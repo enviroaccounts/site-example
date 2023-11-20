@@ -3,6 +3,10 @@
   "setupTasks": [
     {
       "name": "pip install dash",
+      "command": "pip install dash"
+    },
+    {
+      "name": "pip install Pandas",
       "command": "pip install pandas"
     }
   ],
