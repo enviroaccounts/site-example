@@ -12,3 +12,11 @@ COPY . .
 RUN pip install dash
 RUN pip install pandas
 
+# Expose port 8050
+EXPOSE 8050
+
+# Define an environment variable for the port number
+ENV PORT=8050
+
+# Run the Dash app
+CMD ["python", "./app.py"]
