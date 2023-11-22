@@ -37,27 +37,50 @@ def get_piechart_data():
 # Extracting pie chart data
 pie_chart_data = get_piechart_data()
 
-# Assuming 'category' and 'value' are keys in the pie_chart_data
+#'category' and 'value' are keys in the pie_chart_data
 labels = [data['category'] for data in pie_chart_data]
 values = [data['value'] for data in pie_chart_data]
 
 # Create pie chart figure
 fig_pie_chart = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
 
-# Bar chart
-df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-})
-fig_bar_chart = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+# # Bar chart
+# df = pd.DataFrame({
+#     "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
+#     "Amount": [4, 1, 2, 2, 4, 5],
+#     "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
+# })
+# fig_bar_chart = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+
+
+# Function to get bar chart data
+def get_barchart_data():
+    pest_labels = ['Bird', 'Cat', 'Ferret', 'Hedgehog', 'Magpie', 'Mouse', 'Other', 'Possum',
+                   'Rabbit', 'Rat', 'Rat - ship', 'Rat - norway', 'Stoat', 'Unspecified', 'Weasel', 'PÅ«keko']
+    years = [2020, 2021, 2022]
+    barchart_data = pd.DataFrame()
+
+    for year in years:
+        year_data = data_df[data_df['year'] == year]
+        year_grouped = year_data.groupby('Type', observed=False)['count'].sum()
+        year_grouped_percent = calculate_percentage(year_grouped, np.sum(year_grouped))
+        year_grouped_percent.name = str(year)
+        barchart_data = pd.concat([barchart_data, year_grouped_percent], axis=1)
+
+    barchart_data['Type'] = pest_labels
+    return barchart_data
+
+# Creating the bar chart
+barchart_data = get_barchart_data()
+fig_bar_chart = px.bar(barchart_data, x='Type', y=['2020', '2021', '2022'])
+
 
 # Layout
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
     dcc.Graph(id='pie-chart', figure=fig_pie_chart),
     html.Div(children='Dash: A web application framework for your data.'),
-    dcc.Graph(id='bar-chart', figure=fig_bar_chart)
+     dcc.Graph(id='bar-chart', figure=fig_bar_chart)
 ])
 
 if __name__ == '__main__':
