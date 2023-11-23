@@ -18,5 +18,3 @@ EXPOSE 8050
 # Define an environment variable for the port number
 ENV PORT=8050
 
-# Run the Dash app
-CMD ["python", "./app.py"]
