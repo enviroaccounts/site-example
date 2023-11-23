@@ -41,7 +41,7 @@ fig_bar_chart = px.bar(initial_barchart_data, x='Type', y='percent')
 app.layout = html.Div(children=[
     html.Div([  
     html.Div([
-        html.H1(children='Data Dashboard'),
+        html.H1(children='Data Dashboard - revised'),
         html.H2(children='Project:'),
         html.H4(children='Interactive charts for frontend data visualization using dash and plotly')
     ],className="description"), 
