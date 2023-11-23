@@ -1,6 +1,8 @@
 from dash import Dash, html, dcc, callback, Output, Input
-import plotly.express as px
 import pandas as pd
+import plotly.graph_objects as go
+import numpy as np
+import plotly.express as px
 
 app = Dash(__name__)
 
@@ -66,6 +68,5 @@ def update_bar_chart(clickData):
 
     return px.bar(new_barchart_data, x='Type', y='percent', color_discrete_sequence=selected_color).update_layout(transition_duration=500)
 
-
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8050)
+    app.run_server(debug=True, host='0.0.0.0', port=8050)
