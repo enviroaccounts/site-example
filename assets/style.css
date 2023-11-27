@@ -1,29 +1,6 @@
-.visualisation{
-    display: grid;
-    grid-template-columns:2fr 3fr;
-    height:30rem
-}
-/* .description{
-    padding-left: 6.4rem;
-} */
-
-.pie_chart,.description{
-    align-self: center;
-    justify-self: center;
-}
-
-.description{
-    max-width: 18rem;
-}
-
-.bar_chart{
-    grid-column: 1 / 3
-}
-.container{
-    max-width:100rem;
-    margin: 0 auto;
-}
-
-#pie-chart{
-    max-width: 40rem;
+#forest-land-use-pie-chart-layout{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
