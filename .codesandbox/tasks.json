@@ -1,25 +1,21 @@
 {
   // These tasks will run in order when initializing your CodeSandbox project.
-  "setupTasks": [
-    {
-      "name": "pip install dash",
-      "command": "pip install dash"
-    },
-    {
-      "name": "pip install Pandas",
-      "command": "pip install pandas"
-    }
-  ],
+  "setupTasks": [],
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
     "start": {
       "name": "start",
-      "command": "python app.py",
+      "command": "python -m wsgi",
       "runAtStart": true,
       "preview": {
         "port": 8050
       }
+    },
+    "compile css": {
+      "name": "compile css",
+      "command": "tailwindcss -i css/style.css -o app/static/css/main.css --minify",
+      "runAtStart": true
     }
   }
 }
