@@ -1,7 +1,7 @@
-# app-plotly
+# Site Example
 
 
-This has been updated to use Flask and Tailwind and then embed the dash plot.
+This is a Flask + tailwind + dash + plotly site, the dash plot is embeded rather than in control.
 
 ## References
 + Applicaiton Factory Pattern - https://flask.palletsprojects.com/en/3.0.x/tutorial/factory/
