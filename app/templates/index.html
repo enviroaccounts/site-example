@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Mixed">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Flask + Dash + Plotly</title>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</script>
+  </head>
+  <body>
+    <h1 class="text-3xl font-bold underline">Land Uses</h1>
+    {{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe  }} 
+  </body>
+</html>
