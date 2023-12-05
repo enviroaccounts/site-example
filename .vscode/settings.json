@@ -1,0 +1,13 @@
+{
+    "docker.commands.runInteractive": [
+        {
+            "label": "Default run command",
+            "template": "${containerCommand} run --rm -it ${exposedPorts} ${tag}"
+        },
+        {
+            "label": "Run python container",
+            "template": "${containerCommand} run --rm --tty -it ${exposedPorts} --mount 'type=bind,source=${workspaceFolder},destination=/site' ${tag} bash",
+            "match": "siteexample"
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "docker-build",
+			"label": "docker-build",
+			"platform": "python",
+			"dockerBuild": {
+				"tag": "siteexample:latest",
+				"dockerfile": "${workspaceFolder}/Dockerfile",
+				"context": "${workspaceFolder}",
+				"pull": true
+			}
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run: static",
+			"detail": "This directly runs the Flask app without dash.",
+			"hide": true,
+			"dependsOn": [
+				"docker-build"
+			],
+			"dockerRun": {
+				"env": {},
+				"volumes": [
+					{
+						"containerPath": "/site",
+						"localPath": "${workspaceFolder}"
+					}
+				],
+			},
+			"python": {
+				"args": [
+					"--app",
+					"wsgi:application",
+					"run",
+					"--no-debugger",
+					"--no-reload",
+					"--host",
+					"0.0.0.0",
+					"--port",
+					"8050"
+				],
+				"module": "flask"
+			}
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run: live",
+			"dependsOn": [
+				"docker-build"
+			],
+			"dockerRun": {
+				"containerName": "siteexample-live",
+				"image": "siteexample:latest",
+				"env": {},
+				"volumes": [
+					{
+						"containerPath": "/site",
+						"localPath": "${workspaceFolder}"
+					}
+				],
+				"ports": [
+					{
+						"containerPort": 8050,
+						"hostPort": 8050
+					}
+				]
+			},
+			"python": {
+				"module": "wsgi"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "docker-run: 2 tailwind css compile ",
+			"dependsOn": [
+				"docker-build"
+			],
+			"command": "docker run --rm --tty -it -p 8050:8050/tcp --mount 'type=bind,source=${workspaceFolder},destination=/site' siteexample:latest bash -c 'tailwindcss -i css/style.css -o app/static/css/main.css --minify'",
+			"problemMatcher": []
+		}
+		
+	]
+}

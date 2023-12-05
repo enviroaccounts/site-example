@@ -18,8 +18,29 @@ This is a Flask + tailwind + dash + plotly site, the dash plot is embeded rather
 + Plotly embed as div - https://plotly.com/python-api-reference/generated/plotly.io.to_html.html
 
 
+## Design
+
+### Atomic Design 
++ https://atomicdesign.bradfrost.com/
++ https://bootcamp.uxdesign.cc/building-design-systems-with-atomic-design-fd21e86f34c5
++ https://www.webstacks.com/blog/atomic-design-methodology
+                 
+
+## Development Tools
+### Pyhton + VS Code + Docker 
++ https://code.visualstudio.com/docs/containers/debug-python
++ https://chopcoding.com/flask-docker-vscode-how-to-simplify-debugging-and-improve-your-development-experience
+### VS Code + Docker 
++ https://code.visualstudio.com/docs/containers/reference
++ https://code.visualstudio.com/docs/containers/overview
+### Flask + python + VS Code
++ https://code.visualstudio.com/docs/python/tutorial-flask
 
 
 
+## Issues
+### Error Message: Debug Adapter Execution not provided
+This is an error caused by the host not having python installed or available in the path for VS Code. 
+Install python and check that code can open a py file and have an interpeter. (Check the bottom right)
 
 

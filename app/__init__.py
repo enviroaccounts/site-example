@@ -1,6 +1,8 @@
 from flask import Flask, render_template
 
 
+
+
 def init_app():
     """Init app core"""
     app = Flask(__name__, instance_relative_config=False)
@@ -9,6 +11,6 @@ def init_app():
     with app.app_context():
         from . import routes
         from .plots import LandUses
-        app = LandUses.init_dash(app)
+        dash_app = LandUses.init_dash(app)
 
-        return app
+        return dash_app

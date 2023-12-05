@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Docker: Python - Flask Static",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: static",
+            "python": {
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}",
+                        "remoteRoot": "/site"
+                    }
+                ],
+                "projectType": "flask"
+            }
+        },
+        {
+            "name": "Docker: Python - Flask Live",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: live",
+            "python": {
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}",
+                        "remoteRoot": "/site"
+                    }
+                ],
+                "projectType": "flask"
+            }
+        }
+    ]
+}
