@@ -73,7 +73,7 @@
 		},
 		{
 			"type": "shell",
-			"label": "docker-run: 2 tailwind css compile ",
+			"label": "docker-run: tailwind css compile ",
 			"dependsOn": [
 				"docker-build"
 			],

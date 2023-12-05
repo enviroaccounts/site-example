@@ -37,10 +37,22 @@ This is a Flask + tailwind + dash + plotly site, the dash plot is embeded rather
 + https://code.visualstudio.com/docs/python/tutorial-flask
 
 
+### Actions and tasks
++ Debug using (ctrl+shift+d) - https://code.visualstudio.com/docs/editor/debugging
+    - select thre Docker:Python - Flask Live
+    - This allows breakpoints in python code as well as changes to files to 'live' changed in the image
++ Run Tailwind Css generation (ctrl+p task docker-run:  tailwind css compile) - https://code.visualstudio.com/docs/editor/tasks
+    - Look in the .vscode/tasks.json for all the tasks that can be run
+    - The tailwind css runs a tool that is in the docker image to convert the style.css to main.css
++ Run a terminal in the docker image
+    - A terminal with a bash shell can be started in the docker image 
+    - Click on the 'docker' whale and select the docker image `siteexample`
+    - Right click the image tag `latest` then select `Run Interactive` 
+    - ![Alt text](image.png)
+
 
 ## Issues
 ### Error Message: Debug Adapter Execution not provided
 This is an error caused by the host not having python installed or available in the path for VS Code. 
 Install python and check that code can open a py file and have an interpeter. (Check the bottom right)
-
 
