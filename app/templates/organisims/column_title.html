@@ -1,0 +1,17 @@
+{% import 'atoms/subhead_01.html' as subhead_01  with context%}
+
+{% macro render(body="") -%}
+
+
+{%set parent_caller=caller()%}
+
+
+
+<div class="w-128">
+   {% call subhead_01.render() %}
+    {{body}}
+    {{ parent_caller }}
+   {% endcall %} 
+
+</div>
+{%- endmacro %}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+   
+</script>
+  </head>
+  <body>
+    <div>
+      <!-- center the container -->
+      <div class="Desktop container mx-auto h-auto">
+        <!-- logo section -->
+        <div
+          class="logo_section_div flex flex-row justify-end  mb-20 mt-20 gap-5"
+        >
+          <div
+            class="relative flex justify-center items-center before:content-[''] before:block before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-dark-blue-900 before:rounded-b-full before:w-[120%] before:pb-[330%] before:z-[1] ClimateVariables w-28 text-center text-black text-footer font-semibold font-inter uppercase leading-footer "
+          >
+          </div>
+          <div
+            class="relative flex justify-center items-center before:content-[''] before:block before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-light-blue-900 before:rounded-b-full before:w-[120%] before:pb-[330%] before:z-[1] ClimateVariables w-28 text-center text-black text-footer font-semibold font-inter uppercase leading-footer"
+          >
+          </div>
+          <div
+            class="relative flex justify-center items-center before:content-[''] before:block before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-yellow-900 before:rounded-b-full before:w-[120%] before:pb-[330%] before:z-[1] ClimateVariables w-28 text-center text-black text-footer font-semibold font-inter uppercase leading-footer mr-20"
+          >
+          </div>
+        </div>
+        <!-- divider -->
+        <div class="border-b-8 mb-12"></div>
+        <!-- primary heading -->
+        <div
+          class="w-208 text-black font-bold font-inter text-headline leading-headline mb-48 tracking-tighter"
+        >
+          Greenhouse gas emission
+        </div>
+        <!-- flex layout  -->
+        <div class="flex flex-row mb-20">
+          <!--  left side column: flex layout for text content -->
+          <div
+            class="flex flex-col justify-start items-start gap-16 w-full"
+          >
+            <div class="flex-col justify-start items-start gap-7 flex">
+              <div
+                class="w-128 text-black uppercase font-bold font-overused-grotesk text-subhead-01 leading-subhead-01 tracking-tight"
+              >
+                Subhead 01
+              </div>
+              <div
+                class="w-128 text-black text-body font-light font-inter leading-body"
+              >
+                Each sector can be analysed in more detail to understand where
+                the largest contributing activities or sources exist.
+              </div>
+            </div>
+            <!-- divider -->
+            <div class="border-b-2 w-128 border-dashed"></div>
+
+            <div
+              class="flex-col justify-start items-center gap-16 flex"
+            >
+              <div
+                class=" flex-col justify-start items-start gap-12 flex"
+              >
+                <div
+                  class="w-128 text-black text-statistic font-bold font-overused-grotesk tracking-tightest leading-statistic"
+                 >
+                  80%
+                </div>
+                <div
+                  class=" w-96 text-black text-subhead-02 font-regular font-overused-grotesk leading-subhead-02 tracking-tight"
+                >
+                  According to a survery conducted by the QLDC 80% of residents
+                  in the catchment stated that they were "concerned" or "very
+                  concerned" about the potential impacts of climate change.
+                </div>
+              </div>
+            </div>
+            <!-- divider -->
+            <div class="border-b-2 w-128 border-dashed"></div>
+
+            <div
+              class="w-128 text-black text-body font-light font-inter leading-footer-02 tracking-default"
+            >
+              To align with national climate change commitments and targets and
+              to alleviate concern from residents, increase in GHG emissions
+              needs to be addressed across the sectors and catchment.
+            </div>
+          </div>
+          <!-- divider -->
+          <div class="border-b-2 border-dashed"></div>
+
+          <!-- right side column: graph-->
+          <div class="mt-10 flex flex-col w-full items-center">
+            <div class="Rectangle11 w-208 h-240 bg-light-grey rounded-t-3xl">
+              {{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe  }} 
+            </div>
+            <div
+              class="Frame4 w-208 px-12 py-6 bg-white rounded-b-3xl flex justify-start items-center gap-2.5 border-x-4 border-b-4 border-light-grey"
+            >
+              <div
+                class=" text-black text-caption font-medium font-inter leading-tight"
+              >
+                GHG emissions from the energy sector by location.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- divider -->
+        <div class="border-b-2 mb-32"></div>
+
+        <!-- The forestery sector -->
+        <div class="flex flex-col items-end gap-16 w-full">
+          <div class="Frame26 flex-col gap-7 flex">
+            <div
+              class="w-208 text-black uppercase font-bold font-inter text-subhead-01 leading-caption tracking-tight"
+            >
+              the forestry sector
+            </div>
+            <div
+              class="w-208 text-black text-body font-light font-inter leading-body"
+            >
+              The forestry sector accounts for greenhouse gas removals in the
+              catchment; as forests grow, they sequester carbon dioxide and act
+              as a natural carbon sink. A small quantity of greenhouse gas
+              emissions result from deforestation and harvesting of both natural
+              and plantation forests: a loss of 10.3 ha of forestland in 2076
+              led to 9,500 tonnes of C02e emitted to the atmosphere.
+            </div>
+          </div>
+
+          <div
+            class="flex-col self-stretch items-start gap flex mb-48"
+          >
+            <div class="w-full h-208 bg-light-grey rounded-t-3xl"></div>
+            <div
+              class="px-12 py-6 rounded-b-3xl bg-white border-x-4 border-b-4 border-light-grey flex gap-2.5 self-stretch"
+            >
+              <div
+                class=" text-black text-caption font-medium font-inter leading-caption tracking-tight"
+              >
+                GHG emissions and removals from the forestry sector.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- button -->
+        <div class="flex justify-center mb-48">
+          <div
+            class="leanmore_link_div Button w-76 mt-5 px-7 py-5 bg-black rounded-full flex justify-center items-center gap-4 hover:bg-white hover:shadow-md transition-all duration-700 ease-in-out"
+          >
+            <a
+              href="#"
+              class="leanmore_link text-white text-caption font-medium font-inter leading-caption flex justify-center items-center gap-4 tracking-tight"
+            >
+              <p>Learn more</p>
+              <ion-icon
+                name="arrow-forward-circle-outline"
+                class="w-12 h-12"
+                style="stroke-width: 1px"
+              ></ion-icon>
+            </a>
+          </div>
+        </div>
+        <!-- divider -->
+        <div class="border-b-8 mb-12"></div>
+
+        <!-- references section-->
+        <div class="flex justify-between items-start mb-32">
+          <!-- reference  -->
+          <!-- <div
+            class="References w-96 text-black text-caption font-bold font-inter"
+          >
+            References
+          </div> -->
+
+          <!-- <div
+            class="AgricultureStatsnzTransportCentralOtagoDistrictCouncilEnergyArouraEnergyForestryLucasQldcQualityOfLifeSurvey"
+          >
+            <a
+              class="text-slate-900 text-footer font-normal font-inter leading-10"
+              href="#"
+              >Agriculture—
+              <span
+                class="text-slate-900 text-footer-02 font-semibold font-inter underline leading-10"
+                >StatsNZ<br /></span
+            ></a>
+            <a
+              class="text-slate-900 text-footer-02 font-normal font-inter leading-10"
+              href="#"
+              >Transport-
+              <span
+                class="text-slate-900 text-footer-02 font-semibold font-inter underline leading-10"
+                >Central Otago District Council<br /></span
+            ></a>
+            <a
+              class="text-slate-900 text-footer-02 font-normal font-inter leading-10"
+              href="#"
+              >Energy—
+              <span
+                class="text-slate-900 text-footer-02 font-semibold font-inter underline leading-10"
+                >Aroura Energy<br /></span
+            ></a>
+            <a
+              class="text-slate-900 text-footer-02 font-normal font-inter leading-10"
+              href="#"
+              >Forestry—
+              <span
+                class="text-slate-900 text-footer-02 font-semibold font-inter underline leading-10"
+                >LUCAS:QLDC Quality of Life Survey<br /></span
+            ></a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- iconic icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    
+  </body>
+</html>
