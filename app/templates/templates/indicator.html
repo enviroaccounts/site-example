@@ -20,8 +20,8 @@
               {% endcall %}
             {% endcall %}
           </header>
-          <main>
 
+          <main>
           <!-- headline section-->
           {% call page_container_plain.render() %}
             <!-- headline organism -->
@@ -30,8 +30,8 @@
             {% endcall %}
           {% endcall %}
 
-          <!-- flex layout  -->
-          <div class="container mx-auto h-auto flex flex-row mb-20">
+          <!-- content-one section   -->
+            {% call page_container_two_columns.render() %}
             <!--  left side column: flex layout for text content -->
             <div
               class="flex flex-col justify-start items-start gap-16 w-full"
@@ -84,10 +84,11 @@
               </div>
             </div>
           </div>
+
           <!-- divider -->
           <div class="border-b-2 mb-32"></div>
 
-          <!-- The forestery sector -->
+          <!-- content-two section -->
           <div class="flex flex-col items-end gap-16 w-full">
             <div class="Frame26 flex-col gap-7 flex">
               <div
@@ -151,6 +152,7 @@
           </div>
           <!-- divider -->
           <div class="border-b-8 mb-12"></div>
+          {% endcall %}
         </main>
 
           <!-- references section-->
