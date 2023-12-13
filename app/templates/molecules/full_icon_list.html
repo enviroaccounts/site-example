@@ -1,0 +1,22 @@
+{% import 'atoms/icon.html' as icon with context%}
+
+{% macro render(value, body="") -%} 
+{%set parent_caller=caller()%}
+
+<div
+class="logo_section_div flex flex-row justify-end  mb-20 mt-20 gap-5 mr-20"
+>
+{% call icon.render(color="bg-dark-blue-900") %} 
+{{ body }}
+{% endcall %}
+{% call icon.render(color="bg-light-blue-900") %} 
+{{ body }}
+{% endcall %}
+{% call icon.render(color="bg-yellow-900") %} 
+{{ body }}
+{% endcall %}
+
+</div>
+<!-- divider -->
+<div class="border-b-2 w-128 border-dashed"></div>
+{%- endmacro %}

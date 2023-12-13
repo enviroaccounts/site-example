@@ -1,8 +1,10 @@
+{% import 'organisims/page_container.html' as page_container  with context%}
 {% import 'organisims/title.html' as title  with context%}
 {% import 'organisims/column_title.html' as column_title  with context%}
 {% import 'organisims/callout.html' as callout with context%}
 {% import 'atoms/copytext.html' as copytext with context%}
 {% import 'atoms/callout_copytext.html' as callout_copytext with context%}
+{% import 'molecules/full_icon_list.html' as full_icon_list with context%}
 
 
 {% macro render() -%}
@@ -12,28 +14,15 @@
         <!-- center the container -->
         <div class="Desktop container mx-auto h-auto">
           <!-- logo section -->
-          <div
-            class="logo_section_div flex flex-row justify-end  mb-20 mt-20 gap-5"
-          >
-            <div
-              class="relative flex justify-center items-center before:content-[''] before:block before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-dark-blue-900 before:rounded-b-full before:w-[120%] before:pb-[330%] before:z-[1] ClimateVariables w-28 text-center text-black text-footer font-semibold font-inter uppercase leading-footer "
-            >
-            </div>
-            <div
-              class="relative flex justify-center items-center before:content-[''] before:block before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-light-blue-900 before:rounded-b-full before:w-[120%] before:pb-[330%] before:z-[1] ClimateVariables w-28 text-center text-black text-footer font-semibold font-inter uppercase leading-footer"
-            >
-            </div>
-            <div
-              class="relative flex justify-center items-center before:content-[''] before:block before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:bg-yellow-900 before:rounded-b-full before:w-[120%] before:pb-[330%] before:z-[1] ClimateVariables w-28 text-center text-black text-footer font-semibold font-inter uppercase leading-footer mr-20"
-            >
-            </div>
-          </div>
+          {% call full_icon_list.render() %}
+          {% endcall %}
           <!-- divider -->
           <div class="border-b-8 mb-12"></div>
-          {% call title.render() %}
-            Greenhouse gas emission
+          {% call page_container.render() %}
+            {% call title.render() %}
+              Greenhouse gas emission
+            {% endcall %}
           {% endcall %}
-
           <!-- flex layout  -->
           <div class="flex flex-row mb-20">
             <!--  left side column: flex layout for text content -->

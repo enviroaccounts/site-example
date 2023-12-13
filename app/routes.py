@@ -12,9 +12,9 @@ def index():
     return render_template('pages/index.html')
 
 
-@app.route('/main')
-def main():
-    return render_template('pages/main.html')
+@app.route('/<page>')
+def main(page):
+    return render_template(f"pages/{page}.html")
 
 
 @app.route('/water')
