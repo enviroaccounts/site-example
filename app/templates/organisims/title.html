@@ -1,19 +1,12 @@
 {% import 'atoms/headline.html' as headline  with context%}
+{% import 'organisims/headline_container.html' as headline_container  with context%}
 
 {% macro render(body="") -%}
-
-
 {%set parent_caller=caller()%}
 
-
-
-
-<!-- primary heading -->
-<div class=" w-208 mb-48">
    {% call headline.render() %}
     {{body}}
     {{ parent_caller }}
    {% endcall %} 
 
-</div>
 {%- endmacro %}

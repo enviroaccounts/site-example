@@ -1,4 +1,4 @@
-{% import 'organisims/page_container.html' as page_container  with context%}
+{% import 'organisims/headline_container.html' as headline_container  with context%}
 {% import 'organisims/title.html' as title  with context%}
 {% import 'organisims/column_title.html' as column_title  with context%}
 {% import 'organisims/callout.html' as callout with context%}
@@ -17,7 +17,7 @@
           {% call header.render() %}
           {% endcall %}
           <!-- title organism-->
-          {% call page_container.render() %}
+          {% call headline_container.render() %}
             {% call title.render() %}
               Greenhouse gas emission
             {% endcall %}
