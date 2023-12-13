@@ -4,7 +4,7 @@
 {% import 'organisims/callout.html' as callout with context%}
 {% import 'atoms/copytext.html' as copytext with context%}
 {% import 'atoms/callout_copytext.html' as callout_copytext with context%}
-{% import 'molecules/full_icon_list.html' as full_icon_list with context%}
+{% import 'organisims/header.html' as header  with context%}
 
 
 {% macro render() -%}
@@ -13,11 +13,10 @@
       <div>
         <!-- center the container -->
         <div class="Desktop container mx-auto h-auto">
-          <!-- logo section -->
-          {% call full_icon_list.render() %}
+          <!-- header organism -->
+          {% call header.render() %}
           {% endcall %}
-          <!-- divider -->
-          <div class="border-b-8 mb-12"></div>
+          <!-- title organism-->
           {% call page_container.render() %}
             {% call title.render() %}
               Greenhouse gas emission

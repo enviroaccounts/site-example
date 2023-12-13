@@ -1,0 +1,15 @@
+{% import 'atoms/divider.html' as divider with context%}
+{% import 'molecules/full_icon_list.html' as full_icon_list with context%}
+
+
+{% macro render() -%} 
+{%set parent_caller=caller()%}
+
+<!-- full logo list -->
+{% call full_icon_list.render() %}
+{% endcall %}
+<!-- divider -->
+{% call divider.render() %} 
+{% endcall %}
+
+{%- endmacro %}
