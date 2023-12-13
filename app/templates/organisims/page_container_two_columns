@@ -1,0 +1,8 @@
+
+{% macro render(body="") -%}
+{%set parent_caller=caller()%}
+<section class="container mx-auto h-auto">
+   {{body}}
+   {{ parent_caller }}
+</section>
+{%- endmacro %}

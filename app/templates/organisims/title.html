@@ -1,12 +1,14 @@
-{% import 'atoms/headline.html' as headline  with context%}
-{% import 'organisims/headline_container.html' as headline_container  with context%}
+{% import 'atoms/headline.html' as headline_atom  with context%}
+{% import 'molecules/headline.html' as headline_molecule  with context%}
 
 {% macro render(body="") -%}
 {%set parent_caller=caller()%}
 
-   {% call headline.render() %}
+{% call headline_molecule.render() %}
+   {% call headline_atom.render() %}
     {{body}}
     {{ parent_caller }}
    {% endcall %} 
+{% endcall %} 
 
 {%- endmacro %}
