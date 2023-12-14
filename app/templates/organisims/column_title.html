@@ -1,5 +1,5 @@
 {% import 'atoms/subhead_01.html' as subhead_01  with context%}
-
+{% import 'atoms/copytext.html' as copytext with context%}
 {% macro render(body="") -%}
 
 
@@ -12,6 +12,10 @@
     {{body}}
     {{ parent_caller }}
    {% endcall %} 
+   {% call copytext.render() %}
+      Each sector can be analysed in more detail to understand where
+      the largest contributing activities or sources exist.
+   {% endcall %}
 
 </div>
 {%- endmacro %}

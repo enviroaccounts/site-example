@@ -1,7 +1,7 @@
 
 {% macro render(body="") -%}
 {%set parent_caller=caller()%}
-<!-- the mb-48 should be set as a variable and be passed in from the page level-->
+<!-- the mb-48 should be set as a variable and be passed in from the page-->
 <div  class="w-3/5 mb-48">
    {{body}}
    {{ parent_caller }}

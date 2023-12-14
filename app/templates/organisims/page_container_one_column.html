@@ -1,7 +1,7 @@
 
 {% macro render(gap_value=0) -%}
 {%set parent_caller=caller()%}
-<div
+<section
 class="w-full flex flex-col justify-start items-start gap-{{gap_value}}"
 >
    {{ parent_caller }}

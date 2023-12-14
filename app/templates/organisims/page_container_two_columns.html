@@ -1,7 +1,7 @@
 
 {% macro render(body="") -%}
 {%set parent_caller=caller()%}
-<section class="container mx-auto h-auto flex flex-row mb-20">
+<section class="container mx-auto h-auto flex lg:flex-row mb-20 md:flex-col">
    {{body}}
    {{ parent_caller }}
 </section>

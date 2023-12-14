@@ -45,78 +45,8 @@
         >
           Greenhouse gas emission
         </div>
-        <!-- flex layout  -->
-        <div class="flex flex-row mb-20">
-          <!--  left side column: flex layout for text content -->
-          <div
-            class="flex flex-col justify-start items-start gap-16 w-full"
-          >
-            <div class="flex-col justify-start items-start gap-7 flex">
-              <div
-                class="w-128 text-black uppercase font-bold font-overused-grotesk text-subhead-01 leading-subhead-01 tracking-tight"
-              >
-                Subhead 01
-              </div>
-              <div
-                class="w-128 text-black text-body font-light font-inter leading-body"
-              >
-                Each sector can be analysed in more detail to understand where
-                the largest contributing activities or sources exist.
-              </div>
-            </div>
-            <!-- divider -->
-            <div class="border-b-2 w-128 border-dashed"></div>
-
-            <div
-              class="flex-col justify-start items-center gap-16 flex"
-            >
-              <div
-                class=" flex-col justify-start items-start gap-12 flex"
-              >
-                <div
-                  class="w-128 text-black text-statistic font-bold font-overused-grotesk tracking-tightest leading-statistic"
-                 >
-                  80%
-                </div>
-                <div
-                  class=" w-96 text-black text-subhead-02 font-regular font-overused-grotesk leading-subhead-02 tracking-tight"
-                >
-                  According to a survery conducted by the QLDC 80% of residents
-                  in the catchment stated that they were "concerned" or "very
-                  concerned" about the potential impacts of climate change.
-                </div>
-              </div>
-            </div>
-            <!-- divider -->
-            <div class="border-b-2 w-128 border-dashed"></div>
-
-            <div
-              class="w-128 text-black text-body font-light font-inter leading-footer-02 tracking-default"
-            >
-              To align with national climate change commitments and targets and
-              to alleviate concern from residents, increase in GHG emissions
-              needs to be addressed across the sectors and catchment.
-            </div>
-          </div>
-          <!-- divider -->
-          <div class="border-b-2 border-dashed"></div>
-
-          <!-- right side column: graph-->
-          <div class="mt-10 flex flex-col w-full items-center">
-            <div class="Rectangle11 w-208 h-240 bg-light-grey rounded-t-3xl">
-              {{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe  }} 
-            </div>
-            <div
-              class="Frame4 w-208 px-12 py-6 bg-white rounded-b-3xl flex justify-start items-center gap-2.5 border-x-4 border-b-4 border-light-grey"
-            >
-              <div
-                class=" text-black text-caption font-medium font-inter leading-tight"
-              >
-                GHG emissions from the energy sector by location.
-              </div>
-            </div>
-          </div>
-        </div>
+     
+        
         <!-- divider -->
         <div class="border-b-2 mb-32"></div>
 

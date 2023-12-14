@@ -1,0 +1,11 @@
+{% import 'molecules/desc_without_heading.html' as desc_without_heading with context%}
+
+{% macro render(content="") -%} 
+{%set parent_caller=caller()%}
+
+    {% call desc_without_heading.render() %}
+    {{content}}
+    {{ parent_caller }}
+    {% endcall %} 
+
+{%- endmacro %}
