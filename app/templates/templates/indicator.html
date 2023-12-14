@@ -1,5 +1,6 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context%}
 {% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context%}
+{% import 'organisims/page_container_one_column.html' as page_container_one_column  with context%}
 {% import 'organisims/title.html' as title  with context%}
 {% import 'organisims/column_title.html' as column_title  with context%}
 {% import 'organisims/callout.html' as callout with context%}
@@ -33,9 +34,7 @@
           <!-- content-one section   -->
             {% call page_container_two_columns.render() %}
             <!--  left side column: flex layout for text content -->
-            <div
-              class="flex flex-col justify-start items-start gap-16 w-full"
-            >
+            {% call page_container_one_column.render(gap_value=16) %}
               <div class="flex-col justify-start items-start gap-7 flex">
                 {% call column_title.render() %}
                   Subhead 011
@@ -64,13 +63,13 @@
                 needs to be addressed across the sectors and catchment.
               {% endcall %}
               </div>
-            </div>
-            <!-- divider -->
-            <div class="border-b-2 border-dashed"></div>
+            {% endcall %}
+            <!-- 
+            <div class="border-b-2 border-dashed"></div>-->
 
             <!-- right side column: graph-->
             <div class="mt-10 flex flex-col w-full items-center">
-              <div class="Rectangle11 w-208 h-240 bg-light-grey rounded-t-3xl">
+              <div class="Rectangle11 w-208 bg-light-grey rounded-t-3xl">
                 {{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe  }} 
               </div>
               <div
@@ -87,17 +86,18 @@
 
           <!-- divider -->
           <div class="border-b-2 mb-32"></div>
-
+          {% endcall %}
           <!-- content-two section -->
-          <div class="flex flex-col items-end gap-16 w-full">
+         <section class="container mx-auto h-auto">
+          <div class="=flex flex-col items-end gap-16 w-full ">
             <div class="Frame26 flex-col gap-7 flex">
               <div
                 class="w-208"
               >
-                
+          
                 {% call column_title.render() %}
                 the forestry sector
-              {% endcall %}
+                {% endcall %}
               </div>
               
               <div
@@ -131,9 +131,10 @@
               </div>
             </div>
           </div>
+        </section> 
 
           <!-- button -->
-          <div class="flex justify-center mb-48">
+          <div class="container mx-auto h-auto flex justify-center mb-48">
             <div
               class="leanmore_link_div Button w-76 mt-5 px-7 py-5 bg-black rounded-full flex justify-center items-center gap-4 hover:bg-white hover:shadow-md transition-all duration-700 ease-in-out"
             >
@@ -151,8 +152,8 @@
             </div>
           </div>
           <!-- divider -->
-          <div class="border-b-8 mb-12"></div>
-          {% endcall %}
+          <div class="container mx-auto h-auto border-b-8 mb-12"></div>
+
         </main>
 
           <!-- references section-->
