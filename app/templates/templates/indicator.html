@@ -34,10 +34,10 @@
           <!-- content-one section   -->
             {% call page_container_two_columns.render() %}
             <!--  left side column: flex layout for text content -->
-            {% call page_container_one_column.render(gap_value=16) %}
+            <div class="flex flex-col justify-start items-start gap-16 w-full">
               <div class="flex-col justify-start items-start gap-7 flex">
                 {% call column_title.render() %}
-                  Subhead 011
+                  Subhead 01
                 {% endcall %}
                 <div class="w-128">
                 {% call copytext.render() %}
@@ -63,7 +63,7 @@
                 needs to be addressed across the sectors and catchment.
               {% endcall %}
               </div>
-            {% endcall %}
+            </div>
             <!-- 
             <div class="border-b-2 border-dashed"></div>-->
 
