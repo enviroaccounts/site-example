@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% import 'templates/indicator.html' as indicator  with context%}
+{% import 'templates/mock.html' as mock  with context%}
 {% block title %}Main Page{% endblock %}
    
 {% block content %}
-  {% call indicator.render() %}
+  {% call mock.render() %}
   {% endcall %}
 {% endblock %}
   

@@ -71,7 +71,11 @@ def create_forest_land_use_pie_chart(labels, values):
         plot_bgcolor='rgba(0,0,0,0)',  # Making the plot background transparent
         paper_bgcolor='#F5F5F5',  # Light gray background for the entire graph
         xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-        yaxis=dict(showgrid=False, zeroline=False, showticklabels=False)
+        yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),    
+        hoverlabel=dict(
+        font_size=25,          # Hover label font size 
+        font_family="Inter"    # Change hover table font family 
+    )
     )
 
 
