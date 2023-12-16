@@ -6,3 +6,7 @@
 .leanmore_link_div:hover .leanmore_link {
   color: black; 
 }
+
+.padding-block-20 {
+  padding-block: 20%;
+}
