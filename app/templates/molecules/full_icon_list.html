@@ -2,20 +2,20 @@
 
 {% macro render(value, body="") -%} 
 {%set parent_caller=caller()%}
-
+<div class="relative flex justify-end">
 <div
-class="logo_section_div flex flex-row justify-end  mb-20 mt-20 gap-4 mr-16"
+class="w-1/2 h-72 logo_section_div flex flex-row gap-4 mr-16 z-10 bg-white"
 >
-{% call icon.render(color="before:bg-light-grey",height="before:pb-[250%]") %} 
+{% call icon.render(color="before:bg-light-grey",height="before:pb-[400%]",svg_position="bottom-8 ") %} 
 {{ body }}
 {% endcall %}
 {% call icon.render(color="before:bg-grey-900") %} 
 {{ body }}
 {% endcall %}
-{% call icon.render(color="before:bg-light-grey",height="before:pb-[250%]") %} 
+{% call icon.render(color="before:bg-light-grey",height="before:pb-[400%]",svg_position="bottom-8") %} 
 {{ body }}
 {% endcall %}
-{% call icon.render(color="before:bg-light-grey",height="before:pb-[250%]") %} 
+{% call icon.render(color="before:bg-light-grey",height="before:pb-[400%]",svg_position="bottom-8") %} 
 {{ body }}
 {% endcall %}
 {% call icon.render(color="before:bg-grey-900") %} 
@@ -25,5 +25,8 @@ class="logo_section_div flex flex-row justify-end  mb-20 mt-20 gap-4 mr-16"
 {{ body }}
 {% endcall %}
 
+</div>
+
+<div class="absolute bottom-1/2 z-0 left-0 border-b-8 container mx-auto"></div>
 </div>
 {%- endmacro %}

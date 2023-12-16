@@ -1,5 +1,5 @@
-{% macro render(divider_width=8,margin_bottom_space=12,border_style="") -%}
-<div class="border-b-{{divider_width}} mb-{{margin_bottom_space}}{{border_style}}">
+{% macro render(divider_width="border-b-8",border_style="") -%}
+<div class="{{divider_width}} {{border_style}}">
 {{body}}
 {{caller()}}
 </div>

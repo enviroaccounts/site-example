@@ -1,7 +1,7 @@
 
-{% macro render(body="") -%}
+{% macro render(margin_bottom="mb-15") -%}
 {%set parent_caller=caller()%}
-<section class="container mx-auto h-auto">
+<section class="container mx-auto h-auto {{margin_bottom}}">
    {{body}}
    {{ parent_caller }}
 </section>
