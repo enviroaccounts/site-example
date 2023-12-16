@@ -6,7 +6,7 @@
 
 
 
-{% macro render(title_text="") -%}
+{% macro render(title_text) -%}
   {%set parent_caller=caller()%}
   <!-- header section-->
   <header>
@@ -21,7 +21,7 @@
   {% call page_container_plain.render() %}
   <!-- headline organism -->
     {% call title.render() %}
-      {{ title }}
+      {{ title_text }}
     {% endcall %}
   {% endcall %}
 

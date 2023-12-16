@@ -1,7 +1,7 @@
 
-{% macro render(color="",body="") -%}
+{% macro render(color="before:bg-light-grey",height="before:pb-[350%]",body="") -%}
 <div
-class="relative flex justify-center items-center before:content-[''] before:block before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:{{color}} before:rounded-b-full before:w-[120%] before:pb-[330%] before:z-[1] ClimateVariables w-28 text-center text-black text-footer font-semibold font-inter uppercase leading-footer "
+class="relative flex justify-center items-center before:content-[''] before:block before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 {{color}} before:rounded-b-full before:w-[110%] {{height}} before:z-[1] ClimateVariables w-28 text-center text-black text-footer font-semibold font-inter uppercase leading-footer "
 >
 {{body}}
 {{caller()}}

@@ -1,11 +1,11 @@
 {% import 'atoms/statistic.html' as statistic with context%}
 {% import 'atoms/callout_copytext.html' as callout_copytext with context%}
 
-{% macro render(value, body="") -%} 
+{% macro render(value, body="",color="bg-dark-blue-900") -%} 
 {%set parent_caller=caller()%}
 
 
- <div class="bg-dark-blue-900 rounded-3xl">
+ <div class="{{color}} rounded-3xl">
   <div  class="flex flex-col justify-center items-center gap-10 p-16">
     <div class="w-96">{% call statistic.render() %} {{ value }}% {% endcall %}</div>
     <div class="w-96">

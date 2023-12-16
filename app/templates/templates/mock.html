@@ -10,7 +10,7 @@
 
 
 
-{% macro render() -%}
+{% macro render(title_text) -%}
   {%set parent_caller=caller()%}
   {% set template %}
   <!-- header section-->
@@ -25,9 +25,9 @@
           <main>
           <!-- headline section-->
           {% call page_container_plain.render() %}
-            <!-- headline organism -->
-              {% call title.render() %}
-                Greenhouse gas emission
+          <!-- headline organism -->
+            {% call title.render() %}
+              {{ title_text }}
             {% endcall %}
           {% endcall %}
 

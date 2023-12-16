@@ -1,18 +1,20 @@
 {% import 'atoms/subhead_01.html' as subhead_01 with context%}
 {% import 'atoms/copytext.html' as copytext with context%}
 
-{% macro render(value, body="") -%} 
+{% macro render(subhead_01_text="") -%} 
 {%set parent_caller=caller()%}
 
 
- <div class="bg-dark-blue-900 rounded-3xl">
-  <div  class="flex flex-col justify-center items-center gap-10 p-16">
-    <div class="w-96">{% call statistic.render() %} {{ value }}% {% endcall %}</div>
-    <div class="w-96">
-      {% call callout_copytext.render() %} 
-         {{ body }}
-      {% endcall %}
-    </div>
+<div class="flex-col justify-start items-start gap-7 flex">
+  <div
+    class="w-128 text-black uppercase font-bold font-overused-grotesk text-subhead-01 leading-subhead-01 tracking-tight"
+  >
+  {% call subhead_01.render() %} {{ subhead_01_text }} {% endcall %}
+  </div>
+  <div
+    class="w-128 text-black text-body font-light font-inter leading-body"
+  >
+  {{ parent_caller }}
   </div>
 </div>
 

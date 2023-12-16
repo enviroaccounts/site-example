@@ -21,12 +21,14 @@
       {% call page_container_one_column.render(gap_value=16) %}
         <div class="flex-col justify-start items-start gap-7 flex">
           {% call desc_with_heading.render(subhead_01_text="subhead_01") %}
-          Since 1990, there has been a net increase of 300 ha of forestland
-          across the catchment. However,
-          most of this has been through the
-          growth of new exotic forest, while
-          the cover of natural, indigenous
-          forest has seen a net decline.
+          Climate variables are a key driver for
+          many measures of catchment health
+          due to their influence on the
+          ecosystem as well as water quality and
+          quantity. This indicator includes
+          temperature and rainfall observations
+          obtained from four, currently active,
+          measurement sites.
           {% endcall %}
         </div>
 
@@ -70,7 +72,7 @@
           </defs>
             </svg><span><</span><span class="underline">view data source</span>
             </a></div>
-          {{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe  }} 
+            <div class='h-192 bg-light-grey'></div>
         </div>
         <div
           class="Frame4 w-208 px-12 py-6 bg-white rounded-b-3xl flex justify-start items-center gap-2.5 border-x-4 border-b-4 border-light-grey"
@@ -78,7 +80,7 @@
           <div
             class=" text-black text-caption font-medium font-inter leading-tight"
           >
-          Land uses converted into exotic forest between 2008 and 2018.
+          Land uses across the catchment in 2016
           </div>
         </div>
       {% endcall %}
@@ -126,7 +128,7 @@
           {% with %}
           {% set body %}Indigenous forest cover has decreased by between 2008 and 2018.
           {% endset %}
-          {% call callout.render(value="<0.2",body=body,color="bg-dark-blue-900") %}
+          {% call callout.render(value="<0.2",body=body,color="bg-grey-900") %}
           {% endcall %}
         {% endwith %}
           {% call desc_with_heading.render(subhead_01_text="subhead_01") %}
@@ -149,6 +151,47 @@
 
       {% endcall %}
     {% endcall %}
+
+    <!-- divider -->
+    <div class="container mx-auto h-auto border-b-2 mb-20"></div>
+
+    {% call page_container_two_columns.render() %}
+      <!-- The forestery sector -->
+      <div class="flex flex-col items-end gap-16 w-full">
+        <div class="Frame26 flex-col gap-7 flex">
+          <div
+            class="w-208 text-black uppercase font-bold font-inter text-subhead-01 leading-caption tracking-tight"
+          >
+            the forestry sector
+          </div>
+          <div
+            class="w-208 text-black text-body font-light font-inter leading-body"
+          >
+            The forestry sector accounts for greenhouse gas removals in the
+            catchment; as forests grow, they sequester carbon dioxide and act
+            as a natural carbon sink. A small quantity of greenhouse gas
+            emissions result from deforestation and harvesting of both natural
+            and plantation forests: a loss of 10.3 ha of forestland in 2076
+            led to 9,500 tonnes of C02e emitted to the atmosphere.
+          </div>
+        </div>
+
+        <div
+          class="flex-col self-stretch items-start gap flex mb-48"
+        >
+          <div class="w-full h-208 bg-light-grey rounded-t-3xl"></div>
+          <div
+            class="px-12 py-6 rounded-b-3xl bg-white border-x-4 border-b-4 border-light-grey flex gap-2.5 self-stretch"
+          >
+            <div
+              class=" text-black text-caption font-medium font-inter leading-caption tracking-tight"
+            >
+              GHG emissions and removals from the forestry sector.
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endcall %}
 
 
     <!-- divider -->

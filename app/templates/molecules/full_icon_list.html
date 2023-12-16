@@ -4,15 +4,24 @@
 {%set parent_caller=caller()%}
 
 <div
-class="logo_section_div flex flex-row justify-end  mb-20 mt-20 gap-5 mr-20"
+class="logo_section_div flex flex-row justify-end  mb-20 mt-20 gap-4 mr-16"
 >
-{% call icon.render(color="bg-dark-blue-900") %} 
+{% call icon.render(color="before:bg-light-grey",height="before:pb-[250%]") %} 
 {{ body }}
 {% endcall %}
-{% call icon.render(color="bg-light-blue-900") %} 
+{% call icon.render(color="before:bg-grey-900") %} 
 {{ body }}
 {% endcall %}
-{% call icon.render(color="bg-yellow-900") %} 
+{% call icon.render(color="before:bg-light-grey",height="before:pb-[250%]") %} 
+{{ body }}
+{% endcall %}
+{% call icon.render(color="before:bg-light-grey",height="before:pb-[250%]") %} 
+{{ body }}
+{% endcall %}
+{% call icon.render(color="before:bg-grey-900") %} 
+{{ body }}
+{% endcall %}
+{% call icon.render(color="before:bg-grey-900") %} 
 {{ body }}
 {% endcall %}
 
