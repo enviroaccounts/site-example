@@ -1,0 +1,8 @@
+
+{% macro render() -%}
+<section class="container mx-auto h-auto flex justify-between items-end mb-32">
+    {% if caller %}
+    {{ caller() }}
+  {% endif %}
+</section>
+{%- endmacro %}

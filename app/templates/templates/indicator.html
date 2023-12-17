@@ -1,6 +1,8 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context%}
+{% import 'organisims/page_container_footer.html' as page_container_footer  with context%}
 {% import 'organisims/title.html' as title  with context%}
 {% import 'organisims/header.html' as header  with context%}
+{% import 'organisims/footer.html' as footer  with context%}
 
 
 
@@ -28,9 +30,12 @@
   <!-- article section-->
   {{ parent_caller }}
 
-  <!-- references section-->
-  <footer class="flex justify-between items-start mb-32">
-      
+  <!-- footer section-->
+  <footer>
+  {% call page_container_footer.render() %}
+    <!-- header organism -->
+    {{footer.render() }}
+  {% endcall %}
   </footer>
   <!-- iconic icon -->
   <script
