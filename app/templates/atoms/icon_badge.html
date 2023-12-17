@@ -1,0 +1,9 @@
+
+{% macro render(badge_background_color="",badge_height="",svg_position="",svg_fill="") -%}
+    <div
+    class="{{badge_background_color}} w-24 h-44 rounded-b-full flex justify-center items-center z-20 {{badge_height}}"
+    >
+    {{caller()}}
+    </div>
+
+{%- endmacro %}
