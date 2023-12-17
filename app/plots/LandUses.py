@@ -58,8 +58,8 @@ def create_forest_land_use_pie_chart(labels, values):
 
     # Update the layout to remove the background and add a light gray background
     fig.update_layout(
-        width=832,  # Width of the canvas in pixels
-       height=950,  # Height of the canvas in pixels
+        width=500,  # Width of the canvas in pixels
+       height=500,  # Height of the canvas in pixels
         legend=dict(
             orientation="h",
             x=0.15,

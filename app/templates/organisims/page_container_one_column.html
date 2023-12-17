@@ -1,9 +1,9 @@
 
-{% macro render(gap_value=0,position="start") -%}
+{% macro render(flex_basis='basis-1/2',position="start") -%}
 {%set parent_caller=caller()%}
-<section
-class="w-full flex flex-col justify-start items-{{position}} gap-{{gap_value}}"
+<div
+class="w-full flex flex-col justify-start items-{{position}} {{flex_basis}} "
 >
    {{ parent_caller }}
-</section>
+</div>
 {%- endmacro %}

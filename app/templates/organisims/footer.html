@@ -1,15 +1,16 @@
 {% import 'atoms/logo_wai_wanaka.html' as logo_wai_wanaka with context%}
 {% import 'atoms/footer_link.html' as footer_link with context%} 
+{% import 'atoms/divider.html' as divider with context%} 
 
 {% macro render() -%} 
 
-<!-- wai wanaka logo -->
-{{ logo_wai_wanaka.render() }}
+    <!-- wai wanaka logo -->
+    {{ logo_wai_wanaka.render() }}
 
+    <!-- wai wanaka link-->
+    {% call footer_link.render(url="https://waiwanaka.nz/") %}
+    waiwanaka.nz
+    {% endcall %}
 
-<!-- wai wanaka link-->
-{% call footer_link.render(url="https://waiwanaka.nz/") %}
-waiwanaka.nz
-{% endcall %}
 
 {%- endmacro %}

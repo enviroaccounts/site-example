@@ -3,10 +3,11 @@
 
 
 {% macro render() -%} 
-{%set parent_caller=caller()%}
+
 
 <!-- full logo list -->
-{% call full_icon_list.render() %}
-{% endcall %}
+{{ full_icon_list.render() }}
+
+
 
 {%- endmacro %}

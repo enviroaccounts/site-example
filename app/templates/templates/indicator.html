@@ -12,10 +12,9 @@
   {%set parent_caller=caller()%}
   <!-- header section-->
   <header>
-    {% call page_container_plain.render() %}
+    {% call page_container_plain.render(margin_bottom="mb-10") %}
       <!-- header organism -->
-      {% call header.render() %}
-      {% endcall %}
+      {{header.render() }}
     {% endcall %}
   </header>
   
@@ -33,7 +32,7 @@
   <!-- footer section-->
   <footer>
   {% call page_container_footer.render() %}
-    <!-- header organism -->
+    <!-- footer organism -->
     {{footer.render() }}
   {% endcall %}
   </footer>

@@ -9,11 +9,10 @@
 
 
 {% macro render() -%} 
-{%set parent_caller=caller()%}
 
-<div class="flex justify-end flex-row relative ">
+<div class="w-full flex justify-end flex-row relative ">
   <div
-    class="flex flex-row gap-0.5 justify-center items-start bg-white z-10 mr-[10%] px-1"
+    class="flex flex-row gap-0.5 justify-center items-start bg-white z-10 mr-[3%] px-1"
   >
       {% call icon_badge.render(badge_background_color="bg-light-grey",badge_height="") %} 
       {{ icon_land_use_change.render(svg_position="mt-16",svg_fill="black") }}
@@ -41,7 +40,7 @@
   </div>
 
   <!-- divider -->
-  <div class="border-b-6 mb-12 mt-20 absolute bottom-1/4 container mx-auto h-auto z-0"></div>
+  <div class="w-full border-b-6 mb-12 mt-20 absolute bottom-1/4 mx-auto h-auto z-0"></div>
 
 </div>
 {%- endmacro %}
