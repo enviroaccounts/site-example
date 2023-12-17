@@ -1,7 +1,7 @@
 
 {% macro render(margin_bottom="mb-32") -%}
 {%set parent_caller=caller()%}
-<section class="container {{margin_bottom}} max-w-screen-xl mx-auto h-auto flex lg:flex-row md:flex-col sm:flex-col px-12 gap-24">
+<section class="container {{margin_bottom}} max-w-screen-xl mx-auto h-auto flex lg:flex-row md:flex-col sm:flex-col px-12 gap-28">
    {{ parent_caller }}
 </section>
 {%- endmacro %}
