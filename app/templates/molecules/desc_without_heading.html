@@ -3,7 +3,7 @@
 {% macro render() -%} 
 {%set parent_caller=caller()%}
 
-<div class="w-full py-16">                
+<div class="w-full">                
     {% call copytext.render() %}
      {{ parent_caller }}
     {% endcall %}

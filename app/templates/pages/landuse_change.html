@@ -28,18 +28,15 @@
       {% endcall %}
         <!--  right side organism -->
         {% call page_container_one_column.render(flex_basis="basis-2/5",position="end") %}
-        <div class="flex-col justify-start items-start gap-7 flex">
+
           <!-- call out -->
-          {% with %}
-          {% set body %}Areas of built-up land have increased by 60% while the population increased four-fold since 1990.
-          {% endset %}
-          {% call callout.render(value="60",body=body,) %}
+          {% call callout.render(statistic_value="60%") %}
+          Indigenous forest cover has decreased by &lt;0.2% between 2008 and 2018.
           {% endcall %}
-        {% endwith %}
           {% call desc_without_heading.render() %}
           Land use and land use change is a catchment-wide indicator assessing how we are using our land. Over half of the area of the catchment is categorised as “production grassland”, dominated by low producing grassland. Following grassland, the most common land uses in the catchment are forest land (16.6%), and grassland with woody biomass (11.0%). Built-up areas account for only 0.3% of the total area of the catchment.
           {% endcall %}
-        </div>
+
       {% endcall %}
     {% endcall %}
 
@@ -58,11 +55,9 @@
       {% endcall %}
         <!--  right side organism -->
         {% call page_container_one_column.render(flex_basis="basis-2/5",position="end") %}
-
-          {% call desc_with_heading.render(subhead_01_text="subhead_01") %}
+          {% call desc_without_heading.render() %}
           Urban areas in Wānaka and Hāwea have increased since 1990. A majority of this new urbanised landscape resulted from converting productive grassland. However, total production grassland remained constant, due to conversion of grassland with woody biomass.
           {% endcall %}
-
       {% endcall %}
     {% endcall %}
 
@@ -75,83 +70,56 @@
 
     <!-- content-three section   --> 
     {% call page_container_plain.render() %}
-          <div class="flex flex-col items-end gap-16 w-full ">
-            <div class="flex-col gap-7 flex w-208">
-             <!--move to molecules-->
-            <div
-              class="w-208 text-black uppercase font-bold font-inter text-subhead-01 leading-caption tracking-tight"
-            >
-             the forestry sector
-           </div>
-           <div
-             class="w-208 text-black text-body font-light font-inter leading-body"
-           >
-             The forestry sector accounts for greenhouse gas removals in the
-             catchment; as forests grow, they sequester carbon dioxide and act
-             as a natural carbon sink. A small quantity of greenhouse gas
-             emissions result from deforestation and harvesting of both natural
-             and plantation forests: a loss of 10.3 ha of forestland in 2076
-             led to 9,500 tonnes of C02e emitted to the atmosphere.
-           </div>
-         </div>
+      {% call page_container_one_column.render(flex_basis="",position="end") %}
 
+        {%call desc_with_heading.render(subhead_01_text="Forest Cover",moledule_width="w-3/5")%}
+        To understand the current land use and land use change practices, a more recent dataset from 2008 to 2018 was analysed, showing a gross increase in exotic forest cover of 71 ha, which mainly is a result of the conversion of production grassland (52 ha). 52 ha account for 0.02% of the total production grassland available in the catchment. A gross decrease in indigenous forest cover of 69 ha is observed between 2008 and 2018.
+        {%endcall%}
 
-          </div>
+        {% call graph_frame.render(graph_title="Land Use Category") %}
+        <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe  }} -->
+        {% endcall %}
 
-            <div
-              class="flex-col self-stretch items-start gap flex mb-48"
-            >
-              <div class="w-full h-208 bg-light-grey rounded-t-3xl"></div>
-              <div
-                class="px-12 py-6 rounded-b-3xl bg-white border-x-4 border-b-4 border-light-grey flex gap-2.5 self-stretch"
-              >
-                <div
-                  class=" text-black text-caption font-medium font-inter leading-caption tracking-tight"
-                >
-                  GHG emissions and removals from the forestry sector.
-                </div>
-              </div>
-            </div>
-            
- 
+      {%endcall%}
+
+    {% endcall %}
+
+    {% call page_container_two_columns.render() %}
+      <!-- left side organism -->
+      {% call page_container_one_column.render(flex_basis="basis-3/5") %}
+        {% call graph_frame.render(graph_title="Land uses converted from forestland since 1990.") %}
+        <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe  }} -->
+        {% endcall %}
+      {% endcall %}
+        <!--  right side organism -->
+        {% call page_container_one_column.render(flex_basis="basis-2/5",position="end") %}
+
+          {% call desc_without_heading.render() %}
+          Since 1990, there has been a net increase of 300 ha of forestland across the catchment. However, most of this has been through the growth of new exotic forest, while the cover of natural, indigenous forest has seen a net decline. 
           {% endcall %}
 
+      {% endcall %}
+    {% endcall %}
 
+
+
+    <!-- divider-->
+    {% call page_container_plain.render() %}
+      {{divider.render(divider_width="border-b-2")}}
+    {%endcall%}
 
     <!-- content-four section   -->
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call page_container_one_column.render(flex_basis="basis-2/5") %}
-        <div class="flex-col justify-start items-start gap-7 flex">
-          {% call desc_with_heading.render(subhead_01_text="Forest Cover") %}
-          Since 1990, there has been a net increase of 300 ha of forestland
-          across the catchment. However,
-          most of this has been through the
-          growth of new exotic forest, while
-          the cover of natural, indigenous
-          forest has seen a net decline.
-          {% endcall %}
-        </div>
 
-        {% call desc_without_heading.render() %}
-        To understand the current land use
-        and land use change practices, a
-        more recent dataset from 2008 to
-        2018 was analysed, showing a gross
-        increase in exotic forest cover of 71
-        ha, which mainly is a result of the
-        conversion of production grassland
-        (52 ha). 52 ha account for 0.02% of
-        the total production grassland
-        available in the catchment. 
+        <!-- call out -->
+        {% call callout.render(statistic_value="<0.2%") %}
+        Indigenous forest cover has decreased by &lt;0.2% between 2008 and 2018.
         {% endcall %}
-
         {% call desc_without_heading.render() %}
-        A gross decrease in indigenous
-        forest cover of 69 ha is observed
-        between 2008 and 2018.
+        Most of the loss of indigenous forest that took place between 2008 and 2018 was the result of landslides in the high alpine1, rather than a direct impact of anthropogenic activities. While indigenous forest is not under particular threat, other native vegetation classes, such as fernlands, have seen significant reductions in land cover: fernland decreased by 1,500 ha.
         {% endcall %}
-
 
       {% endcall %}
       
@@ -162,13 +130,6 @@
           {% endcall %}
       {% endcall %}
     {% endcall %}
-
-
-    {% call page_container_plain.render() %}
-      <!-- divider atom-->
-      {{divider.render(divider_width="border-b-2")}}
-    {%endcall%}
-
 
 
      <!-- divider section -->

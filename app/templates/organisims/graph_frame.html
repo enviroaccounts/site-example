@@ -1,7 +1,9 @@
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context%}
+{% import 'atoms/caption_textstyle.html' as caption_textstyle with context%}
 
 {% macro render(graph_title="") -%} 
 {%set parent_caller=caller()%}
+<div class="w-full">
 <!-- Top bar: view datasource link -->
 <div class="w-full rounded-t-3xl">
     <div class="rounded-t-3xl bg-light-grey h-192 w-full">{{link_view_datasource.render()}}</div>
@@ -16,8 +18,9 @@
 <div
 class="w-full px-12 py-6 bg-white rounded-b-3xl flex justify-start items-center gap-2.5 border-x-4 border-b-4 border-light-grey"
 >
-
-
+{% call caption_textstyle.render() %}
+{{ graph_title|safe }}
+{% endcall %}
 </div>
-
+</div>
 {%- endmacro %}
