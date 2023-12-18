@@ -1,7 +1,7 @@
 
 {% macro render(badge_background_color="",badge_height="",svg_position="",svg_fill="") -%}
     <div
-    class="{{badge_background_color}} 2xl:w-24 2xl:h-44 xl:w-20 xl:h-40 lg:w-16 lg:h-32 rounded-b-full flex justify-center items-center z-20 {{badge_height}}"
+    class="{{badge_background_color}} rounded-b-full flex justify-center items-center z-20 basis-1/6 {{badge_height}}"
     >
     {{caller()}}
     </div>
