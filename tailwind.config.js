@@ -4,6 +4,16 @@
 module.exports = {
   content: ["./app/templates/**/*.html"],
   theme: {
+    screens: {
+      '3xs': '320px', // Extra small devices, like older smartphones
+      '2xs': '360px', // Small devices, typically smaller smartphones
+      'xs': '480px',  // Small devices, commonly for compact smartphones
+      'sm': '640px',  // Standard breakpoint for tablets and large smartphones
+      'md': '768px',  // Medium devices, like small tablets
+      'lg': '1024px', // Large devices, like laptops
+      'xl': '1280px', // Extra large devices, like large laptops
+      '2xl': '1536px', // Extra extra large devices, like high-res screens
+    },
     fontFamily: {
       'overused-grotesk': ['Overused Grotesk', 'sans-serif'],
       'inter': ['Inter', 'sans-serif'],
