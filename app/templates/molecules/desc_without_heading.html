@@ -1,11 +1,10 @@
 {% import 'atoms/copytext.html' as copytext with context%}
 
-{% macro render(content="") -%} 
+{% macro render() -%} 
 {%set parent_caller=caller()%}
 
-<div>                
+<div class="w-full py-16">                
     {% call copytext.render() %}
-     {{content}}
      {{ parent_caller }}
     {% endcall %}
 </div>

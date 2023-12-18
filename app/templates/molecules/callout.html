@@ -1,0 +1,20 @@
+{% import 'atoms/statistic.html' as statistic with context%}
+{% import 'atoms/call_out_copy_textstyle.html' as call_out_copy_textstyle with context%}
+
+{% macro render(value, body="") -%} 
+{%set parent_caller=caller()%}
+
+
+ <div class="rounded-3xl">
+  <div  class="flex flex-col justify-center items-start gap-10 py-16 border-y-4 border-dashed">
+    <div class="w-4/5">{% call statistic.render() %} {{ value }}% {% endcall %}</div>
+    <div class="w-4/5">
+      {% call call_out_copy_textstyle.render() %} 
+         {{ body }}
+      {% endcall %}
+    </div>
+  </div>
+</div>
+
+
+{%- endmacro %}

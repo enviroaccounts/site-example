@@ -1,8 +1,10 @@
+{% import 'atoms/headline.html' as headline with context%}
 
-{% macro render(body="") -%}
+{% macro render() -%}
 {%set parent_caller=caller()%}
-<div  class="w-3/5 mb-48">
-   {{body}}
+<div  class="w-3/5">
+   {%call headline.render()%}
    {{ parent_caller }}
+   {%endcall%}
 </div>
 {%- endmacro %}

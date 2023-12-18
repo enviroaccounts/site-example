@@ -1,6 +1,5 @@
-{% macro render(body="") -%}
+{% macro render() -%}
 <p class="text-black font-bold font-inter leading-headline tracking-tighter xl:text-headline lg:text-8xl md:text-7xl sm:text-6xl">
-{{body}}
 {{caller()}}
 </p>
 {%- endmacro %}

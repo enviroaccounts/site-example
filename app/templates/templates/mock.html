@@ -2,10 +2,11 @@
 {% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context%}
 {% import 'organisims/page_container_one_column.html' as page_container_one_column  with context%}
 {% import 'organisims/title.html' as title  with context%}
-{% import 'organisims/column_title.html' as column_title  with context%}
-{% import 'organisims/callout.html' as callout with context%}
+{% import 'molecules/desc_without_heading.html' as desc_without_heading  with context%}
+{% import 'molecules/desc_with_heading.html' as desc_with_heading  with context%}
+{% import 'molecules/callout.html' as callout with context%}
 {% import 'organisims/header.html' as header  with context%}
-{% import 'organisims/callout_bottom.html' as callout_bottom with context%}
+
 
 
 
@@ -35,8 +36,8 @@
                 <!--  left side organism -->
                 {% call page_container_one_column.render() %}
                   <div class="flex-col justify-start items-start gap-7 flex">
-                    {% call column_title.render() %}
-                      Subhead 01
+                    {% call desc_with_heading.render(subhead_01_text="Subhead 01") %}
+                      XXXXX
                     {% endcall %}
 
                   </div>
@@ -50,7 +51,7 @@
                   {% endcall %}
                   {% endwith %}
 
-                  {% call callout_bottom.render() %}
+                  {% call desc_without_heading.render() %}
                   To align with national climate change commitments and targets and
                   to alleviate concern from residents, increase in GHG emissions
                   needs to be addressed across the sectors and catchment.
