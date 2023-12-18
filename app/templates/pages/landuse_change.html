@@ -20,24 +20,25 @@
   <main>
     <!-- content-one section   -->
     {% call page_container_two_columns.render() %}
-      <!-- left side organism -->
+      <!--  left side organism -->
+      {% call page_container_one_column.render(flex_basis="basis-2/5",position="end") %}
+      
+      {% call desc_without_heading.render() %}
+      Land use and land use change is a catchment-wide indicator assessing how we are using our land. Over half of the area of the catchment is categorised as “production grassland”, dominated by low producing grassland. Following grassland, the most common land uses in the catchment are forest land (16.6%), and grassland with woody biomass (11.0%). Built-up areas account for only 0.3% of the total area of the catchment.
+      {% endcall %}
+      <!-- call out -->
+      {% call callout.render(statistic_value="60%") %}
+      Areas of built-up land have increased by 60% while the population increased four-fold since 1990.
+      {% endcall %}
+
+  {% endcall %}
+      <!-- right side organism -->
       {% call page_container_one_column.render(flex_basis="basis-3/5") %}
         {% call graph_frame.render(graph_title="Land use cover across the catchment in 2016.") %}
         <!--map graph placeholder -->
         {% endcall %}
       {% endcall %}
-        <!--  right side organism -->
-        {% call page_container_one_column.render(flex_basis="basis-2/5",position="end") %}
-
-          <!-- call out -->
-          {% call callout.render(statistic_value="60%") %}
-          Areas of built-up land have increased by 60% while the population increased four-fold since 1990.
-          {% endcall %}
-          {% call desc_without_heading.render() %}
-          Land use and land use change is a catchment-wide indicator assessing how we are using our land. Over half of the area of the catchment is categorised as “production grassland”, dominated by low producing grassland. Following grassland, the most common land uses in the catchment are forest land (16.6%), and grassland with woody biomass (11.0%). Built-up areas account for only 0.3% of the total area of the catchment.
-          {% endcall %}
-
-      {% endcall %}
+      
     {% endcall %}
 
     {% call page_container_plain.render() %}
@@ -71,10 +72,6 @@
     <!-- content-three section   --> 
     {% call page_container_plain.render() %}
       {% call page_container_one_column.render(flex_basis="",position="end") %}
-
-        {%call desc_with_heading.render(subhead_01_text="Forest Cover",moledule_width="w-3/5")%}
-        To understand the current land use and land use change practices, a more recent dataset from 2008 to 2018 was analysed, showing a gross increase in exotic forest cover of 71 ha, which mainly is a result of the conversion of production grassland (52 ha). 52 ha account for 0.02% of the total production grassland available in the catchment. A gross decrease in indigenous forest cover of 69 ha is observed between 2008 and 2018.
-        {%endcall%}
 
         {% call graph_frame.render(graph_title="Land Use Category") %}
         <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe  }} -->
@@ -112,6 +109,9 @@
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call page_container_one_column.render(flex_basis="basis-2/5") %}
+        {%call desc_with_heading.render(subhead_01_text="Forest Cover",moledule_width="w-full")%}
+        To understand the current land use and land use change practices, a more recent dataset from 2008 to 2018 was analysed, showing a gross increase in exotic forest cover of 71 ha, which mainly is a result of the conversion of production grassland (52 ha). 52 ha account for 0.02% of the total production grassland available in the catchment. A gross decrease in indigenous forest cover of 69 ha is observed between 2008 and 2018.
+        {%endcall%}
 
         <!-- call out -->
         {% call callout.render(statistic_value="<0.2%") %}
