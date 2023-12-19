@@ -1,4 +1,5 @@
-{% import 'atoms/icon_badge.html' as icon_badge with context %}
+{% import 'atoms/icon_badge_short.html' as icon_badge_short with context %}
+{% import 'atoms/icon_badge_long.html' as icon_badge_long with context %}
 {% import 'atoms/icon_land_use_change.html' as icon_land_use_change with context %}
 {% import 'atoms/icon_water_quality.html' as icon_water_quality with context %}
 {% import 'atoms/icon_invasive_speicies.html' as icon_invasive_speicies with context %}
@@ -7,40 +8,31 @@
 {% import 'atoms/icon_social_wellbeing.html' as icon_social_wellbeing with context %}
 
 {%- macro render() -%}
-  <div
-    class="w-full flex lg:justify-end sm:justify-start flex-row relative h-28 sm:h-36 md:h-44 xl:h-52 2xl:h-68 border-b-4 lg:border-none"
-  >
     <div
-      class="flex flex-row gap-0.5 justify-center lg:items-start items-center lg:bg-white z-10 mr-[3%] px-1 lg:w-[45%] h-full"
+      class="flex flex-row gap-0.5 justify-center lg:items-start items-1/4 lg:bg-white z-10 mr-[3%] px-1 lg:w-[45%] h-full"
     >
-      {% call icon_badge.render(badge_background_color="bg-light-grey",badge_height="lg:h-[82%]") %}
-        {{ icon_land_use_change.render(svg_position="lg:mt-[65%]",svg_fill="black") }}
+      {% call icon_badge_short.render(badge_background_color="bg-light-grey") %}
+        {{ icon_land_use_change.render(svg_fill="black") }}
       {% endcall %}
 
-      {% call icon_badge.render(badge_background_color="bg-grey-900",badge_height="lg:h-full") %}
-        {{ icon_water_quality.render(svg_position="lg:mt-[115%]",svg_fill="white") }}
+      {% call icon_badge_long.render(badge_background_color="bg-grey-900") %}
+        {{ icon_water_quality.render(svg_fill="white") }}
       {% endcall %}
 
-      {% call icon_badge.render(badge_background_color="bg-light-grey",badge_height="lg:h-[82%]") %}
-        {{ icon_invasive_speicies.render(svg_position="lg:mt-[65%]",svg_fill="black") }}
+      {% call icon_badge_short.render(badge_background_color="bg-light-grey") %}
+        {{ icon_invasive_speicies.render(svg_fill="black") }}
       {% endcall %}
 
-      {% call icon_badge.render(badge_background_color="bg-light-grey",badge_height="lg:h-[82%]") %}
-        {{ icon_greenhouse_gas_emissions.render(svg_position="lg:mt-[65%]",svg_fill="black") }}
+      {% call icon_badge_short.render(badge_background_color="bg-light-grey") %}
+        {{ icon_greenhouse_gas_emissions.render(svg_fill="black") }}
       {% endcall %}
 
-      {% call icon_badge.render(badge_background_color="bg-grey-900",badge_height="lg:h-full") %}
-        {{ icon_climate_variables.render(svg_position="lg:mt-[115%]",svg_fill="white") }}
+      {% call icon_badge_long.render(badge_background_color="bg-grey-900") %}
+        {{ icon_climate_variables.render(svg_fill="white") }}
       {% endcall %}
 
-      {% call icon_badge.render(badge_background_color="bg-grey-900",badge_height="lg:h-full") %}
-        {{ icon_social_wellbeing.render(svg_position="lg:mt-[115%]",svg_fill="white") }}
+      {% call icon_badge_long.render(badge_background_color="bg-grey-900") %}
+        {{ icon_social_wellbeing.render(svg_fill="white") }}
       {% endcall %}
     </div>
-
-    <!-- divider -->
-    <div
-      class="w-full lg:border-b-6  mt-20 absolute bottom-[40%] mx-auto h-auto z-0 rounded-full"
-    ></div>
-  </div>
 {%- endmacro -%}
