@@ -1,7 +1,7 @@
 {% import 'atoms/icon_view_data_source.html' as icon_view_data_source with context %}
 {% import 'atoms/footer_02_textstyle.html' as footer_02_textstyle with context %}
 
-{%- macro render(content="") -%}
+{%- macro render() -%}
   <a class="px-12 py-6 flex flex-row gap-4 items-center justify-start" href="#"
     >{{ icon_view_data_source.render() }}
     <span><</span>
