@@ -1,5 +1,10 @@
 {% import 'atoms/headline_textstyle.html' as headline with context %}
 
 {%- macro render(body="") -%}
-  <div class="w-3/5">{{ headline.render(body) }}</div>
+{%set parent_caller=caller()%}
+  <div class="w-3/5">
+    {%call headline.render()%}
+    {{ parent_caller }}
+    {%endcall%}
+  </div>
 {%- endmacro -%}

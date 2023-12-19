@@ -17,7 +17,9 @@
   <!-- headline section-->
   {% call page_container_plain.render() %}
     <!-- headline organism -->
-    {{ title.render(title_text) }}
+    {% call title.render() %}
+    {{ title_text }}
+    {% endcall %}
   {% endcall %}
 
   <!-- article section-->
