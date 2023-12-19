@@ -1,7 +1,0 @@
-{%- macro render(badge_background_color="", svg_fill="") -%}
-  <div
-    class="{{ badge_background_color }} rounded-full flex justify-center  z-20 lg:h-full w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:rounded-t-none lg:rounded-b-full items-end pb-[7%]"
-  >
-    {{ caller() }}
-  </div>
-{%- endmacro -%}
