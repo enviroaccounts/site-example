@@ -9,44 +9,43 @@
 {% import 'atoms/icon_social_wellbeing.html' as icon_social_wellbeing with context %}
 
 {%- macro render() -%}
-    <div
-      class="flex flex-row gap-0.5 justify-center items-center lg:items-start items-1/4 lg:bg-white z-10 mr-[3%] px-1 lg:w-[45%] h-full"
-    >
-      {% call icon_badge_short.render() %}
-        {% call icon_frame.render() %}
-          {{ icon_land_use_change.render(svg_fill="black") }}
-        {% endcall %}        
+  <div
+    class="flex flex-row gap-0.5 justify-center items-center lg:items-start items-1/4 lg:bg-white z-10 mr-[3%] px-1 lg:w-[45%] h-full"
+  >
+    {% call icon_badge_short.render() %}
+      {% call icon_frame.render() %}
+        {{ icon_land_use_change.render(svg_fill="black") }}
       {% endcall %}
+    {% endcall %}
 
-      {% call icon_badge_long.render() %}
-        {% call icon_frame.render() %}
-          {{ icon_water_quality.render(svg_fill="white") }}
-        {% endcall %}
+    {% call icon_badge_long.render() %}
+      {% call icon_frame.render() %}
+        {{ icon_water_quality.render(svg_fill="white") }}
       {% endcall %}
+    {% endcall %}
 
-      {% call icon_badge_short.render() %}
+    {% call icon_badge_short.render() %}
       {% call icon_frame.render() %}
         {{ icon_invasive_speicies.render(svg_fill="black") }}
-        {% endcall %}
-
       {% endcall %}
+    {% endcall %}
 
-      {% call icon_badge_short.render() %}
+    {% call icon_badge_short.render() %}
       {% call icon_frame.render() %}
         {{ icon_greenhouse_gas_emissions.render(svg_fill="black") }}
-        {% endcall %}
       {% endcall %}
+    {% endcall %}
 
-      {% call icon_badge_long.render() %}
-        {% call icon_frame.render() %}
-          {{ icon_climate_variables.render(svg_fill="white") }}
-        {% endcall %}
+    {% call icon_badge_long.render() %}
+      {% call icon_frame.render() %}
+        {{ icon_climate_variables.render(svg_fill="white") }}
       {% endcall %}
+    {% endcall %}
 
-      {% call icon_badge_long.render() %}
-        {% call icon_frame.render() %}
-          {{ icon_social_wellbeing.render(svg_fill="white") }}
-        {% endcall %}
+    {% call icon_badge_long.render() %}
+      {% call icon_frame.render() %}
+        {{ icon_social_wellbeing.render(svg_fill="white") }}
       {% endcall %}
-    </div>
+    {% endcall %}
+  </div>
 {%- endmacro -%}
