@@ -1,13 +1,7 @@
-{% import 'atoms/divider.html' as divider with context%}
-{% import 'molecules/full_icon_list.html' as full_icon_list with context%}
+{% import 'atoms/divider.html' as divider with context %}
+{% import 'molecules/full_icon_list.html' as full_icon_list with context %}
 
-
-{% macro render() -%} 
-
-
-<!-- full logo list -->
-{{ full_icon_list.render() }}
-
-
-
-{%- endmacro %}
+{%- macro render() -%}
+  <!-- full logo list -->
+  {{ full_icon_list.render() }}
+{%- endmacro -%}

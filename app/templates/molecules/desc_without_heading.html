@@ -1,13 +1,11 @@
-{% import 'atoms/body_textstyle.html' as body_textstyle with context%}
+{% import 'atoms/body_textstyle.html' as body_textstyle with context %}
 
-{% macro render() -%} 
-{%set parent_caller=caller()%}
+{%- macro render() -%}
+  {% set parent_caller=caller() %}
 
-<div class="w-full">                
+  <div class="w-full">
     {% call body_textstyle.render() %}
-     {{ parent_caller }}
+      {{ parent_caller }}
     {% endcall %}
-</div>
-
-
-{%- endmacro %}
+  </div>
+{%- endmacro -%}

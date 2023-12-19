@@ -1,29 +1,23 @@
-{% import 'organisims/page_container_plain.html' as page_container_plain  with context%}
-{% import 'organisims/page_container_footer.html' as page_container_footer  with context%}
-{% import 'organisims/title.html' as title  with context%}
-{% import 'organisims/header.html' as header  with context%}
-{% import 'organisims/footer.html' as footer  with context%}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
+{% import 'organisims/title.html' as title  with context %}
+{% import 'organisims/header.html' as header  with context %}
+{% import 'organisims/footer.html' as footer  with context %}
 
-
-
-
-
-{% macro render(title_text) -%}
-  {%set parent_caller=caller()%}
+{%- macro render(title_text) -%}
+  {% set parent_caller=caller() %}
   <!-- header section-->
   <header>
     {% call page_container_plain.render(margin_bottom="mb-10") %}
       <!-- header organism -->
-      {{header.render() }}
+      {{ header.render() }}
     {% endcall %}
   </header>
-  
+
   <!-- headline section-->
   {% call page_container_plain.render() %}
-  <!-- headline organism -->
-    {% call title.render() %}
-      {{ title_text }}
-    {% endcall %}
+    <!-- headline organism -->
+    {{ title.render(title_text) }}
   {% endcall %}
 
   <!-- article section-->
@@ -31,18 +25,18 @@
 
   <!-- footer section-->
   <footer>
-  {% call page_container_footer.render() %}
-    <!-- footer organism -->
-    {{footer.render() }}
-  {% endcall %}
+    {% call page_container_footer.render() %}
+      <!-- footer organism -->
+      {{ footer.render() }}
+    {% endcall %}
   </footer>
   <!-- iconic icon -->
   <script
-  type="module"
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
   ></script>
   <script
-  nomodule
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
   ></script>
-{%- endmacro %}
+{%- endmacro -%}

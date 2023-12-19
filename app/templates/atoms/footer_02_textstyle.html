@@ -1,5 +1,7 @@
-{% macro render() -%}
-<p class="text-footer-02 font-inter text-black font-medium leading-footer-02 tracking-tight underline">
-{{caller()}}
-</p>
-{%- endmacro %}
+{%- macro render() -%}
+  <p
+    class="text-footer-02 font-inter text-black font-medium leading-footer-02 tracking-tight underline"
+  >
+    {{ caller() }}
+  </p>
+{%- endmacro -%}

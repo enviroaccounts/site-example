@@ -1,10 +1,5 @@
-{% import 'molecules/headline.html' as headline_molecule  with context%}
+{% import 'molecules/headline.html' as headline_molecule  with context %}
 
-{% macro render() -%}
-{%set parent_caller=caller()%}
-
-{% call headline_molecule.render() %}
-    {{ parent_caller }}
-{% endcall %} 
-
-{%- endmacro %}
+{%- macro render(body="") -%}
+  {{ headline_molecule.render(body) }}
+{%- endmacro -%}

@@ -1,15 +1,9 @@
 {% extends "base.html" %}
-{% import 'templates/indicator.html' as indicator  with context%}
+{% import 'templates/indicator.html' as indicator  with context %}
 {% block title %}Acknowledgements{% endblock %}
-   
+
 {% block content %}
   {% call indicator.render() %}
-  title 
-
-  headline
-  copytext
+    title headline copytext
   {% endcall %}
 {% endblock %}
-  
-
-   
