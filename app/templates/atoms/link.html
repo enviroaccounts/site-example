@@ -1,0 +1,4 @@
+{%- macro render(url="#") -%}
+  {% set parent_caller=caller() %}
+  <a class="cursor-pointer" href="{{ url }} w-full"> {{ parent_caller }} </a>
+{%- endmacro -%}
