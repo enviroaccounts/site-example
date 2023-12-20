@@ -1,0 +1,49 @@
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/page_container_header.html' as page_container_header  with context %}
+{% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
+{% import 'molecules/headline.html' as headline  with context %}
+{% import 'organisims/header.html' as header  with context %}
+{% import 'organisims/footer.html' as footer  with context %}
+
+{%- macro render(title_text) -%}
+  <!-- header section-->
+  <header>
+    {% call page_container_header.render() %}
+      <!-- header organism -->
+      {% call header.render() %}
+      {% endcall %}
+    {% endcall %}
+  </header>
+
+  <!-- headline section-->
+  {% call page_container_plain.render() %}
+    <!-- headline molecule -->
+    {% call headline.render() %}
+      {{ title_text }}
+    {% endcall %}
+  {% endcall %}
+
+  <!-- article section-->
+    <main>
+      {{ caller() }}
+    </main>
+
+  <!-- footer section-->
+  <footer>
+    {% call page_container_footer.render() %}
+      <!-- footer organism -->
+      {% call footer.render() %}
+      {% endcall %}
+    {% endcall %}
+  </footer>
+
+  <!-- iconic icon -->
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+{%- endmacro -%}

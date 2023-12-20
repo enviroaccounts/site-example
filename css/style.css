@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-#forest-land-use-pie-chart-layout {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+/* Hover Effect for Child Elements: */
+.leanmore_link_div:hover .leanmore_link {
+  color: black; 
 }
+
+/* .padding-block-20 {
+  padding-block: 20%;
+} */

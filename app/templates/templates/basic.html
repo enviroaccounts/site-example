@@ -1,0 +1,8 @@
+{% macro render() %}
+  {% set parent_caller=caller() %}
+
+  <div>
+    <!-- center the container -->
+    <div class="Desktop container mx-auto h-auto">{{ parent_caller }}</div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,27 @@
+{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'atoms/caption_textstyle.html' as caption_textstyle with context %}
+
+{%- macro render(graph_title="") -%}
+  <div class="w-full">
+    <!-- Top bar: view datasource link -->
+    <div class="w-full rounded-t-3xl">
+      <div class="rounded-t-3xl bg-light-grey h-192 w-full px-12 py-6">
+        {% call link_view_datasource.render()%}
+        {% endcall %}
+      </div>
+    </div>
+
+    <!-- Middle: graph -->
+    {{ caller() }}
+    <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
+
+    <!-- bottom bar -->
+    <div
+      class="w-full px-12 py-6 bg-white rounded-b-3xl flex justify-start items-center gap-2.5 border-x-4 border-b-4 border-light-grey"
+    >
+      {% call caption_textstyle.render() %}
+        {{ graph_title|safe }}
+      {% endcall %}
+    </div>
+  </div>
+{%- endmacro -%}

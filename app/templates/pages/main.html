@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% import 'templates/mock.html' as mock  with context %}
+{% set title_text="Land use change" %}
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+  {% call mock.render(title_text=title_text) %}
+  {% endcall %}
+{% endblock %}

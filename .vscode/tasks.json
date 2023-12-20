@@ -77,7 +77,10 @@
 			"dependsOn": [
 				"docker-build"
 			],
-			"command": "docker run --rm --tty -it -p 8050:8050/tcp --mount 'type=bind,source=${workspaceFolder},destination=/site' siteexample:latest bash -c 'tailwindcss -i css/style.css -o app/static/css/main.css --minify'",
+			// "command": "docker run --rm --tty -it --mount 'type=bind,source=${workspaceFolder},destination=/site' siteexample:latest bash -c 'tailwindcss -i css/style.css -o app/static/css/main.css --minify'",
+
+			"command":"docker run --rm --tty -it --mount 'type=bind,source=${workspaceFolder},destination=/site' siteexample:latest bash -c 'tailwindcss -i css/style.css -o app/static/css/main.css --minify --watch'",
+
 			"problemMatcher": []
 		}
 		
