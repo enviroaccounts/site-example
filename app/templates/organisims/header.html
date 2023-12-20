@@ -6,11 +6,14 @@
     class="w-full flex lg:justify-end sm:justify-start flex-row relative h-28 sm:h-36 md:h-44 xl:h-52 2xl:h-68 border-b-4 lg:border-none"
   >
     <!-- full logo list -->
-    {{ full_icon_list.render() }}
+    {% call full_icon_list.render() %}
+    {% endcall %}
 
     <!-- divider -->
     <div
       class="w-full lg:border-b-6  mt-20 absolute bottom-[40%] mx-auto h-auto z-0 rounded-full"
     ></div>
   </div>
+  <!-- placeholder -->
+  {{caller()}}
 {%- endmacro -%}

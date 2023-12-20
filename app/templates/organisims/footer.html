@@ -5,16 +5,16 @@
 
 
 {%- macro render() -%}
-{% set parent_caller=caller() %}
   <!-- wai wanaka logo -->
-  {{ logo_wai_wanaka.render() }}
-
+  {% call logo_wai_wanaka.render() %}
+  {% endcall %}
   <!-- wai wanaka link-->
   {% call link_plain.render(url="https://waiwanaka.nz/") %}
     {% call footer_02_textstyle.render() %}
       waiwanaka.nz
     {% endcall %}
   {% endcall %}
-  </a>
-  {{parent_caller}}
+
+  <!--  placeholder -->
+  {{caller()}}
 {%- endmacro -%}
