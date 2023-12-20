@@ -2,7 +2,8 @@
 
 
 module.exports = {
-  content: ["./app/templates/**/*.html"],
+  content: ["./app/templates/**/*.html",
+  "./node_modules/flowbite/**/*.js"],
   theme: {
     screens: {
       '3xs': '320px', // Extra small devices, like older smartphones
@@ -214,5 +215,5 @@ module.exports = {
   },
   variants: {},
   //plugin added
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio'), require('@tailwindcss/container-queries'),],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio'), require('@tailwindcss/container-queries'),require("flowbite/plugin")],
 };
