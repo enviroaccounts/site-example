@@ -3,7 +3,7 @@
 {% import 'atoms/footer_textstyle.html' as footer_textstyle with context %}
 
 {%- macro render() -%}
-  <a class="px-12 py-6 flex flex-row gap-4 items-center justify-start" href="#"
+  <a class="flex flex-row gap-4 items-center justify-start" href="#"
     >{{ icon_view_data_source.render() }}
     {% call footer_textstyle.render() %}
       &lt;

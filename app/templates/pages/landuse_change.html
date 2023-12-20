@@ -5,25 +5,28 @@
 {% import 'organisims/child_container_forty_percent_width.html' as child_container_forty_percent_width  with context %}
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width  with context %}
 {% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
-{% import 'molecules/headline.html' as title  with context %}
-{% import 'molecules/desc_with_heading.html' as desc_with_heading  with context %}
-{% import 'molecules/desc_without_heading.html' as desc_without_heading  with context %}
-{% import 'molecules/callout.html' as callout with context %}
-{% import 'organisims/header.html' as header  with context %}
-{% import 'atoms/divider.html' as divider with context %}
-{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
+{% import 'organisims/header.html' as header  with context %}
+{% import 'molecules/headline.html' as title  with context %}
+{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/callout.html' as callout with context %}
+{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'atoms/divider.html' as divider with context %}
+
+
 {% set title_text="Land use change" %}
+
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
   {% call indicator.render(title_text=title_text) %}
-      <!-- content-one section   -->
+      <!-- content-first section   -->
       {% call page_container_two_columns.render() %}
         <!--  left side organism -->
         {% call child_container_forty_percent_width.render() %}
-
-          {% call desc_without_heading.render() %}
+        <!--  text without heading molecule-->
+          {% call text_without_heading.render() %}
             Land use and land use change is a catchment-wide indicator assessing
             how we are using our land. Over half of the area of the catchment is
             categorised as “production grassland”, dominated by low producing
@@ -32,7 +35,7 @@
             (11.0%). Built-up areas account for only 0.3% of the total area of
             the catchment.
           {% endcall %}
-          <!-- call out -->
+          <!-- call out molecule-->
           {% call callout.render(statistic_value="60%") %}
             Areas of built-up land have increased by 60% while the population
             increased four-fold since 1990.
@@ -40,28 +43,32 @@
         {% endcall %}
         <!-- right side organism -->
         {% call child_container_sixty_percent_width.render() %}
+        <!-- graph frame organism-->
           {% call graph_frame.render(graph_title="Land use cover across the catchment in 2016.") %}
-            <!--map graph placeholder -->
+            <!-- graph placeholder -->
           {% endcall %}
         {% endcall %}
       {% endcall %}
 
+      <!-- divider section -->
       {% call page_container_plain.render() %}
         <!-- divider atom-->
         {{ divider.render(divider_width="border-b-2") }}
       {% endcall %}
 
-      <!-- content-two section   -->
+      <!-- content-second section   -->
       {% call page_container_two_columns.render() %}
         <!-- left side organism -->
         {% call child_container_sixty_percent_width.render() %}
+        <!-- graph frame organism-->
           {% call graph_frame.render(graph_title="Land uses converted from forestland since 1990.") %}
             <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
           {% endcall %}
         {% endcall %}
         <!--  right side organism -->
         {% call child_container_forty_percent_width.render() %}
-          {% call desc_without_heading.render() %}
+          <!--  text without heading molecule-->
+          {% call text_without_heading.render() %}
             Urban areas in Wānaka and Hāwea have increased since 1990. A
             majority of this new urbanised landscape resulted from converting
             productive grassland. However, total production grassland remained
@@ -70,31 +77,36 @@
         {% endcall %}
       {% endcall %}
 
+      <!-- divider section -->
       {% call page_container_plain.render() %}
         <!-- divider atom-->
         {{ divider.render(divider_width="border-b-2") }}
       {% endcall %}
 
-      <!-- content-three section   -->
+      <!-- content-third section   -->
       {% call page_container_plain.render() %}
+        <!-- full width organism with items aligned to end -->
         {% call child_container_full_width_items_end.render() %}
+          <!-- graph frame organism-->
           {% call graph_frame.render(graph_title="Land Use Category") %}
             <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
           {% endcall %}
         {% endcall %}
       {% endcall %}
 
+      <!-- two column organisims -->
       {% call page_container_two_columns.render() %}
         <!-- left side organism -->
         {% call child_container_sixty_percent_width.render() %}
+        <!-- graph frame organism-->
           {% call graph_frame.render(graph_title="Land uses converted from forestland since 1990.") %}
             <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
           {% endcall %}
         {% endcall %}
         <!--  right side organism -->
         {% call child_container_forty_percent_width.render() %}
-
-          {% call desc_without_heading.render() %}
+          <!--  text without heading molecule-->
+          {% call text_without_heading.render() %}
             Since 1990, there has been a net increase of 300 ha of forestland
             across the catchment. However, most of this has been through the
             growth of new exotic forest, while the cover of natural, indigenous
@@ -103,8 +115,9 @@
         {% endcall %}
       {% endcall %}
 
-      <!-- divider-->
+      <!-- divider section -->
       {% call page_container_plain.render() %}
+        <!-- divider atom-->
         {{ divider.render(divider_width="border-b-2") }}
       {% endcall %}
 
@@ -112,7 +125,8 @@
       {% call page_container_two_columns.render() %}
         <!--  left side organism -->
         {% call child_container_forty_percent_width.render() %}
-          {% call desc_with_heading.render(subhead_01_text="Forest Cover",moledule_width="w-full") %}
+          <!--  text with heading molecule-->
+          {% call text_with_heading.render(subhead_01_text="Forest Cover",moledule_width="w-full") %}
             To understand the current land use and land use change practices, a
             more recent dataset from 2008 to 2018 was analysed, showing a gross
             increase in exotic forest cover of 71 ha, which mainly is a result
@@ -127,7 +141,7 @@
             Indigenous forest cover has decreased by &lt;0.2% between 2008 and
             2018.
           {% endcall %}
-          {% call desc_without_heading.render() %}
+          {% call text_without_heading.render() %}
             Most of the loss of indigenous forest that took place between 2008
             and 2018 was the result of landslides in the high alpine1, rather
             than a direct impact of anthropogenic activities. While indigenous
@@ -139,6 +153,7 @@
 
         <!-- right side organism -->
         {% call child_container_sixty_percent_width.render() %}
+        <!-- graph frame organism-->
           {% call graph_frame.render(graph_title="Land uses converted into exotic forest between 2008 and 2018.") %}
             <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
           {% endcall %}
