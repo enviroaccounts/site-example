@@ -1,7 +1,0 @@
-{%- macro render(flex_basis='basis-1/2',position="start") -%}
-  <div
-    class="w-full flex flex-col justify-start items-{{ position }} {{ flex_basis }} gap-16"
-  >
-    {{ caller() }}
-  </div>
-{%- endmacro -%}
