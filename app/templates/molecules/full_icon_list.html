@@ -1,5 +1,5 @@
-{% import 'atoms/icon_badge_short.html' as icon_badge_short with context %}
-{% import 'atoms/icon_badge_long.html' as icon_badge_long with context %}
+{% import 'atoms/link_icon_badge_short.html' as link_icon_badge_short with context %}
+{% import 'atoms/link_icon_badge_long.html' as link_icon_badge_long with context %}
 {% import 'atoms/icon_frame.html' as icon_frame with context %}
 {% import 'atoms/icon_land_use_change.html' as icon_land_use_change with context %}
 {% import 'atoms/icon_water_quality.html' as icon_water_quality with context %}
@@ -7,54 +7,50 @@
 {% import 'atoms/icon_greenhouse_gas_emissions.html' as icon_greenhouse_gas_emissions with context %}
 {% import 'atoms/icon_climate_variables.html' as icon_climate_variables with context %}
 {% import 'atoms/icon_social_wellbeing.html' as icon_social_wellbeing with context %}
-{% import 'atoms/link.html' as link with context %}
 
 {%- macro render() -%}
   <div
     class="flex flex-row gap-0.5 justify-center items-center lg:items-start items-1/4 lg:bg-white z-10 mr-[3%] px-1 lg:w-[45%] h-full"
   >
-    {% call link.render() %}
-      {% call icon_badge_short.render() %}
+      {% call link_icon_badge_short.render(url="#") %}
         {% call icon_frame.render() %}
           {{ icon_land_use_change.render(svg_fill="black") }}
         {% endcall %}
       {% endcall %}
-    {% endcall %}
 
-    {% call link.render() %}
-      {% call icon_badge_long.render() %}
+      {% call link_icon_badge_long.render(url="#") %}
         {% call icon_frame.render() %}
           {{ icon_water_quality.render(svg_fill="white") }}
         {% endcall %}
       {% endcall %}
-    {% endcall %}
-    {% call link.render() %}
-      {% call icon_badge_short.render() %}
+
+
+      {% call link_icon_badge_short.render(url="#") %}
         {% call icon_frame.render() %}
           {{ icon_invasive_speicies.render(svg_fill="black") }}
         {% endcall %}
       {% endcall %}
-    {% endcall %}
-    {% call link.render() %}
-      {% call icon_badge_short.render() %}
+
+
+      {% call link_icon_badge_short.render(url="#") %}
         {% call icon_frame.render() %}
           {{ icon_greenhouse_gas_emissions.render(svg_fill="black") }}
         {% endcall %}
       {% endcall %}
-    {% endcall %}
-    {% call link.render() %}
-      {% call icon_badge_long.render() %}
+
+
+      {% call link_icon_badge_long.render(url="#") %}
         {% call icon_frame.render() %}
           {{ icon_climate_variables.render(svg_fill="white") }}
         {% endcall %}
       {% endcall %}
-    {% endcall %}
-    {% call link.render() %}
-      {% call icon_badge_long.render() %}
+
+
+      {% call link_icon_badge_long.render(url="#") %}
         {% call icon_frame.render() %}
           {{ icon_social_wellbeing.render(svg_fill="white") }}
         {% endcall %}
       {% endcall %}
-    {% endcall %}
+
   </div>
 {%- endmacro -%}

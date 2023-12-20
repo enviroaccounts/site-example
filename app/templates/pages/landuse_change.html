@@ -16,7 +16,6 @@
 
 {% block content %}
   {% call indicator.render(title_text=title_text) %}
-    <main>
       <!-- content-one section   -->
       {% call page_container_two_columns.render() %}
         <!--  left side organism -->
@@ -150,6 +149,5 @@
         <!-- divider atom-->
         {{ divider.render(divider_width="border-b-6") }}
       {% endcall %}
-    </main>
   {% endcall %}
 {% endblock %}

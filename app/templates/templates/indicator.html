@@ -23,15 +23,19 @@
   {% endcall %}
 
   <!-- article section-->
-  {{ parent_caller }}
+    <main>
+      {{ parent_caller }}
+    </main>
 
   <!-- footer section-->
   <footer>
     {% call page_container_footer.render() %}
       <!-- footer organism -->
-      {{ footer.render() }}
+      {% call footer.render() %}
+      {% endcall %}
     {% endcall %}
   </footer>
+
   <!-- iconic icon -->
   <script
     type="module"
