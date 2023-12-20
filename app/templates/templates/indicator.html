@@ -1,30 +1,31 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/page_container_header.html' as page_container_header  with context %}
 {% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
-{% import 'organisims/title.html' as title  with context %}
+{% import 'molecules/headline.html' as headline  with context %}
 {% import 'organisims/header.html' as header  with context %}
 {% import 'organisims/footer.html' as footer  with context %}
 
 {%- macro render(title_text) -%}
-  {% set parent_caller=caller() %}
   <!-- header section-->
   <header>
-    {% call page_container_plain.render(margin_bottom="mb-10") %}
+    {% call page_container_header.render() %}
       <!-- header organism -->
-      {{ header.render() }}
+      {% call header.render() %}
+      {% endcall %}
     {% endcall %}
   </header>
 
   <!-- headline section-->
   {% call page_container_plain.render() %}
     <!-- headline organism -->
-    {% call title.render() %}
+    {% call headline.render() %}
       {{ title_text }}
     {% endcall %}
   {% endcall %}
 
   <!-- article section-->
     <main>
-      {{ parent_caller }}
+      {{ caller() }}
     </main>
 
   <!-- footer section-->

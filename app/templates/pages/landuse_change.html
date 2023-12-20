@@ -3,7 +3,7 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
 {% import 'organisims/page_container_one_column.html' as page_container_one_column  with context %}
-{% import 'organisims/title.html' as title  with context %}
+{% import 'molecules/headline.html' as title  with context %}
 {% import 'molecules/desc_with_heading.html' as desc_with_heading  with context %}
 {% import 'molecules/desc_without_heading.html' as desc_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
@@ -145,7 +145,7 @@
       {% endcall %}
 
       <!-- divider section -->
-      {% call page_container_plain.render(margin_bottom="mb-16") %}
+      {% call page_container_plain.render() %}
         <!-- divider atom-->
         {{ divider.render(divider_width="border-b-6") }}
       {% endcall %}
