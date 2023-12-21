@@ -1,10 +1,12 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_header.html' as page_container_header  with context %}
 {% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
-{% import 'molecules/headline.html' as headline  with context %}
 {% import 'organisims/header.html' as header  with context %}
 {% import 'organisims/footer.html' as footer  with context %}
 {% import 'organisims/nav.html' as nav  with context %}
+{% import 'molecules/headline.html' as headline  with context %}
+{% import 'atoms/nav_item.html' as nav_item with context %}
+
 
 {%- macro render(title_text) -%}
   <!-- header section-->
@@ -14,16 +16,28 @@
       {% call header.render() %}
       {% endcall %}
     {% endcall %}
-  </header>
 
   <!-- navigation section -->
   <nav>
-    {% call page_container_header.render() %}
+  {% call page_container_plain.render() %}
       <!-- nav organism -->
       {% call nav.render() %}
+        <!-- nav item atom -->
+        {% call nav_item.render(url="#") %}
+        Home
+        {% endcall %}
+        {% call nav_item.render(url="#") %}
+        About
+        {% endcall %}
+        {% call nav_item.render(url="#") %}
+        Services
+        {% endcall %}
+        {% call nav_item.render(url="#") %}
+        Contact
+        {% endcall %}
       {% endcall %}
-    {% endcall %}
-  </ndv>
+  {% endcall %}
+  </nav>
 
 
   <!-- headline section-->

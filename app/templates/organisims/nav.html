@@ -1,22 +1,21 @@
-{% import 'molecules/nav_list.html' as nav_list  with context %}
 {% import 'molecules/button_get_started.html' as button_get_started  with context %}
 {% import 'molecules/button_hamburger.html' as button_hamburger  with context %}
+{% import 'molecules/nav_list.html' as nav_list  with context %}
+
 
 {%- macro render() -%}
+{%set  parent_caller = caller()%}
   <div class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
         <div class="flex md:order-2">
-                {% call button_get_started.render() %}
-                get started
-                {% endcall %}
                 {% call button_hamburger.render() %}
                 {% endcall %}
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
           {% call nav_list.render() %}
+            {{parent_caller}}
           {% endcall %}
         </div>
   </div>
-  <!--  placeholder -->
-  {{caller()}}
+
 {%- endmacro -%}
