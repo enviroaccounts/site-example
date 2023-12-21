@@ -215,5 +215,7 @@ module.exports = {
   },
   variants: {},
   //plugin added
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio'), require('@tailwindcss/container-queries'),require("flowbite/plugin")],
+  plugins: [require('@tailwindcss/typography'), 
+  require('@tailwindcss/aspect-ratio'), 
+  require('@tailwindcss/container-queries'),require("flowbite/plugin")],
 };
