@@ -171,12 +171,12 @@ module.exports = {
         'graph-axis': '3.25rem', // 52px
         'graph-key': '3.25rem', // 52px
       },
-      letterSpacing: {
-        'tight': '-0.01rem', // -1%
-        'tighter': '-0.02rem', // -2%
-        'tightest': '-0.03rem', // -3%
-        'default': '0', // 0%
-      },
+      // letterSpacing: {
+      //   'tight': '-0.01rem', // -1%
+      //   'tighter': '-0.02rem', // -2%
+      //   'tightest': '-0.03rem', // -3%
+      //   'default': '0', // 0%
+      // },
       width: {
         '68': '17.0rem',
         '76': '19.0rem',

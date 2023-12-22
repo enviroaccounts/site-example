@@ -1,6 +1,6 @@
 {%- macro render(margin_bottom="mb-32") -%}
   <section
-    class="container {{ margin_bottom }} mx-auto h-auto flex flex-col xl:px-24 lg:px-16 md:px-11 xs:px-6 xl:gap-22 lg:gap-18 md:gap-13  xs:flex-row sm:flex-col"
+    class="container {{ margin_bottom }} mx-auto h-auto flex md:flex-row xl:px-24 lg:px-16 md:px-11 xs:px-6 xl:gap-22 lg:gap-18 md:gap-13 flex-col"
   >
     {{ caller() }}
   </section>
