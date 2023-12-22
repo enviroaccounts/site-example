@@ -1,7 +1,7 @@
 {%- macro render(url="#") -%}
   <a
-    class="md:w-full md:flex-1 md:h-full md:flex-grow md:rounded-t-none md:rounded-b-full md:items-end md:pb-[7%] w-14 h-14 xs:w-24 xs:h-24 bg-grey-900 rounded-full flex justify-center z-20 items-center cursor-pointer"
-    href={{url|safe}}}
+    class="md:w-full md:flex-1 md:h-full md:flex-grow md:rounded-t-none md:rounded-b-full md:items-end md:pb-[7%] w-12 h-12 bg-grey-900 rounded-full flex justify-center z-20 items-center cursor-pointer"
+    href="{{ url|safe }}}"
   >
     {{ caller() }}
   </a>

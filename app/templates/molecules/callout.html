@@ -4,16 +4,16 @@
 {%- macro render(statistic_value) -%}
   {% set parent_caller=caller() %}
 
-    <div
-      class="flex flex-col justify-center items-start gap-10 py-16 border-y-4 border-dashed"
-    >
-      <div class="w-4/5">
-        {% call statistic_textstyle.render() %}{{ statistic_value }}{% endcall %}
-      </div>
-      <div class="w-4/5">
-        {% call call_out_copy_textstyle.render() %}
-          {{ parent_caller }}
-        {% endcall %}
-      </div>
+  <div
+    class="flex flex-col justify-center items-start gap-10 py-16 border-y-4 border-dashed"
+  >
+    <div class="w-4/5">
+      {% call statistic_textstyle.render() %}{{ statistic_value }}{% endcall %}
     </div>
+    <div class="w-4/5">
+      {% call call_out_copy_textstyle.render() %}
+        {{ parent_caller }}
+      {% endcall %}
+    </div>
+  </div>
 {%- endmacro -%}

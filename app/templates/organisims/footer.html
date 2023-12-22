@@ -3,7 +3,6 @@
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/link_plain.html' as link_plain with context %}
 
-
 {%- macro render() -%}
   <!-- wai wanaka logo -->
   {% call logo_wai_wanaka.render() %}
@@ -16,5 +15,5 @@
   {% endcall %}
 
   <!--  placeholder -->
-  {{caller()}}
+  {{ caller() }}
 {%- endmacro -%}
