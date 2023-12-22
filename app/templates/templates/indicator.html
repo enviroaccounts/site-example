@@ -1,9 +1,8 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_header.html' as page_container_header  with context %}
 {% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
-{% import 'organisims/header.html' as header  with context %}
 {% import 'organisims/footer.html' as footer  with context %}
-{% import 'organisims/nav.html' as nav  with context %}
+{% import 'organisims/header.html' as header  with context %}
 {% import 'molecules/headline.html' as headline  with context %}
 {% import 'atoms/nav_item.html' as nav_item with context %}
 
@@ -11,9 +10,8 @@
   <!-- header section-->
   <header>
     {% call page_container_header.render() %}
-
-      {% call nav.render() %}
-
+      <!-- header organism -->
+      {% call header.render() %}
         {% call nav_item.render(url="#") %}
           Home
         {% endcall %}

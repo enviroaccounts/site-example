@@ -209,6 +209,11 @@ module.exports = {
       },
       borderWidth:{
         '6': '6px',
+      },
+      gap: {
+        '13': '3.366rem', // 53.86px
+        '18':'4.447rem', //71.15px
+        '22': '5.625rem' // 90px 
       }
     },
     

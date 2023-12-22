@@ -1,11 +1,11 @@
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% import 'atoms/body_textstyle.html' as body_textstyle with context %}
 
-{%- macro render(subhead_01_text="",moledule_width="w-full") -%}
+{%- macro render(subhead_01_text="") -%}
   {% set parent_caller=caller() %}
 
   <div
-    class="flex-col justify-start items-start gap-7 flex {{ moledule_width }}"
+    class="flex-col justify-start items-start gap-7 flex w-full"
   >
     {% call subhead_01_textstyle.render() %}
       {{ subhead_01_text }}

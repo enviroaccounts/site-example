@@ -2,7 +2,7 @@
 
 {%- macro render() -%}
   {% set parent_caller=caller() %}
-  <div class="w-3/5">
+  <div class="md:w-7/12 w-full">
     {% call headline.render() %}
       {{ parent_caller }}
     {% endcall %}

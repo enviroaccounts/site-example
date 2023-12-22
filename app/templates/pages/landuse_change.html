@@ -6,7 +6,6 @@
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width  with context %}
 {% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
-{% import 'organisims/header.html' as header  with context %}
 {% import 'molecules/headline.html' as title  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
@@ -24,7 +23,7 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_width.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
+        {% call text_with_heading.render(subhead_01_text="subhead_01") %}
           Land use and land use change is a catchment-wide indicator assessing
           how we are using our land. Over half of the area of the catchment is
           categorised as “production grassland”, dominated by low producing
@@ -124,7 +123,7 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_width.render() %}
         <!--  text with heading molecule-->
-        {% call text_with_heading.render(subhead_01_text="Forest Cover",moledule_width="w-full") %}
+        {% call text_with_heading.render(subhead_01_text="Forest Cover") %}
           To understand the current land use and land use change practices, a
           more recent dataset from 2008 to 2018 was analysed, showing a gross
           increase in exotic forest cover of 71 ha, which mainly is a result of
