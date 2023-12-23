@@ -1,5 +1,6 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_header.html' as page_container_header  with context %}
+{% import 'organisims/page_container_headline.html' as page_container_headline  with context %}
 {% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
 {% import 'organisims/footer.html' as footer  with context %}
 {% import 'organisims/header.html' as header  with context %}
@@ -28,7 +29,7 @@
     {% endcall %}
 
     <!-- headline section-->
-    {% call page_container_plain.render() %}
+    {% call page_container_headline.render() %}
       <!-- headline molecule -->
       {% call headline.render() %}
         {{ title_text }}
