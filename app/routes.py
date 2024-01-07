@@ -12,6 +12,7 @@ def index():
     return render_template('pages/index.html')
 
 
+
 @app.route('/<page>')
 def main(page):
     return render_template(f"pages/{page}.html")
