@@ -29,34 +29,33 @@
     {% endcall %}
   </header>
 
-    <!-- headline section-->
-    {% call page_container_headline.render() %}
-      <!-- headline molecule -->
-      {% call headline.render() %}
-        {{ title_text }}
+  <!-- headline section-->
+  {% call page_container_headline.render() %}
+    <!-- headline molecule -->
+    {% call headline.render() %}
+      {{ title_text }}
+    {% endcall %}
+  {% endcall %}
+
+  <!-- article section-->
+  <main>{{ caller() }}</main>
+
+  <!-- footer section-->
+  <footer>
+    {% call page_container_footer.render() %}
+      <!-- footer organism -->
+      {% call footer.render() %}
       {% endcall %}
     {% endcall %}
+  </footer>
 
-    <!-- article section-->
-    <main>{{ caller() }}</main>
-
-    <!-- footer section-->
-    <footer>
-      {% call page_container_footer.render() %}
-        <!-- footer organism -->
-        {% call footer.render() %}
-        {% endcall %}
-      {% endcall %}
-    </footer>
-
-    <!-- iconic icon -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-  </header>
+  <!-- iconic icon -->
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
 {%- endmacro -%}
