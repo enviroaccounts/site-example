@@ -74,6 +74,13 @@
       {% endcall %}
     {% endcall %}
 
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
     <!-- content-third section   -->
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
@@ -84,7 +91,6 @@
         {% call text_without_heading.render() %}
         Continued efforts to control pests in the catchment is an important contribution to the national Predator Free 2050 goal, which is working towards an Aotearoa where our native species are safe from extinction and thrive alongside us.
         {% endcall %}
-        <!-- call out molecule-->
         <!-- call out molecule-->
         {% call callout.render(statistic_value="503  ") %}
         Increase in the number of traps between 2020 and 2021
