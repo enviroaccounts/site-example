@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% import 'templates/indicator.html' as indicator  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
+{% import 'organisims/child_container_forty_percent_basis.html' as child_container_forty_percent_basis  with context %}
+{% import 'organisims/child_container_fifty_percent_basis.html' as child_container_fifty_percent_basis  with context %}
+{% import 'organisims/child_container_sixty_percent_basis.html' as child_container_sixty_percent_basis  with context %}
+{% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
+{% import 'organisims/graph_frame.html' as graph_frame with context %}
+{% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
+{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/callout.html' as callout with context %}
+{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'atoms/divider.html' as divider with context %}
+{% set title_text="Social Well-being" %}
+
+{% block title %}{{ title_text }}{% endblock %}
+
+{% block content %}
+  {% call indicator.render(title_text=title_text) %}
+    <!-- content-first section   -->
+    {% call page_container_two_columns.render() %}
+      <!--  left side organism -->
+      {% call child_container_fifty_percent_basis.render() %}
+        <!--  text without heading molecule-->
+        {% call text_without_heading.render() %}
+          Social well-being considers the social and economic aspects of
+          catchment health, including: •Community and Cultural Spirit
+          •Affordability Overall •Quality of Life
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          Monitoring social well-being is important, as social drivers have a
+          key influence on other aspects of catchment health, including pest
+          control, biodiversity, water quality and effective land use
+          management.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          The Queenstown Lake District Council conducts a ‘Quality of Life
+          Survey’ annually to better understand what works well and what the
+          challenges facing the residents in the district are. Data collected by
+          this survey were used to derive social well-being rankings for the
+          catchment.
+        {% endcall %}
+      {% endcall %}
+      <!-- right side organism -->
+      {% call child_container_fifty_percent_basis.render() %}
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="C") %}
+          Overall social well-being rank.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          Despite the low overall score, the sense of cultural heritage saw an
+          improvement compared to the previous year, as more respondents
+          reported being able to express their culture without feeling excluded
+          from their community or neighbourhood. Nonetheless, just over one
+          third of residents expressed satisfaction with the celebration of
+          tangata whenua and Māori culture, which remains consistently low.
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!-- content-second section   -->
+    {% call page_container_plain.render() %}
+      <!-- full width organism with items aligned to end -->
+      {% call child_container_full_width_items_end.render() %}
+        <!-- graph frame organism-->
+        {% call graph_frame.render(graph_title="Rankings of the social well-being, including its different aspects.") %}
+          <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!-- content-third section   -->
+    <!-- content-first section   -->
+    {% call page_container_two_columns.render() %}
+      <!--  left side organism -->
+      {% call child_container_fifty_percent_basis.render() %}
+        <!--  text without heading molecule-->
+        {% call text_without_heading.render() %}
+          Various studies have been conducted to understand how the health of
+          the environment we live in may impact the well-being of the people who
+          live in it. Societies living in a flourishing, green environment may
+          be more likely to thrive5. Wealthier societies may have more
+          opportunities to invest in climate-aware lifestyle choices6.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          Māori health models, such as the concept of Te Whare Tapa Whā,
+          illustrate the intimate link between the physical, spiritual and
+          mental health of individuals with their communities and environment7.
+        {% endcall %}
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="36%") %}
+          of survey respondents indicated that they had sufficient levels of
+          disposable income after meeting all of their basic needs.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          It is important to link social well-being to the other indicators
+          presented in this report, to gain insights into how the health and
+          happiness of the community may impact the catchment health.
+        {% endcall %}
+      {% endcall %}
+      <!-- right side organism -->
+      {% call child_container_fifty_percent_basis.render() %}
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="82%") %}
+          of survey respondents stating their quality of life to be “good” or
+          “extremely good”.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          Spare income and spare time are vital requirements for residents of
+          the catchment to be able to invest into caring for the environment;
+          whether this is in the form of volunteer hours or financial donations
+          to support ecological and environmental projects. Despite the high
+          rank of the overall quality of life, the high cost of living and low
+          affordability of housing pose significant threats for the future
+          health of the catchment, as residents may simply be unable to afford
+          to support improvements.
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-6") }}
+    {% endcall %}
+  {% endcall %}
+{% endblock %}
