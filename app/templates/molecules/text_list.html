@@ -1,0 +1,7 @@
+{%- macro render() -%}
+  <ul
+    class="flex flex-col w-full list-disc pt-5 pl-5"
+  >
+    {{ caller() }}
+  </ul>
+{%- endmacro -%}
