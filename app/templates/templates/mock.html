@@ -2,10 +2,12 @@
 {% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
 {% import 'organisims/page_container_one_column.html' as page_container_one_column  with context %}
 {% import 'organisims/title.html' as title  with context %}
+{% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/callout.html' as callout with context %}
 {% import 'organisims/header.html' as header  with context %}
+{% import 'molecules/callout.html' as callout with context %}
+
 
 {%- macro render(title_text) -%}
   {% set parent_caller=caller() %}
@@ -20,10 +22,12 @@
 
     <main>
       <!-- headline section-->
-      {% call page_container_plain.render() %}
-        <!-- headline organism -->
-        {% call title.render() %}
-          {{ title_text }}
+      {% call page_container_headline.render() %}
+        {% call child_container_sixty_percent_width.render() %}
+          <!-- headline molecule -->
+          {% call headline.render() %}
+            {{ title_text }}
+          {% endcall %}
         {% endcall %}
       {% endcall %}
 

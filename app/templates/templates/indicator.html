@@ -2,10 +2,12 @@
 {% import 'organisims/page_container_header.html' as page_container_header  with context %}
 {% import 'organisims/page_container_headline.html' as page_container_headline  with context %}
 {% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
+{% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'organisims/footer.html' as footer  with context %}
 {% import 'organisims/header.html' as header  with context %}
-{% import 'molecules/headline.html' as headline  with context %}
 {% import 'atoms/nav_item.html' as nav_item with context %}
+{% import 'atoms/headline_textstyle.html' as headline with context %}
+
 
 {%- macro render(title_text) -%}
   <!-- header section-->
@@ -31,9 +33,11 @@
 
   <!-- headline section-->
   {% call page_container_headline.render() %}
-    <!-- headline molecule -->
-    {% call headline.render() %}
-      {{ title_text }}
+    {% call child_container_sixty_percent_width.render() %}
+      <!-- headline molecule -->
+      {% call headline.render() %}
+        {{ title_text }}
+      {% endcall %}
     {% endcall %}
   {% endcall %}
 
