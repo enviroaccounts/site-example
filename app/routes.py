@@ -3,10 +3,12 @@ from flask import current_app as app
 from flask import render_template,redirect
 from .plots import LandUses
 from .plots import LandUsesCopy
+from .plots import WildingPines
 
 
 app.jinja_env.globals.update(LandUses=LandUses)
 app.jinja_env.globals.update(LandUsesCopy=LandUsesCopy)
+app.jinja_env.globals.update(WildingPines=WildingPines)
 
 
 @app.route('/')
