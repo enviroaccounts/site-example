@@ -18,7 +18,6 @@ module.exports = {
     fontFamily: {
       'overused-grotesk': ['Overused Grotesk', 'sans-serif'],
       'inter': ['Inter', 'sans-serif'],
-      'Genos': ['Genos', 'sans-serif'],
     },
     fontWeight: {
       'thin': 100,             // Tailwind's font-thin

@@ -45,7 +45,7 @@ def create_forest_land_use_pie_chart(labels, values):
 
     fig = go.Figure(data=[pie_chart])
     
-    # # Add scatter plot traces to mimic circular legend markers
+    # # Add scatter plot traces to mimic circular legend markers(Please dont remove this at the moment)
     # for label, color in zip(labels, pie_colors):
     #     fig.add_trace(go.Scatter(
     #         x=[None],  # No actual data points
