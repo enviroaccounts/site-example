@@ -39,45 +39,42 @@ def create_forest_land_use_pie_chart(labels, values):
         hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value} ha<extra></extra>',
         hole=.65,
         marker=dict(colors=pie_colors),  # Apply custom colors
-        showlegend=False,
+        showlegend=True,
         textfont=dict(size=30)  # Adjust text size inside pie chart
     )
 
     fig = go.Figure(data=[pie_chart])
     
-    # Add scatter plot traces to mimic circular legend markers
-    for label, color in zip(labels, pie_colors):
-        fig.add_trace(go.Scatter(
-            x=[None],  # No actual data points
-            y=[None],
-            mode='markers',
-            marker=dict(color=color, size=20),
-            name=label,
-            textfont=dict(size=30) 
-        ))
+    # # Add scatter plot traces to mimic circular legend markers
+    # for label, color in zip(labels, pie_colors):
+    #     fig.add_trace(go.Scatter(
+    #         x=[None],  # No actual data points
+    #         y=[None],
+    #         mode='markers',
+    #         marker=dict(color=color, size=10),
+    #         name=label,
+    #         textfont=dict(size=10) 
+    #     ))
 
-    # Update the layout to remove the background and add a light gray background
+     # Update the layout to remove the background and add a light gray background
     fig.update_layout(
-        width=500,  # Width of the canvas in pixels
-       height=500,  # Height of the canvas in pixels
+        autosize=True,  # Enable autosizing
         legend=dict(
+            x=0.5,
+            y=-0.1,
+            xanchor="center",
             orientation="h",
-            x=0.15,
-            y=-0.5,
-            xanchor="left",
-            yanchor="bottom",
-            font=dict(size=30) 
+            font=dict(size=10) 
         ),
-        plot_bgcolor='rgba(0,0,0,0)',  # Making the plot background transparent
-        paper_bgcolor='#F5F5F5',  # Light gray background for the entire graph
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='#F5F5F5',
         xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
         yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),    
         hoverlabel=dict(
-        font_size=25,          # Hover label font size 
-        font_family="Inter"    # Change hover table font family 
+            font_size=25, 
+            font_family="Inter"
+        )
     )
-    )
-
 
     return fig
 
@@ -95,13 +92,16 @@ def create_figure():
 
 
 def setup_dash_layout(app, fig_pie_chart):
-    """Sets up the layout of the Dash app."""
     app.layout = html.Div(children=[
         html.Div([
-            dcc.Graph(id='forest-land-use-pie-chart', figure=fig_pie_chart)
-        ])
-    ],id='forest-land-use-pie-chart-layout')
-
+            dcc.Graph(
+                id='forest-land-use-pie-chart', 
+                figure=fig_pie_chart,
+                responsive=True  # Set responsive to True
+            )
+        ], style={'width': '100%', 'height': '100%'})
+    ])
+    
 def create_app():
     """Creates and configures the Dash app."""
     app = Dash(__name__, suppress_callback_exceptions=True)
