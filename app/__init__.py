@@ -10,7 +10,4 @@ def init_app():
 
     with app.app_context():
         from . import routes
-        from .plots import LandUses
-        dash_app = LandUses.init_dash(app)
-
-        return dash_app
+        return app
