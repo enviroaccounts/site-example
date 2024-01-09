@@ -1,10 +1,12 @@
 """Routes for parent Flask app."""
 from flask import current_app as app
 from flask import render_template
-from .plots.LandUses import create_figure
+from .plots import LandUses
+from .plots import LandUsesCopy
 
 
-app.jinja_env.globals.update(create_figure=create_figure)
+app.jinja_env.globals.update(LandUses=LandUses)
+app.jinja_env.globals.update(LandUsesCopy=LandUsesCopy)
 
 
 @app.route('/')
