@@ -6,14 +6,14 @@ module.exports = {
   "./node_modules/flowbite/**/*.js"],
   theme: {
     screens: {
-      '3xs': '320px', // Extra small devices, like older smartphones
-      '2xs': '360px', // Small devices, typically smaller smartphones
-      'xs': '480px',  // Small devices, commonly for compact smartphones
-      'sm': '640px',  // Standard breakpoint for tablets and large smartphones
+      'xs': '320px', // Extra small devices, like older smartphones
+      // '2xs': '360px', // Small devices, typically smaller smartphones
+      // 'xs': '480px',  // Small devices, commonly for compact smartphones
+      // 'sm': '640px',  // Standard breakpoint for tablets and large smartphones
       'md': '768px',  // Medium devices, like small tablets
       'lg': '1024px', // Large devices, like laptops
       'xl': '1280px', // Extra large devices, like large laptops
-      '2xl': '1536px', // Extra extra large devices, like high-res screens
+      // '2xl': '1536px', // Extra extra large devices, like high-res screens
     },
     fontFamily: {
       'overused-grotesk': ['Overused Grotesk', 'sans-serif'],
@@ -209,11 +209,18 @@ module.exports = {
       },
       borderWidth:{
         '6': '6px',
+      },
+      gap: {
+        '13': '3.366rem', // 53.86px
+        '18':'4.447rem', //71.15px
+        '22': '5.625rem' // 90px 
       }
     },
     
   },
   variants: {},
   //plugin added
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio'), require('@tailwindcss/container-queries'),require("flowbite/plugin")],
+  plugins: [require('@tailwindcss/typography'), 
+  require('@tailwindcss/aspect-ratio'), 
+  require('@tailwindcss/container-queries'),require("flowbite/plugin")],
 };

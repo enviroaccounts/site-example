@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% import 'templates/indicator.html' as indicator  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
+{% import 'organisims/child_container_forty_percent_basis.html' as child_container_forty_percent_basis  with context %}
+{% import 'organisims/child_container_sixty_percent_basis.html' as child_container_sixty_percent_basis  with context %}
+{% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
+{% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
+{% import 'organisims/graph_frame.html' as graph_frame with context %}
+{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/callout.html' as callout with context %}
+{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'atoms/divider.html' as divider with context %}
+{% set title_text="Invasive Species" %}
+
+{% block title %}{{ title_text }}{% endblock %}
+
+{% block content %}
+  {% call indicator.render(title_text=title_text) %}
+    <!-- content-first section   -->
+    {% call page_container_two_columns.render() %}
+      <!--  left side organism -->
+      {% call child_container_forty_percent_basis.render() %}
+        <!--  text without heading molecule-->
+        {% call text_without_heading.render() %}
+          New Zealand’s biodiversity is unique: 100% of the country’s frogs and
+          reptiles, 90% of the insects, 80% of vascular plants, and 25% of bird
+          species are only found in New Zealand3.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          Invasive species are recognised as an important challenge in the
+          catchment and greater region. The Otago Regional Council has
+          classified 49 species4 of plants and animals in the region as pests
+          due to the threats they pose. With that we are home to a valuable
+          ecosystem that needs protecting and restoring.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          Monitoring the extent of invasive species can therefore provide an
+          insight into the extent and control of threats to our ecosystems.
+        {% endcall %}
+      {% endcall %}
+      <!-- right side organism -->
+      {% call child_container_sixty_percent_basis.render() %}
+        <!-- graph frame organism-->
+        {% call graph_frame.render(graph_title="Heat map of pest control areas in the catchment.") %}
+          <!-- graph placeholder -->
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!-- content-second section   -->
+    {% call page_container_plain.render() %}
+      <!-- full width organism with items aligned to end -->
+      {% call child_container_full_width_items_end.render() %}
+        {% call child_container_sixty_percent_width.render() %}
+          {% call text_without_heading.render() %}
+            Urban areas in Wānaka and Hāwea have increased since 1990. A
+            majority of this new urbanised landscape resulted from converting
+            productive grassland. However, total production grassland remained
+            constant, due to conversion of grassland with woody biomass.
+          {% endcall %}
+        {% endcall %}
+        <!-- graph frame organism-->
+        {% call graph_frame.render(graph_title="Predator control data over the last three years.") %}
+          <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!-- content-third section   -->
+    {% call page_container_two_columns.render() %}
+      <!--  left side organism -->
+      {% call child_container_forty_percent_basis.render() %}
+        {% call text_without_heading.render() %}
+        The dominating pests caught in the catchment are rats (33%) followed by possums(17%).
+        {% endcall %}
+        {% call text_without_heading.render() %}
+        Continued efforts to control pests in the catchment is an important contribution to the national Predator Free 2050 goal, which is working towards an Aotearoa where our native species are safe from extinction and thrive alongside us.
+        {% endcall %}
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="503  ") %}
+        Increase in the number of traps between 2020 and 2021
+      {% endcall %}
+        {% call callout.render(statistic_value="855 ") %}
+        Increase in the number of traps between 2021 and 2022.
+        {% endcall %}
+        {% endcall %}
+        <!-- right side organism -->
+        {% call child_container_sixty_percent_basis.render() %}
+        <!-- graph frame organism-->
+        {% call graph_frame.render(graph_title="Type of pests being caught in traps across the catchment.") %}
+        <!-- graph placeholder -->
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!-- content-fourth section   -->
+    {% call page_container_two_columns.render() %}
+      <!--  left side organism -->
+      {% call child_container_forty_percent_basis.render() %}
+        {% call text_with_heading.render(subhead_01_text="Wilding Conifers") %}
+          Wilding conifers are a threat to native plants and animals as they
+          compete for sunlight and water. Particularly high-risk areas of
+          wilding conifer invasion are the high country and tussock grasslands
+          of the catchment , which are further threatened by water demand and
+          fire risk associated by the increase in wilding conifers. While WCIS,
+          Whakatipu Wilding Conifer Control Group, and Central Otago Wilding
+          Control Group continue their wilding pine management efforts, it is
+          important to consider the increasing threat that spreading exotic
+          forest cover may pose on the catchment.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          The wilding data are currently only sourced from the WCIS, which only
+          covers a fraction of the spatial extent of the catchment.
+        {% endcall %}
+      {% endcall %}
+      <!-- right side organism -->
+      {% call child_container_sixty_percent_basis.render() %}
+        <!-- graph frame organism-->
+        {% call graph_frame.render(graph_title="Wilding pines control efforts by WCIS.") %}
+          <!-- graph placeholder -->
+        {% endcall %}
+      {% endcall %}
+    {% endcall %} 
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-6") }}
+    {% endcall %}
+  {% endcall %}
+{% endblock %}

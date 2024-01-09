@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% import 'templates/indicator.html' as indicator  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
+{% import 'organisims/child_container_forty_percent_basis.html' as child_container_forty_percent_basis  with context %}
+{% import 'organisims/child_container_sixty_percent_basis.html' as child_container_sixty_percent_basis  with context %}
+{% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
+{% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
+{% import 'organisims/graph_frame.html' as graph_frame with context %}
+{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/callout.html' as callout with context %}
+{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% import 'atoms/divider.html' as divider with context %}
+{% import 'atoms/text_divider.html' as text_divider with context %}
+{% set title_text="Water Quality" %}
+
+{% block title %}{{ title_text }}{% endblock %}
+
+{% block content %}
+  {% call indicator.render(title_text=title_text) %}
+    <!-- content-first section   -->
+    {% call page_container_two_columns.render() %}
+      <!--  left side organism -->
+      {% call child_container_forty_percent_basis.render() %}
+
+        {% call child_container_full_width.render() %}
+          {% call text_without_heading.render() %}
+            Water quality rankings are provided for four parameters which were
+            selected for their importance for ecosystem and human health:
+          {% endcall %}
+          {% call text_list.render() %}
+            {% call text_list_item.render() %}
+              Total phosphorus
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Phytoplankton (chlorophyll-a)
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Escherichia coli
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Nitrate-nitrogen
+            {% endcall %}
+          {% endcall %}
+        {% endcall %}
+
+        {% call text_without_heading.render() %}
+          Water quality was assessed in accordance with the guidelines provided
+          by the National Policy Statement for Freshwater Management 2020
+          (NPS-FM), which ranks each parameter from A (good) to D or E (poor).
+        {% endcall %}
+
+        {% call text_without_heading.render() %}
+          While the parameters are being measured in both lake and rivers,
+          NPS-FM provides guidelines that allow us to obtain quality ratings for
+          total phosphorus and chlorophyll-a for lakes only, not rivers;
+          rankings for nitrate can only be obtained for rivers not lakes.
+        {% endcall %}
+      {% endcall %}
+      <!-- right side organism -->
+      {% call child_container_sixty_percent_basis.render() %}
+        <!-- graph frame organism-->
+        {% call graph_frame.render(graph_title="Water quality measurement sites.") %}
+          <!-- graph placeholder -->
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!-- content-third section   -->
+    {% call page_container_plain.render() %}
+      <!-- full width organism with items aligned to end -->
+      {% call child_container_full_width_items_end.render() %}
+        <!-- graph frame organism-->
+        {% call graph_frame.render(graph_title="Water quality parameters included in this monitoring framework") %}
+          <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!-- content-second section   -->
+    {% call page_container_two_columns.render() %}
+      <!-- left side organism -->
+      {% call child_container_sixty_percent_basis.render() %}
+        <!-- graph frame organism-->
+        {% call graph_frame.render(graph_title="The 'current state’ of lake and river water quality in the catchment.") %}
+          <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
+        {% endcall %}
+      {% endcall %}
+
+      <!--  right side organism -->
+      {% call child_container_forty_percent_basis.render() %}
+        {% call child_container_full_width.render() %}
+          <!--  text without heading molecule-->
+          {% call text_without_heading.render() %}
+            Monitoring water quality parameters provides a comprehensive
+            understanding of the health of aquatic systems, their impact on
+            human well-being, and the need for sustainable environmental
+            management practices.
+          {% endcall %}
+          {% call text_list.render() %}
+            {% call text_list_item.render() %}
+              Monitoring nitrate levels helps manage agricultural practices to
+              minimise pollution and protect water resources;
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Monitoring E.coli ensures that water sources are safe for
+              recreational activities, drinking, and agricultural use;
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Monitoring chlorophyll-a levels provides insight into the overall
+              health of aquatic ecosystems;
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Monitoring total phosphorus allows for early detection of
+              potential threats to native species and habitats and it helps to
+              identify and manage nutrient pollution, preventing detrimental
+              effects, such as an ecological imbalance characterised by harmful
+              algal blooms and oxygen depletion.
+            {% endcall %}
+          {% endcall %}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-6") }}
+    {% endcall %}
+  {% endcall %}
+{% endblock %}
