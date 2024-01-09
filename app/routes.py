@@ -46,6 +46,10 @@ def main():
 def greenhouse_gas_emissions():
     return render_template("pages/greenhouse_gas_emissions.html")
 
+@app.route('/water_quality')
+def water_quality():
+    return render_template("pages/water_quality.html")
+
 @app.route('/index')
 def index():
     return render_template("pages/index.html")
