@@ -4,11 +4,13 @@ from flask import render_template,redirect
 from .plots import LandUses
 from .plots import LandUsesCopy
 from .plots import WildingPines
+from .plots import PredatorType
 
 
 app.jinja_env.globals.update(LandUses=LandUses)
 app.jinja_env.globals.update(LandUsesCopy=LandUsesCopy)
 app.jinja_env.globals.update(WildingPines=WildingPines)
+app.jinja_env.globals.update(PredatorType=PredatorType)
 
 
 @app.route('/')
