@@ -7,6 +7,24 @@
   color: black; 
 }
 
+
+/* 在你的CSS文件中 */
+.aspect-ratio-box {
+  width: 100%; /* 宽度为100% */
+  padding-top: 90.9%; /* 高度等于宽度 */
+  position: relative;
+}
+
+.aspect-ratio-box > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+
 /* .padding-block-20 {
   padding-block: 20%;
 } */

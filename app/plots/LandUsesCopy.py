@@ -40,7 +40,7 @@ def create_forest_land_use_pie_chart(labels, values):
         hole=.65,
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=True,
-        textfont=dict(size=30)  # Adjust text size inside pie chart
+        textfont=dict(size=22)  # Adjust text size inside pie chart
     )
 
     fig = go.Figure(data=[pie_chart])

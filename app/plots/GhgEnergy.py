@@ -43,7 +43,7 @@ def create_energy_consumption_pie_chart(labels, values):
         hole=.70,
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=False,
-        textfont=dict(size=30,family="Overused Grotesk, sans-serif",color='#898989')  # Adjust text size inside pie chart
+        textfont=dict(size=22,family="Overused Grotesk, sans-serif",color='#898989')  # Adjust text size inside pie chart
     )
 
     fig = go.Figure(data=[pie_chart])
@@ -77,7 +77,7 @@ def create_energy_consumption_pie_chart(labels, values):
         hoverlabel=dict(
             font_size=15, 
             font_family="Overused Grotesk, sans-serif"
-        )
+        ),
     )
 
     return fig

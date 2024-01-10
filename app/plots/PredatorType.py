@@ -43,7 +43,7 @@ def create_predator_pie_chart(labels, values):
         hole=.70,
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=True,
-        textfont=dict(size=30,family="Overused Grotesk, sans-serif",color='#898989')
+        textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989')
     )
     
 
@@ -67,10 +67,10 @@ def create_predator_pie_chart(labels, values):
         margin=dict(l=0, r=0, t=0, b=0),
         legend=dict(
             x=0.5,
-            y=-0.3,
+            y=-0.2,
             xanchor="center",
             orientation="h",
-            font=dict(size=8),
+            font=dict(size=5),
             
         ),
         plot_bgcolor='rgba(0,0,0,0)',

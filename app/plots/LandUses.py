@@ -39,9 +39,10 @@ def create_forest_land_use_pie_chart(labels, values):
         hoverinfo='label+percent',
         hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value} ha<extra></extra>',
         hole=.70,
+        rotation=-30, 
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=False,
-        textfont=dict(size=30,family="Overused Grotesk, sans-serif",color='#898989')  # Adjust text size inside pie chart
+        textfont=dict(size=22,family="Overused Grotesk, sans-serif",color='#898989')# Adjust text size inside pie chart
     )
 
     fig = go.Figure(data=[pie_chart])

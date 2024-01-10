@@ -83,13 +83,6 @@
     <!-- content-third section   -->
     {% call page_container_two_columns.render() %}
       <!-- left side organism -->
-      {% call child_container_sixty_percent_basis.render() %}
-        <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="GHG Emissions from the energy sector by location.") %}
-        {{ GhgEnergy.create_figure().to_html(div_id="GhgEnergy",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
-        {% endcall %}
-      {% endcall %}
-      <!--  right side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
         {% call text_without_heading.render() %}
@@ -108,6 +101,13 @@
           the potential impacts of climate change.
         {% endcall %}
       {% endcall %}
+      <!--  right side organism -->
+      {% call child_container_sixty_percent_basis.render() %}
+      <!-- graph frame organism-->
+      {% call graph_frame.render(graph_title="GHG Emissions from the energy sector by location.") %}
+      {{ GhgEnergy.create_figure().to_html(div_id="GhgEnergy",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+      {% endcall %}
+    {% endcall %}
     {% endcall %}
 
     <!-- divider section -->
