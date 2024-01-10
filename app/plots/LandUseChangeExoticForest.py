@@ -2,45 +2,34 @@ from dash import Dash, html, dcc
 import pandas as pd
 import plotly.graph_objects as go
 
-def load_ghg_emissions_data():
-    """Loads greenhouse gas emissions data."""
-    return pd.read_csv("app/static/data/GHG_emissions_Agri_Industry.csv")
+def load_forest_land_use_data():
+    """Loads forest land use change data."""
+    return pd.read_csv("app/static/data/LandUseChange_ExoticForest_2008_2018.csv")
 
-def prepare_ghg_emissions_chart_data(data_df):
-    """Prepares data for the GHG emissions pie chart."""
-    # GHG emissions data start from the 'Total fertiliser emissions' column
-    ghg_emissions_data = data_df.iloc[0, 2:-1]
-    labels = ghg_emissions_data.index.tolist()
-    values = []
-    for value in ghg_emissions_data.values:
-        if isinstance(value, str):
-            value = float(value.replace(',', '').strip())
-        values.append(value)
+def prepare_forest_land_use_chart_data(data_df):
+    """Prepares data for the forest land use pie chart."""
+    # Extract data starting from the 'Producing Grassland' column
+    land_use_data = data_df.iloc[0, 3:]
+    labels = land_use_data.index.tolist()
+    values = land_use_data.values.tolist()
     return labels, values
 
-
-
-def create_ghg_emissions_pie_chart(labels, values):
-    """Creates a pie chart for GHG emissions data."""
-
+def create_forest_land_use_pie_chart(labels, values):
+    """Creates a pie chart for forest land use data."""
+    
     # Calculate percentages and create custom text labels
     total = sum(values)
     percents = [(v / total * 100) for v in values]
     custom_text = [f"<1%" if 0 < p < 1 else f"{p:.0f}%" for p in percents]
     
     colors = {
-        'Fertiliser': '#F0E442',    
-        'Sheep': '#56B4E9',             
-        'Pigs': '#1A80BA',                    
-        'Beef cattle': '#009E73',                  
-        'Dairy cattle': '#FFB44F', 
-        'Deer': '#CC79A7'  
-        
+        'Production grassland': '#009E73',    
+        'Fernland': '#FFB44F',             
+        'Manuka and/or Kanuka': '#CC79A7',                    
     }
-
+    
     # Map labels to colors
     pie_colors = [colors[label] for label in labels]
-
 
     pie_chart = go.Pie(
         domain={'x': [0, 1], 'y': [0, 1]}, #size of donut chart
@@ -94,15 +83,13 @@ def create_ghg_emissions_pie_chart(labels, values):
 
     return fig
 
-
-
 def create_figure():
     # Load and prepare data
-    data_df = load_ghg_emissions_data()
-    labels, values = prepare_ghg_emissions_chart_data(data_df)
+    data_df = load_forest_land_use_data()
+    labels, values = prepare_forest_land_use_chart_data(data_df)
 
     # Create pie chart
-    fig_pie_chart = create_ghg_emissions_pie_chart(labels, values)
+    fig_pie_chart = create_forest_land_use_pie_chart(labels, values)
 
 
     return fig_pie_chart

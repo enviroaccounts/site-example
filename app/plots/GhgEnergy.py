@@ -24,13 +24,7 @@ def create_energy_consumption_pie_chart(labels, values):
         'Wānaka': '#56B4E9',             
     }
 
-    fig = go.Figure(data=[go.Pie(
-        labels=labels,
-        values=values,
-        hoverinfo='label+percent',  
-        hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value}<extra></extra>',  
-        texttemplate='%{percent:.0%}'
-    )])
+
     
     # Map labels to colors
     pie_colors = [colors[label] for label in labels]
@@ -45,7 +39,7 @@ def create_energy_consumption_pie_chart(labels, values):
         insidetextorientation='auto',
         texttemplate='%{percent:.0%}',
         hoverinfo='label+percent',
-        hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value} <extra></extra>',
+        hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value} ha<extra></extra>',
         hole=.70,
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=False,
