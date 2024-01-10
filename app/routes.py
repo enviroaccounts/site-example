@@ -6,6 +6,7 @@ from .plots import LandUsesCopy
 from .plots import WildingPines
 from .plots import PredatorType
 from .plots import GhgAgri
+from .plots import GhgEnergy
 
 
 app.jinja_env.globals.update(LandUses=LandUses)
@@ -13,6 +14,7 @@ app.jinja_env.globals.update(LandUsesCopy=LandUsesCopy)
 app.jinja_env.globals.update(WildingPines=WildingPines)
 app.jinja_env.globals.update(PredatorType=PredatorType)
 app.jinja_env.globals.update(GhgAgri=GhgAgri)
+app.jinja_env.globals.update(GhgEnergy=GhgEnergy)
 
 
 @app.route('/')
