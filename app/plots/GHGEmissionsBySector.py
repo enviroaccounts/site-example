@@ -1,6 +1,8 @@
 from dash import Dash, html, dcc
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objs as go
+
 
 
 def load_ghg_emissions_data():
@@ -17,6 +19,10 @@ def prepare_ghg_emissions_bar_chart_data(data_df):
     df_melted = data_df.melt(id_vars='Sector', var_name='Year', value_name='Emissions')
     # Convert Emissions to numeric, removing any commas
     df_melted['Emissions'] = pd.to_numeric(df_melted['Emissions'].str.replace(',', ''), errors='coerce')
+
+    # Debug print to check columns
+    print("Melted DataFrame columns:", df_melted.columns)
+
     return df_melted
 
 
