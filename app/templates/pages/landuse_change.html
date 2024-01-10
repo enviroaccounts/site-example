@@ -57,6 +57,7 @@
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
         {% call graph_frame.render(graph_title="Land uses converted from forestland since 1990.") %}
+        {{ LandUseChangeBuildUp.create_figure().to_html(div_id="LandUseChangeBuildUp",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
         {% endcall %}
       {% endcall %}
       <!--  right side organism -->
