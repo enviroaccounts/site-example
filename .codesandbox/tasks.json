@@ -1,6 +1,11 @@
 {
   // These tasks will run in order when initializing your CodeSandbox project.
-  "setupTasks": [],
+  "setupTasks": [
+    {
+      "name": "install node modules",
+      "command": "export NVM_DIR=\"$HOME/.nvm\" && \\. \"$NVM_DIR/nvm.sh\" && npm install"
+    }
+  ],
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
@@ -17,5 +22,6 @@
       "command": "tailwindcss -i css/style.css -o app/static/css/main.css --minify",
       "runAtStart": true
     }
+    
   }
 }
