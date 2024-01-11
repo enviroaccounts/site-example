@@ -2,9 +2,13 @@
 {% import 'molecules/button_hamburger.html' as button_hamburger  with context %}
 {% import 'molecules/nav_list.html' as nav_list  with context %}
 {% import 'molecules/full_icon_list.html' as full_icon_list with context %}
+{% import 'atoms/nav_item.html' as nav_item with context %}
+
 
 {%- macro render() -%}
-  {% set  parent_caller = caller() %}
+  {% set  parent_caller1 = caller('full_icon_list') %}
+  {% set  parent_caller2 = caller('nav_list') %}
+
   <!-- header organism -->
   <div class="flex bg-white border-gray-200 rounded dark:bg-gray-900">
     <div
@@ -13,6 +17,7 @@
     >
       <!-- icon list -->
       {% call full_icon_list.render() %}
+      {{ parent_caller1 }}
       {% endcall %}
       <!-- divider-->
       <div
@@ -30,7 +35,7 @@
       >
         {% call nav_list.render() %}
           <!-- navigation item -->
-          {{ parent_caller }}
+      {{ parent_caller12 }}
         {% endcall %}
       </nav>
     </div>
