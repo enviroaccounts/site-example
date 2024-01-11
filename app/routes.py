@@ -11,6 +11,7 @@ from .plots import LandUseChangeBuildUp
 from .plots import LandUseChangeExoticForest
 from .plots import GHGEmissionsBySector
 from .plots import ClimateMakaroa
+from .plots import GhgRemoval
 
 app.jinja_env.globals.update(LandUses=LandUses)
 app.jinja_env.globals.update(LandUsesCopy=LandUsesCopy)
@@ -22,6 +23,7 @@ app.jinja_env.globals.update(LandUseChangeBuildUp=LandUseChangeBuildUp)
 app.jinja_env.globals.update(LandUseChangeExoticForest=LandUseChangeExoticForest)
 app.jinja_env.globals.update(GHGEmissionsBySector=GHGEmissionsBySector)
 app.jinja_env.globals.update(ClimateMakaroa=ClimateMakaroa)
+app.jinja_env.globals.update(GhgRemoval=GhgRemoval)
 
 
 @app.route('/')
