@@ -69,11 +69,10 @@
         {% endcall %}
         <!-- graph frame organism-->
         {% call graph_frame.render(graph_title="Predator control data over the last three years.") %}
-        {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
         {% endcall %}
       {% endcall %}
     {% endcall %}
-
 
     <!-- divider section -->
     {% call page_container_plain.render() %}
@@ -86,24 +85,28 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         {% call text_without_heading.render() %}
-        The dominating pests caught in the catchment are rats (33%) followed by possums(17%).
+          The dominating pests caught in the catchment are rats (33%) followed
+          by possums(17%).
         {% endcall %}
         {% call text_without_heading.render() %}
-        Continued efforts to control pests in the catchment is an important contribution to the national Predator Free 2050 goal, which is working towards an Aotearoa where our native species are safe from extinction and thrive alongside us.
+          Continued efforts to control pests in the catchment is an important
+          contribution to the national Predator Free 2050 goal, which is working
+          towards an Aotearoa where our native species are safe from extinction
+          and thrive alongside us.
         {% endcall %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="503  ") %}
-        Increase in the number of traps between 2020 and 2021
-      {% endcall %}
+          Increase in the number of traps between 2020 and 2021
+        {% endcall %}
         {% call callout.render(statistic_value="855 ") %}
-        Increase in the number of traps between 2021 and 2022.
+          Increase in the number of traps between 2021 and 2022.
         {% endcall %}
-        {% endcall %}
-        <!-- right side organism -->
-        {% call child_container_sixty_percent_basis.render() %}
+      {% endcall %}
+      <!-- right side organism -->
+      {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
         {% call graph_frame.render(graph_title="Type of pests being caught in traps across the catchment.") %}
-        {{ PredatorType.create_figure().to_html(div_id="PredatorType",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {{ PredatorType.create_figure().to_html(div_id="PredatorType",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -138,10 +141,10 @@
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
         {% call graph_frame.render(graph_title="Wilding pines control efforts by WCIS.") %}
-        {{ WildingPines.create_figure().to_html(div_id="WildingPines",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {{ WildingPines.create_figure().to_html(div_id="WildingPines",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
         {% endcall %}
       {% endcall %}
-    {% endcall %} 
+    {% endcall %}
 
     <!-- divider section -->
     {% call page_container_plain.render() %}

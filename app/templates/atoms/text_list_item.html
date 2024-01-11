@@ -2,8 +2,8 @@
 {%- macro render() -%}
   {% set parent_caller = caller() %}
   <li>
-      {% call body_textstyle.render() %}
-        {{ parent_caller }}
-      {% endcall %}
+    {% call body_textstyle.render() %}
+      {{ parent_caller }}
+    {% endcall %}
   </li>
 {%- endmacro -%}
