@@ -13,6 +13,7 @@ from .plots import GHGEmissionsBySector
 from .plots import ClimateMakaroa
 from .plots import GhgRemoval
 from .plots import ClimateVarAero
+from .plots import PredatorControl
 
 app.jinja_env.globals.update(LandUses=LandUses)
 app.jinja_env.globals.update(LandUsesCopy=LandUsesCopy)
@@ -26,6 +27,7 @@ app.jinja_env.globals.update(GHGEmissionsBySector=GHGEmissionsBySector)
 app.jinja_env.globals.update(ClimateMakaroa=ClimateMakaroa)
 app.jinja_env.globals.update(GhgRemoval=GhgRemoval)
 app.jinja_env.globals.update(ClimateVarAero=ClimateVarAero)
+app.jinja_env.globals.update(PredatorControl=PredatorControl)
 
 
 @app.route('/')
