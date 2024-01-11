@@ -1,5 +1,6 @@
 {% import 'atoms/link_icon_badge_short.html' as link_icon_badge_short with context %}
 {% import 'atoms/link_icon_badge_long.html' as link_icon_badge_long with context %}
+{% import 'atoms/link_icon_badge_long_active.html' as link_icon_badge_long_active with context %}
 {% import 'atoms/icon_frame.html' as icon_frame with context %}
 {% import 'atoms/icon_land_use_change.html' as icon_land_use_change with context %}
 {% import 'atoms/icon_water_quality.html' as icon_water_quality with context %}
@@ -36,7 +37,7 @@
       {% endcall %}
     {% endcall %}
 
-    {% call link_icon_badge_long.render(url="/climate_variables") %}
+    {% call link_icon_badge_long_active.render(url="/climate_variables") %}
       {% call icon_frame.render() %}
         {{ icon_climate_variables.render(svg_fill="white") }}
       {% endcall %}
