@@ -30,7 +30,7 @@ def create_rainfall_bar_chart(months, values_1990_2005, values_2022):
         x=months, 
         y=values_1990_2005, 
         name='1990-2005 average rainfall',
-        marker_color='#009E73'  # Blue color
+        marker_color='#009E73'  
     ))
 
     # Adding 2022 data as grey bars
@@ -38,7 +38,7 @@ def create_rainfall_bar_chart(months, values_1990_2005, values_2022):
         x=months, 
         y=values_2022, 
         name='Monthly rainfall',
-        marker_color='#80CFB9'  # Grey color
+        marker_color='#80CFB9'  
     ))
 
     # Updating the layout of the chart
@@ -46,22 +46,21 @@ def create_rainfall_bar_chart(months, values_1990_2005, values_2022):
         margin=dict(l=0, r=20, t=0, b=0),
         xaxis=dict(
             tickfont_size=14,
-            showgrid=False  # Hiding vertical grid lines
+            showgrid=True, 
+            gridcolor='#d4d4d4' 
         ),
         yaxis=dict(
             title='Rainfall (mm)',
             titlefont_size=16,
             tickfont_size=14,
             dtick=50,  # Displaying a tick every 50mm
-            gridcolor='#898989'  # Showing horizontal grid lines in grey
+            gridcolor='#d4d4d4'  # Showing horizontal grid lines in grey
         ),
         legend=dict(
             x=0.5,  # Centering the legend horizontally
             y=-0.15,
             xanchor='center',
             orientation='h',  # Setting legend orientation to horizontal
-            # bgcolor='#F5F5F5',
-            # bordercolor='#000000'
         ),
         barmode='group',
         bargap=0.15,  # Space between bars of different groups
