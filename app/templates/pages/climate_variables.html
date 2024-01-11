@@ -65,7 +65,7 @@
         {% endcall %}
         <!-- graph frame organism-->
         {% call graph_frame.render(graph_title="Monthly total rainfall and average monthly temperature as observed at Wānaka Airport in 2022.") %}
-          <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
+        {{ ClimateVarAero.create_figure().to_html(div_id="ClimateVarAero",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -123,7 +123,7 @@
         {% endcall %}
         <!-- graph frame organism-->
         {% call graph_frame.render(graph_title="Monthly total rainfall as observed at Makaroa in 2022. No temperature data were available from the climate database.") %}
-          <!--{{ create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }} -->
+      {{ ClimateMakaroa.create_figure().to_html(div_id="ClimateMakaroa",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
         {% endcall %}
       {% endcall %}
     {% endcall %}
