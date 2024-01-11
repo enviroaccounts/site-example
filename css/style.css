@@ -8,10 +8,10 @@
 }
 
 
-/* 在你的CSS文件中 */
-.aspect-ratio-box {
-  width: 100%; /* 宽度为100% */
-  padding-top: 90.9%; /* 高度等于宽度 */
+/* graph frame */
+/* .aspect-ratio-box {
+  width: 100%;
+  padding-top: 90%; 
   position: relative;
 }
 
@@ -22,7 +22,7 @@
   right: 0;
   bottom: 0;
 }
-
+ */
 
 
 /* .padding-block-20 {
