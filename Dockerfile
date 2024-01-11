@@ -25,7 +25,7 @@ ENV PORT=8050
 
 
 WORKDIR /site
-COPY . /site
+
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
@@ -36,8 +36,7 @@ USER appuser
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 RUN export NVM_DIR="$HOME/.nvm" \ 
     && \. "$NVM_DIR/nvm.sh"\
-    && nvm install node \
-    && npm install
+    && nvm install node 
 
 
 
