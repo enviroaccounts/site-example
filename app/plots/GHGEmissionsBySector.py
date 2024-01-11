@@ -20,8 +20,8 @@ def prepare_ghg_emissions_bar_chart_data(data_df):
     # Convert Emissions to numeric, removing any commas
     df_melted['Emissions'] = pd.to_numeric(df_melted['Emissions'].str.replace(',', ''), errors='coerce')
 
-    # Debug print to check columns
-    print("Melted DataFrame columns:", df_melted.columns)
+    # # Debug print to check columns
+    # print("Melted DataFrame columns:", df_melted.columns)
 
     return df_melted
 
