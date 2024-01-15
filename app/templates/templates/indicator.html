@@ -6,9 +6,7 @@
 {% import 'organisims/footer.html' as footer  with context %}
 {% import 'organisims/header.html' as header  with context %}
 {% import 'atoms/headline_textstyle.html' as headline with context %}
-{% import 'atoms/link_icon_badge_short.html' as link_icon_badge_short with context %}
-{% import 'atoms/link_icon_badge_long.html' as link_icon_badge_long with context %}
-{% import 'atoms/link_icon_badge_long_active.html' as link_icon_badge_long_active with context %}
+{% import 'atoms/link_icon_badge.html' as link_icon_badge with context %}
 {% import 'atoms/icon_frame.html' as icon_frame with context %}
 {% import 'atoms/icon_land_use_change.html' as icon_land_use_change with context %}
 {% import 'atoms/icon_water_quality.html' as icon_water_quality with context %}
@@ -26,39 +24,39 @@
       <!-- header organism -->
       {% call(content) header.render() %}
         {% if content == 'full_icon_list' %}
-          {% call link_icon_badge_short.render(url="/landuse_change") %}
+          {% call link_icon_badge.render(url="/landuse_change",badge_type=landuse_change) %}
             {% call icon_frame.render() %}
-              {{ icon_land_use_change.render(svg_fill="black") }}
+              {{ icon_land_use_change.render(badge_type=landuse_change) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge_long.render(url="/water_quality") %}
+          {% call link_icon_badge.render(url="/water_quality",badge_type=water_quality) %}
             {% call icon_frame.render() %}
-              {{ icon_water_quality.render(svg_fill="white") }}
+              {{ icon_water_quality.render(badge_type=water_quality) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge_short.render(url="/invasive_species") %}
+          {% call link_icon_badge.render(url="/invasive_species",badge_type=invasive_species) %}
             {% call icon_frame.render() %}
-              {{ icon_invasive_speicies.render(svg_fill="black") }}
+              {{ icon_invasive_speicies.render(badge_type=invasive_species) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge_short.render(url="/greenhouse_gas_emissions") %}
+          {% call link_icon_badge.render(url="/greenhouse_gas_emissions",badge_type=greenhouse_gas_emissions) %}
             {% call icon_frame.render() %}
-              {{ icon_greenhouse_gas_emissions.render(svg_fill="black") }}
+              {{ icon_greenhouse_gas_emissions.render(badge_type=greenhouse_gas_emissions) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge_long_active.render(url="/climate_variables") %}
+          {% call link_icon_badge.render(url="/climate_variables",badge_type=climate_variables) %}
             {% call icon_frame.render() %}
-              {{ icon_climate_variables.render(svg_fill="black") }}
+              {{ icon_climate_variables.render(badge_type=climate_variables) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge_long.render(url="/social_well_being") %}
+          {% call link_icon_badge.render(url="/social_well_being",badge_type=social_well_being) %}
             {% call icon_frame.render() %}
-              {{ icon_social_wellbeing.render(svg_fill="white") }}
+              {{ icon_social_wellbeing.render(badge_type=social_well_being) }}
             {% endcall %}
           {% endcall %}
         {% endif %}

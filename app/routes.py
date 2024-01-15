@@ -34,39 +34,76 @@ app.jinja_env.globals.update(PredatorControl=PredatorControl)
 def home():
     return redirect("/landuse_change")
 
-@app.route('/landuse_change')
-def landuse_change():
-    return render_template("pages/landuse_change.html")
+@app.route('/main')
+def main():
+    return render_template("pages/main.html")
+
+@app.route('/index')
+def index():
+    return render_template("pages/index.html")
 
 @app.route('/acknowledgements')
 def acknowledgements():
     return render_template("pages/acknowledgements.html")
 
+@app.route('/landuse_change')
+def landuse_change():
+    return render_template("pages/landuse_change.html",
+                           climate_variables = "related",
+                            invasive_species = "related",
+                            social_well_being = "related",
+                            greenhouse_gas_emissions = "related",
+                            water_quality = "related",
+                            landuse_change = "active",)
+
 @app.route('/climate_variables')
 def climate_variables():
-    return render_template("pages/climate_variables.html")
+    return render_template("pages/climate_variables.html",
+                            climate_variables = "active",
+                            invasive_species = "related",
+                            social_well_being = "related",
+                            greenhouse_gas_emissions = "unrelated",
+                            water_quality = "related",
+                            landuse_change = "unrelated",)
 
 @app.route('/invasive_species')
 def invasive_species():
-    return render_template("pages/invasive_species.html")
+    return render_template("pages/invasive_species.html",
+                            climate_variables = "related",
+                            invasive_species = "active",
+                            social_well_being = "unrelated",
+                            greenhouse_gas_emissions = "unrelated",
+                            water_quality = "related",
+                            landuse_change = "related",)
 
 @app.route('/social_well_being')
 def social_well_being():
-    return render_template("pages/social_well_being.html")
-
-@app.route('/main')
-def main():
-    return render_template("pages/main.html")
+    return render_template("pages/social_well_being.html",
+                            climate_variables = "related",
+                            invasive_species = "related",
+                            social_well_being = "active",
+                            greenhouse_gas_emissions = "related",
+                            water_quality = "related",
+                            landuse_change = "unrelated",)
 
 @app.route('/greenhouse_gas_emissions')
 def greenhouse_gas_emissions():
-    return render_template("pages/greenhouse_gas_emissions.html")
+    return render_template("pages/greenhouse_gas_emissions.html",
+                            climate_variables = "related",
+                            invasive_species = "unrelated",
+                            social_well_being = "related",
+                            greenhouse_gas_emissions = "active",
+                            water_quality = "related",
+                            landuse_change = "unrelated",)
 
 @app.route('/water_quality')
 def water_quality():
-    return render_template("pages/water_quality.html")
+    return render_template("pages/water_quality.html",
+                            climate_variables = "related",
+                            invasive_species = "unrelated",
+                            social_well_being = "related",
+                            greenhouse_gas_emissions = "related",
+                            water_quality = "active",
+                            landuse_change = "related",)
 
-@app.route('/index')
-def index():
-    return render_template("pages/index.html")
 
