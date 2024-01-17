@@ -1,10 +1,10 @@
 {% import 'atoms/nav_textstyle.html' as nav_textstyle with context %}
 {%- macro render(url="#") -%}
   {% set parent_caller = caller() %}
-  <li>
+  <li class="md:flex md:flex-grow md:bg-light-grey rounded-t-full  md:justify-center md:items-center group-hover:shadow-custom-border-xl md:w-full md:basis-1/4">
     <a
       href="#"
-      class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent "
+      class="block md:p-0 text-gray-900 hover:bg-gray-100 md:hover:bg-none  "
     >
       {% call nav_textstyle.render() %}
         {{ parent_caller }}
