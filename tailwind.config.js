@@ -216,8 +216,9 @@ module.exports = {
         '22': '5.625rem' // 90px 
       },
       boxShadow: {
-        'custom-border-large': 'inset 0 0 0 4px #2e2e2e', 
-        'custom-border-small': 'inset 0 0 0 2px #2e2e2e', 
+        'custom-border-xl': 'inset 0 0 0 4px #2e2e2e', 
+        'custom-border-md': 'inset 0 0 0 3px #2e2e2e', 
+        'custom-border-sm': 'inset 0 0 0 2px #2e2e2e', 
 
       },
     },
