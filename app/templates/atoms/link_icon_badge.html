@@ -1,4 +1,4 @@
-{%- macro render(url="#",related=False) -%}
+{%- macro render(url="#",related=False,active=False) -%}
   <a
     class="group md:w-full md:flex-1 md:flex-grow md:rounded-t-none md:rounded-b-full md:items-end md:pb-[7%] w-10 h-10 rounded-full flex justify-center z-20 items-center cursor-pointer
     {% if not related %}
@@ -6,7 +6,7 @@
     {% else %}
       md:h-full bg-grey-900
     {% endif %}
-    {% if request.path == url %}
+    {% if active %}
       md:h-full bg-light-grey xl:shadow-custom-border-xl
       md:shadow-custom-border-md shadow-custom-border-sm
     {% endif %}

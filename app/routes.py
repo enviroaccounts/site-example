@@ -55,7 +55,7 @@ def landuse_change():
                                     "social_well_being",
                                     "greenhouse_gas_emissions",
                                     "water_quality"
-                                    }
+                                    },active="landuse_change"
                                     )
 
 @app.route('/climate_variables')
@@ -65,7 +65,7 @@ def climate_variables():
                                     "invasive_species",
                                     "social_well_being",
                                     "water_quality",
-                                    }
+                                    },active="climate_variables"
                                     )
 
 
@@ -76,7 +76,7 @@ def invasive_species():
                                     "climate_variables",
                                     "water_quality",
                                     "landuse_change",
-                                    })
+                                    },active="invasive_species")
 
 @app.route('/social_well_being')
 def social_well_being():
@@ -86,7 +86,7 @@ def social_well_being():
                                     "invasive_species",
                                     "greenhouse_gas_emissions",
                                     "water_quality"
-                                    })
+                                    },active="social_well_being")
 
 @app.route('/greenhouse_gas_emissions')
 def greenhouse_gas_emissions():
@@ -95,7 +95,7 @@ def greenhouse_gas_emissions():
                                     "climate_variables",
                                     "social_well_being",
                                     "water_quality",
-                                    })
+                                    },active="greenhouse_gas_emissions")
 
 
 @app.route('/water_quality')
@@ -106,7 +106,7 @@ def water_quality():
                                     "social_well_being",
                                     "greenhouse_gas_emissions",
                                     "landuse_change"
-                                    })
+                                    },active="water_quality")
 
 
 
