@@ -5,7 +5,7 @@
 {% import 'atoms/logo_frame.html' as logo_frame with context %}
 
 {%- macro render() -%} 
-<div class="border-t-6 border-grey-900 w-full pt-10 xl:pt-24 lg:pt-16 md:pt-11 rounded">
+<div class="flex justify-between items-end xl:border-t-6 border-t-4 border-grey-900 w-full pt-10 xl:pt-16 lg:pt-12 md:pt-4 rounded">
   <!-- wai wanaka logo -->
   {% call logo_frame.render() %}
     {% call logo_wai_wanaka.render() %}
@@ -17,7 +17,7 @@
       waiwanaka.nz
     {% endcall %}
   {% endcall %}
-</div class="flex justify-between items-end">
+</div>
   <!--  placeholder -->
   {{ caller() }}
 {%- endmacro -%}

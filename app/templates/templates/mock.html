@@ -1,11 +1,8 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_header.html' as page_container_header  with context %}
-{% import 'organisims/page_container_headline.html' as page_container_headline  with context %}
 {% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
-{% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'organisims/footer.html' as footer  with context %}
 {% import 'organisims/header.html' as header  with context %}
-{% import 'atoms/headline_textstyle.html' as headline with context %}
 {% import 'atoms/link_icon_badge.html' as link_icon_badge with context %}
 {% import 'atoms/icon_frame.html' as icon_frame with context %}
 {% import 'atoms/icon_land_use_change.html' as icon_land_use_change with context %}
@@ -61,7 +58,7 @@
           {% endcall %}
         {% endif %}
         {% if content == 'nav_list' %}
-          {% call nav_item.render(url="#") %}
+          {% call nav_item.render(url="/main") %}
             Home
           {% endcall %}
           {% call nav_item.render(url="#") %}
@@ -78,18 +75,10 @@
     {% endcall %}
   </header>
 
-  <!-- headline section-->
-  {% call page_container_headline.render() %}
-    {% call child_container_sixty_percent_width.render() %}
-      <!-- headline molecule -->
-      {% call headline.render() %}
-        {{ title_text }}
-      {% endcall %}
-    {% endcall %}
-  {% endcall %}
-
+ 
   <!-- article section-->
-  <main>{{ caller() }}</main>
+  <!-- temperory height -->
+  <main class="h-lvh">{{ caller() }}</main>
 
   <!-- footer section-->
   <footer>

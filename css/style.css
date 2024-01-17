@@ -7,6 +7,21 @@
   color: black; 
 }
 
+@media screen and (min-width: 768px) {
+  .navigation-list-nested-hover:hover {
+      background-color: #2e2e2e;
+      overflow: hidden;
+      transition: background-color 0.5s ease-in-out;
+  }
+
+  .navigation-list-nested-hover:hover p {
+      color: white; 
+  }
+
+  .navigation-list-nested-hover:hover a {
+      background-color: transparent;
+  }
+}
 
 /* graph frame */
 /* .aspect-ratio-box {

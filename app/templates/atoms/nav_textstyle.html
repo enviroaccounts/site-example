@@ -1,6 +1,10 @@
-{%- macro render() -%}
+{%- macro render(url="#") -%}
   <p
-    class="text-grey-900 text-body font-medium font-overused-grotesk leading-body tracking-default xl:text-xl lg:text-lg md:text-sm"
+    class="text-grey-900 text-body font-medium font-overused-grotesk leading-body tracking-default xl:text-xl lg:text-lg md:text-sm
+    {%if request.path == url %} 
+    md:text-white
+    {% endif %}
+    "
   >
     {{ caller() }}
   </p>
