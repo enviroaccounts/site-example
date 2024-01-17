@@ -24,37 +24,37 @@
       <!-- header organism -->
       {% call(content) header.render() %}
         {% if content == 'full_icon_list' %}
-          {% call link_icon_badge.render(url="/landuse_change",badge_type=landuse_change) %}
+          {% call link_icon_badge.render(url="/landuse_change",related=("landuse_change" in related )) %}
             {% call icon_frame.render() %}
               {{ icon_land_use_change.render(badge_type=landuse_change) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge.render(url="/water_quality",badge_type=water_quality) %}
+          {% call link_icon_badge.render(url="/water_quality",related=("water_quality" in related )) %}
             {% call icon_frame.render() %}
               {{ icon_water_quality.render(badge_type=water_quality) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge.render(url="/invasive_species",badge_type=invasive_species) %}
+          {% call link_icon_badge.render(url="/invasive_species",related=("invasive_species" in related )) %}
             {% call icon_frame.render() %}
               {{ icon_invasive_speicies.render(badge_type=invasive_species) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge.render(url="/greenhouse_gas_emissions",badge_type=greenhouse_gas_emissions) %}
+          {% call link_icon_badge.render(url="/greenhouse_gas_emissions",related=("greenhouse_gas_emissions" in related )) %}
             {% call icon_frame.render() %}
               {{ icon_greenhouse_gas_emissions.render(badge_type=greenhouse_gas_emissions) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge.render(url="/climate_variables",badge_type=climate_variables) %}
+          {% call link_icon_badge.render(url="/climate_variables",related=("climate_variables" in related )) %}
             {% call icon_frame.render() %}
               {{ icon_climate_variables.render(badge_type=climate_variables) }}
             {% endcall %}
           {% endcall %}
 
-          {% call link_icon_badge.render(url="/social_well_being",badge_type=social_well_being) %}
+          {% call link_icon_badge.render(url="/social_well_being",related=("social_well_being" in related )) %}
             {% call icon_frame.render() %}
               {{ icon_social_wellbeing.render(badge_type=social_well_being) }}
             {% endcall %}

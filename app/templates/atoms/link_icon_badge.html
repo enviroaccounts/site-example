@@ -1,8 +1,9 @@
-{%- macro render(url="#",badge_type="unrelated") -%}
+{%- macro render(url="#",badge_type="unrelated",related=False) -%}
 <a class="group md:w-full md:flex-1 md:flex-grow md:rounded-t-none md:rounded-b-full md:items-end md:pb-[7%] w-10 h-10 rounded-full flex justify-center z-20 items-center cursor-pointer
-    {% if badge_type == 'unrelated' %} md:h-[82%] bg-light-grey lg:rounded-b-full lg:items-end lg:pb-[7%]
-    {% elif badge_type == 'related' %} md:h-full bg-grey-900
-    {% elif badge_type == 'active' %} md:h-full bg-light-grey md:shadow-custom-border-large shadow-custom-border-small
+    {% if not related %} md:h-[82%] bg-light-grey lg:rounded-b-full lg:items-end lg:pb-[7%]
+    {% elif related %} md:h-full bg-grey-900
+    {% endif %}
+    {% if request.path == url %} md:h-full bg-light-grey md:shadow-custom-border-large shadow-custom-border-small
     {% endif %}
     hover:bg-light-grey hover:md:shadow-custom-border-large hover:shadow-custom-border-small hover:md:h-full transition-all duration-500 ease-out"
     href="{{ url }}">

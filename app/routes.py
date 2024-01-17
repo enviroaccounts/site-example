@@ -49,61 +49,64 @@ def acknowledgements():
 @app.route('/landuse_change')
 def landuse_change():
     return render_template("pages/landuse_change.html",
-                           climate_variables = "related",
-                            invasive_species = "related",
-                            social_well_being = "related",
-                            greenhouse_gas_emissions = "related",
-                            water_quality = "related",
-                            landuse_change = "active",)
+                           related = {
+                                    "climate_variables",
+                                    "invasive_species",
+                                    "social_well_being",
+                                    "greenhouse_gas_emissions",
+                                    "water_quality"
+                                    }
+                                    )
 
 @app.route('/climate_variables')
 def climate_variables():
     return render_template("pages/climate_variables.html",
-                            climate_variables = "active",
-                            invasive_species = "related",
-                            social_well_being = "related",
-                            greenhouse_gas_emissions = "unrelated",
-                            water_quality = "related",
-                            landuse_change = "unrelated",)
+                                    related = {
+                                    "invasive_species",
+                                    "social_well_being",
+                                    "water_quality",
+                                    }
+                                    )
+
 
 @app.route('/invasive_species')
 def invasive_species():
     return render_template("pages/invasive_species.html",
-                            climate_variables = "related",
-                            invasive_species = "active",
-                            social_well_being = "unrelated",
-                            greenhouse_gas_emissions = "unrelated",
-                            water_quality = "related",
-                            landuse_change = "related",)
+                                    related = {
+                                    "climate_variables",
+                                    "water_quality",
+                                    "landuse_change",
+                                    })
 
 @app.route('/social_well_being')
 def social_well_being():
     return render_template("pages/social_well_being.html",
-                            climate_variables = "related",
-                            invasive_species = "related",
-                            social_well_being = "active",
-                            greenhouse_gas_emissions = "related",
-                            water_quality = "related",
-                            landuse_change = "unrelated",)
+                                    related = {
+                                    "climate_variables",
+                                    "invasive_species",
+                                    "greenhouse_gas_emissions",
+                                    "water_quality"
+                                    })
 
 @app.route('/greenhouse_gas_emissions')
 def greenhouse_gas_emissions():
     return render_template("pages/greenhouse_gas_emissions.html",
-                            climate_variables = "related",
-                            invasive_species = "unrelated",
-                            social_well_being = "related",
-                            greenhouse_gas_emissions = "active",
-                            water_quality = "related",
-                            landuse_change = "unrelated",)
+                                    related = {
+                                    "climate_variables",
+                                    "social_well_being",
+                                    "water_quality",
+                                    })
+
 
 @app.route('/water_quality')
 def water_quality():
     return render_template("pages/water_quality.html",
-                            climate_variables = "related",
-                            invasive_species = "unrelated",
-                            social_well_being = "related",
-                            greenhouse_gas_emissions = "related",
-                            water_quality = "active",
-                            landuse_change = "related",)
+                                    related = {
+                                    "climate_variables",
+                                    "social_well_being",
+                                    "greenhouse_gas_emissions",
+                                    "landuse_change"
+                                    })
+
 
 
