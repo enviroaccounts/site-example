@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% import 'templates/indicator.html' as indicator  with context %}
+{% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
 {% import 'organisims/child_container_forty_percent_basis.html' as child_container_forty_percent_basis  with context %}
@@ -17,7 +17,7 @@
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
-  {% call indicator.render(title_text=title_text) %}
+  {% call basic.render(title_text=title_text) %}
     <!-- content-first section   -->
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
@@ -26,7 +26,7 @@
         {% call text_without_heading.render() %}
           Climate variables are a key driver for many measures of catchment
           health due to their influence on the ecosystem as well as water
-          quality and quantity. This indicator includes temperature and rainfall
+          quality and quantity. This basic includes temperature and rainfall
           observations obtained from four, currently active, measurement sites.
         {% endcall %}
         {% call text_without_heading.render() %}
@@ -98,7 +98,7 @@
       {% call text_without_heading.render() %}
         Climate data presented here are thus important to consider when, for
         example, assessing the data presented as part of the invasive species
-        indicator.
+        basic.
       {% endcall %}
     {% endcall %}
 

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% import 'templates/indicator.html' as indicator  with context %}
+{% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
 {% import 'organisims/child_container_forty_percent_basis.html' as child_container_forty_percent_basis  with context %}
@@ -18,7 +18,7 @@
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
-  {% call indicator.render(title_text=title_text) %}
+  {% call basic.render(title_text=title_text) %}
     <!-- content-first section   -->
     {% call page_container_plain.render() %}
       <!-- full width organism with items aligned to end -->
