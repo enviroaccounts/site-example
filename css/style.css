@@ -28,7 +28,9 @@
   }
 }
 
-
+#dropdownNavbar {
+  transform: translate(166, 100) !important; 
+}
 
 /* graph frame */
 /* .aspect-ratio-box {
