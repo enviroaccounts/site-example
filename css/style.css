@@ -10,8 +10,8 @@
 @media screen and (min-width: 768px) {
   .navigation-list-nested-hover:hover {
       box-shadow: 
-          inset -2px 0 0 2px #2e2e2e, 
-          inset 2px 0 0 2px #2e2e2e;
+          inset 0 0 0 3px #2e2e2e, 
+          inset 0 0 0 3px #2e2e2e;
       overflow: hidden;
       transition: box-shadow 0.3s ease-in-out;
   }
@@ -21,8 +21,8 @@
   }
   .navigation-list-nested-active {
     box-shadow: 
-        inset -2px 0 0 2px #2e2e2e, 
-        inset 2px 0 0 2px #2e2e2e;
+        inset 0 0 0 3px #2e2e2e, 
+        inset 0 0 0 3px #2e2e2e;
     overflow: hidden;
     transition: box-shadow 0.3s ease-in-out;
   }
