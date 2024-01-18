@@ -9,19 +9,19 @@
 
 @media screen and (min-width: 768px) {
   .navigation-list-nested-hover:hover {
-      background-color: #2e2e2e;
+      box-shadow: 
+          inset -2px 0 0 2px #2e2e2e, /* 左侧阴影 */
+          inset 2px 0 0 2px #2e2e2e,  /* 右侧阴影 */
+          inset 0 0 0 0 #2e2e2e; /* 下侧阴影 */
       overflow: hidden;
-      transition: background-color 0.5s ease-in-out;
-  }
-
-  .navigation-list-nested-hover:hover p {
-      color: white; 
+      transition: box-shadow 0.3s ease-in-out;
   }
 
   .navigation-list-nested-hover:hover a {
       background-color: transparent;
   }
 }
+
 
 /* graph frame */
 /* .aspect-ratio-box {
