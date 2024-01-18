@@ -34,13 +34,25 @@ app.jinja_env.globals.update(PredatorControl=PredatorControl)
 def home():
     return redirect("/landuse_change")
 
-@app.route('/main')
+@app.route('/home')
 def main():
-    return render_template("pages/main.html")
+    return render_template("pages/home.html")
 
-@app.route('/index')
-def index():
-    return render_template("pages/index.html")
+@app.route('/disclaimer')
+def disclaimer():
+    return render_template("pages/disclaimer.html")
+
+@app.route('/story')
+def story():
+    return render_template("pages/story.html")
+
+@app.route('/sponsorship')
+def sponsorship():
+    return render_template("pages/sponsorship.html")
+
+@app.route('/reference')
+def reference():
+    return render_template("pages/reference.html")
 
 @app.route('/acknowledgements')
 def acknowledgements():
