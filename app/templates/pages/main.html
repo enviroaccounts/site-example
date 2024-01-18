@@ -1,8 +1,10 @@
 {% extends "base.html" %}
-{% import 'templates/mock.html' as mock  with context %}
-{% block title %}Main Page{% endblock %}
+{% import 'templates/indicator.html' as indicator  with context %}
+{% set title_text="Home" %}
+
+{% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
-  {% call mock.render() %}
+  {% call indicator.render(title_text=title_text) %}
   {% endcall %}
 {% endblock %}

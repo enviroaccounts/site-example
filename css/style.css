@@ -10,9 +10,8 @@
 @media screen and (min-width: 768px) {
   .navigation-list-nested-hover:hover {
       box-shadow: 
-          inset -2px 0 0 2px #2e2e2e, /* 左侧阴影 */
-          inset 2px 0 0 2px #2e2e2e,  /* 右侧阴影 */
-          inset 0 0 0 0 #2e2e2e; /* 下侧阴影 */
+          inset -2px 0 0 2px #2e2e2e, 
+          inset 2px 0 0 2px #2e2e2e;
       overflow: hidden;
       transition: box-shadow 0.3s ease-in-out;
   }
@@ -20,7 +19,15 @@
   .navigation-list-nested-hover:hover a {
       background-color: transparent;
   }
+  .navigation-list-nested-active {
+    box-shadow: 
+        inset -2px 0 0 2px #2e2e2e, 
+        inset 2px 0 0 2px #2e2e2e;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+  }
 }
+
 
 
 /* graph frame */

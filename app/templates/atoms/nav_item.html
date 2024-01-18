@@ -1,9 +1,10 @@
 {% import 'atoms/nav_textstyle.html' as nav_textstyle with context %}
 {%- macro render(url="#") -%}
   {% set parent_caller = caller() %}
-  <li class="md:flex md:flex-grow rounded-t-md md:justify-center md:items-center group-hover:shadow-custom-border-xl md:w-full md:basis-1/4 navigation-list-nested-hover 
+  <li class="md:flex md:flex-grow rounded-t-lg md:justify-center md:items-center group-hover:shadow-custom-border-xl md:w-full md:basis-1/4 navigation-list-nested-hover 
   {%if request.path == url %} 
-    md:bg-grey-900
+    navigation-list-nested-active
+    md:bg-light-grey
   {%else%}
   md:bg-light-grey
   {% endif %}
