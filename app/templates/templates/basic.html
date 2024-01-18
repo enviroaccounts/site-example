@@ -5,6 +5,7 @@
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'organisims/footer.html' as footer  with context %}
 {% import 'organisims/header.html' as header  with context %}
+{% import 'molecules/nav_item_dropdown_menu.html' as nav_item_dropdown_menu with context %}
 {% import 'atoms/headline_textstyle.html' as headline with context %}
 {% import 'atoms/link_icon_badge.html' as link_icon_badge with context %}
 {% import 'atoms/icon_frame.html' as icon_frame with context %}
@@ -15,7 +16,7 @@
 {% import 'atoms/icon_climate_variables.html' as icon_climate_variables with context %}
 {% import 'atoms/icon_social_wellbeing.html' as icon_social_wellbeing with context %}
 {% import 'atoms/nav_item.html' as nav_item with context %}
-
+{% import 'atoms/nav_dropdown_item.html' as nav_dropdown_item with context %}
 
 {%- macro render(title_text) -%}
   <!-- header section-->
@@ -67,8 +68,19 @@
           {% call nav_item.render(url="/disclaimer") %}
             Disclaimer
           {% endcall %}
-          {% call nav_item.render(url="#") %}
-            About
+          {% call nav_item_dropdown_menu.render() %}
+            {% call nav_dropdown_item.render(url="/story") %}
+             Story
+            {% endcall %}
+            {% call nav_dropdown_item.render(url="/sponsorship") %}
+            Sponsorship
+            {% endcall %}
+            {% call nav_dropdown_item.render(url="/reference") %}
+            Reference
+            {% endcall %}
+            {% call nav_dropdown_item.render(url="/acknowledgements") %}
+            Acknowledgements
+            {% endcall %}
           {% endcall %}
         {% endif %}
       {% endcall %}

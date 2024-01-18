@@ -4,7 +4,6 @@
 {% import 'molecules/full_icon_list.html' as full_icon_list with context %}
 {% import 'atoms/nav_item.html' as nav_item with context %}
 
-
 {%- macro render() -%}
   {% set  parent_caller1 = caller('full_icon_list') %}
   {% set  parent_caller2 = caller('nav_list') %}
@@ -17,7 +16,7 @@
     >
       <!-- icon list -->
       {% call full_icon_list.render() %}
-      {{ parent_caller1 }}
+        {{ parent_caller1 }}
       {% endcall %}
       <!-- divider-->
       <div
@@ -30,12 +29,12 @@
       </div>
       <!--  navigation list -->
       <nav
-        class="items-center justify-between hidden w-full md:flex md:w-[40%] md:order-1 md:ml-[3%] md:h-[18%]"
+        class="items-center justify-between hidden w-full md:flex md:w-[40%] md:order-1 md:ml-[3%] md:h-[20%]"
         id="navbar-cta"
       >
         {% call nav_list.render() %}
           <!-- navigation item -->
-      {{ parent_caller2 }}
+          {{ parent_caller2 }}
         {% endcall %}
       </nav>
     </div>
