@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import 'templates/basic.html' as basic  with context %}
+{% set title_text="Disclaimer" %}
+
+{% block title %}{{ title_text }}{% endblock %}
+
+{% block content %}
+  {% call basic.render(title_text=title_text) %}
+  {% endcall %}
+{% endblock %}
