@@ -7,6 +7,7 @@
 {% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
 {% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
+{% import 'organisims/flyout.html' as flyout with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
@@ -63,8 +64,14 @@
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Water quality measurement sites.") %}
-          <!-- graph placeholder -->
+        {% call(content) graph_frame.render(graph_title="Water quality measurement sites.",flyout_id="placeholder7") %}
+        {% if content == 'flyout' %}
+        {% call flyout.render(flyout_id="placeholder7") %}
+        {% endcall %}
+        {% endif %}
+        {% if content == 'graph' %}
+        <!-- graph placeholder -->
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -80,8 +87,14 @@
       <!-- full width organism with items aligned to end -->
       {% call child_container_full_width_items_end.render() %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Water quality parameters included in this monitoring framework") %}
-          <!-- create_figure -->
+        {% call(content) graph_frame.render(graph_title="Water quality parameters included in this monitoring framework",flyout_id="placeholder8") %}
+        {% if content == 'flyout' %}
+        {% call flyout.render(flyout_id="placeholder8") %}
+        {% endcall %}
+        {% endif %}
+        {% if content == 'graph' %}
+        <!-- graph placeholder -->
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -97,8 +110,14 @@
       <!-- left side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="The 'current state’ of lake and river water quality in the catchment.") %}
-          <!-- create_figure -->
+        {% call(content) graph_frame.render(graph_title="The 'current state’ of lake and river water quality in the catchment.",flyout_id="placeholder9") %}
+        {% if content == 'flyout' %}
+        {% call flyout.render(flyout_id="placeholder9") %}
+        {% endcall %}
+        {% endif %}
+        {% if content == 'graph' %}
+        <!-- graph placeholder -->
+          {% endif %}
         {% endcall %}
       {% endcall %}
 
