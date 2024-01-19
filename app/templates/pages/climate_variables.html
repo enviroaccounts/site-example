@@ -12,6 +12,7 @@
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
+{% import 'organisims/flyout.html' as flyout with context %}
 {% set title_text="Climate Variables" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -37,10 +38,10 @@
       {% endcall %}
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
-        <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Active weather stations in the catchment") %}
-          <!-- graph placeholder -->
-        {% endcall %}
+        <!-- graph frame organism
+         call() graph_frame.render(graph_title="Active weather stations in the catchment") 
+
+         endcall -->
       {% endcall %}
     {% endcall %}
 
@@ -64,8 +65,14 @@
           {% endcall %}
         {% endcall %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Monthly total rainfall and average monthly temperature as observed at Wānaka Airport in 2022.") %}
-          {{ ClimateVarAero.create_figure().to_html(div_id="ClimateVarAero",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+        {% call(content) graph_frame.render(graph_title="Monthly total rainfall and average monthly temperature as observed at Wānaka Airport in 2022.",flyout_id="flyout_ClimateVarAero") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_ClimateVarAero") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            {{ ClimateVarAero.create_figure().to_html(div_id="ClimateVarAero",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -122,8 +129,15 @@
           {% endcall %}
         {% endcall %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Monthly total rainfall as observed at Makaroa in 2022. No temperature data were available from the climate database.") %}
-          {{ ClimateMakaroa.create_figure().to_html(div_id="ClimateMakaroa",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+        {% call(content) graph_frame.render(graph_title="Monthly total rainfall as observed at Makaroa in 2022. No temperature data were available from the climate database.",flyout_id="flyout_ClimateMakaroa") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_ClimateMakaroa") %}
+            {% endcall %}
+            
+          {% endif %}
+          {% if content == 'graph' %}
+            {{ ClimateMakaroa.create_figure().to_html(div_id="ClimateMakaroa",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
