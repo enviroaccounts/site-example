@@ -38,10 +38,15 @@
       {% endcall %}
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
-        <!-- graph frame organism
-         call() graph_frame.render(graph_title="Active weather stations in the catchment") 
-
-         endcall -->
+        <!-- graph frame organism -->
+        {%call(content) graph_frame.render(graph_title="Active weather stations in the catchment",flyout_id="placeholder1") %}
+        {% if content == 'flyout' %}
+        {% call flyout.render(flyout_id="placeholder1") %}
+        {% endcall %}
+        {% endif %}
+        {% if content == 'graph' %}
+        {% endif %}
+        {% endcall %}
       {% endcall %}
     {% endcall %}
 
