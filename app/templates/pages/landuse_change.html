@@ -24,8 +24,8 @@
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
         {% call text_without_heading.render() %}
-          Land use and land use change is a catchment-wide basic assessing
-          how we are using our land. Over half of the area of the catchment is
+          Land use and land use change is a catchment-wide basic assessing how
+          we are using our land. Over half of the area of the catchment is
           categorised as “production grassland”, dominated by low producing
           grassland. Following grassland, the most common land uses in the
           catchment are forest land (16.6%), and grassland with woody biomass
@@ -40,15 +40,15 @@
       {% endcall %}
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
-      <!-- graph frame organism-->
-      {% call(content) graph_frame.render(graph_title="Land use cover across the catchment in 2016.",flyout_id="placeholder3") %}
-      {% if content == 'flyout' %}
-      {% call flyout.render(flyout_id="placeholder3") %}
-      {% endcall %}
-      {% endif %}
-      {% if content == 'graph' %}
-      {% endif %}
-      {% endcall %}
+        <!-- graph frame organism-->
+        {% call(content) graph_frame.render(graph_title="Land use cover across the catchment in 2016.",flyout_id="placeholder3") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder3") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+          {% endif %}
+        {% endcall %}
       {% endcall %}
     {% endcall %}
 
@@ -74,13 +74,13 @@
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
         {% call(content) graph_frame.render(graph_title="What was all this urbanised land before 1990?",flyout_id="flyout_LandUseChangeBuildUp") %}
-        {% if content == 'flyout' %}
-        {% call flyout.render(flyout_id="flyout_LandUseChangeBuildUp") %}
-        {% endcall %}
-        {% endif %}
-        {% if content == 'graph' %}
-        {{ LandUseChangeBuildUp.create_figure().to_html(div_id="LandUseChangeBuildUp",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
-        {% endif %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_LandUseChangeBuildUp") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            {{ LandUseChangeBuildUp.create_figure().to_html(div_id="LandUseChangeBuildUp",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -97,12 +97,66 @@
       {% call child_container_full_width_items_end.render() %}
         <!-- graph frame organism-->
         {% call(content) graph_frame.render(graph_title="Land Use Category",flyout_id="placeholder4") %}
-        {% if content == 'flyout' %}
-        {% call flyout.render(flyout_id="placeholder4") %}
-        {% endcall %}
-        {% endif %}
-        {% if content == 'graph' %}
-        {% endif %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder4") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            <div class="overflow-x-auto">
+              <table
+                class="min-w-full bg-grey-900 text-white text-body font-light font-inter tracking-default xl:text-lg xl:leading-7 lg:text-base lg:leading-snug md:text-xs md:leading-none text-xs leading-tight"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col" class="py-3 px-6">Land Use Category</th>
+                    <th scope="col" class="py-3 px-6">2016 (ha)</th>
+                    <th scope="col" class="py-3 px-6">
+                      Net change since 1990 (ha)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="text-black">
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Forest</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">76,000</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">392</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">
+                      Grassland with woody biomass
+                    </td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">50,500</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">-932</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Production grassland</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">247,800</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">35</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Cropland</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">1,100</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">-18</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Wetland</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">39,400</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">-21</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Built-up area</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">1,400</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">551</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Other</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">42,600</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">-7</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -123,13 +177,13 @@
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
         {% call(content) graph_frame.render(graph_title="Land uses converted from forestland since 1990.",flyout_id="flyout_landUses") %}
-        {% if content == 'flyout' %}
-        {% call flyout.render(flyout_id="flyout_landUses") %}
-        {% endcall %}
-        {% endif %}
-        {% if content == 'graph' %}
-        {{ LandUses.create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
-        {% endif %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_landUses") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            {{ LandUses.create_figure().to_html(div_id="landUses",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -173,14 +227,14 @@
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
         {% call(content) graph_frame.render(graph_title="Land uses converted into exotic forest between 2008 and 2018.",flyout_id="flyout_LandUseChangeExoticForest") %}
-        {% if content == 'flyout' %}
-        {% call flyout.render(flyout_id="flyout_LandUseChangeExoticForest") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_LandUseChangeExoticForest") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            {{ LandUseChangeExoticForest.create_figure().to_html(div_id="LandUseChangeExoticForest",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {% endif %}
         {% endcall %}
-        {% endif %}
-        {% if content == 'graph' %}
-        {{ LandUseChangeExoticForest.create_figure().to_html(div_id="LandUseChangeExoticForest",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
-        {% endif %}
-      {% endcall %}
       {% endcall %}
     {% endcall %}
   {% endcall %}
