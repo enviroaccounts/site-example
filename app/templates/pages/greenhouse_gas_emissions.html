@@ -41,7 +41,50 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            <!-- graph place holder-->
+            <div class="overflow-x-auto">
+              <table
+                class="min-w-full bg-grey-900 text-white text-body font-light font-inter tracking-default xl:text-lg xl:leading-7 lg:text-base lg:leading-snug md:text-xs md:leading-none text-xs leading-tight"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col" class="py-3 px-6">
+                      <!-- Leave this empty if there's no header in the first cell of the thead row -->
+                    </th>
+                    <th scope="col" class="py-3 px-6">Emissions (tCO₂e)</th>
+                    <th scope="col" class="py-3 px-6">
+                      Change to previous year (%)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="text-black">
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Transport</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">69,100</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">-4.7%</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Energy</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">13,400</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">8.1%</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Agriculture</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">137,000</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">3.6%</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Forestry</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">-69,500</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">N/A</td>
+                  </tr>
+                  <tr class="border-b-2 border-white">
+                    <td class="py-4 px-6 bg-grey-500">Net</td>
+                    <td class="py-4 px-6 bg-grey-300 text-center">150,000</td>
+                    <td class="py-4 px-6 bg-neutral-100 text-center">1.6%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           {% endif %}
         {% endcall %}
       {% endcall %}
