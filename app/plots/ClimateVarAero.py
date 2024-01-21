@@ -79,6 +79,7 @@ def create_rainfall_temp_chart(months, rainfall_2000_2013, rainfall_2022, temp_2
     
     # Updating the layout of the chart
     fig.update_layout(
+        margin=dict(l=0, r=20, t=0, b=0),
         xaxis=dict(
             tickfont_size=14,
             showgrid=True,# Displaying a tick every 20mm
