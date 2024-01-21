@@ -65,12 +65,12 @@
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
         {% call(content) graph_frame.render(graph_title="Water quality measurement sites.",flyout_id="placeholder7") %}
-        {% if content == 'flyout' %}
-        {% call flyout.render(flyout_id="placeholder7") %}
-        {% endcall %}
-        {% endif %}
-        {% if content == 'graph' %}
-        <!-- graph placeholder -->
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder7") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            <!-- graph placeholder -->
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -88,12 +88,66 @@
       {% call child_container_full_width_items_end.render() %}
         <!-- graph frame organism-->
         {% call(content) graph_frame.render(graph_title="Water quality parameters included in this monitoring framework",flyout_id="placeholder8") %}
-        {% if content == 'flyout' %}
-        {% call flyout.render(flyout_id="placeholder8") %}
-        {% endcall %}
-        {% endif %}
-        {% if content == 'graph' %}
-        <!-- graph placeholder -->
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder8") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white text-black text-body font-light font-inter tracking-default xl:text-lg xl:leading-7 lg:text-base lg:leading-snug md:text-xs md:leading-none text-sm leading-tight ">
+              <thead class="bg-blue-500 text-white">
+                <tr>
+                  <th scope="col" class="py-3 px-6 bg-grey-900" colspan="2">
+                  </th>
+
+                  <th scope="col" class="py-3 px-6 bg-grey-900">
+                    Description
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">
+                    Phytoplankton (chlorophyll-a)
+                  </td>
+                  <td class="py-4 px-6 bg-grey-300" rowspan="3">
+                    Ecosystem health
+                  </td>
+                  <td class="py-4 px-6 bg-neutral-100">
+                    Chlorophyll-a is the green pigment in plants and algae that is used for photosynthesis and is a good indicator of the total amount of algae in a lake. Elevated chlorophyll-a concentrations can indicate nutrient enrichment (eutrophication), leading to algal blooms that disrupt the balance of aquatic life.
+                  </td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">
+                    Total phosphorus
+                  </td>
+                  <td class="py-4 px-6 bg-neutral-100">
+                    High levels of total phosphorus in water can come from either wastewater or run-off from agricultural land. Too much phosphorus can encourage the growth of nuisance plants such as algal blooms.
+                  </td>
+                </tr>
+                <tr class="border-b-2 border-black">
+                  <td class="py-4 px-6 bg-grey-500">
+                    Nitrate-nitrogen
+                  </td>
+                  <td class="py-4 px-6 bg-neutral-100">
+                    Nitrate-nitrogen is a very important plant nutrient but because it is highly water soluble, it leaches through soils and into groundwater very easily, particularly after heavy rainfall.
+                  </td>
+                </tr>
+                <tr class="border-b-2 border-white"> 
+                  <td class="py-4 px-6 bg-grey-500">
+                    Escherichia coli
+                  </td>
+                  <td class="py-4 px-6 bg-grey-300">
+                    Human contact
+                  </td>
+                  <td class="py-4 px-6 bg-neutral-100">
+                    E. coli (Escherichia coli) is an indicator of the faecal contamination and the presence of disease-causing organisms. Common sources of E. coli bacteria are human wastewater discharges, animal waste, bird droppings and stormwater run-off. E. coli is harmful to human health in high concentrations.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -111,12 +165,12 @@
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
         {% call(content) graph_frame.render(graph_title="The 'current state’ of lake and river water quality in the catchment.",flyout_id="placeholder9") %}
-        {% if content == 'flyout' %}
-        {% call flyout.render(flyout_id="placeholder9") %}
-        {% endcall %}
-        {% endif %}
-        {% if content == 'graph' %}
-        <!-- graph placeholder -->
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder9") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            <!-- graph placeholder -->
           {% endif %}
         {% endcall %}
       {% endcall %}
