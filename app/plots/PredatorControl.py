@@ -49,7 +49,8 @@ def create_predator_control_chart(years, traps_caught, pests_caught, catch_rate)
             title='Year',
             tickfont_size=14,
             showgrid=True,
-            gridcolor='#dee2e6'
+            gridcolor='#dee2e6',
+            dtick=1
         ),
     yaxis=dict(
         title='Number of traps or pests caught (#)',
