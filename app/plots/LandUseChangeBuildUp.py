@@ -41,7 +41,7 @@ def create_builtup_area_pie_chart(labels, values):
         hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value}<extra></extra>',
         # texttemplate=custom_text  # Use custom text labels
         hole=.70,
-        rotation=-55, 
+        rotation=-30, 
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=True,
         textfont=dict(size=18,family="Overused Grotesk, sans-serif",color='#898989')

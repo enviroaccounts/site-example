@@ -53,6 +53,7 @@ def create_ghg_emissions_pie_chart(labels, values):
         hoverinfo='label+percent',
         hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value}<extra></extra>',
         hole=.70,
+        rotation=-30, 
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=True,
         textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989')  # Adjust text size inside pie chart
@@ -80,7 +81,7 @@ def create_ghg_emissions_pie_chart(labels, values):
             y=-0.1,
             xanchor="center",
             orientation="h",
-            font=dict(size=11) 
+            font=dict(size=9) 
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='#F5F5F5',

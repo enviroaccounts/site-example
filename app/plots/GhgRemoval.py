@@ -29,14 +29,14 @@ def create_ghg_forestry_bar_chart(data_df):
 
     # Customizing the layout
     fig.update_layout(
-        margin=dict(l=60,r=60, t=20, b=0),
+        margin=dict(l=80,r=40, t=20, b=0),
         legend=dict(
             x=1,
             y=-0.4,
             xanchor='right',
             yanchor='bottom',
             orientation='h',
-            font=dict(size=15, family="Overused Grotesk, sans-serif", color='#898989')
+            font=dict(size=12, family="Overused Grotesk, sans-serif", color='#898989')
         ),
         plot_bgcolor='#F5F5F5',
         paper_bgcolor='#F5F5F5',

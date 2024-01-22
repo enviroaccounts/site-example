@@ -54,6 +54,9 @@ def create_wildingpines_bar_chart(years, days_operating, area_covered):
     )
 
     fig.update_layout(barmode='group',
+        xaxis=dict(
+            dtick=1
+        ),
         autosize=True, 
         margin=dict(l=0, r=0, t=0, b=0),
         legend=dict(

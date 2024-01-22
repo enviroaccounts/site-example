@@ -45,7 +45,7 @@ def create_ghg_emissions_bar_chart(data_df):
 
     # Customizing the layout
     fig.update_layout(
-        margin=dict(l=0, r=0, t=5, b=0),
+        margin=dict(l=80, r=40, t=5, b=0),
         legend=dict(
             x=1,
             y=-0.6,

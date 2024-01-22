@@ -41,7 +41,7 @@ def create_forest_land_use_pie_chart(labels, values):
         texttemplate='%{percent:.0%}',
         hoverinfo='label+percent',
         hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value}<extra></extra>',
-        rotation=-55, 
+        rotation=-30, 
         hole=.70,
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=True,
