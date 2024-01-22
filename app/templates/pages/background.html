@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% import 'templates/basic.html' as basic  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
+{% import 'organisims/child_container_forty_percent_basis.html' as child_container_forty_percent_basis  with context %}
+{% import 'organisims/child_container_sixty_percent_basis.html' as child_container_sixty_percent_basis  with context %}
+{% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
+{% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
+{% import 'organisims/graph_frame.html' as graph_frame with context %}
+{% import 'organisims/flyout.html' as flyout with context %}
+{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/callout.html' as callout with context %}
+{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% import 'atoms/divider.html' as divider with context %}
+{% import 'atoms/text_divider.html' as text_divider with context %}
+{% set title_text="Background" %}
+
+{% block title %}{{ title_text }}{% endblock %}
+
+{% block content %}
+  {% call basic.render(title_text=title_text) %}
+    {% call page_container_two_columns.render() %}
+      <!--  left side organism -->
+      {% call child_container_forty_percent_basis.render() %}
+        {% call text_without_heading.render() %}
+          This report presents an annual snapshot of the state of health of the
+          Upper Clutha Catchment in 2022.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          The aim of this report is to facilitate informed decision-making by
+          stakeholders and the community about environmental management and
+          investment in conservation efforts within the catchment.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          The data presented in this report were obtained from the Upper Clutha
+          Catchment Health Monitoring Framework. This framework uses a
+          combination of quantitative and qualitative methods to assess the
+          health of the catchment.
+        {% endcall %}
+      {% endcall %}
+      {% call child_container_sixty_percent_basis.render() %}
+        <!-- graph frame organism -->
+        {% call(content) graph_frame.render(graph_title="Upper Clutha Catchment",flyout_id="placeholder10") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder10") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+          {% endif %}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    {% call page_container_plain.render() %}
+      {% call child_container_full_width_items_end.render() %}
+        {% call child_container_full_width.render() %}
+          {% call text_without_heading.render() %}
+            The findings are presented according to the following six
+            indicators:
+          {% endcall %}
+          {% call text_list.render() %}
+            {% call text_list_item.render() %}
+              Land Use Change: Examines how the land within the catchment is
+              being used and how it has changed over time. It includes an
+              analysis of changes in land cover due to urbanisation,
+              agriculture, and deforestation.
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Climate Variables: Presents temperature and rainfall observations
+              as available from meteorological measurement sites in the
+              catchment.
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Water Quality: Assesses the water quality of lakes and rivers.
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Invasive Species : Assesses the presence of invasive species; in
+              particular, it considers the extent of pest control efforts and
+              control of wilding pines.
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Greenhouse Gas Emissions: Presents the GHG emissions profile of
+              the catchment, including emissions associated with the transport,
+              energy, forestry and agricultural sectors.
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Social Well-Being: Assesses the well-being and quality of life of
+              the people living in the catchment.
+            {% endcall %}
+          {% endcall %}
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          These indicators were chosen to provide insights on various key
+          aspects of catchment health. However, the indicators are not static or
+          exhaustive, and will evolve over time as the framework further
+          develops. More information about the framework and data underpinning
+          each indicator can be found in the technical report which is available
+          from WAI Wānaka.
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    {% call page_container_plain.render() %}
+      {% call child_container_full_width_items_end.render() %}
+        {% call text_with_heading.render(subhead_01_text="What do we mean by health?") %}
+        The "health of the Upper Clutha Catchment" is seen here as a holistic concept that considers the interconnectedness of various environmental and social factors and how they collectively contribute to the well-being of the overall ecosystem and the communities that rely on it. Māori have always recognised the importance of the connection to the environment as vital to health and well-being. This Upper Clutha Catchment monitoring framework was developed to align with the Māori concept of te Taiao, a deep relationship of respect and reciprocity with the natural world. The health of the climate, land, water and living systems comes first. And when nature thrives, it positively impacts our families, communities and businesses8.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+        Health in the context of the Upper Clutha Catchment involves achieving a sustainable balance between human activities and the natural environment, recognising that a healthy catchment is one where the environment is treated with respect and care. The components of a healthy catchment and te Taiao are the climate, soil and land, water, and living systems which are interconnected and interdependent. This interaction is complex, preventing the overall health of the catchment being assessed with a simple ‘good’ or ‘bad’ rating.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+        This monitoring framework is designed to provide a snap-shot of the state of the catchment health, which is turn is indicative of its environmental well-being, encouraging us to strive for a future where humanity and the natural world sustain each other and to behave in ways that are more connected to te Taiao.
+        {% endcall %}
+        
+      {% endcall %}
+    {% endcall %}
+  {% endcall %}
+{% endblock %}

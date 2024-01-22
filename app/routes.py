@@ -58,6 +58,10 @@ def reference():
 def acknowledgements():
     return render_template("pages/acknowledgements.html")
 
+@app.route('/background')
+def background():
+    return render_template("pages/background.html")
+
 @app.route('/landuse_change')
 def landuse_change():
     return render_template("pages/landuse_change.html",
