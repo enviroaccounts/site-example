@@ -33,21 +33,21 @@
 }
 
 
-/* graph frame */
-/* .aspect-ratio-box {
+/* pie chart */
+.aspect-ratio-container {
   width: 100%;
-  padding-top: 90%; 
+  padding-top: 80%; 
   position: relative;
 }
 
-.aspect-ratio-box > * {
+.aspect-ratio-container  > * {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
- */
+
 
 
 /* .padding-block-20 {
