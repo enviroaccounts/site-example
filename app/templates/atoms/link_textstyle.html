@@ -1,0 +1,7 @@
+{%- macro render(text_color="text-black") -%}
+  <p
+    class="font-inter {{text_color}} font-semibold xl:text-lg xl:leading-7 lg:text-base lg:leading-snug md:text-xs md:leading-none text-sm leading-tight tracking-tight underline break-words"
+  >
+    {{ caller() }}
+  </p>
+{%- endmacro -%}
