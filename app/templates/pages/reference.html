@@ -1,10 +1,54 @@
 {% extends "base.html" %}
 {% import 'templates/basic.html' as basic  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/text_list_plain.html' as text_list_plain with context %}
+{% import 'molecules/reference.html' as reference  with context %}
+{% import 'atoms/text_list_item.html' as text_list_item with context %}
+
 {% set title_text="Reference" %}
 
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
   {% call basic.render(title_text=title_text) %}
+    {% call page_container_plain.render() %}
+    {% call text_list_plain.render(gap="gap-3") %}
+      {% call reference.render(url="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/") %}
+      [1]Land Cover Database version 5.0, Mainland, New Zealand &minus; LRIS Portal, 
+      {% endcall %}
+      {% call reference.render(url="https://niwa.co.nz/education-and-training/schools/students/climate-change/impacts-for-NZ") %}
+      [2]Climate change and possible impacts for New Zealand, NIWA, 
+      {% endcall %}
+      {% call reference.render(url="https://environment.govt.nz/publications/environment-new-zealand-2007/chapter-12-biodiversity/introduction/") %}
+      [3]MfE, Environment New Zealand 2007, Chapter 12,
+      {% endcall %}
+      {% call reference.render(url="https://www.orc.govt.nz/plans-policies-reports/regional-plans-and-policies/regional-pest-management-plan") %}
+      [4]Regional Pest Management Plan 2019, ORC,
+      {% endcall %}
+      {% call reference.render(url="https://academic.oup.com/heapro/article/36/Supplement_1/i53/6460415") %}
+      [5]Trevor Hancock , the IUHPE&acute;s Global Working Group on Waiora Planetary Health, Towards healthy One Planet cities and communities: planetary health promotion at the local level, Health Promotion International, Volume 36, Issue Supplement_1, December 2021, Pages i53&minus;i63,
+      {% endcall %}
+      {% call reference.render(url="https://edition.cnn.com/2019/07/12/health/rich-people-climate-change-intl/index.html") %}
+      [6]S. Bailey, How rich people could help save the planet from climate change, CNN, Jul. 12, 2019, 
+      {% endcall %}
+      {% call reference.render(url="https://natlib.govt.nz/blog/posts/nature-and-nurture-connecting-conservation-and-wellbeing") %}
+      [7]E. Williamson and N. Gaston, Nature and nurture: Connecting conservation and wellbeing, National Library of New Zealand, 2020. Article available online, 
+      {% endcall %}
+      {% call reference.render(url="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/") %}
+      [8]National Science Challenge &minus; Our Land and Water,
+      {% endcall %}
+      {% call reference.render(url="https://ourlandandwater.nz/news/why-te-taiao-matters-and-the-supporting-role-of-our-research/") %}
+      [8]Destination Management Plan for Queenstown Lakes (draft),
+      {% endcall %}
+      {% call reference.render(url="https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/queenstownnz/Queenstown_Lakes_Regenerative_Tourism_Plan_956930e4-1b59-4293-9294-96b5d5ec5196.pdf") %}
+      [9]Queenstown Lakes Climate and Biodiversity Plan 2022-2025
+      {% endcall %}
+      {% call reference.render(url="https://www.qldc.govt.nz/media/ie3jk5bb/qldc_climate-and-biodiversity-plan_jun22-web.pdf") %}
+      [10]Land Cover Database version 5.0, Mainland, New Zealand &minus; LRIS Portal 
+      {% endcall %}
+      
+      {% endcall %}
+    {% endcall %}
   {% endcall %}
 {% endblock %}
