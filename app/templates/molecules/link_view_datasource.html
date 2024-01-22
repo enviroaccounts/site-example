@@ -4,8 +4,16 @@
 {% import 'atoms/icon_frame.html' as icon_frame with context %}
 
 {%- macro render(flyout_id="drawer-disabled-backdrop") -%}
-<!-- drawer init and toggle -->
-  <button class="flex flex-row gap-4 items-center justify-start" type="button" data-drawer-target="{{flyout_id}}" data-drawer-show="{{flyout_id}}" data-drawer-backdrop="false" aria-controls="{{flyout_id}}" data-drawer-body-scrolling="true">
+  <!-- drawer init and toggle -->
+  <button
+    class="flex flex-row gap-4 items-center justify-start"
+    type="button"
+    data-drawer-target="{{ flyout_id }}"
+    data-drawer-show="{{ flyout_id }}"
+    data-drawer-backdrop="false"
+    aria-controls="{{ flyout_id }}"
+    data-drawer-body-scrolling="true"
+  >
     {% call icon_frame.render() %}
       {{ icon_view_data_source.render() }}
     {% endcall %}
@@ -19,5 +27,4 @@
 
   <!-- placeholder -->
   {{ caller() }}
-
 {%- endmacro -%}

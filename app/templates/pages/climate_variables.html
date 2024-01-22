@@ -39,13 +39,13 @@
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism -->
-        {%call(content) graph_frame.render(graph_title="Active weather stations in the catchment",flyout_id="placeholder1") %}
-        {% if content == 'flyout' %}
-        {% call flyout.render(flyout_id="placeholder1") %}
-        {% endcall %}
-        {% endif %}
-        {% if content == 'graph' %}
-        {% endif %}
+        {% call(content) graph_frame.render(graph_title="Active weather stations in the catchment",flyout_id="placeholder1") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder1") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -101,11 +101,11 @@
         The range of some invasive species may increase to include our
         catchment: for example, the sub-tropical bungalow palm, which currently
         only grows on the North Island, could spread to the South Island under a
-        warming climate<sup>2</sup>. Furthermore, breeding seasons of invasive predators,
-        such as rats, possums and mice, may also extend due to higher
-        temperatures<sup>2</sup>, which can also accelerate the reproductive cycle, leading
-        to faster population growth, while rainfall influences the availability
-        of food, water, and shelter for pests.
+        warming climate<sup>2</sup>. Furthermore, breeding seasons of invasive
+        predators, such as rats, possums and mice, may also extend due to higher
+        temperatures<sup>2</sup>, which can also accelerate the reproductive
+        cycle, leading to faster population growth, while rainfall influences
+        the availability of food, water, and shelter for pests.
       {% endcall %}
       {% call text_without_heading.render() %}
         Climate data presented here are thus important to consider when, for
@@ -138,7 +138,6 @@
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_ClimateMakaroa") %}
             {% endcall %}
-            
           {% endif %}
           {% if content == 'graph' %}
             {{ ClimateMakaroa.create_figure().to_html(div_id="ClimateMakaroa",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}

@@ -1,6 +1,6 @@
 {%- macro render(text_color="text-black") -%}
   <p
-    class="font-inter {{text_color}} font-semibold xl:text-sm xl:leading-relaxed text-xs lg:leading-tight md:leading-none xs:leading-3 tracking-tight underline"
+    class="font-inter {{ text_color }} font-semibold xl:text-sm xl:leading-relaxed text-xs lg:leading-tight md:leading-none xs:leading-3 tracking-tight underline"
   >
     {{ caller() }}
   </p>

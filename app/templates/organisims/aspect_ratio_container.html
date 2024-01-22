@@ -1,6 +1,4 @@
 {%- macro render() -%}
   {% set  parent_caller = caller() %}
-  <div class="aspect-ratio-container">
-      {{ parent_caller }}
-  </div>
+  <div class="aspect-ratio-container">{{ parent_caller }}</div>
 {%- endmacro -%}

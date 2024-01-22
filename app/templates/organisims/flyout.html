@@ -5,13 +5,13 @@
 {% import 'atoms/icon_frame.html' as icon_frame with context %}
 
 {%- macro render(flyout_id="drawer-disabled-backdrop") -%}
-{% set  parent_caller = caller() %}
+  {% set  parent_caller = caller() %}
   <!-- drawer component -->
   <div
-    id="{{flyout_id}}"
+    id="{{ flyout_id }}"
     class="absolute top-0 left-0 z-40 lg:w-3/5 w-4/5 h-full p-8 overflow-y-auto transition-transform -translate-x-full bg-grey-900 opacity-95 dark:bg-gray-800 rounded-tl-3xl"
     tabindex="-1"
-    aria-labelledby="{{flyout_id}}-label"
+    aria-labelledby="{{ flyout_id }}-label"
   >
     <div class="flex flex-row justify-start items-center gap-3 mb-5">
       <div class="lg:w-6 lg:h-6 md:w-5 md:h-5 xs:w-4 xs:h-4">
@@ -25,8 +25,8 @@
     <hr class="mb-7" />
     <button
       type="button"
-      data-drawer-hide="{{flyout_id}}"
-      aria-controls="{{flyout_id}}"
+      data-drawer-hide="{{ flyout_id }}"
+      aria-controls="{{ flyout_id }}"
       class="text-white bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
     >
       <svg
@@ -99,5 +99,5 @@
       </ul>
     </div>
   </div>
-  {{parent_caller}}
+  {{ parent_caller }}
 {%- endmacro -%}
