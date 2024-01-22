@@ -1,5 +1,5 @@
 {%- macro render(gap="gap-0") -%}
-  <ul class="w-full flex flex-col list-disc pt-5 pl-5 {{gap}}">
+  <ul class="w-full flex flex-col list-none {{gap}}">
     {{ caller() }}
   </ul>
 {%- endmacro -%}
