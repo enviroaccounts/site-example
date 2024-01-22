@@ -6,6 +6,7 @@
 {% import 'organisims/child_container_fifty_percent_basis.html' as child_container_fifty_percent_basis  with context %}
 {% import 'organisims/child_container_sixty_percent_basis.html' as child_container_sixty_percent_basis  with context %}
 {% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
+{% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
@@ -13,6 +14,8 @@
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'atoms/text_list_item.html' as text_list_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% set title_text="Social Well-being" %}
 
@@ -25,11 +28,23 @@
       <!--  left side organism -->
       {% call child_container_fifty_percent_basis.render() %}
         <!--  text without heading molecule-->
+        {% call child_container_full_width.render() %}
         {% call text_without_heading.render() %}
           Social well-being considers the social and economic aspects of
-          catchment health, including: •Community and Cultural Spirit
-          •Affordability Overall •Quality of Life
-        {% endcall %}
+          catchment health, including:
+          {% endcall %}
+          {% call text_list.render() %}
+            {% call text_list_item.render() %}
+              Community and Cultural Spirit
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Affordability Overall
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Quality of Life
+            {% endcall %}
+          {% endcall %}
+          {% endcall %}
         {% call text_without_heading.render() %}
           Monitoring social well-being is important, as social drivers have a
           key influence on other aspects of catchment health, including pest
@@ -75,8 +90,8 @@
         {% call(content) graph_frame.render(graph_title="Rankings of the social well-being, including its different aspects.",flyout_id="placeholder6") %}
           <!-- create_figure -->
           {% if content == 'flyout' %}
-          {% call flyout.render(flyout_id="placeholder6") %}
-          {% endcall %}
+            {% call flyout.render(flyout_id="placeholder6") %}
+            {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
           {% endif %}
