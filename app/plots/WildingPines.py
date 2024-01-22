@@ -29,15 +29,17 @@ def create_wildingpines_bar_chart(years, days_operating, area_covered):
                 'title': 'Days Operating',
                 'range': [0, 250],
                 'dtick': 50,
-                'showgrid': True,  # Show grid lines
-                'gridcolor': '#dee2e6'  # Light grey color for grid lines
+                'showgrid': True,  
+                'gridcolor': 'white'  
             },
             'yaxis2': {
                 'title': 'Area Covered (ha)',
                 'overlaying': 'y',
                 'side': 'right',
                 'range': [0, 16000],
-                'dtick': 2000
+                'dtick': 2000,
+                'showgrid': True,  
+                'gridcolor': '#e5e5e5' 
             },
             'legend': {
                 'x': 0.5,
@@ -51,7 +53,18 @@ def create_wildingpines_bar_chart(years, days_operating, area_covered):
         }
     )
 
-    fig.update_layout(barmode='group')
+    fig.update_layout(barmode='group',
+        autosize=True, 
+        margin=dict(l=0, r=0, t=0, b=0),
+        legend=dict(
+            font=dict(size=11),
+        ),
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='#F5F5F5', 
+        hoverlabel=dict(
+            font_size=15, 
+            font_family="Overused Grotesk, sans-serif",
+        ))
 
     return fig
 

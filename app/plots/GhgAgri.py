@@ -54,22 +54,22 @@ def create_ghg_emissions_pie_chart(labels, values):
         hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value}<extra></extra>',
         hole=.70,
         marker=dict(colors=pie_colors),  # Apply custom colors
-        showlegend=False,
-        textfont=dict(size=22,family="Overused Grotesk, sans-serif",color='#898989')  # Adjust text size inside pie chart
+        showlegend=True,
+        textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989')  # Adjust text size inside pie chart
     )
 
     fig = go.Figure(data=[pie_chart])
     
-    # Add scatter plot traces to mimic circular legend markers(Please dont remove this at the moment)
-    for label, color in zip(labels, pie_colors):
-        fig.add_trace(go.Scatter(
-            x=[None],  # No actual data points
-            y=[None],
-            mode='markers',
-            marker=dict(color=color, size=15),
-            name=label,
-            textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989') 
-        ))
+    # # Add scatter plot traces to mimic circular legend markers(Please dont remove this at the moment)
+    # for label, color in zip(labels, pie_colors):
+    #     fig.add_trace(go.Scatter(
+    #         x=[None],  # No actual data points
+    #         y=[None],
+    #         mode='markers',
+    #         marker=dict(color=color, size=15),
+    #         name=label,
+    #         textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989') 
+    #     ))
 
 
     fig.update_layout(
@@ -80,7 +80,7 @@ def create_ghg_emissions_pie_chart(labels, values):
             y=-0.1,
             xanchor="center",
             orientation="h",
-            font=dict(size=10) 
+            font=dict(size=11) 
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='#F5F5F5',

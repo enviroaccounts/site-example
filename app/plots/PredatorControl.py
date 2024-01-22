@@ -76,7 +76,8 @@ def create_predator_control_chart(years, traps_caught, pests_caught, catch_rate)
             xanchor='center',
             orientation='h',
             bgcolor='rgba(255, 255, 255, 0)',
-            bordercolor='rgba(255, 255, 255, 0)'
+            bordercolor='rgba(255, 255, 255, 0)',
+            font=dict(size=11) 
         ),
         barmode='group',
         bargap=0.15,

@@ -67,10 +67,10 @@ def create_predator_pie_chart(labels, values):
         margin=dict(l=0, r=0, t=0, b=0),
         legend=dict(
             x=0.5,
-            y=-0.2,
+            y=-0.3,
             xanchor="center",
             orientation="h",
-            font=dict(size=5),
+            font=dict(size=11),
             
         ),
         plot_bgcolor='rgba(0,0,0,0)',
@@ -78,7 +78,7 @@ def create_predator_pie_chart(labels, values):
         xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
         yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),    
         hoverlabel=dict(
-            font_size=15, 
+            font_size=18, 
             font_family="Overused Grotesk, sans-serif"
         )
     )
