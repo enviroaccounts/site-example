@@ -1,16 +1,14 @@
 {% import 'atoms/body_textstyle.html' as body_textstyle with context %}
-{% import 'atoms/link_textstyle.html' as link_textstyle with context %}
 {% import 'atoms/link_plain.html' as link_plain with context %}
-{%- macro render(url="#") -%}
+{%- macro render(url="#",name="",additional_info="") -%}
   {% set parent_caller = caller() %}
   <li class="">
     {% call body_textstyle.render() %}
       {{ parent_caller }}
-    {% endcall %}
-    {% call link_plain.render(url) %}
-      {% call link_textstyle.render() %}
-        {{ url }}
+      {% call link_plain.render(url) %}
+        {{ name }}
       {% endcall %}
+      {{ additional_info }}
     {% endcall %}
   </li>
 {%- endmacro -%}
