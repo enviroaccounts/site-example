@@ -56,7 +56,7 @@ def create_ghg_emissions_pie_chart(labels, values):
         rotation=-30, 
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=True,
-        textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989')  # Adjust text size inside pie chart
+        textfont=dict(size=18,family="Overused Grotesk, sans-serif",color='#898989')  # Adjust text size inside pie chart
     )
 
     fig = go.Figure(data=[pie_chart])
@@ -69,7 +69,7 @@ def create_ghg_emissions_pie_chart(labels, values):
     #         mode='markers',
     #         marker=dict(color=color, size=15),
     #         name=label,
-    #         textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989') 
+    #         textfont=dict(size=18,family="Overused Grotesk, sans-serif",color='#898989') 
     #     ))
 
 
@@ -81,7 +81,7 @@ def create_ghg_emissions_pie_chart(labels, values):
             y=-0.1,
             xanchor="center",
             orientation="h",
-            font=dict(size=9) 
+            font=dict(size=12) 
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='#F5F5F5',

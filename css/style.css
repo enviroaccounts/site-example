@@ -33,20 +33,48 @@
 }
 
 
-/* pie chart */
-.aspect-ratio-container {
+.graph_container_small {
   width: 100%;
   padding-top: 80%; 
   position: relative;
 }
-
-.aspect-ratio-container  > * {
+.graph_container_small  > * {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
+
+@media (max-width: 768px) {
+.graph_container_small {
+  width: 100%;
+  padding-top: 110%; 
+  position: relative;
+}
+}
+
+.graph_container_medium {
+  width: 100%;
+  padding-top: 90%; 
+  position: relative;
+}
+.graph_container_medium  > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+.graph_container_medium {
+  width: 100%;
+  padding-top: 125%; 
+  position: relative;
+}
+}
+
 
 
 

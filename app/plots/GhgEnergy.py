@@ -56,7 +56,7 @@ def create_energy_consumption_pie_chart(labels, values):
     #         mode='markers',
     #         marker=dict(color=color, size=15),
     #         name=label,
-    #         textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989') 
+    #         textfont=dict(size=18,family="Overused Grotesk, sans-serif",color='#898989') 
     #     ))
 
      # Update the layout to remove the background and add a light gray background

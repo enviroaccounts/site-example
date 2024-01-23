@@ -99,7 +99,7 @@ def create_rainfall_temp_chart(months, rainfall_2000_2013, rainfall_2022, temp_2
             orientation='h',  # Setting legend orientation to horizontal
             bgcolor='rgba(255, 255, 255, 0)',
             bordercolor='rgba(255, 255, 255, 0)',
-            font=dict(size=11),
+            font=dict(size=12)
         ),
         barmode='group',
         bargap=0.15,  # Space between bars of different groups

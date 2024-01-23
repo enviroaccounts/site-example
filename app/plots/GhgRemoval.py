@@ -40,7 +40,7 @@ def create_ghg_forestry_bar_chart(data_df):
         ),
         plot_bgcolor='#F5F5F5',
         paper_bgcolor='#F5F5F5',
-        font=dict(size=15, family="Overused Grotesk, sans-serif", color='#898989')
+        font=dict(size=18, family="Overused Grotesk, sans-serif", color='#898989')
     )
 
     # Customizing axes and grid
