@@ -13,6 +13,8 @@
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
+{% import 'atoms/map_climate_variable.html' as map_climate_variable with context %}
+
 {% set title_text="Climate Variables" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -45,6 +47,8 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
+          {% call map_climate_variable.render() %}
+          {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
