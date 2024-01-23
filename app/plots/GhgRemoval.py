@@ -45,19 +45,18 @@ def create_ghg_forestry_bar_chart(data_df):
 
     # Customizing axes and grid
     fig.update_xaxes(
-        gridcolor='#898989',
-        showgrid=True,
+        showgrid=False,
         showline=True,
         linewidth=1,
-        linecolor='#898989'
+        linecolor='#b6b6b6'
     )
 
     fig.update_yaxes(
-        gridcolor='#898989',
+        gridcolor='#b6b6b6',
         showgrid=True,
         showline=True,
         linewidth=1,
-        linecolor='#898989'
+        linecolor='#b6b6b6'
     )
     
     fig.add_shape(
