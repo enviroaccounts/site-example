@@ -14,6 +14,7 @@
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
 {% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% import 'atoms/icon_water_sites.html' as icon_water_sites with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/text_divider.html' as text_divider with context %}
 {% set title_text="Water Quality" %}
@@ -70,7 +71,8 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            <!-- graph placeholder -->
+          {% call icon_water_sites.render() %}
+          {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
