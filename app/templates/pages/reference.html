@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% import 'templates/basic.html' as basic  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/text_list_plain.html' as text_list_plain with context %}
+{% import 'molecules/reference.html' as reference  with context %}
+{% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% set title_text="Reference" %}
+
+{% block title %}{{ title_text }}{% endblock %}
+
+{% block content %}
+  {% call basic.render(title_text=title_text) %}
+    {% call page_container_plain.render() %}
+      {% call text_list_plain.render(gap="gap-3") %}
+        {% call reference.render(url="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",name=" LRIS Portal",additional_info=", last accessed Jan 2024.") %}
+          [1] Land Cover Database version 5.0, Mainland, New Zealand &minus; available from the 
+        {% endcall %}
+        {% call reference.render(url="https://niwa.co.nz/education-and-training/schools/students/climate-change/impacts-for-NZ",name=" online",additional_info=", last accessed Jan 2024.") %}
+          [2] Climate change and possible impacts for New Zealand, NIWA &minus; available
+        {% endcall %}
+        {% call reference.render(url="https://environment.govt.nz/publications/environment-new-zealand-2007/chapter-12-biodiversity/introduction/",name=" online",additional_info=", last accessed Jan 2024.") %}
+          [3] Environment New Zealand 2007, Ministry for the Environment, Manatū Mō Te Taiao, Report ME 847, Chapter 12 &minus; available
+        {% endcall %}
+        {% call reference.render(url="https://www.orc.govt.nz/plans-policies-reports/regional-plans-and-policies/regional-pest-management-plan",name=" online",additional_info=", last accessed Jan 2024.") %}
+          [4] Otago Pest Management Plan 2019-2029, Otago Regional Council, 2019 &minus; available
+        {% endcall %}
+        {% call reference.render(url="https://academic.oup.com/heapro/article/36/Supplement_1/i53/6460415",name=" online",additional_info=", last accessed Jan 2024.") %}
+          [5] Hancock, T. and the IUHPE&#39;s Global Working Group on Waiora Planetary Health: Towards healthy One Planet cities and communities: planetary health promotion at the local level, Health Promotion International, Volume 36, 2021 &minus; available
+        {% endcall %}
+        {% call reference.render(url="https://edition.cnn.com/2019/07/12/health/rich-people-climate-change-intl/index.html",name=" online",additional_info=", last accessed Jan 2024.") %}
+          [6] Bailey, S.: How rich people could help save the planet from climate change, CNN, Jul. 12, 2019 &minus; available
+        {% endcall %}
+        {% call reference.render(url="https://natlib.govt.nz/blog/posts/nature-and-nurture-connecting-conservation-and-wellbeing",name=" online",additional_info=", last accessed Jan 2024.") %}
+          [7] Williamson E. and Gaston N: Nature and nurture: Connecting conservation and wellbeing, National Library of New Zealand, 2020, available
+        {% endcall %}
+        {% call reference.render(url="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",name=" Our Land and Water",additional_info=", last accessed Jan 2024.") %}
+          [8] National Science Challenge, Why Te Taiao Matters and the Supporting Role of Our Research &minus;
+        {% endcall %}
+        {% call reference.render(url="https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/queenstownnz/Queenstown_Lakes_Regenerative_Tourism_Plan_956930e4-1b59-4293-9294-96b5d5ec5196.pdf",name=" online",additional_info=", last accessed Jan 2024.") %}
+          [9] Destination Management Plan for Queenstown Lakes, Travel to a thriving future &minus; available
+        {% endcall %}
+        {% call reference.render(url="https://www.qldc.govt.nz/media/ie3jk5bb/qldc_climate-and-biodiversity-plan_jun22-web.pdf",name=" online",additional_info=", last accessed Jan 2024.") %}
+          [10] Queenstown Lakes Climate and Biodiversity Plan 2022-2025, July 2022 - available
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+  {% endcall %}
+{% endblock %}

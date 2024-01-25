@@ -1,8 +1,124 @@
-{% macro render() %}
-  {% set parent_caller=caller() %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/page_container_header.html' as page_container_header  with context %}
+{% import 'organisims/page_container_headline.html' as page_container_headline  with context %}
+{% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
+{% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
+{% import 'organisims/footer.html' as footer  with context %}
+{% import 'organisims/header.html' as header  with context %}
+{% import 'molecules/nav_item_dropdown_menu.html' as nav_item_dropdown_menu with context %}
+{% import 'atoms/headline_textstyle.html' as headline with context %}
+{% import 'atoms/link_icon_badge.html' as link_icon_badge with context %}
+{% import 'atoms/icon_frame.html' as icon_frame with context %}
+{% import 'atoms/icon_land_use_change.html' as icon_land_use_change with context %}
+{% import 'atoms/icon_water_quality.html' as icon_water_quality with context %}
+{% import 'atoms/icon_invasive_speicies.html' as icon_invasive_speicies with context %}
+{% import 'atoms/icon_greenhouse_gas_emissions.html' as icon_greenhouse_gas_emissions with context %}
+{% import 'atoms/icon_climate_variables.html' as icon_climate_variables with context %}
+{% import 'atoms/icon_social_wellbeing.html' as icon_social_wellbeing with context %}
+{% import 'atoms/nav_item.html' as nav_item with context %}
+{% import 'atoms/nav_dropdown_item.html' as nav_dropdown_item with context %}
 
-  <div>
-    <!-- center the container -->
-    <div class="Desktop container mx-auto h-auto">{{ parent_caller }}</div>
-  </div>
-{% endmacro %}
+{%- macro render(title_text) -%}
+  <!-- header section-->
+  <header>
+    {% call page_container_header.render() %}
+      <!-- header organism -->
+      {% call(content) header.render() %}
+        {% if content == 'full_icon_list' %}
+          {% call link_icon_badge.render(url="/landuse_change",related=("landuse_change" in related ),active=("landuse_change" == active)) %}
+            {% call icon_frame.render() %}
+              {{ icon_land_use_change.render(related=("landuse_change" in related )) }}
+            {% endcall %}
+          {% endcall %}
+
+          {% call link_icon_badge.render(url="/water_quality",related=("water_quality" in related ),active=("water_quality" == active)) %}
+            {% call icon_frame.render() %}
+              {{ icon_water_quality.render(related=("water_quality" in related )) }}
+            {% endcall %}
+          {% endcall %}
+
+          {% call link_icon_badge.render(url="/invasive_species",related=("invasive_species" in related ),active=("invasive_species" == active)) %}
+            {% call icon_frame.render() %}
+              {{ icon_invasive_speicies.render(related=("invasive_species" in related )) }}
+            {% endcall %}
+          {% endcall %}
+
+          {% call link_icon_badge.render(url="/greenhouse_gas_emissions",related=("greenhouse_gas_emissions" in related ),active=("greenhouse_gas_emissions" == active)) %}
+            {% call icon_frame.render() %}
+              {{ icon_greenhouse_gas_emissions.render(related=("greenhouse_gas_emissions" in related )) }}
+            {% endcall %}
+          {% endcall %}
+
+          {% call link_icon_badge.render(url="/climate_variables",related=("climate_variables" in related ),active=("climate_variables" == active)) %}
+            {% call icon_frame.render() %}
+              {{ icon_climate_variables.render(related=("climate_variables" in related )) }}
+            {% endcall %}
+          {% endcall %}
+
+          {% call link_icon_badge.render(url="/social_well_being",related=("social_well_being" in related ),active=("social_well_being" == active)) %}
+            {% call icon_frame.render() %}
+              {{ icon_social_wellbeing.render(related=("social_well_being" in related )) }}
+            {% endcall %}
+          {% endcall %}
+        {% endif %}
+        {% if content == 'nav_list' %}
+          {% call nav_item.render(url="/home") %}
+            Home
+          {% endcall %}
+          {% call nav_item.render(url="/disclaimer") %}
+            Disclaimer
+          {% endcall %}
+          {% call nav_item_dropdown_menu.render() %}
+            {% call nav_dropdown_item.render(url="/story") %}
+              Story
+            {% endcall %}
+            {% call nav_dropdown_item.render(url="/background") %}
+              Background
+            {% endcall %}
+            {% call nav_dropdown_item.render(url="/sponsorship") %}
+              Sponsorship
+            {% endcall %}
+            {% call nav_dropdown_item.render(url="/reference") %}
+              Reference
+            {% endcall %}
+            {% call nav_dropdown_item.render(url="/acknowledgements") %}
+              Acknowledgements
+            {% endcall %}
+          {% endcall %}
+        {% endif %}
+      {% endcall %}
+    {% endcall %}
+  </header>
+
+  <!-- headline section-->
+  {% call page_container_headline.render() %}
+    {% call child_container_sixty_percent_width.render() %}
+      <!-- headline molecule -->
+      {% call headline.render() %}
+        {{ title_text }}
+      {% endcall %}
+    {% endcall %}
+  {% endcall %}
+
+  <!-- article section-->
+  <main>{{ caller() }}</main>
+
+  <!-- footer section-->
+  <footer>
+    {% call page_container_footer.render() %}
+      <!-- footer organism -->
+      {% call footer.render() %}
+      {% endcall %}
+    {% endcall %}
+  </footer>
+
+  <!-- iconic icon -->
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+{%- endmacro -%}

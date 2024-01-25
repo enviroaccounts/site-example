@@ -41,9 +41,10 @@ def create_predator_pie_chart(labels, values):
         hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value}<extra></extra>',
         # texttemplate=custom_text  # Use custom text labels
         hole=.70,
+        rotation=-50, 
         marker=dict(colors=pie_colors),  # Apply custom colors
         showlegend=True,
-        textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989')
+        textfont=dict(size=18,family="Overused Grotesk, sans-serif",color='#898989')
     )
     
 
@@ -59,29 +60,29 @@ def create_predator_pie_chart(labels, values):
     #         mode='markers',
     #         marker=dict(color=color, size=15),
     #         name=label,
-    #         textfont=dict(size=15,family="Overused Grotesk, sans-serif",color='#898989') 
+    #         textfont=dict(size=18,family="Overused Grotesk, sans-serif",color='#898989') 
     #     ))
-        
     fig.update_layout(
-        autosize=True, 
+        autosize=True,
         margin=dict(l=0, r=0, t=0, b=0),
         legend=dict(
-            x=0.5,
-            y=-0.2,
-            xanchor="center",
-            orientation="h",
-            font=dict(size=5),
-            
+            x=0.5,  # Center the legend
+            y=-0.15,  # Position the legend below the chart
+            xanchor='center',
+            yanchor='top',
+            orientation='h',  # Keep the legend horizontal
+            font=dict(size=12)
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='#F5F5F5',
         xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-        yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),    
+        yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
         hoverlabel=dict(
-            font_size=15, 
+            font_size=15,
             font_family="Overused Grotesk, sans-serif"
         )
     )
+
 
     return fig
 

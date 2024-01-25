@@ -214,11 +214,21 @@ module.exports = {
         '13': '3.366rem', // 53.86px
         '18':'4.447rem', //71.15px
         '22': '5.625rem' // 90px 
-      }
+      },
+      boxShadow: {
+        'custom-border-xl': 'inset 0 0 0 4px #2e2e2e', 
+        'custom-border-md': 'inset 0 0 0 3px #2e2e2e', 
+        'custom-border-sm': 'inset 0 0 0 2px #2e2e2e', 
+
+      },
     },
     
   },
-  variants: {},
+  variants: {
+    extend: {
+      fill: ['group-hover'], 
+    },
+  },
   //plugin added
   plugins: [require('@tailwindcss/typography'), 
   require('@tailwindcss/aspect-ratio'), 

@@ -44,12 +44,13 @@ def create_predator_control_chart(years, traps_caught, pests_caught, catch_rate)
 
     # Updating the layout of the chart
     fig.update_layout(
-        margin=dict(l=40, r=40, t=0, b=0),
+        margin=dict(l=80, r=80, t=0, b=0),
         xaxis=dict(
             title='Year',
             tickfont_size=14,
             showgrid=True,
-            gridcolor='#dee2e6'
+            gridcolor='#dee2e6',
+            dtick=1
         ),
     yaxis=dict(
         title='Number of traps or pests caught (#)',
@@ -72,11 +73,12 @@ def create_predator_control_chart(years, traps_caught, pests_caught, catch_rate)
     ),
         legend=dict(
             x=0.5,
-            y=-0.2,
+            y=-0.3,
             xanchor='center',
             orientation='h',
             bgcolor='rgba(255, 255, 255, 0)',
-            bordercolor='rgba(255, 255, 255, 0)'
+            bordercolor='rgba(255, 255, 255, 0)',
+            font=dict(size=12) 
         ),
         barmode='group',
         bargap=0.15,

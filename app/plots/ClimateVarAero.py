@@ -79,16 +79,17 @@ def create_rainfall_temp_chart(months, rainfall_2000_2013, rainfall_2022, temp_2
     
     # Updating the layout of the chart
     fig.update_layout(
+        margin=dict(l=0, r=20, t=0, b=0),
         xaxis=dict(
-            tickfont_size=14,
+            tickfont_size=15,
             showgrid=True,# Displaying a tick every 20mm
             gridcolor='#dee2e6'
         ),
         yaxis=dict(
             title='Rainfall (mm)',
-            titlefont_size=16,
-            tickfont_size=14,
-            dtick=20,  # Displaying a tick every 20mm
+            titlefont_size=15,
+            tickfont_size=15,
+            dtick=11,  # Displaying a tick every 20mm
             gridcolor='#dee2e6'  # Showing horizontal grid lines in grey
         ),
         legend=dict(
@@ -98,6 +99,7 @@ def create_rainfall_temp_chart(months, rainfall_2000_2013, rainfall_2022, temp_2
             orientation='h',  # Setting legend orientation to horizontal
             bgcolor='rgba(255, 255, 255, 0)',
             bordercolor='rgba(255, 255, 255, 0)',
+            font=dict(size=12)
         ),
         barmode='group',
         bargap=0.15,  # Space between bars of different groups
@@ -110,9 +112,9 @@ def create_rainfall_temp_chart(months, rainfall_2000_2013, rainfall_2022, temp_2
     fig.update_layout(
         yaxis2=dict(
             title='Temperature (℃)',
-            titlefont_size=16,
-            tickfont_size=14,
-            dtick=5,
+            titlefont_size=15,
+            tickfont_size=15,
+            dtick=11,
             overlaying='y',
             side='right',
         )

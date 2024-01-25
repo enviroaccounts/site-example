@@ -1,0 +1,4 @@
+{%- macro render() -%}
+  {% set  parent_caller = caller() %}
+  <div class="graph_container_small">{{ parent_caller }}</div>
+{%- endmacro -%}
