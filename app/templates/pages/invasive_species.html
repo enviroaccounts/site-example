@@ -15,6 +15,7 @@
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
+{% import 'atoms/map_pestcontrol_heat.html' as map_pestcontrol_heat with context %}
 {% set title_text="Invasive Species" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -52,7 +53,8 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            <!-- graph placeholder -->
+            {% call map_pestcontrol_heat.render() %}
+            {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
