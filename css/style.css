@@ -7,22 +7,75 @@
   color: black; 
 }
 
+@media screen and (min-width: 768px) {
+  .navigation-list-nested-hover:hover {
+      box-shadow: 
+          inset 0 0 0 3px #2e2e2e, 
+          inset 0 0 0 3px #2e2e2e;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease-in-out;
+  }
 
-/* graph frame */
-/* .aspect-ratio-box {
-  width: 100%;
-  padding-top: 90%; 
-  position: relative;
+  .navigation-list-nested-hover:hover a {
+      background-color: transparent;
+  }
+  .navigation-list-nested-active {
+    box-shadow: 
+        inset 0 0 0 3px #2e2e2e, 
+        inset 0 0 0 3px #2e2e2e;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+  }
 }
 
-.aspect-ratio-box > * {
+#dropdownNavbar {
+  transform: translate(166, 100) !important; 
+}
+
+
+.graph_container_small {
+  width: 100%;
+  padding-top: 80%; 
+  position: relative;
+}
+.graph_container_small  > * {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
- */
+
+@media (max-width: 768px) {
+.graph_container_small {
+  width: 100%;
+  padding-top: 110%; 
+  position: relative;
+}
+}
+
+.graph_container_medium {
+  width: 100%;
+  padding-top: 90%; 
+  position: relative;
+}
+.graph_container_medium  > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+.graph_container_medium {
+  width: 100%;
+  padding-top: 125%; 
+  position: relative;
+}
+}
+
+
 
 
 /* .padding-block-20 {

@@ -5,18 +5,21 @@
 {% import 'atoms/logo_frame.html' as logo_frame with context %}
 
 {%- macro render() -%}
-  <!-- wai wanaka logo -->
-  {% call logo_frame.render() %}
-    {% call logo_wai_wanaka.render() %}
+  <div
+    class="flex justify-between items-end xl:border-t-6 border-t-4 border-grey-900 w-full pt-10 xl:pt-16 lg:pt-12 md:pt-4 rounded"
+  >
+    <!-- wai wanaka logo -->
+    {% call logo_frame.render() %}
+      {% call logo_wai_wanaka.render() %}
+      {% endcall %}
     {% endcall %}
-  {% endcall %}
-  <!-- wai wanaka link-->
-  {% call link_plain.render(url="https://waiwanaka.nz/") %}
-    {% call footer_02_textstyle.render() %}
-      waiwanaka.nz
+    <!-- wai wanaka link-->
+    {% call link_plain.render(url="https://waiwanaka.nz/") %}
+      {% call footer_02_textstyle.render() %}
+        waiwanaka.nz
+      {% endcall %}
     {% endcall %}
-  {% endcall %}
-
+  </div>
   <!--  placeholder -->
   {{ caller() }}
 {%- endmacro -%}

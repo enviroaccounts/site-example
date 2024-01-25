@@ -1,33 +1,49 @@
 {% extends "base.html" %}
-{% import 'templates/indicator.html' as indicator  with context %}
+{% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
 {% import 'organisims/child_container_forty_percent_basis.html' as child_container_forty_percent_basis  with context %}
 {% import 'organisims/child_container_fifty_percent_basis.html' as child_container_fifty_percent_basis  with context %}
 {% import 'organisims/child_container_sixty_percent_basis.html' as child_container_sixty_percent_basis  with context %}
 {% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
+{% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
+{% import 'organisims/flyout.html' as flyout with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'atoms/text_list_item.html' as text_list_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% set title_text="Social Well-being" %}
 
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
-  {% call indicator.render(title_text=title_text) %}
+  {% call basic.render(title_text=title_text) %}
     <!-- content-first section   -->
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_fifty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
-          Social well-being considers the social and economic aspects of
-          catchment health, including: •Community and Cultural Spirit
-          •Affordability Overall •Quality of Life
+        {% call child_container_full_width.render() %}
+          {% call text_without_heading.render() %}
+            Social well-being considers the social and economic aspects of
+            catchment health, including&#58;
+          {% endcall %}
+          {% call text_list.render() %}
+            {% call text_list_item.render() %}
+              Community and Cultural Spirit
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Affordability Overall
+            {% endcall %}
+            {% call text_list_item.render() %}
+              Quality of Life
+            {% endcall %}
+          {% endcall %}
         {% endcall %}
         {% call text_without_heading.render() %}
           Monitoring social well-being is important, as social drivers have a
@@ -36,8 +52,8 @@
           management.
         {% endcall %}
         {% call text_without_heading.render() %}
-          The Queenstown Lake District Council conducts a ‘Quality of Life
-          Survey’ annually to better understand what works well and what the
+          The Queenstown Lake District Council conducts a &#39;Quality of Life
+          Survey&#39; annually to better understand what works well and what the
           challenges facing the residents in the district are. Data collected by
           this survey were used to derive social well-being rankings for the
           catchment.
@@ -71,8 +87,14 @@
       <!-- full width organism with items aligned to end -->
       {% call child_container_full_width_items_end.render() %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Rankings of the social well-being, including its different aspects.") %}
+        {% call(content) graph_frame.render(graph_title="Rankings of the social well-being, including its different aspects.",flyout_id="placeholder6") %}
           <!-- create_figure -->
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder6") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -93,13 +115,15 @@
           Various studies have been conducted to understand how the health of
           the environment we live in may impact the well-being of the people who
           live in it. Societies living in a flourishing, green environment may
-          be more likely to thrive5. Wealthier societies may have more
-          opportunities to invest in climate-aware lifestyle choices6.
+          be more likely to thrive<sup>5</sup>. Wealthier societies may have
+          more opportunities to invest in climate-aware lifestyle
+          choices<sup>6</sup>.
         {% endcall %}
         {% call text_without_heading.render() %}
           Māori health models, such as the concept of Te Whare Tapa Whā,
           illustrate the intimate link between the physical, spiritual and
-          mental health of individuals with their communities and environment7.
+          mental health of individuals with their communities and
+          environment<sup>7</sup>.
         {% endcall %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="36%") %}
@@ -116,8 +140,8 @@
       {% call child_container_fifty_percent_basis.render() %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="82%") %}
-          of survey respondents stating their quality of life to be “good” or
-          “extremely good”.
+          of survey respondents stating their quality of life to be
+          &quot;good&quot; or &quot;extremely good&quot;.
         {% endcall %}
         {% call text_without_heading.render() %}
           Spare income and spare time are vital requirements for residents of
@@ -130,12 +154,6 @@
           to support improvements.
         {% endcall %}
       {% endcall %}
-    {% endcall %}
-
-    <!-- divider section -->
-    {% call page_container_plain.render() %}
-      <!-- divider atom-->
-      {{ divider.render(divider_width="border-b-6") }}
     {% endcall %}
   {% endcall %}
 {% endblock %}

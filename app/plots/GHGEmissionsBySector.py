@@ -45,18 +45,18 @@ def create_ghg_emissions_bar_chart(data_df):
 
     # Customizing the layout
     fig.update_layout(
-        margin=dict(l=0, r=0, t=5, b=0),
+        margin=dict(l=80, r=40, t=5, b=0),
         legend=dict(
             x=1,
-            y=-0.5,
+            y=-0.6,
             xanchor='right',
             yanchor='bottom',
             orientation="h",
-            font=dict(size=12, family="Overused Grotesk, sans-serif", color='#b6b6b6')
+            font=dict(size=12, family="Overused Grotesk, sans-serif", color='#898989')
         ),
         plot_bgcolor='#F5F5F5',
         paper_bgcolor='#F5F5F5',
-        font=dict(size=12, family="Overused Grotesk, sans-serif", color='#b6b6b6')
+        font=dict(size=15, family="Overused Grotesk, sans-serif", color='#898989')
     )
 
     # Customizing axes and grid

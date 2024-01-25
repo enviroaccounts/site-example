@@ -1,9 +1,73 @@
 {% extends "base.html" %}
 {% import 'templates/basic.html' as basic  with context %}
-{% block title %}Acknowledgements{% endblock %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% set title_text="Acknowledgements" %}
+
+{% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
-  {% call basic.render() %}
-    title headline copytext
+  {% call basic.render(title_text=title_text) %}
+    {% call page_container_plain.render() %}
+      {% call text_without_heading.render() %}
+        We would like to thank the following individuals and organisations for
+        their contribution to the development of the monitoring framework, the
+        development of this website, and accompanied reports&#58;
+      {% endcall %}
+      {% call text_list.render(gap="gap-2") %}
+        {% call text_list_item.render() %}
+          The steering group and working group members, for their insights,
+          advice and time provided in the development of the Upper Clutha
+          Catchment Health Monitoring Framework.
+        {% endcall %}
+        {% call text_list_item.render() %}
+          The Ministry for the Environment (MfE), for freely publishing their
+          environmental data on a publicly accessible web-based application
+          called the MfE Data Service
+        {% endcall %}
+        {% call text_list_item.render() %}
+          The Queenstown-Lakes District Council (QLDC), for sharing their
+          Quality of Life survey data and providing guidance on potential data
+          limitations and gaps important for data processing.
+        {% endcall %}
+        {% call text_list_item.render() %}
+          The Otago Regional Council (ORC), for their work in collecting and
+          sharing data relating to water quality on their publicly available
+          Environmental Data Portal.
+        {% endcall %}
+        {% call text_list_item.render() %}
+          The Central Otago District Council (CODC), for providing data for use
+          in the GHG emissions indicator.
+        {% endcall %}
+        {% call text_list_item.render() %}
+          The National Institute of Water and Atmospheric Research (NIWA), for
+          collecting data from weather stations across New Zealand and making
+          this raw data publicly available data on their National Climate
+          Database (CliFlo).
+        {% endcall %}
+        {% call text_list_item.render() %}
+          TrapNZ, for providing a national data management service for predator
+          trapping and monitoring, and sharing their data for the purpose of
+          this monitoring framework. We would like to thank the TrapNZ staff for
+          the additional data provided that was not readily accessible on their
+          website, to enhance our data processing.
+        {% endcall %}
+        {% call text_list_item.render() %}
+          The Land Information New Zealand (LINZ) in collaboration with the
+          Wilding Conifer Information System (WCIS), for providing information
+          and data related to the national wilding conifer control programme. We
+          would like to give thanks to the WCIS staff for sharing additional
+          data that was not accessible on their WCIS app yet, and providing
+          guidance on existing data limitations, gaps, and potential alternative
+          data sources.
+        {% endcall %}
+        {% call text_list_item.render() %}
+          Aurora Energy, for providing energy consumption data for use in the
+          GHG emissions indicator.
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
   {% endcall %}
 {% endblock %}

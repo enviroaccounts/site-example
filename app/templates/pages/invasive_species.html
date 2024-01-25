@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% import 'templates/indicator.html' as indicator  with context %}
+{% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
 {% import 'organisims/child_container_forty_percent_basis.html' as child_container_forty_percent_basis  with context %}
@@ -7,6 +7,9 @@
 {% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
+{% import 'organisims/flyout.html' as flyout with context %}
+{% import 'organisims/graph_container_small.html' as graph_container_small with context %}
+{% import 'organisims/graph_container_medium.html' as graph_container_medium with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
@@ -17,23 +20,23 @@
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
-  {% call indicator.render(title_text=title_text) %}
+  {% call basic.render(title_text=title_text) %}
     <!-- content-first section   -->
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
         {% call text_without_heading.render() %}
-          New Zealand’s biodiversity is unique: 100% of the country’s frogs and
-          reptiles, 90% of the insects, 80% of vascular plants, and 25% of bird
-          species are only found in New Zealand3.
+          New Zealand&#39;s biodiversity is unique: 100% of the country&#39;s
+          frogs and reptiles, 90% of the insects, 80% of vascular plants, and
+          25% of bird species are only found in New Zealand<sup>3</sup>.
         {% endcall %}
         {% call text_without_heading.render() %}
           Invasive species are recognised as an important challenge in the
           catchment and greater region. The Otago Regional Council has
-          classified 49 species4 of plants and animals in the region as pests
-          due to the threats they pose. With that we are home to a valuable
-          ecosystem that needs protecting and restoring.
+          classified 49 species<sup>4</sup> of plants and animals in the region
+          as pests due to the threats they pose. With that we are home to a
+          valuable ecosystem that needs protecting and restoring.
         {% endcall %}
         {% call text_without_heading.render() %}
           Monitoring the extent of invasive species can therefore provide an
@@ -43,8 +46,14 @@
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Heat map of pest control areas in the catchment.") %}
-          <!-- graph placeholder -->
+        {% call(content) graph_frame.render(graph_title="Heat map of pest control areas in the catchment.",flyout_id="placeholder2") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="placeholder2") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            <!-- graph placeholder -->
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -68,8 +77,14 @@
           {% endcall %}
         {% endcall %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Predator control data over the last three years.") %}
-          {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+        {% call(content) graph_frame.render(graph_title="Predator control data over the last three years.",flyout_id="flyout_PredatorControl") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_PredatorControl") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+            {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -105,8 +120,16 @@
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Type of pests being caught in traps across the catchment.") %}
-          {{ PredatorType.create_figure().to_html(div_id="PredatorType",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+        {% call(content) graph_frame.render(graph_title="Type of pests being caught in traps across the catchment.",flyout_id="flyout_PredatorType") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_PredatorType") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+          {% call graph_container_medium.render() %}
+              {{ PredatorType.create_figure().to_html(div_id="PredatorType",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+            {% endcall %}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -140,16 +163,18 @@
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
-        {% call graph_frame.render(graph_title="Wilding pines control efforts by WCIS.") %}
-          {{ WildingPines.create_figure().to_html(div_id="WildingPines",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+        {% call(content) graph_frame.render(graph_title="Wilding pines control efforts by WCIS.",flyout_id="flyout_WildingPines") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_WildingPines") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            {% call graph_container_small.render() %}
+              {{ WildingPines.create_figure().to_html(div_id="WildingPines",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+            {% endcall %}
+          {% endif %}
         {% endcall %}
       {% endcall %}
-    {% endcall %}
-
-    <!-- divider section -->
-    {% call page_container_plain.render() %}
-      <!-- divider atom-->
-      {{ divider.render(divider_width="border-b-6") }}
     {% endcall %}
   {% endcall %}
 {% endblock %}
