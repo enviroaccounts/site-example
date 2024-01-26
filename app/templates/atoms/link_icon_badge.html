@@ -1,15 +1,32 @@
 {%- macro render(url="#",active=False) -%}
   <a
-    class="group md:w-full md:flex-1 md:flex-grow md:rounded-t-none md:rounded-b-full md:items-end md:pb-[7%] w-10 h-10 rounded-full flex justify-center z-20 items-center cursor-pointer
+    class="group md:w-full md:flex-1 md:flex-grow md:rounded-t-none md:rounded-b-full md:items-center w-10 h-10 rounded-full flex md:flex-col  justify-center z-20 items-center cursor-pointer md:gap-2 
     {% if active %}
       md:h-full bg-light-grey xl:shadow-custom-border-xl
-      md:shadow-custom-border-md shadow-custom-border-sm
+      md:shadow-custom-border-md shadow-custom-border-sm md:pt-[12%]
       {%else%}
-      md:h-[82%] bg-light-grey lg:rounded-b-full lg:items-end lg:pb-[7%]
+      md:h-[82%] bg-light-grey lg:rounded-b-full lg:items-center md:pt-[7%]
     {% endif %}
     hover:bg-light-grey hover:xl:shadow-custom-border-xl hover:md:shadow-custom-border-md hover:shadow-custom-border-sm hover:md:h-full hover:transition-all hover:duration-500 hover:ease-out"
     href="{{ url }}"
   >
     {{ caller() }}
+    {% if not active %}
+    <svg
+    class="w-2.5 h-2.5"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 10 6"
+  >
+    <path
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="m1 1 4 4 4-4"
+    />
+  </svg>
+  {% endif %}
   </a>
 {%- endmacro -%}
