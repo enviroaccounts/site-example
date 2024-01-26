@@ -11,6 +11,7 @@
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/graph_container_small.html' as graph_container_small with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
+{% import 'organisims/graph_container_large.html' as graph_container_large with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
@@ -153,7 +154,9 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
+          {% call graph_container_large.render() %}
             {{ GHGEmissionsBySector.create_figure().to_html(div_id="GHGEmissionsBySector",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+          {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
