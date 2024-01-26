@@ -9,11 +9,13 @@
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/graph_container_small.html' as graph_container_small with context %}
 {% import 'organisims/graph_container_medium.html' as graph_container_medium with context %}
+{% import 'organisims/table_container.html' as table_container with context %}
+{% import 'organisims/table_container.html' as table_container with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
-{% import 'atoms/divider.html' as divider with context %}
+{% import 'atoms/divider.html' as divider with context %}table_container
 {% import 'atoms/map_land_use.html' as map_land_use with context %}
 {% set title_text="Land use change" %}
 
@@ -50,8 +52,8 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          {% call map_land_use.render() %}
-          {% endcall %}
+            {% call map_land_use.render() %}
+            {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -109,60 +111,56 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            <div class="overflow-x-auto">
-              <table
-                class="min-w-full bg-grey-900 text-white text-body font-light font-inter tracking-default xl:text-lg xl:leading-7 lg:text-base lg:leading-snug md:text-xs md:leading-none text-xs leading-tight"
-              >
-                <thead>
-                  <tr>
-                    <th scope="col" class="py-3 px-6">Land Use Category</th>
-                    <th scope="col" class="py-3 px-6">2016 (ha)</th>
-                    <th scope="col" class="py-3 px-6">
-                      Net change since 1990 (ha)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="text-black">
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Forest</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">76,000</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">392</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">
-                      Grassland with woody biomass
-                    </td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">50,500</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">-932</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Production grassland</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">247,800</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">35</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Cropland</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">1,100</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">-18</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Wetland</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">39,400</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">-21</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Built-up area</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">1,400</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">551</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Other</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">42,600</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">-7</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            {% call table_container.render() %}
+              <thead>
+                <tr>
+                  <th scope="col" class="py-3 px-6">Land Use Category</th>
+                  <th scope="col" class="py-3 px-6">2016 (ha)</th>
+                  <th scope="col" class="py-3 px-6">
+                    Net change since 1990 (ha)
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-black">
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Forest</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">76,000</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">392</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">
+                    Grassland with woody biomass
+                  </td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">50,500</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">-932</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Production grassland</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">247,800</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">35</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Cropland</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">1,100</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">-18</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Wetland</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">39,400</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">-21</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Built-up area</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">1,400</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">551</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Other</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">42,600</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">-7</td>
+                </tr>
+              </tbody>
+            {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
