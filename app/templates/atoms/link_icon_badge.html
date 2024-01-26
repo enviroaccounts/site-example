@@ -4,7 +4,7 @@
     {% if active %}
       md:h-full bg-light-grey xl:shadow-custom-border-xl
       md:shadow-custom-border-md shadow-custom-border-sm md:pt-[12%]
-      {%else%}
+    {% else %}
       md:h-[82%] bg-light-grey lg:rounded-b-full lg:items-center md:pt-[7%]
     {% endif %}
     hover:bg-light-grey hover:xl:shadow-custom-border-xl hover:md:shadow-custom-border-md hover:shadow-custom-border-sm hover:md:h-full hover:transition-all hover:duration-500 hover:ease-out"
@@ -12,21 +12,21 @@
   >
     {{ caller() }}
     {% if not active %}
-    <svg
-    class="w-2.5 h-2.5"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 10 6"
-  >
-    <path
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="m1 1 4 4 4-4"
-    />
-  </svg>
-  {% endif %}
+      <svg
+        class="hidden md:block md:w-2.5 md:h-2.5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 10 6"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m1 1 4 4 4-4"
+        />
+      </svg>
+    {% endif %}
   </a>
 {%- endmacro -%}
