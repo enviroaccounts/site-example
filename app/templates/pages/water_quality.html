@@ -72,8 +72,11 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            {% call map_water_sites.render() %}
-            {% endcall %}
+          <img
+          src="/static/images/maps/map_water_sites.svg"
+          alt="Water quality measurement sites map"
+          title="Water quality measurement sites map"
+        />
           {% endif %}
         {% endcall %}
       {% endcall %}

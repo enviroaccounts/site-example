@@ -52,8 +52,11 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            {% call map_land_use.render() %}
-            {% endcall %}
+            <img
+            src="/static/images/maps/map_landuse.svg"
+            alt="Landuse Map"
+            title="Landuse Map"
+          />
           {% endif %}
         {% endcall %}
       {% endcall %}

@@ -54,8 +54,11 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            {% call map_pestcontrol_heat.render() %}
-            {% endcall %}
+            <img
+            src="/static/images/maps/map_pestcontrol_heat.svg"
+            alt="Pest Control Heat Map"
+            title="Pest Control Heat Map"
+          />
           {% endif %}
         {% endcall %}
       {% endcall %}

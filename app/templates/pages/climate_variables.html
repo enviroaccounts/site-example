@@ -48,8 +48,11 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          {% call map_climate_variable.render() %}
-          {% endcall %}
+          <img
+          src="/static/images/maps/map_climate_variables.svg"
+          alt="Climate Variables"
+          title="Climate Variables"
+        />
           {% endif %}
         {% endcall %}
       {% endcall %}
