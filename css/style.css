@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hover Effect for Child Elements: */
+
+/****************
+ Hover Effect for Child Elements
+ ****************/
 .leanmore_link_div:hover .leanmore_link {
   color: black; 
 }
@@ -33,6 +36,9 @@
 }
 
 
+/****************
+ Plot container 
+ ****************/
 .graph_container_small {
   width: 100%;
   padding-top: 80%; 
@@ -75,9 +81,27 @@
 }
 }
 
+/****************
+  Home page animation
+ ****************/
 
+@keyframes moveIcon {
+  from {
+    top: var(--initial-top); 
+    left: var(--initial-left); 
+  }
+  to {
+    top: var(--target-top); 
+    left: var(--target-left);
+  }
+}
 
+.icon_climate_variables {
+  position: absolute;
+  animation: moveIcon 1s ease-out forwards;
+  --initial-top: 200px; 
+  --initial-left: 256px; 
+  --target-top: 743px; 
+  --target-left: 277px; 
 
-/* .padding-block-20 {
-  padding-block: 20%;
-} */
+}

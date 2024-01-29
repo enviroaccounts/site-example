@@ -1,10 +1,109 @@
 {% extends "base.html" %}
 {% import 'templates/basic.html' as basic  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% set title_text="Home" %}
 
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
   {% call basic.render(title_text=title_text) %}
+    {% call page_container_plain.render() %}
+      <div class="relative">
+        <img
+          class="w-full mb-12 environment-graph"
+          src="/static/images/graphs/hero.svg"
+          alt="Environmental illustration"
+          title="Environmental illustration"
+          width="56"
+          height="56"
+        />
+        <div
+          class="text-black uppercase font-bold font-overused-grotesk xl:text-2xl xl:leading-snug lg:text-lg lg:leading-tight md:text-sm md:leading-3 text-base leading-none tracking-tight p-10 border-4 border-grey-900 rounded-3xl grid grid-cols-2 gap-6"
+        >
+          <div class="flex flex-row items-center justify-start gap-2">
+            <p>climate_variables</p>
+            <img
+              src="/static/images/icons/climate_variables.svg"
+              alt="Climate Variables"
+              title="Climate Variables"
+              width="56"
+              height="56"
+              class="icon_climate_variables environment_icon"
+            />
+          </div>
+          <div class="flex flex-row items-center justify-start gap-2">
+            <p>greenhouse_gas_emissions</p>
+            <img
+              src="/static/images/icons/greenhouse_gas_emissions.svg"
+              alt="Greenhouse Gas Emissions "
+              title="Greenhouse Gas Emissions"
+              width="56"
+              height="56"
+              class="icon_greenhouse_gas_emissions environment_icon "
+            />
+          </div>
+          <div class="flex flex-row items-center justify-start gap-2">
+            <p>land_use_change</p>
+            <img
+              src="/static/images/icons/land_use_change.svg"
+              alt="Landuse change"
+              title="Landuse change"
+              width="56"
+              height="56"
+              class="icon_land_use_change environment_icon"
+            />
+          </div>
+
+          <div class="flex flex-row items-center justify-start gap-2">
+            <p>social_wellbeing</p>
+            <img
+              src="/static/images/icons/social_wellbeing.svg"
+              alt="Social Wellbeing"
+              title="Social Wellbeing"
+              width="56"
+              height="56"
+              class="icon_social_wellbeing environment_icon"
+            />
+          </div>
+
+          <div class="flex flex-row items-center justify-start gap-2">
+            <p>water_quality</p>
+            <img
+              src="/static/images/icons/water_quality.svg"
+              alt="Water quality"
+              title="Water quality"
+              width="56"
+              height="56"
+              class="icon_water_quality environment_icon"
+            />
+          </div>
+
+          <div class="flex flex-row items-center justify-start gap-2">
+            <p>invasive_species</p>
+            <img
+              src="/static/images/icons/invasive_species.svg"
+              alt="Invasive Species"
+              title="Invasive Species"
+              width="56"
+              height="56"
+              class="icon_invasive_species environment_icon"
+            />
+          </div>
+        </div>
+      </div>
+    {% endcall %}
   {% endcall %}
+{% endblock %}
+
+{% block script_end %}
+  <script>
+    window.addEventListener("scroll", () => {
+      const scrollFraction =
+        window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
+      const icon = document.querySelector(".icon_climate_variables");
+
+      icon.style.animationPlayState = "paused"; 
+      icon.style.animationDelay = `-${scrollFraction}s`;
+    });
+  </script>
 {% endblock %}
