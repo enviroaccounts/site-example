@@ -1,7 +1,6 @@
 {% import 'atoms/subhead_02_textstyle.html' as subhead_02_textstyle with context %}
 {% import 'atoms/footer_textstyle.html' as footer_textstyle with context %}
 {% import 'atoms/footer_02_textstyle.html' as footer_02_textstyle with context %}
-{% import 'atoms/icon_view_data_source_no_badge.html' as icon_view_data_source_no_badge with context %}
 {% import 'atoms/icon_frame.html' as icon_frame with context %}
 
 {%- macro render(flyout_id="drawer-disabled-backdrop") -%}
@@ -15,7 +14,11 @@
   >
     <div class="flex flex-row justify-start items-center gap-3 mb-5">
       <div class="lg:w-6 lg:h-6 md:w-5 md:h-5 xs:w-4 xs:h-4">
-        {{ icon_view_data_source_no_badge.render() }}
+        <img
+        src="/static/images/icons/icon_data_source_plain.svg"
+        alt="Data source"
+        title="Data source"
+      />
       </div>
       {% call subhead_02_textstyle.render(text_color="text-white") %}
         Data Source

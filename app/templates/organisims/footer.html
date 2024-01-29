@@ -1,4 +1,3 @@
-{% import 'atoms/logo_wai_wanaka.html' as logo_wai_wanaka with context %}
 {% import 'atoms/footer_02_textstyle.html' as footer_02_textstyle with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/link_plain.html' as link_plain with context %}
@@ -10,8 +9,11 @@
   >
     <!-- wai wanaka logo -->
     {% call logo_frame.render() %}
-      {% call logo_wai_wanaka.render() %}
-      {% endcall %}
+      <img
+      src="/static/images/icons/wai_wanaka_logo.svg"
+      alt="Wai wanaka logo"
+      title="Wai wanaka logo"
+    />
     {% endcall %}
     <!-- wai wanaka link-->
     {% call link_plain.render(url="https://waiwanaka.nz/") %}
