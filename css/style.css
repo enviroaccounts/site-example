@@ -96,12 +96,68 @@
   }
 }
 
+@keyframes returnIcon {
+  from {
+    top: var(--target-top); 
+    left: var(--target-left);
+  }
+  to {
+    top: var(--initial-top); 
+    left: var(--initial-left); 
+  }
+}
+
 .icon_climate_variables {
   position: absolute;
-  animation: moveIcon 1s ease-out forwards;
+  animation: moveIcon 2s ease-in forwards;
   --initial-top: 200px; 
   --initial-left: 256px; 
   --target-top: 743px; 
   --target-left: 277px; 
 
+}
+
+.icon_land_use_change {
+  position: absolute;
+  animation: moveIcon 2s ease-in forwards;
+  --initial-top: 351px; 
+  --initial-left: 229px; 
+  --target-top: 796px; 
+  --target-left: 278px; 
+}
+
+.icon_greenhouse_gas_emissions {
+  position: absolute;
+  animation: moveIcon 2s ease-in forwards;
+  --initial-top: 377px; 
+  --initial-left: 472px; 
+  --target-top: 744px; 
+  --target-left: 920px; 
+}
+
+.icon_social_wellbeing {
+  position: absolute;
+  animation: moveIcon 2s ease-in forwards;
+  --initial-top: 308px; 
+  --initial-left: 526px; 
+  --target-top: 788px; 
+  --target-left: 800px; 
+}
+
+.icon_water_quality {
+  position: absolute;
+  animation: moveIcon 2s ease-in forwards;
+  --initial-top: 447px; 
+  --initial-left: 500px; 
+  --target-top: 844px; 
+  --target-left: 278px; 
+}
+
+.icon_invasive_species {
+  position: absolute;
+  animation: moveIcon 2s ease-in forwards;
+  --initial-top: 398px; 
+  --initial-left: 585px; 
+  --target-top: 855px; 
+  --target-left: 800px; 
 }

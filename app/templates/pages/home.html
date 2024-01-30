@@ -96,14 +96,22 @@
 {% endblock %}
 
 {% block script_end %}
-  <script>
-    window.addEventListener("scroll", () => {
-      const scrollFraction =
-        window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
-      const icon = document.querySelector(".icon_climate_variables");
+<script>
+  let lastScroll = 0;
+  const icons = document.querySelectorAll(".environment_icon");
 
-      icon.style.animationPlayState = "paused"; 
-      icon.style.animationDelay = `-${scrollFraction}s`;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    icons.forEach(icon => {
+      if (currentScroll <= lastScroll) {
+        icon.style.animation = "returnIcon 1s ease-in forwards";
+      } else {
+        icon.style.animation = "moveIcon 1s ease-in forwards";
+      }
     });
-  </script>
+
+    lastScroll = currentScroll;
+  });
+</script>
 {% endblock %}
