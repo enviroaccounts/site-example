@@ -16,6 +16,8 @@
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
+{% import 'atoms/datasource_item.html' as datasource_item with context %}
+
 {% set title_text="Land use change" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -48,6 +50,9 @@
         {% call(content) graph_frame.render(graph_title="Land use cover across the catchment in 2016.",flyout_id="placeholder3") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder3") %}
+              {%call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
+              Land Use and Coverage Area frame Survey (LUCAS) 
+              {%endcall%}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -85,6 +90,9 @@
         {% call(content) graph_frame.render(graph_title="What was all this urbanised land before 1990?",flyout_id="flyout_LandUseChangeBuildUp") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_LandUseChangeBuildUp") %}
+            {%call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
+            Land Use and Coverage Area frame Survey (LUCAS) 
+            {%endcall%}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -110,6 +118,9 @@
         {% call(content) graph_frame.render(graph_title="Land Use Category",flyout_id="placeholder4") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder4") %}
+            {%call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
+            Land Use and Coverage Area frame Survey (LUCAS) 
+            {%endcall%}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -186,6 +197,9 @@
         {% call(content) graph_frame.render(graph_title="Land uses converted from forestland since 1990.",flyout_id="flyout_landUses") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_landUses") %}
+            {%call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
+            Land Use and Coverage Area frame Survey (LUCAS) 
+            {%endcall%}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -238,6 +252,9 @@
         {% call(content) graph_frame.render(graph_title="Land uses converted into exotic forest between 2008 and 2018.",flyout_id="flyout_LandUseChangeExoticForest") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_LandUseChangeExoticForest") %}
+            {%call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LDCB-LRIS Portal") %}
+            New Zealand Land Cover Database 
+            {%endcall%}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
