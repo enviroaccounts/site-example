@@ -93,6 +93,9 @@
           <!-- create_figure -->
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder6") %}
+            {% call datasource_item.render(link="https://letstalk.qldc.govt.nz/qol",link_title="Quality of Life Survey") %}
+            Data and information were obtained from the Queenstown Lakes District Council (QLDC) 
+          {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
