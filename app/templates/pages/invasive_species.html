@@ -17,7 +17,6 @@
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
-
 {% set title_text="Invasive Species" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -56,10 +55,10 @@
           {% endif %}
           {% if content == 'graph' %}
             <img
-            src="/static/images/maps/map_pestcontrol_heat.svg"
-            alt="Pest Control Heat Map"
-            title="Pest Control Heat Map"
-          />
+              src="/static/images/maps/map_pestcontrol_heat.svg"
+              alt="Pest Control Heat Map"
+              title="Pest Control Heat Map"
+            />
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -87,13 +86,16 @@
         {% call(content) graph_frame.render(graph_title="Predator control data over the last three years.",flyout_id="flyout_PredatorControl") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_PredatorControl") %}
+              {% call datasource_item.render(link="https://www.trap.nz/",link_title="TrapNZ") %}
+                Data were obtained from
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          {% call graph_container_large.render() %}
-            {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
-          {% endcall %}
-            {% endif %}
+            {% call graph_container_large.render() %}
+              {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+            {% endcall %}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -132,10 +134,13 @@
         {% call(content) graph_frame.render(graph_title="Type of pests being caught in traps across the catchment.",flyout_id="flyout_PredatorType") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_PredatorType") %}
+              {% call datasource_item.render(link="https://www.trap.nz/",link_title="TrapNZ") %}
+                Data were obtained from
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          {% call graph_container_medium.render() %}
+            {% call graph_container_medium.render() %}
               {{ PredatorType.create_figure().to_html(div_id="PredatorType",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
             {% endcall %}
           {% endif %}
@@ -175,6 +180,9 @@
         {% call(content) graph_frame.render(graph_title="Wilding pines control efforts by WCIS.",flyout_id="flyout_WildingPines") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_WildingPines") %}
+              {% call datasource_item.render(link="https://wildpines.linz.govt.nz/portal/apps/StoryMapBasic/index.html?appid=9694bf0ea4b24ee7b13ca368ef449049",link_title="WCIS") %}
+                Data were obtained from the Wilding Conifers Information System
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
