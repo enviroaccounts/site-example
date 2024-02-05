@@ -18,7 +18,6 @@
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
-
 {% set title_text="Greenhouse gas emissions" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -43,6 +42,27 @@
         {% call(content) graph_frame.render(graph_title="GHG emissions by sector in 2022 for the catchment. Forestry emissions are based on the most recent LUCAS data (from 2016).",flyout_id="flyout_GHGemissions") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_GHGemissions") %}
+              {% call datasource_item.render(link="https://www.auroraenergy.co.nz/",link_title="Aurora Energy") %}
+                Energy consumption data were obtained from the electricity
+                network
+              {% endcall %}
+              {% call datasource_item.render(link="https://www.stats.govt.nz/information-releases/agricultural-production-statistics-year-to-june-2022-provisional/",link_title="Stats NZ Agricultural Production Census") %}
+                Agricultural activity data were obtained from
+              {% endcall %}
+              {% call datasource_item.render(link="https://waiwanaka.nz/wp-content/uploads/2023/10/Technical-Report-and-SOPs.pdf",link_title="Technical Report") %}
+                Transport emissions were derived from fuel tax data which were
+                obtained from the Central Otago District Council. The detailed
+                method on how emissions were derived can be found in the
+              {% endcall %}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/",link_title="LUCAS") %}
+                GHG sequestration removals from forestry were estimated using
+                data obtained from the Land Use and Coverage Area frame Survey
+                (LUCAS) data set
+              {% endcall %}
+              {% call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LCDB") %}
+                GHG sequestration removals from forestry were estimated using
+                data obtained from the New Zealand Land Cover Database.
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -124,6 +144,10 @@
         {% call(content) graph_frame.render(graph_title="GHG emissions from the agriculture sector by industry.",flyout_id="flyout_GhgAgri") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_GhgAgri") %}
+              {% call datasource_item.render(link="https://www.stats.govt.nz/information-releases/agricultural-production-statistics-year-to-june-2022-provisional/",link_title="Stats NZ Agricultural Production Census") %}
+                Agricultural activity data were obtained from the (LUCAS) data
+                set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -153,12 +177,33 @@
         {% call(content) graph_frame.render(graph_title="GHG emissions and removals from the forestry sector.",flyout_id="flyout_GHGEmissionsBySector") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_GHGEmissionsBySector") %}
+              {% call datasource_item.render(link="https://www.auroraenergy.co.nz/",link_title="Aurora Energy") %}
+                Energy consumption data were obtained from the electricity
+                network
+              {% endcall %}
+              {% call datasource_item.render(link="https://www.stats.govt.nz/information-releases/agricultural-production-statistics-year-to-june-2022-provisional/",link_title="Stats NZ Agricultural Production Census") %}
+                Agricultural activity data were obtained from
+              {% endcall %}
+              {% call datasource_item.render(link="https://waiwanaka.nz/wp-content/uploads/2023/10/Technical-Report-and-SOPs.pdf",link_title="Technical Report") %}
+                Transport emissions were derived from fuel tax data which were
+                obtained from the Central Otago District Council. The detailed
+                method on how emissions were derived can be found in the
+              {% endcall %}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/",link_title="LUCAS") %}
+                GHG sequestration removals from forestry were estimated using
+                data obtained from the Land Use and Coverage Area frame Survey
+                (LUCAS) data set
+              {% endcall %}
+              {% call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LCDB") %}
+                GHG sequestration removals from forestry were estimated using
+                data obtained from the New Zealand Land Cover Database.
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          {% call graph_container_large.render() %}
-            {{ GHGEmissionsBySector.create_figure().to_html(div_id="GHGEmissionsBySector",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
-          {% endcall %}
+            {% call graph_container_large.render() %}
+              {{ GHGEmissionsBySector.create_figure().to_html(div_id="GHGEmissionsBySector",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+            {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -197,6 +242,10 @@
         {% call(content) graph_frame.render(graph_title="GHG Emissions from the energy sector by location.",flyout_id="flyout_GhgEnergy") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_GhgEnergy") %}
+              {% call datasource_item.render(link="https://www.auroraenergy.co.nz/",link_title="Aurora Energy") %}
+                Energy consumption data were obtained from the electricity
+                network
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -233,6 +282,14 @@
         {% call(content) graph_frame.render(graph_title="GHG emissions and removals from the forestry sector.",flyout_id="flyout_GhgRemoval") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_GhgRemoval") %}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/",link_title="LUCAS") %}
+                GHG sequestration removals from forestry were estimated using
+                data obtained from the Land Use and Coverage Area frame Survey
+              {% endcall %}
+              {% call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LCDB") %}
+                GHG sequestration removals from forestry were estimated using
+                data obtained from the New Zealand Land Cover Database
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
