@@ -80,6 +80,17 @@
   position: relative;
 }
 }
+/* flyout */
+
+.flyout[aria-hidden="true"] {
+  opacity: 0;
+}
+
+.flyout[aria-modal="true"]{
+  opacity: 0.95;
+}
+
+
 
 /****************
   Home page animation
