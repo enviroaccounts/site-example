@@ -42,9 +42,9 @@ def main():
 def disclaimer():
     return render_template("pages/disclaimer.html")
 
-@app.route('/story')
+@app.route('/vision')
 def story():
-    return render_template("pages/story.html")
+    return render_template("pages/vision.html")
 
 @app.route('/sponsorship')
 def sponsorship():
