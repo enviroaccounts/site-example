@@ -44,6 +44,10 @@
           Monitoring the extent of invasive species can therefore provide an
           insight into the extent and control of threats to our ecosystems.
         {% endcall %}
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="503  ") %}
+          Increase in the number of traps between 2020 and 2021
+        {% endcall %}
       {% endcall %}
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
@@ -71,18 +75,22 @@
     {% endcall %}
 
     <!-- content-second section   -->
-    {% call page_container_plain.render() %}
+    {% call page_container_two_columns.render() %}
       <!-- full width organism with items aligned to end -->
-      {% call child_container_full_width_items_end.render() %}
-        {% call child_container_sixty_percent_width.render() %}
-          {% call text_without_heading.render() %}
-            Urban areas in Wānaka and Hāwea have increased since 1990. A
-            majority of this new urbanised landscape resulted from converting
-            productive grassland. However, total production grassland remained
-            constant, due to conversion of grassland with woody biomass.
-          {% endcall %}
+      {% call child_container_forty_percent_basis.render() %}
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="855 ") %}
+          Increase in the number of traps between 2021 and 2022.
         {% endcall %}
-        <!-- graph frame organism-->
+        {% call text_without_heading.render() %}
+          Urban areas in Wānaka and Hāwea have increased since 1990. A majority
+          of this new urbanised landscape resulted from converting productive
+          grassland. However, total production grassland remained constant, due
+          to conversion of grassland with woody biomass.
+        {% endcall %}
+      {% endcall %}
+      <!-- graph frame organism-->
+      {% call child_container_sixty_percent_basis.render() %}
         {% call(content) graph_frame.render(graph_title="Predator control data over the last three years.",flyout_id="flyout_PredatorControl") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_PredatorControl") %}
@@ -92,7 +100,7 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            {% call graph_container_large.render() %}
+            {% call graph_container_medium.render() %}
               {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
             {% endcall %}
           {% endif %}
@@ -119,13 +127,6 @@
           contribution to the national Predator Free 2050 goal, which is working
           towards an Aotearoa where our native species are safe from extinction
           and thrive alongside us.
-        {% endcall %}
-        <!-- call out molecule-->
-        {% call callout.render(statistic_value="503  ") %}
-          Increase in the number of traps between 2020 and 2021
-        {% endcall %}
-        {% call callout.render(statistic_value="855 ") %}
-          Increase in the number of traps between 2021 and 2022.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->

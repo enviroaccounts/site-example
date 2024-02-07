@@ -1,5 +1,7 @@
 {% import 'atoms/footer_02_textstyle.html' as footer_02_textstyle with context %}
-{% import 'atoms/divider.html' as divider with context %}
+{% import 'atoms/caption_textstyle.html' as footer_textstyle with context %}
+{% import 'atoms/divider.html' as divider with context %}child_container_full_width
+{% import 'organisims/footer_link_container.html' as footer_link_container with context %}
 {% import 'atoms/link_plain.html' as link_plain with context %}
 {% import 'atoms/logo_frame.html' as logo_frame with context %}
 
@@ -8,17 +10,27 @@
     class="flex justify-between items-end xl:border-t-6 border-t-4 border-grey-900 w-full pt-10 xl:pt-16 lg:pt-12 md:pt-4 rounded"
   >
     <!-- wai wanaka logo -->
-    {% call logo_frame.render() %}
-      <img
-      src="/static/images/icons/wai_wanaka_logo.svg"
-      alt="Wai wanaka logo"
-      title="Wai wanaka logo"
-    />
-    {% endcall %}
-    <!-- wai wanaka link-->
     {% call link_plain.render(url="https://waiwanaka.nz/") %}
-      {% call footer_02_textstyle.render() %}
-        waiwanaka.nz
+      {% call logo_frame.render() %}
+        <img
+          src="/static/images/icons/wai_wanaka_logo.svg"
+          alt="Wai wanaka logo"
+          title="Wai wanaka logo"
+        />
+      {% endcall %}
+    {% endcall %}
+    <!-- Find out more-->
+    {% call footer_link_container.render() %}
+      <!-- Email us-->
+      {% call link_plain.render(url="mailto:getinvolved@waiwanaka.nz") %}
+        {% call footer_02_textstyle.render() %}
+          Contact us
+        {% endcall %}
+      {% endcall %}
+      {% call link_plain.render(url="https://waiwanaka.nz/action-for-te-taiao/") %}
+        {% call footer_02_textstyle.render() %}
+          Find out more
+        {% endcall %}
       {% endcall %}
     {% endcall %}
   </div>
