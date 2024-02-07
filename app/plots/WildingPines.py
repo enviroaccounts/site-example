@@ -61,6 +61,8 @@ def create_wildingpines_bar_chart(years, days_operating, area_covered):
         margin=dict(l=0, r=0, t=0, b=0),
         legend=dict(
             font=dict(size=12),
+            itemclick=False,  
+            itemdoubleclick=False 
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='#F5F5F5', 

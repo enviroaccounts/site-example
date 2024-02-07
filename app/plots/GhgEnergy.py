@@ -68,7 +68,9 @@ def create_energy_consumption_pie_chart(labels, values):
             y=-0.1,
             xanchor="center",
             orientation="h",
-            font=dict(size=11) 
+            font=dict(size=11),
+            itemclick=False,  
+            itemdoubleclick=False 
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='#F5F5F5',

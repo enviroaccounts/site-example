@@ -52,7 +52,9 @@ def create_ghg_emissions_bar_chart(data_df):
             xanchor='right',
             yanchor='bottom',
             orientation="h",
-            font=dict(size=12, family="Overused Grotesk, sans-serif", color='#898989')
+            font=dict(size=12, family="Overused Grotesk, sans-serif", color='#898989'),
+            itemclick=False,  
+            itemdoubleclick=False 
         ),
         plot_bgcolor='#F5F5F5',
         paper_bgcolor='#F5F5F5',

@@ -64,7 +64,9 @@ def create_forest_land_use_pie_chart(labels, values):
             y=-0.1,
             xanchor="center",
             orientation="h",
-            font=dict(size=12) 
+            font=dict(size=12),
+            itemclick=False,  
+            itemdoubleclick=False 
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='#F5F5F5',

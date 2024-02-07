@@ -39,7 +39,6 @@ def create_predator_pie_chart(labels, values):
         insidetextorientation='auto',
         hoverinfo='label+percent',
         hovertemplate='<b>%{label}</b><br>%{percent:.0%}<br>Total: %{value}<extra></extra>',
-        # texttemplate=custom_text  # Use custom text labels
         hole=.70,
         rotation=-50, 
         marker=dict(colors=pie_colors),  # Apply custom colors
@@ -71,7 +70,9 @@ def create_predator_pie_chart(labels, values):
             xanchor='center',
             yanchor='top',
             orientation='h',  # Keep the legend horizontal
-            font=dict(size=12)
+            font=dict(size=12),
+            itemclick=False,  
+            itemdoubleclick=False 
         ),
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='#F5F5F5',
@@ -85,15 +86,6 @@ def create_predator_pie_chart(labels, values):
 
 
     return fig
-
-
-# def setup_predator_layout(app, fig_pie_chart):
-#     """Sets up the layout of the Dash app for predator visualization."""
-#     app.layout = html.Div(children=[
-#         html.Div([
-#             dcc.Graph(id='predator-pie-chart', figure=fig_pie_chart)
-#         ])
-#     ], id='predator-pie-chart-layout')
 
 
 def create_figure():
