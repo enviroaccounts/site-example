@@ -37,22 +37,22 @@
           Invasive species are recognised as an important challenge in the
           catchment and greater region. The Otago Regional Council has
           classified 49 species<sup>4</sup> of plants and animals in the region
-          as pests due to the threats they pose. With that we are home to a
+          as pests due to the threats they pose. With that the Upper Clutha Catchment is home to a
           valuable ecosystem that needs protecting and restoring.
         {% endcall %}
+                <!-- call out molecule-->
+          {% call callout.render(statistic_value="503  ") %}
+                Increase in the number of traps between 2020 and 2021
+          {% endcall %}
         {% call text_without_heading.render() %}
-          Monitoring the extent of invasive species can therefore provide an
-          insight into the extent and control of threats to our ecosystems.
-        {% endcall %}
-        <!-- call out molecule-->
-        {% call callout.render(statistic_value="503  ") %}
-          Increase in the number of traps between 2020 and 2021
+          Monitoring the extent of invasive species can provide an
+          insight into the extent and control of threats to our ecosystems.The predator control areas with the catchment are highlighted on the map.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
-        {% call(content) graph_frame.render(graph_title="Heat map of pest control areas in the catchment.",flyout_id="placeholder2") %}
+        {% call(content) graph_frame.render(graph_title="Heat map of pest control areas within the catchment.",flyout_id="placeholder2") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder2") %}
             {% endcall %}
@@ -78,15 +78,15 @@
     {% call page_container_two_columns.render() %}
       <!-- full width organism with items aligned to end -->
       {% call child_container_forty_percent_basis.render() %}
+      {% call text_without_heading.render() %}
+      Pest control efforts across the catchment have been on a steady increase the last three years, as the number of active traps (including automatic traps) across the catchment has been increasing.
+      {% endcall %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="855 ") %}
           Increase in the number of traps between 2021 and 2022.
         {% endcall %}
         {% call text_without_heading.render() %}
-          Urban areas in Wānaka and Hāwea have increased since 1990. A majority
-          of this new urbanised landscape resulted from converting productive
-          grassland. However, total production grassland remained constant, due
-          to conversion of grassland with woody biomass.
+        The number of pests caught continues to increase as well, indicating that pest presence remains an issue.
         {% endcall %}
       {% endcall %}
       <!-- graph frame organism-->
@@ -119,9 +119,13 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         {% call text_without_heading.render() %}
-          The dominating pests caught in the catchment are rats (33%) followed
-          by possums(17%).
+          In 2022, the dominating pests caught in the catchment are rats (40%) followed
+          by possums(12%).
         {% endcall %}
+          <!-- call out molecule-->
+          {% call callout.render(statistic_value="40%") %}
+            The majority of pests caught in the catchment are rats.
+          {% endcall %}
         {% call text_without_heading.render() %}
           Continued efforts to control pests in the catchment is an important
           contribution to the national Predator Free 2050 goal, which is working
@@ -163,15 +167,15 @@
           Wilding conifers are a threat to native plants and animals as they
           compete for sunlight and water. Particularly high-risk areas of
           wilding conifer invasion are the high country and tussock grasslands
-          of the catchment , which are further threatened by water demand and
+          of the catchment, which are further threatened by water demand and
           fire risk associated by the increase in wilding conifers. While WCIS,
-          Whakatipu Wilding Conifer Control Group, and Central Otago Wilding
+          the Whakatipu Wilding Conifer Control Group, and Central Otago Wilding
           Control Group continue their wilding pine management efforts, it is
           important to consider the increasing threat that spreading exotic
           forest cover may pose on the catchment.
         {% endcall %}
         {% call text_without_heading.render() %}
-          The wilding data are currently only sourced from the WCIS, which only
+          The wilding conifer data are currently only sourced from the WCIS, which only
           covers a fraction of the spatial extent of the catchment.
         {% endcall %}
       {% endcall %}
