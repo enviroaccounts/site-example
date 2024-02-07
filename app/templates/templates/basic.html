@@ -84,6 +84,9 @@
             Home
           {% endcall %}
           {% call nav_item_dropdown_menu.render() %}
+            {% call nav_dropdown_item.render(url="/reference") %}
+              Reference
+            {% endcall %}
             {% call nav_dropdown_item.render(url="/vision") %}
               Vision
             {% endcall %}
@@ -92,8 +95,8 @@
             {% endcall %}
           {% endcall %}
           {% call nav_item.render(url="/disclaimer") %}
-          Disclaimer
-        {% endcall %}
+            Disclaimer
+          {% endcall %}
         {% endif %}
       {% endcall %}
     {% endcall %}
