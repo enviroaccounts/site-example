@@ -32,7 +32,8 @@
         {% call child_container_full_width.render() %}
           {% call text_without_heading.render() %}
             Water quality rankings are provided for four parameters which were
-            selected for their importance for ecosystem and human health:
+            selected for their importance for ecosystem and human health (see
+            table below):
           {% endcall %}
           {% call text_list.render() %}
             {% call text_list_item.render() %}
@@ -53,7 +54,8 @@
         {% call text_without_heading.render() %}
           Water quality was assessed in accordance with the guidelines provided
           by the National Policy Statement for Freshwater Management 2020
-          (NPS-FM), which ranks each parameter from A (good) to D or E (poor).
+          (NPS-FM), which ranks each parameter from A (good) to D or E
+          (poor)<sup>11</sup>.
         {% endcall %}
 
         {% call text_without_heading.render() %}
@@ -72,11 +74,11 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          <img
-          src="/static/images/maps/map_water_sites.svg"
-          alt="Water quality measurement sites map"
-          title="Water quality measurement sites map"
-        />
+            <img
+              src="/static/images/maps/map_water_sites.svg"
+              alt="Water quality measurement sites map"
+              title="Water quality measurement sites map"
+            />
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -93,7 +95,7 @@
       <!-- full width organism with items aligned to end -->
       {% call child_container_full_width_items_end.render() %}
         <!-- graph frame organism-->
-        {% call(content) graph_frame.render(graph_title="Water quality parameters included in this monitoring framework",flyout_id="placeholder8") %}
+        {% call(content) graph_frame.render(graph_title="Water quality parameters included in this monitoring framework.",flyout_id="placeholder8") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder8") %}
             {% endcall %}
@@ -159,9 +161,9 @@
                   <td class="md:py-4 md:px-6 py-1 px-2 bg-neutral-100">
                     E. coli (Escherichia coli) is an indicator of the faecal
                     contamination and the presence of disease-causing organisms.
-                    Common sources of E. coli bacteria are human wastewater
+                    Common sources of E.coli bacteria are human wastewater
                     discharges, animal waste, bird droppings and stormwater
-                    run-off. E. coli is harmful to human health in high
+                    run-off. E.coli is harmful to human health in high
                     concentrations.
                   </td>
                 </tr>
@@ -186,12 +188,13 @@
         {% call(content) graph_frame.render(graph_title="The 'current state’ of lake and river water quality in the catchment.",flyout_id="placeholder9") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder9") %}
-            {%call datasource_item.render(link="https://envdata.orc.govt.nz/AQWebPortal/Disclaimer?returnUrl=%2FData",link_title="AQWebPortal") %}
-            Data were obtained from the Otago Regional Council Environmental Data Portal website
-            {%endcall%}            
-            {%call datasource_item.render(link="https://www.lawa.org.nz/",link_title="LAWA") %}
-            Data were obtained from the Land Air Water Aotearoa website
-            {%endcall%} 
+              {% call datasource_item.render(link="https://envdata.orc.govt.nz/AQWebPortal/Disclaimer?returnUrl=%2FData",link_title="AQWebPortal") %}
+                Data were obtained from the Otago Regional Council Environmental
+                Data Portal website
+              {% endcall %}
+              {% call datasource_item.render(link="https://www.lawa.org.nz/",link_title="LAWA") %}
+                Data were obtained from the Land Air Water Aotearoa website
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -208,7 +211,7 @@
             Monitoring water quality parameters provides a comprehensive
             understanding of the health of aquatic systems, their impact on
             human well-being, and the need for sustainable environmental
-            management practices&#59;
+            management practices&#58;
           {% endcall %}
           {% call text_list.render() %}
             {% call text_list_item.render() %}
@@ -228,10 +231,16 @@
               potential threats to native species and habitats and it helps to
               identify and manage nutrient pollution, preventing detrimental
               effects, such as an ecological imbalance characterised by harmful
-              algal blooms and oxygen depletion&#59;
+              algal blooms and oxygen depletion.
             {% endcall %}
           {% endcall %}
-        {% endcall %}
+          {% endcall %}
+          {% call text_without_heading.render() %}
+            ORC regularly monitors the water quality around Otago, which
+            includes the Upper Clutha catchment. For the most recent
+            measurements and evaluations of water quality, please visit the <a href="https://envdata.orc.govt.nz/AQWebPortal/Data/Map/Parameter/E-Coli%20MPN/Interval/Latest  " class="underline">ORC
+            Environmental Portal website</a>.
+          {% endcall %}  
       {% endcall %}
     {% endcall %}
   {% endcall %}
