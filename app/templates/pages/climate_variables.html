@@ -29,11 +29,11 @@
         {% call text_without_heading.render() %}
           Climate variables are a key driver for many measures of catchment
           health due to their influence on the ecosystem as well as water
-          quality and quantity. This basic includes temperature and rainfall
+          quality and quantity. This indicator includes temperature and rainfall
           observations obtained from four, currently active, measurement sites.
         {% endcall %}
         {% call text_without_heading.render() %}
-          However, future expansion of the network of weather stations and
+          Future expansion of the network of weather stations and
           parameters monitored would be extremely valuable to obtain a more
           robust representation of the climatic conditions of the catchment.
         {% endcall %}
@@ -41,9 +41,9 @@
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism -->
-        {% call(content) graph_frame.render(graph_title="Active weather stations in the catchment",flyout_id="placeholder1") %}
+        {% call(content) graph_frame.render(graph_title="Active weather stations in the Upper Clutha Catchment.",flyout_id="flyout_ClimateVariables") %}
           {% if content == 'flyout' %}
-            {% call flyout.render(flyout_id="placeholder1") %}
+            {% call flyout.render(flyout_id="flyout_ClimateVariables") %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -71,7 +71,7 @@
           {% call text_with_heading.render(subhead_01_text="Wānaka Airport ") %}
           {% endcall %}
           <!-- call out molecule-->
-          {% call callout.render(statistic_value="**Place holder**") %}
+          {% call callout.render(statistic_value="Above the average ") %}
             Temperature data from 2022 show that our catchment continues to be
             slightly above the long-term average.
           {% endcall %}
@@ -102,28 +102,28 @@
 
     <!-- content-third section   -->
     {% call page_container_plain.render() %}
-      {% call text_without_heading.render() %}
-        The relationship between climate variables and other measures of
-        catchment health are complex, but linked. Rainfall and temperature
-        impact whether flora and fauna can flourish, may impede human recreation
-        opportunities both in the summer and winter, as well as pose threats to
-        the agricultural industry of the catchment.
-      {% endcall %}
-      {% call text_without_heading.render() %}
-        The range of some invasive species may increase to include our
-        catchment: for example, the sub-tropical bungalow palm, which currently
-        only grows on the North Island, could spread to the South Island under a
-        warming climate<sup>2</sup>. Furthermore, breeding seasons of invasive
-        predators, such as rats, possums and mice, may also extend due to higher
-        temperatures<sup>2</sup>, which can also accelerate the reproductive
-        cycle, leading to faster population growth, while rainfall influences
-        the availability of food, water, and shelter for pests.
-      {% endcall %}
-      {% call text_without_heading.render() %}
-        Climate data presented here are thus important to consider when, for
-        example, assessing the data presented as part of the invasive species
-        basic.
-      {% endcall %}
+      {% call child_container_full_width_items_end.render() %}
+        {% call text_without_heading.render() %}
+          The relationship between climate variables and other measures of
+          catchment health are complex, but linked. Rainfall and temperature
+          impact whether flora and fauna can flourish, may impede human recreation
+          opportunities both in the summer and winter, as well as pose threats to
+          the agricultural industry of the catchment.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          The range of some invasive species may increase within the Upper Clutha Catchment: for example, the sub-tropical bungalow palm, which currently
+          only grows on the North Island, could spread to the South Island under a
+          warming climate<sup>2</sup>. Furthermore, breeding seasons of invasive
+          predators, such as rats, possums and mice, may also extend due to higher
+          temperatures<sup>2</sup>, which can also accelerate the reproductive
+          cycle, leading to faster population growth. Rainfall, on the other hand,rainfall influences
+          the availability of food, water, and shelter for pests.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          Climate data presented here are thus important to consider when, for
+          example, assessing the data presented as part of the <a href="/invasive_species" class="underline">invasive species</a>.
+        {% endcall %}
+      {%endcall%}
     {% endcall %}
 
     <!-- divider section -->
