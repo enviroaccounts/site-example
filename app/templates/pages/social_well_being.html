@@ -11,6 +11,8 @@
 {% import 'organisims/graph_container_large.html' as graph_container_large with context %}
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
+{% import 'organisims/reference.html' as reference  with context %}
+{% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
@@ -19,6 +21,9 @@
 {% import 'atoms/text_list_item.html' as text_list_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
+
+
 {% set title_text="Social Well-being" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -164,6 +169,29 @@
           affordability of housing pose significant threats for the future
           health of the catchment, as residents may simply be unable to afford
           to support improvements.
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    {% call page_container_plain.render() %}
+      {% call reference.render() %}
+        {% call subhead_01_textstyle.render() %}
+          Reference
+        {% endcall %}
+        {% call reference_item.render(url="https://academic.oup.com/heapro/article/36/Supplement_1/i53/6460415",name=" online",additional_info=", last accessed Jan 2024.") %}
+        [5] Hancock, T. and the IUHPE&#39;s Global Working Group on Waiora Planetary Health: Towards healthy One Planet cities and communities: planetary health promotion at the local level, Health Promotion International, Volume 36, 2021 &minus; available
+        {% endcall %}
+        {% call reference_item.render(url="https://edition.cnn.com/2019/07/12/health/rich-people-climate-change-intl/index.html",name=" online",additional_info=", last accessed Jan 2024.") %}
+        [6] Bailey, S.: How rich people could help save the planet from climate change, CNN, Jul. 12, 2019 &minus; available
+        {% endcall %}
+        {% call reference_item.render(url="https://natlib.govt.nz/blog/posts/nature-and-nurture-connecting-conservation-and-wellbeing",name=" online",additional_info=", last accessed Jan 2024.") %}
+        [7] Williamson E. and Gaston N: Nature and nurture: Connecting conservation and wellbeing, National Library of New Zealand, 2020, available
         {% endcall %}
       {% endcall %}
     {% endcall %}
