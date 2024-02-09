@@ -5,7 +5,7 @@
 
 {%- macro render() -%}
   {% set  parent_caller = caller() %}
-    {% call text_list_plain.render(gap="gap-3") %}
-      {{ parent_caller }}
-    {% endcall %}
+  {% call text_list_plain.render(gap="gap-3") %}
+    {{ parent_caller }}
+  {% endcall %}
 {% endmacro %}

@@ -23,73 +23,72 @@
         >
           <div class="flex flex-row items-center justify-start gap-2">
             <p>climate_variables</p>
-            {%call icon_frame_with_circle_badge.render(image_class="icon_climate_variables environment_icon") %}
-            <img
-              src="/static/images/icons/climate_variables.svg"
-              alt="Climate Variables"
-              title="Climate Variables"
-              class="w-full h-full"
-            />
-            {%endcall%}
+            {% call icon_frame_with_circle_badge.render(image_class="icon_climate_variables environment_icon") %}
+              <img
+                src="/static/images/icons/climate_variables.svg"
+                alt="Climate Variables"
+                title="Climate Variables"
+                class="w-full h-full"
+              />
+            {% endcall %}
           </div>
           <div class="flex flex-row items-center justify-start gap-2">
             <p>greenhouse_gas_emissions</p>
-            {%call icon_frame_with_circle_badge.render(image_class="icon_greenhouse_gas_emissions environment_icon") %}
-            <img
-              src="/static/images/icons/greenhouse_gas_emissions.svg"
-              alt="Greenhouse Gas Emissions "
-              title="Greenhouse Gas Emissions"
-              class="w-full h-full"
-            />
-            {%endcall%}
+            {% call icon_frame_with_circle_badge.render(image_class="icon_greenhouse_gas_emissions environment_icon") %}
+              <img
+                src="/static/images/icons/greenhouse_gas_emissions.svg"
+                alt="Greenhouse Gas Emissions "
+                title="Greenhouse Gas Emissions"
+                class="w-full h-full"
+              />
+            {% endcall %}
           </div>
           <div class="flex flex-row items-center justify-start gap-2">
             <p>land_use_change</p>
-            {%call icon_frame_with_circle_badge.render(image_class="icon_land_use_change environment_icon") %}
-            <img
-              src="/static/images/icons/land_use_change.svg"
-              alt="Landuse change"
-              title="Landuse change"
-              class="w-full h-full"
-            />
-            {%endcall%}
+            {% call icon_frame_with_circle_badge.render(image_class="icon_land_use_change environment_icon") %}
+              <img
+                src="/static/images/icons/land_use_change.svg"
+                alt="Landuse change"
+                title="Landuse change"
+                class="w-full h-full"
+              />
+            {% endcall %}
           </div>
 
           <div class="flex flex-row items-center justify-start gap-2">
             <p>social_wellbeing</p>
-            {%call icon_frame_with_circle_badge.render(image_class="icon_social_wellbeing environment_icon") %}
-            <img
-              src="/static/images/icons/social_wellbeing.svg"
-              alt="Social Wellbeing"
-              title="Social Wellbeing"
-              class="w-full h-full"
-            />
-            {%endcall%}
+            {% call icon_frame_with_circle_badge.render(image_class="icon_social_wellbeing environment_icon") %}
+              <img
+                src="/static/images/icons/social_wellbeing.svg"
+                alt="Social Wellbeing"
+                title="Social Wellbeing"
+                class="w-full h-full"
+              />
+            {% endcall %}
           </div>
 
           <div class="flex flex-row items-center justify-start gap-2">
             <p>water_quality</p>
-            {%call icon_frame_with_circle_badge.render(image_class="icon_water_quality environment_icon") %}
-            <img
-              src="/static/images/icons/water_quality.svg"
-              alt="Water quality"
-              title="Water quality"
-              class="w-full h-full"
-            />
-            {%endcall%}
+            {% call icon_frame_with_circle_badge.render(image_class="icon_water_quality environment_icon") %}
+              <img
+                src="/static/images/icons/water_quality.svg"
+                alt="Water quality"
+                title="Water quality"
+                class="w-full h-full"
+              />
+            {% endcall %}
           </div>
 
           <div class="flex flex-row items-center justify-start gap-2">
             <p>invasive_species</p>
-            {%call icon_frame_with_circle_badge.render(image_class="icon_invasive_species environment_icon") %}
-            <img
-              src="/static/images/icons/invasive_species.svg"
-              alt="Invasive Species"
-              title="Invasive Species"
-              class="w-full h-full"
-            />
-            {%endcall%}
-
+            {% call icon_frame_with_circle_badge.render(image_class="icon_invasive_species environment_icon") %}
+              <img
+                src="/static/images/icons/invasive_species.svg"
+                alt="Invasive Species"
+                title="Invasive Species"
+                class="w-full h-full"
+              />
+            {% endcall %}
           </div>
         </div>
       </div>
@@ -98,22 +97,22 @@
 {% endblock %}
 
 {% block script_end %}
-<script>
-  let lastScroll = 0;
-  const icons = document.querySelectorAll(".environment_icon");
+  <script>
+    let lastScroll = 0;
+    const icons = document.querySelectorAll(".environment_icon");
 
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
 
-    icons.forEach(icon => {
-      if (currentScroll <= lastScroll) {
-        icon.style.animation = "returnIcon 1s ease-in forwards";
-      } else {
-        icon.style.animation = "moveIcon 1s ease-in forwards";
-      }
+      icons.forEach((icon) => {
+        if (currentScroll <= lastScroll) {
+          icon.style.animation = "returnIcon 1s ease-in forwards";
+        } else {
+          icon.style.animation = "moveIcon 1s ease-in forwards";
+        }
+      });
+
+      lastScroll = currentScroll;
     });
-
-    lastScroll = currentScroll;
-  });
-</script>
+  </script>
 {% endblock %}

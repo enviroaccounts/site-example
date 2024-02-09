@@ -21,7 +21,6 @@
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
-
 {% set title_text="Greenhouse gas emissions" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -303,10 +302,12 @@
           Reference
         {% endcall %}
         {% call reference_item.render(url="https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/queenstownnz/Queenstown_Lakes_Regenerative_Tourism_Plan_956930e4-1b59-4293-9294-96b5d5ec5196.pdf",name=" online",additional_info=", last accessed Jan 2024.") %}
-        [9] Destination Management Plan for Queenstown Lakes, Travel to a thriving future &minus; available
+          [9] Destination Management Plan for Queenstown Lakes, Travel to a
+          thriving future &minus; available
         {% endcall %}
         {% call reference_item.render(url="https://www.qldc.govt.nz/media/ie3jk5bb/qldc_climate-and-biodiversity-plan_jun22-web.pdf",name=" online",additional_info=", last accessed Jan 2024.") %}
-        [10] Queenstown Lakes Climate and Biodiversity Plan 2022-2025, July 2022 - available
+          [10] Queenstown Lakes Climate and Biodiversity Plan 2022-2025, July
+          2022 - available
         {% endcall %}
       {% endcall %}
     {% endcall %}

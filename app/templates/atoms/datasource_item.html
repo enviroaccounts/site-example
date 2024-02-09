@@ -2,17 +2,16 @@
 {% import 'atoms/footer_02_textstyle.html' as footer_02_textstyle with context %}
 
 {%- macro render(link="",link_title="") -%}
-{% set parent_caller=caller() %}
-<li>
+  {% set parent_caller=caller() %}
+  <li>
     <div class="flex flex-row justify-start items-center gap-4">
       {% call footer_textstyle.render(text_color="text-white") %}
         {{ parent_caller }}
       {% endcall %}
       <p class="self-center">&#8594;</p>
-      <a
-      href="{{link}}"  
-      >{% call footer_02_textstyle.render(text_color="text-white") %}
-          {{link_title}}
+      <a href="{{ link }}"
+        >{% call footer_02_textstyle.render(text_color="text-white") %}
+          {{ link_title }}
         {% endcall %}</a
       >
     </div>

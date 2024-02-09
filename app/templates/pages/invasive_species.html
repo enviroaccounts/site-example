@@ -20,7 +20,6 @@
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
-
 {% set title_text="Invasive Species" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -220,10 +219,12 @@
           Reference
         {% endcall %}
         {% call reference_item.render(url="https://environment.govt.nz/publications/environment-new-zealand-2007/chapter-12-biodiversity/introduction/",name=" online",additional_info=", last accessed Jan 2024.") %}
-        [3] Environment New Zealand 2007, Ministry for the Environment, Manatū Mō Te Taiao, Report ME 847, Chapter 12 &minus; available
+          [3] Environment New Zealand 2007, Ministry for the Environment, Manatū
+          Mō Te Taiao, Report ME 847, Chapter 12 &minus; available
         {% endcall %}
         {% call reference_item.render(url="https://www.orc.govt.nz/plans-policies-reports/regional-plans-and-policies/regional-pest-management-plan",name=" online",additional_info=", last accessed Jan 2024.") %}
-        [4] Otago Pest Management Plan 2019-2029, Otago Regional Council, 2019 &minus; available
+          [4] Otago Pest Management Plan 2019-2029, Otago Regional Council, 2019
+          &minus; available
         {% endcall %}
       {% endcall %}
     {% endcall %}
