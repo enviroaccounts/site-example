@@ -9,6 +9,8 @@
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
 {% import 'organisims/table_container.html' as table_container with context %}
+{% import 'organisims/reference.html' as reference  with context %}
+{% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
@@ -18,6 +20,8 @@
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/text_divider.html' as text_divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
+
 {% set title_text="Water Quality" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -198,11 +202,11 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          <img
-          src="/static/images/graphs/current_state_of_lake.svg"
-          alt="Current state of lake"
-          title="Current state of lake"
-        />
+            <img
+              src="/static/images/graphs/current_state_of_lake.svg"
+              alt="Current state of lake"
+              title="Current state of lake"
+            />
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -238,14 +242,36 @@
               algal blooms and oxygen depletion.
             {% endcall %}
           {% endcall %}
-          {% endcall %}
-          {% call text_without_heading.render() %}
-            ORC regularly monitors the water quality around Otago, which
-            includes the Upper Clutha catchment. For the most recent
-            measurements and evaluations of water quality, please visit the <a href="https://envdata.orc.govt.nz/AQWebPortal/Data/Map/Parameter/E-Coli%20MPN/Interval/Latest  " class="underline">ORC
-            Environmental Portal website</a>.
-          {% endcall %}  
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          ORC regularly monitors the water quality around Otago, which includes
+          the Upper Clutha catchment. For the most recent measurements and
+          evaluations of water quality, please visit the
+          <a
+            href="https://envdata.orc.govt.nz/AQWebPortal/Data/Map/Parameter/E-Coli%20MPN/Interval/Latest  "
+            class="underline"
+            >ORC Environmental Portal website</a
+          >.
+        {% endcall %}
       {% endcall %}
     {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    {% call page_container_plain.render() %}
+      {% call reference.render() %}
+        {% call subhead_01_textstyle.render() %}
+          Reference
+        {% endcall %}
+        {% call reference_item.render(url="https://environment.govt.nz/publications/national-policy-statement-for-freshwater-management-2020-amended-january-2024/",name=" online",additional_info=".") %}
+        [11] Ministry for the Environment, National Policy Statement for Freshwater Management 2020, available 
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
   {% endcall %}
 {% endblock %}
