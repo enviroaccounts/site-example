@@ -7,6 +7,7 @@
 {% import 'organisims/child_container_full_width_items_end.html' as child_container_full_width_items_end  with context %}
 {% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
+{% import 'organisims/graph_container_large.html' as graph_container_large with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
 {% import 'organisims/table_container.html' as table_container with context %}
 {% import 'organisims/reference.html' as reference  with context %}
@@ -21,7 +22,6 @@
 {% import 'atoms/text_divider.html' as text_divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
-
 {% set title_text="Water Quality" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -202,11 +202,13 @@
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            <img
-              src="/static/images/graphs/current_state_of_lake.svg"
-              alt="Current state of lake"
-              title="Current state of lake"
-            />
+            {% call graph_container_large.render() %}
+              <img
+                src="/static/images/graphs/current_state_of_lake.svg"
+                alt="Current state of lake"
+                title="Current state of lake"
+              />
+            {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -268,10 +270,10 @@
           Reference
         {% endcall %}
         {% call reference_item.render(url="https://environment.govt.nz/publications/national-policy-statement-for-freshwater-management-2020-amended-january-2024/",name=" online",additional_info=".") %}
-        [11] Ministry for the Environment, National Policy Statement for Freshwater Management 2020, available 
+          [11] Ministry for the Environment, National Policy Statement for
+          Freshwater Management 2020, available
         {% endcall %}
       {% endcall %}
     {% endcall %}
-
   {% endcall %}
 {% endblock %}
