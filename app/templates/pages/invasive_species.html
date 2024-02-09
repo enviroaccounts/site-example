@@ -11,12 +11,16 @@
 {% import 'organisims/graph_container_small.html' as graph_container_small with context %}
 {% import 'organisims/graph_container_medium.html' as graph_container_medium with context %}
 {% import 'organisims/graph_container_large.html' as graph_container_large with context %}
+{% import 'organisims/reference.html' as reference  with context %}
+{% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
+
 {% set title_text="Invasive Species" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -37,16 +41,18 @@
           Invasive species are recognised as an important challenge in the
           catchment and greater region. The Otago Regional Council has
           classified 49 species<sup>4</sup> of plants and animals in the region
-          as pests due to the threats they pose. With that the Upper Clutha Catchment is home to a
-          valuable ecosystem that needs protecting and restoring.
+          as pests due to the threats they pose. With that the Upper Clutha
+          Catchment is home to a valuable ecosystem that needs protecting and
+          restoring.
         {% endcall %}
-                <!-- call out molecule-->
-          {% call callout.render(statistic_value="503  ") %}
-                Increase in the number of traps between 2020 and 2021
-          {% endcall %}
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="503  ") %}
+          Increase in the number of traps between 2020 and 2021
+        {% endcall %}
         {% call text_without_heading.render() %}
-          Monitoring the extent of invasive species can provide an
-          insight into the extent and control of threats to our ecosystems.The predator control areas with the catchment are highlighted on the map.
+          Monitoring the extent of invasive species can provide an insight into
+          the extent and control of threats to our ecosystems.The predator
+          control areas with the catchment are highlighted on the map.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
@@ -78,15 +84,18 @@
     {% call page_container_two_columns.render() %}
       <!-- full width organism with items aligned to end -->
       {% call child_container_forty_percent_basis.render() %}
-      {% call text_without_heading.render() %}
-      Pest control efforts across the catchment have been on a steady increase the last three years, as the number of active traps (including automatic traps) across the catchment has been increasing.
-      {% endcall %}
+        {% call text_without_heading.render() %}
+          Pest control efforts across the catchment have been on a steady
+          increase the last three years, as the number of active traps
+          (including automatic traps) across the catchment has been increasing.
+        {% endcall %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="855 ") %}
           Increase in the number of traps between 2021 and 2022.
         {% endcall %}
         {% call text_without_heading.render() %}
-        The number of pests caught continues to increase as well, indicating that pest presence remains an issue.
+          The number of pests caught continues to increase as well, indicating
+          that pest presence remains an issue.
         {% endcall %}
       {% endcall %}
       <!-- graph frame organism-->
@@ -119,13 +128,13 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         {% call text_without_heading.render() %}
-          In 2022, the dominating pests caught in the catchment are rats (40%) followed
-          by possums(12%).
+          In 2022, the dominating pests caught in the catchment are rats (40%)
+          followed by possums(12%).
         {% endcall %}
-          <!-- call out molecule-->
-          {% call callout.render(statistic_value="40%") %}
-            The majority of pests caught in the catchment are rats.
-          {% endcall %}
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="40%") %}
+          The majority of pests caught in the catchment are rats.
+        {% endcall %}
         {% call text_without_heading.render() %}
           Continued efforts to control pests in the catchment is an important
           contribution to the national Predator Free 2050 goal, which is working
@@ -175,8 +184,8 @@
           forest cover may pose on the catchment.
         {% endcall %}
         {% call text_without_heading.render() %}
-          The wilding conifer data are currently only sourced from the WCIS, which only
-          covers a fraction of the spatial extent of the catchment.
+          The wilding conifer data are currently only sourced from the WCIS,
+          which only covers a fraction of the spatial extent of the catchment.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
@@ -195,6 +204,26 @@
               {{ WildingPines.create_figure().to_html(div_id="WildingPines",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
             {% endcall %}
           {% endif %}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    {% call page_container_plain.render() %}
+      {% call reference.render() %}
+        {% call subhead_01_textstyle.render() %}
+          Reference
+        {% endcall %}
+        {% call reference_item.render(url="https://environment.govt.nz/publications/environment-new-zealand-2007/chapter-12-biodiversity/introduction/",name=" online",additional_info=", last accessed Jan 2024.") %}
+        [3] Environment New Zealand 2007, Ministry for the Environment, Manatū Mō Te Taiao, Report ME 847, Chapter 12 &minus; available
+        {% endcall %}
+        {% call reference_item.render(url="https://www.orc.govt.nz/plans-policies-reports/regional-plans-and-policies/regional-pest-management-plan",name=" online",additional_info=", last accessed Jan 2024.") %}
+        [4] Otago Pest Management Plan 2019-2029, Otago Regional Council, 2019 &minus; available
         {% endcall %}
       {% endcall %}
     {% endcall %}
