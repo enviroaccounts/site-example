@@ -19,7 +19,6 @@
 {% import 'atoms/text_list_item.html' as text_list_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
-
 {% set title_text="Social Well-being" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -94,19 +93,20 @@
           <!-- create_figure -->
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder6") %}
-            {% call datasource_item.render(link="https://letstalk.qldc.govt.nz/qol",link_title="Quality of Life Survey") %}
-            Data and information were obtained from the Queenstown Lakes District Council (QLDC) 
-          {% endcall %}
+              {% call datasource_item.render(link="https://letstalk.qldc.govt.nz/qol",link_title="Quality of Life Survey") %}
+                Data and information were obtained from the Queenstown Lakes
+                District Council (QLDC)
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          {% call graph_container_large.render() %}
-          <img
-          src="/static/images/graphs/social_wellbeing.svg"
-          alt="Social wellbeing"
-          title="Social wellbeing"
-        />
-        {% endcall %}
+            {% call graph_container_large.render() %}
+              <img
+                src="/static/images/graphs/social_wellbeing.svg"
+                alt="Social wellbeing"
+                title="Social wellbeing"
+              />
+            {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -142,14 +142,14 @@
           of survey respondents indicated that they had sufficient levels of
           disposable income after meeting all of their basic needs.
         {% endcall %}
+      {% endcall %}
+      <!-- right side organism -->
+      {% call child_container_fifty_percent_basis.render() %}
         {% call text_without_heading.render() %}
           It is important to link social well-being to the other indicators
           presented in this report, to gain insights into how the health and
           happiness of the community may impact the catchment health.
         {% endcall %}
-      {% endcall %}
-      <!-- right side organism -->
-      {% call child_container_fifty_percent_basis.render() %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="82%") %}
           of survey respondents stating their quality of life to be
