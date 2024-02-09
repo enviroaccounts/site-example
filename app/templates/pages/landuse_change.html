@@ -11,13 +11,15 @@
 {% import 'organisims/graph_container_medium.html' as graph_container_medium with context %}
 {% import 'organisims/table_container.html' as table_container with context %}
 {% import 'organisims/table_container.html' as table_container with context %}
+{% import 'organisims/reference.html' as reference  with context %}
+{% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% import 'atoms/datasource_item.html' as datasource_item with context %}
-
 {% set title_text="Land use change" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -30,8 +32,8 @@
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
         {% call text_without_heading.render() %}
-          Land use and land use change are catchment-wide indicators assessing how
-          we are using our land. Over half of the area of the catchment is
+          Land use and land use change are catchment-wide indicators assessing
+          how we are using our land. Over half of the area of the catchment is
           categorised as “production grassland”, dominated by low producing
           grassland. Following grassland, the most common land uses in the
           catchment are forest land (16.6%), and grassland with woody biomass
@@ -50,17 +52,18 @@
         {% call(content) graph_frame.render(graph_title="Land use cover across the catchment in 2016.",flyout_id="placeholder3") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder3") %}
-              {%call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
-              Data were obtained from the Land Use and Coverage Area frame Survey (LUCAS) data set
-              {%endcall%}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
+                Data were obtained from the Land Use and Coverage Area frame
+                Survey (LUCAS) data set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
             <img
-            src="/static/images/maps/map_landuse.svg"
-            alt="Landuse Map"
-            title="Landuse Map"
-          />
+              src="/static/images/maps/map_landuse.svg"
+              alt="Landuse Map"
+              title="Landuse Map"
+            />
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -78,7 +81,11 @@
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
         {% call text_without_heading.render() %}
-          Urban areas in Wānaka and Hāwea have increased since 1990. Primarily through the conversion of productive grassland. Despite this conversion, the total area of production grassland remained the same, as grassland with woody biomass has been converted to production grassland.
+          Urban areas in Wānaka and Hāwea have increased since 1990. Primarily
+          through the conversion of productive grassland. Despite this
+          conversion, the total area of production grassland remained the same,
+          as grassland with woody biomass has been converted to production
+          grassland.
         {% endcall %}
       {% endcall %}
       <!--  right side organism -->
@@ -87,9 +94,10 @@
         {% call(content) graph_frame.render(graph_title="Land use categories before 1990",flyout_id="flyout_LandUseChangeBuildUp") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_LandUseChangeBuildUp") %}
-            {%call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
-            Data were obtained from the Land Use and Coverage Area frame Survey (LUCAS) data set
-            {%endcall%}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
+                Data were obtained from the Land Use and Coverage Area frame
+                Survey (LUCAS) data set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -115,9 +123,10 @@
         {% call(content) graph_frame.render(graph_title="Total area by land use category for the catchment and their changes since 1990 (in hectares).",flyout_id="placeholder4") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder4") %}
-            {%call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
-            Data were obtained from the Land Use and Coverage Area frame Survey (LUCAS) data set 
-            {%endcall%}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
+                Data were obtained from the Land Use and Coverage Area frame
+                Survey (LUCAS) data set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -183,9 +192,9 @@
         <!--  text without heading molecule-->
         {% call text_without_heading.render() %}
           Since 1990, there has been a net increase of 392 ha of forestland
-          across the catchment.Most of this increase has been through the
-          growth of new exotic forest. The cover of natural, indigenous
-          forest has seen a net decline.
+          across the catchment.Most of this increase has been through the growth
+          of new exotic forest. The cover of natural, indigenous forest has seen
+          a net decline.
         {% endcall %}
       {% endcall %}
       <!--  right side organism -->
@@ -194,9 +203,10 @@
         {% call(content) graph_frame.render(graph_title="Land uses converted from forestland since 1990.",flyout_id="flyout_landUses") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_landUses") %}
-            {%call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
-            Data were obtained from the Land Use and Coverage Area frame Survey (LUCAS) data set
-            {%endcall%}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/)",link_title="MfE Data Service") %}
+                Data were obtained from the Land Use and Coverage Area frame
+                Survey (LUCAS) data set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -239,8 +249,8 @@
           2018 was the result of landslides in the high alpine<sup>1</sup>,
           rather than a direct impact of anthropogenic activities. While
           indigenous forest is not under particular threat, other native
-          vegetation classes have seen significant
-          reductions in land cover.For example, fernlands decreased by 1,500 ha.
+          vegetation classes have seen significant reductions in land cover.For
+          example, fernlands decreased by 1,500 ha.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
@@ -249,9 +259,9 @@
         {% call(content) graph_frame.render(graph_title="Land uses converted into exotic forest between 2008 and 2018.",flyout_id="flyout_LandUseChangeExoticForest") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_LandUseChangeExoticForest") %}
-            {%call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LDCB-LRIS Portal") %}
-            Data were obtained from the New Zealand Land Cover Database
-            {%endcall%}
+              {% call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LDCB-LRIS Portal") %}
+                Data were obtained from the New Zealand Land Cover Database
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -262,5 +272,25 @@
         {% endcall %}
       {% endcall %}
     {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    {% call page_container_plain.render() %}
+      {% call reference.render() %}
+        {% call subhead_01_textstyle.render() %}
+          Reference
+        {% endcall %}
+        {% call reference_item.render(url="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",name=" LRIS Portal",additional_info=", last accessed Jan 2024.") %}
+          [1] Land Cover Database version 5.0, Mainland, New Zealand &minus;
+          available from the
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    
   {% endcall %}
 {% endblock %}
