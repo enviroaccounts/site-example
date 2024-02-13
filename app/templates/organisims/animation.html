@@ -1,7 +1,7 @@
-
+{% import 'molecules/navigation_tertiary.html' as navigation_tertiary  with context %}
 
 {%- macro render() -%}
-{% set  parent_caller = caller() %}
+  {% set  parent_caller = caller() %}
   <!-- animation section -->
   <div class="relative">
     <img
@@ -12,10 +12,9 @@
       width="56"
       height="56"
     />
-    <div
-      class="text-black uppercase font-bold font-overused-grotesk xl:text-2xl xl:leading-snug lg:text-lg lg:leading-tight md:text-sm md:leading-3 text-sm leading-none tracking-tight md:p-10 p-7 border-4 border-grey-900 rounded-3xl grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4"
-    >
+    <!-- navigation-tertiary: homepage navigation with animation -->
+    {% call navigation_tertiary.render() %}
       {{ parent_caller }}
-    </div>
+    {% endcall %}
   </div>
 {%- endmacro -%}
