@@ -56,3 +56,5 @@ This is a Flask + tailwind + dash + plotly site, the dash plot is embeded rather
 This is an error caused by the host not having python installed or available in the path for VS Code. 
 Install python and check that code can open a py file and have an interpeter. (Check the bottom right)
 
+## format
+run command :`npx prettier --write **/*.html` on all html files in your project

@@ -1,0 +1,21 @@
+
+
+{%- macro render() -%}
+{% set  parent_caller = caller() %}
+  <!-- animation section -->
+  <div class="relative">
+    <img
+      class="w-full mb-12 environment-graph"
+      src="/static/images/graphs/hero.svg"
+      alt="Environmental illustration"
+      title="Environmental illustration"
+      width="56"
+      height="56"
+    />
+    <div
+      class="text-black uppercase font-bold font-overused-grotesk xl:text-2xl xl:leading-snug lg:text-lg lg:leading-tight md:text-sm md:leading-3 text-base leading-none tracking-tight p-10 border-4 border-grey-900 rounded-3xl grid grid-cols-2 gap-6"
+    >
+      {{ parent_caller }}
+    </div>
+  </div>
+{%- endmacro -%}

@@ -1,102 +1,74 @@
 {% extends "base.html" %}
 {% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
-{% import 'atoms/icon_frame_with_circle_badge.html' as icon_frame_with_circle_badge  with context %}
+{% import 'organisims/animation.html' as animation  with context %}
+{% import 'molecules/homepage_navigation_item.html' as homepage_navigation_item  with context %}
 {% set title_text="Home" %}
 
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
   {% call basic.render(title_text=title_text) %}
+    <!-- animation section -->
     {% call page_container_plain.render() %}
-      <div class="relative">
-        <img
-          class="w-full mb-12 environment-graph"
-          src="/static/images/graphs/hero.svg"
-          alt="Environmental illustration"
-          title="Environmental illustration"
-          width="56"
-          height="56"
-        />
-        <div
-          class="text-black uppercase font-bold font-overused-grotesk xl:text-2xl xl:leading-snug lg:text-lg lg:leading-tight md:text-sm md:leading-3 text-base leading-none tracking-tight p-10 border-4 border-grey-900 rounded-3xl grid grid-cols-2 gap-6"
-        >
-          <div class="flex flex-row items-center justify-start gap-2">
-            <p>climate_variables</p>
-            {% call icon_frame_with_circle_badge.render(image_class="icon_climate_variables environment_icon") %}
-              <img
-                src="/static/images/icons/climate_variables.svg"
-                alt="Climate Variables"
-                title="Climate Variables"
-                class="w-full h-full"
-              />
-            {% endcall %}
-          </div>
-          <div class="flex flex-row items-center justify-start gap-2">
-            <p>greenhouse_gas_emissions</p>
-            {% call icon_frame_with_circle_badge.render(image_class="icon_greenhouse_gas_emissions environment_icon") %}
-              <img
-                src="/static/images/icons/greenhouse_gas_emissions.svg"
-                alt="Greenhouse Gas Emissions "
-                title="Greenhouse Gas Emissions"
-                class="w-full h-full"
-              />
-            {% endcall %}
-          </div>
-          <div class="flex flex-row items-center justify-start gap-2">
-            <p>land_use_change</p>
-            {% call icon_frame_with_circle_badge.render(image_class="icon_land_use_change environment_icon") %}
-              <img
-                src="/static/images/icons/land_use_change.svg"
-                alt="Landuse change"
-                title="Landuse change"
-                class="w-full h-full"
-              />
-            {% endcall %}
-          </div>
-
-          <div class="flex flex-row items-center justify-start gap-2">
-            <p>social_wellbeing</p>
-            {% call icon_frame_with_circle_badge.render(image_class="icon_social_wellbeing environment_icon") %}
-              <img
-                src="/static/images/icons/social_wellbeing.svg"
-                alt="Social Wellbeing"
-                title="Social Wellbeing"
-                class="w-full h-full"
-              />
-            {% endcall %}
-          </div>
-
-          <div class="flex flex-row items-center justify-start gap-2">
-            <p>water_quality</p>
-            {% call icon_frame_with_circle_badge.render(image_class="icon_water_quality environment_icon") %}
-              <img
-                src="/static/images/icons/water_quality.svg"
-                alt="Water quality"
-                title="Water quality"
-                class="w-full h-full"
-              />
-            {% endcall %}
-          </div>
-
-          <div class="flex flex-row items-center justify-start gap-2">
-            <p>invasive_species</p>
-            {% call icon_frame_with_circle_badge.render(image_class="icon_invasive_species environment_icon") %}
-              <img
-                src="/static/images/icons/invasive_species.svg"
-                alt="Invasive Species"
-                title="Invasive Species"
-                class="w-full h-full"
-              />
-            {% endcall %}
-          </div>
-        </div>
-      </div>
+    <!-- animation organism -->
+      {% call animation.render() %}
+      <!-- animation navigation_icon molecule -->
+        {% call homepage_navigation_item.render(navigation_title="climate_variables",navigation_class="icon_climate_variables") %}
+          <img
+            src="/static/images/icons/climate_variables.svg"
+            alt="Climate Variables"
+            title="{{navigation_title}}"
+            class="w-full h-full"
+          />
+        {% endcall %}
+        {% call homepage_navigation_item.render(navigation_title="greenhouse_gas_emissions",navigation_class="icon_greenhouse_gas_emissions") %}
+          <img
+            src="/static/images/icons/greenhouse_gas_emissions.svg"
+            alt="Greenhouse Gas Emissions "
+            title="Greenhouse Gas Emissions"
+            class="w-full h-full"
+          />
+        {% endcall %}
+        {% call homepage_navigation_item.render(navigation_title="land_use_change",navigation_class="icon_land_use_change") %}
+          <img
+            src="/static/images/icons/land_use_change.svg"
+            alt="Landuse change"
+            title="Landuse change"
+            class="w-full h-full"
+          />
+        {% endcall %}
+        {% call homepage_navigation_item.render(navigation_title="social_wellbeing",navigation_class="icon_social_wellbeing") %}
+          <img
+            src="/static/images/icons/social_wellbeing.svg"
+            alt="Social Wellbeing"
+            title="Social Wellbeing"
+            class="w-full h-full"
+          />
+        {% endcall %}
+        {% call homepage_navigation_item.render(navigation_title="water_quality",navigation_class="icon_water_quality") %}
+          <img
+            src="/static/images/icons/water_quality.svg"
+            alt="Water quality"
+            title="Water quality"
+            class="w-full h-full"
+          />
+        {% endcall %}
+        {% call homepage_navigation_item.render(navigation_title="invasive_species",navigation_class="icon_invasive_species") %}
+          <img
+            src="/static/images/icons/invasive_species.svg"
+            alt="Invasive Species"
+            title="Invasive Species"
+            class="w-full h-full"
+          />
+        {% endcall %}
+      {% endcall %}
     {% endcall %}
   {% endcall %}
 {% endblock %}
 
 {% block script_end %}
+  <!-- animation -->
   <script>
     let lastScroll = 0;
     const icons = document.querySelectorAll(".environment_icon");
