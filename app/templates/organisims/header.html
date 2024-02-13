@@ -1,11 +1,11 @@
 
 {% import 'molecules/nav_list.html' as nav_list  with context %}
-{% import 'molecules/full_icon_list.html' as full_icon_list with context %}
+{% import 'molecules/navigation_secondary.html' as navigation_secondary with context %}
 {% import 'atoms/button_hamburger.html' as button_hamburger  with context %}
 {% import 'molecules/nav_item.html' as nav_item with context %}
 
 {%- macro render() -%}
-  {% set  parent_caller1 = caller('full_icon_list') %}
+  {% set  parent_caller1 = caller('navigation_secondary') %}
   {% set  parent_caller2 = caller('nav_list') %}
 
   <!-- header organism -->
@@ -15,7 +15,7 @@
     md:items-center relative h-[85px] md:h-[118px] lg:h-[157px] xl:h-[196px] border-b-4 border-grey-900 md:border-none"
     >
       <!-- icon list -->
-      {% call full_icon_list.render() %}
+      {% call navigation_secondary.render() %}
         {{ parent_caller1 }}
       {% endcall %}
       <!-- divider-->

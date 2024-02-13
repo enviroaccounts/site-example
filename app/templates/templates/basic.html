@@ -18,7 +18,7 @@
     {% call page_container_header.render() %}
       <!-- header organism -->
       {% call(content) header.render() %}
-        {% if content == 'full_icon_list' %}
+        {% if content == 'navigation_secondary' %}
           {% call link_icon_badge.render(url="/landuse_change",active=("landuse_change" == active)) %}
             {% call icon_frame.render() %}
               <img
