@@ -54,10 +54,6 @@ def sponsorship():
 def supporter():
     return render_template("pages/supporter.html")
 
-@app.route('/reference')
-def reference():
-    return render_template("pages/reference.html")
-
 @app.route('/acknowledgements')
 def acknowledgements():
     return render_template("pages/acknowledgements.html")
@@ -71,13 +67,12 @@ def landuse_change():
     return render_template("pages/landuse_change.html",
                            active="landuse_change"
                                     )
-
+    
 @app.route('/climate_variables')
 def climate_variables():
     return render_template("pages/climate_variables.html",
                                    active="climate_variables"
                                     )
-
 
 @app.route('/invasive_species')
 def invasive_species():
