@@ -1,10 +1,42 @@
 {% extends "base.html" %}
 {% import 'templates/basic.html' as basic  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
+{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
 {% set title_text="Vision" %}
 
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
   {% call basic.render(title_text=title_text) %}
+    {% call page_container_plain.render() %}
+      {% call child_container_full_width.render(gap="gap-7") %}
+        {% call text_without_heading.render() %}
+          In envisioning a thriving and resilient future for the Upper Clutha
+          Catchment, our holistic catchment health framework embraces the
+          profound interconnection of people and place, recognising the
+          intrinsic value of Te Taiao. Grounded in community leadership and
+          collaboration, we are committed to fostering a collective sense of
+          responsibility for the well-being of our environment. Our vision
+          extends beyond scientific data; it encompasses the lived experiences,
+          cultures, and aspirations of the communities within our catchment.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          This framework serves as a compass, guiding environmental restoration
+          activities and investment with a keen understanding of the delicate
+          balance between ecological health and human well-being. By weaving the
+          wisdom of local communities and the expertise of diverse
+          organisations, we strive for a sustainable and harmonious coexistence
+          between nature and society for present and future generations to come.
+        {% endcall %}
+        {% call text_without_heading.render() %}
+          Join us on this journey as we strive to deepen our connection to Te
+          Taiao and pave the way towards a healthier, more sustainable future
+          for the Upper Clutha Catchment. Together, let’s embark on a
+          transformative endeavour rooted in respect, reciprocity, and
+          resilience.
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
   {% endcall %}
 {% endblock %}
