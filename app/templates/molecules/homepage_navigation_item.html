@@ -3,10 +3,10 @@
 
 {%- macro render(navigation_title="",navigation_class="") -%}
   {% set  parent_caller = caller() %}
-  <div class="flex flex-row items-center justify-start gap-2">
+  <li class="flex flex-row items-center justify-start gap-2">
     <p>{{ navigation_title }}</p>
     {% call icon_frame_with_circle_badge.render(image_class1=navigation_class,image_class2="environment_icon") %}
       {{ parent_caller }}
     {% endcall %}
-  </div>
+  </li>
 {%- endmacro -%}
