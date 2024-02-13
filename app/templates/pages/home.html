@@ -217,7 +217,6 @@
 
     window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
-
       icons.forEach((icon) => {
         if (currentScroll <= lastScroll) {
           icon.style.animation = "returnIcon 1s ease-in forwards";
@@ -225,7 +224,6 @@
           icon.style.animation = "moveIcon 1s ease-in forwards";
         }
       });
-
       lastScroll = currentScroll;
     });
   </script>
