@@ -1,12 +1,12 @@
 
-{% import 'molecules/nav_list.html' as nav_list  with context %}
+{% import 'molecules/navigation_primary.html' as navigation_primary  with context %}
 {% import 'molecules/navigation_secondary.html' as navigation_secondary with context %}
 {% import 'atoms/button_hamburger.html' as button_hamburger  with context %}
 {% import 'molecules/nav_item.html' as nav_item with context %}
 
 {%- macro render() -%}
   {% set  parent_caller1 = caller('navigation_secondary') %}
-  {% set  parent_caller2 = caller('nav_list') %}
+  {% set  parent_caller2 = caller('navigation_primary') %}
 
   <!-- header organism -->
   <div class="flex bg-white border-gray-200 rounded dark:bg-gray-900">
@@ -32,7 +32,7 @@
       id="navbar-cta"
     >
       <!--  navigation_primary list -->
-        {% call nav_list.render() %}
+        {% call navigation_primary.render() %}
           <!-- navigation_primary item -->
           {{ parent_caller2 }}
         {% endcall %}
