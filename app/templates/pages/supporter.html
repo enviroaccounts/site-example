@@ -3,7 +3,6 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
 {% import 'molecules/paragraph.html' as paragraph  with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
 {% import 'molecules/text_list_item.html' as text_list_item with context %}
@@ -115,8 +114,12 @@
     <!--  content-2 -->
     {% call page_container_plain.render() %}
       {% call child_container_full_width.render(gap="gap-7") %}
+        <!-- subhead_01_textstyle heading -->
+        {% call subhead_01_textstyle.render() %}
+        Become a supporter of the Upper Clutha Catchment Health Report
+        {% endcall %}
         <!-- Become a supporter of the Upper Clutha Catchment Health Report -->
-        {% call text_with_heading.render(subhead_01_text="Become a supporter of the Upper Clutha Catchment Health Report") %}
+        {% call paragraph.render() %}
           Thank you for your interest in joining us as a supporter of the Upper
           Clutha Catchment Health Project. By becoming a partner, you'll play a
           crucial role in monitoring and reporting on the health of our
@@ -126,7 +129,11 @@
         {% endcall %}
 
         <!-- Why Partner with Upper Clutha Catchment Health Partnership? -->
-        {% call text_with_heading.render(subhead_01_text="Why Partner with Upper Clutha Catchment Health Partnership?") %}
+        <!-- subhead_01_textstyle heading -->
+        {% call subhead_01_textstyle.render() %}
+        Why Partner with Upper Clutha Catchment Health Partnership?
+        {% endcall %}
+        {% call paragraph.render() %}
           As a partner, you'll stand alongside government entities, industries,
           research groups, and the community, showcasing your commitment to
           environmental stewardship and community well-being.
@@ -194,8 +201,12 @@
 
     <!-- Acknowledgements -->
     {% call page_container_plain.render() %}
-      {% call child_container_full_width.render() %}
-        {% call text_with_heading.render(subhead_01_text="Acknowledgements") %}
+      {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
+        <!-- subhead_01_textstyle heading -->
+        {% call subhead_01_textstyle.render() %}
+          Acknowledgements
+        {% endcall %}
+        {% call paragraph.render() %}
           We would like to thank the following individuals and organisations for
           their contribution to the development of the monitoring framework, the
           development of this website, and accompanied reports:

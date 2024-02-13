@@ -10,7 +10,7 @@
 {% import 'organisims/child_container_full_width.html' as child_container_full_width with context %}
 {% import 'molecules/navigation_tertiary_item.html' as navigation_tertiary_item  with context %}
 {% import 'molecules/paragraph.html' as paragraph  with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/button_black.html' as button_black with context %}
 {% set title_text="Home" %}
@@ -83,14 +83,20 @@
 
     <!-- The story section -->
     {% call page_container_plain.render() %}
+      {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
+      <!-- heading -->
+      {% call subhead_01_textstyle.render() %}
+        The Story
+      {% endcall %} 
 
-      {% call text_with_heading.render(subhead_01_text="The Story") %}
+      {% call paragraph.render() %}
         Welcome to the Upper Clutha Catchment Health Project, an initiative
         deeply rooted in the principles of Te Taiao – a profound connection to
         and reverence for the natural world (Figure below). Our project serves
         as a catalyst for community engagement, uniting diverse stakeholders –
         from residents and iwi to landowners and tourism operators – in a
         collective effort to revitalise Te Taiao.
+      {% endcall %}
       {% endcall %}
     {% endcall %}
 
@@ -183,7 +189,11 @@
     <!-- Join us section -->
     {% call page_container_plain.render() %}
       {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
-        {% call text_with_heading.render(subhead_01_text="Join Us in Building a Healthier Catchment!") %}
+        <!-- heading -->
+        {% call subhead_01_textstyle.render() %}
+        Join Us in Building a Healthier Catchment!
+        {% endcall %}
+        {% call paragraph.render() %}
           By partnering with us, you'll not only contribute to the preservation
           of our natural resources but also strengthen your organisation's
           commitment to sustainability and community engagement. Together, we

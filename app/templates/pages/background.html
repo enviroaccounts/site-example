@@ -8,11 +8,11 @@
 {% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
 {% import 'molecules/text_list_item.html' as text_list_item with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/text_divider.html' as text_divider with context %}
 {% set title_text="Background" %}
@@ -110,7 +110,9 @@
 
     {% call page_container_plain.render() %}
       {% call child_container_full_width_items_end.render() %}
-        {% call text_with_heading.render(subhead_01_text="What do we mean by health?") %}
+        {% call subhead_01_textstyle.render(subhead_01_text="What do we mean by health?") %}
+        {% endcall %}
+        {% call paragraph.render() %}
           The &#147;health of the Upper Clutha Catchment&#148; is seen here as a
           holistic concept that considers the interconnectedness of various
           environmental and social factors and how they collectively contribute
