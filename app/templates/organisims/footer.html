@@ -1,4 +1,3 @@
-{% import 'molecules/footer_link_container.html' as footer_link_container with context %}
 {% import 'molecules/logo_frame.html' as logo_frame with context %}
 {% import 'atoms/footer_02_textstyle.html' as footer_02_textstyle with context %}
 {% import 'atoms/caption_textstyle.html' as footer_textstyle with context %}
@@ -19,20 +18,20 @@
         />
       {% endcall %}
     {% endcall %}
-    <!-- Find out more-->
-    {% call footer_link_container.render() %}
+    <div class="flex flex-col gap-3	justify-end">
       <!-- Email us-->
       {% call link_plain.render(url="mailto:getinvolved@waiwanaka.nz") %}
-        {% call footer_02_textstyle.render() %}
-          Contact us
-        {% endcall %}
+      {% call footer_02_textstyle.render() %}
+      Contact us
+      {% endcall %}
       {% endcall %}
       {% call link_plain.render(url="https://waiwanaka.nz/action-for-te-taiao/") %}
+        <!-- Find out more-->
         {% call footer_02_textstyle.render() %}
           Find out more
         {% endcall %}
       {% endcall %}
-    {% endcall %}
+    </div>
   </div>
   <!--  placeholder -->
   {{ caller() }}
