@@ -14,7 +14,7 @@
 {% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
-{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
 {% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/text_divider.html' as text_divider with context %}
@@ -37,7 +37,7 @@
             selected for their importance for ecosystem and human health (see
             table below):
           {% endcall %}
-          {% call text_list.render() %}
+          {% call unorderlist_disc_style.render() %}
             {% call unorderlist_item.render() %}
               Total phosphorus
             {% endcall %}
@@ -221,7 +221,7 @@
             human well-being, and the need for sustainable environmental
             management practices&#58;
           {% endcall %}
-          {% call text_list.render() %}
+          {% call unorderlist_disc_style.render() %}
             {% call unorderlist_item.render() %}
               Monitoring nitrate levels helps manage agricultural practices to
               minimise pollution and protect water resources&#59;

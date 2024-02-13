@@ -2,7 +2,7 @@
 {% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'molecules/paragraph.html' as paragraph  with context %}
-{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
 {% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% set title_text="Acknowledgements" %}
 
@@ -16,7 +16,7 @@
         their contribution to the development of the monitoring framework, the
         development of this website, and accompanied reports&#58;
       {% endcall %}
-      {% call text_list.render(gap="gap-2") %}
+      {% call unorderlist_disc_style.render(gap="gap-2") %}
         {% call unorderlist_item.render() %}
           The steering group and working group members, for their insights,
           advice and time provided in the development of the Upper Clutha

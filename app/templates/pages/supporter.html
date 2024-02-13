@@ -3,8 +3,8 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
 {% import 'molecules/paragraph.html' as paragraph  with context %}
-{% import 'molecules/text_list.html' as text_list with context %}
-{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
 {% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
@@ -54,7 +54,7 @@
             significant time and input from the following organisations and
             people;
           {% endcall %}
-          {% call text_list.render(gap="gap-1") %}
+          {% call unorderlist_disc_style.render(gap="gap-1") %}
             {% call unorderlist_item.render() %}
               <a href="https://www.lakewanaka.co.nz/" class="underline">
                 Lake Wānaka Tourism</a
@@ -147,7 +147,7 @@
           {% call subhead_01_textstyle.render() %}
             Recognition and Benefits:
           {% endcall %}
-          {% call text_list.render(gap="gap-1") %}
+          {% call unorderlist_disc_style.render(gap="gap-1") %}
             {% call unorderlist_item.render() %}
               Acknowledgment of your organisation's contribution and its
               commitment to environmental and economic sustainability, cultural
@@ -175,7 +175,7 @@
           {% call subhead_01_textstyle.render() %}
             Your Contribution:
           {% endcall %}
-          {% call text_list.render(gap="gap-1") %}
+          {% call unorderlist_disc_style.render(gap="gap-1") %}
             {% call unorderlist_item.render() %}
               Assist in disseminating reports and publications, such as the
               Annual Health Report Card.
@@ -211,7 +211,7 @@
           their contribution to the development of the monitoring framework, the
           development of this website, and accompanied reports:
         {% endcall %}
-        {% call text_list.render(gap="gap-1") %}
+        {% call unorderlist_disc_style.render(gap="gap-1") %}
           {% call unorderlist_item.render() %}
             The steering group and working group members, for their insights,
             advice and time provided in the development of the Upper Clutha

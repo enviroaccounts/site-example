@@ -15,7 +15,7 @@
 {% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
-{% import 'molecules/text_list.html' as text_list with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
 {% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% import 'molecules/datasource_item.html' as datasource_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
@@ -36,7 +36,7 @@
             Social well-being considers the social and economic aspects of
             catchment health, including&#58;
           {% endcall %}
-          {% call text_list.render() %}
+          {% call unorderlist_disc_style.render() %}
             {% call unorderlist_item.render() %}
               Community and Cultural Spirit
             {% endcall %}
