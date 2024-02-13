@@ -32,7 +32,7 @@ app.jinja_env.globals.update(PredatorControl=PredatorControl)
 
 @app.route('/')
 def home():
-    return redirect("/landuse_change")
+    return render_template("pages/home.html")
 
 @app.route('/home')
 def main():
