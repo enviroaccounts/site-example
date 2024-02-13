@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
 {% import 'molecules/text_list_item.html' as text_list_item with context %}
 {% set title_text="Acknowledgements" %}
@@ -11,7 +11,7 @@
 {% block content %}
   {% call basic.render(title_text=title_text) %}
     {% call page_container_plain.render() %}
-      {% call text_without_heading.render() %}
+      {% call paragraph.render() %}
         We would like to thank the following individuals and organisations for
         their contribution to the development of the monitoring framework, the
         development of this website, and accompanied reports&#58;

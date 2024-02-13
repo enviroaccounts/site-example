@@ -13,7 +13,7 @@
 {% import 'molecules/reference.html' as reference  with context %}
 {% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
 {% import 'molecules/text_list_item.html' as text_list_item with context %}
@@ -33,7 +33,7 @@
       {% call child_container_forty_percent_basis.render() %}
 
         {% call child_container_full_width.render() %}
-          {% call text_without_heading.render() %}
+          {% call paragraph.render() %}
             Water quality rankings are provided for four parameters which were
             selected for their importance for ecosystem and human health (see
             table below):
@@ -54,14 +54,14 @@
           {% endcall %}
         {% endcall %}
 
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Water quality was assessed in accordance with the guidelines provided
           by the National Policy Statement for Freshwater Management 2020
           (NPS-FM), which ranks each parameter from A (good) to D or E
           (poor)<sup>11</sup>.
         {% endcall %}
 
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           While the parameters are being measured in both lake and rivers,
           NPS-FM provides guidelines that allow us to obtain quality ratings for
           total phosphorus and chlorophyll-a for lakes only, not rivers;
@@ -216,7 +216,7 @@
       {% call child_container_forty_percent_basis.render() %}
         {% call child_container_full_width.render() %}
           <!--  text without heading molecule-->
-          {% call text_without_heading.render() %}
+          {% call paragraph.render() %}
             Monitoring water quality parameters provides a comprehensive
             understanding of the health of aquatic systems, their impact on
             human well-being, and the need for sustainable environmental
@@ -244,7 +244,7 @@
             {% endcall %}
           {% endcall %}
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           ORC regularly monitors the water quality around Otago, which includes
           the Upper Clutha catchment. For the most recent measurements and
           evaluations of water quality, please visit the

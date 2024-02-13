@@ -14,7 +14,7 @@
 {% import 'molecules/reference.html' as reference  with context %}
 {% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
 {% import 'molecules/text_list_item.html' as text_list_item with context %}
@@ -33,7 +33,7 @@
       {% call child_container_fifty_percent_basis.render() %}
         <!--  text without heading molecule-->
         {% call child_container_full_width.render() %}
-          {% call text_without_heading.render() %}
+          {% call paragraph.render() %}
             Social well-being considers the social and economic aspects of
             catchment health, including&#58;
           {% endcall %}
@@ -49,13 +49,13 @@
             {% endcall %}
           {% endcall %}
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Monitoring social well-being is important, as social drivers have a
           key influence on other aspects of catchment health, including pest
           control, biodiversity, water quality and effective land use
           management.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The Queenstown Lake District Council conducts a &#39;Quality of Life
           Survey&#39; annually to better understand what works well and what the
           challenges facing the residents in the district are. Data collected by
@@ -69,7 +69,7 @@
         {% call callout.render(statistic_value="C") %}
           Overall social well-being rank.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Despite the low overall score, the sense of cultural heritage saw an
           improvement compared to the previous year, as more respondents
           reported being able to express their culture without feeling excluded
@@ -125,7 +125,7 @@
       <!--  left side organism -->
       {% call child_container_fifty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Various studies have been conducted to understand how the health of
           the environment we live in may impact the well-being of the people who
           live in it. Societies living in a flourishing, green environment may
@@ -133,7 +133,7 @@
           more opportunities to invest in climate-aware lifestyle
           choices<sup>6</sup>.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Māori health models, such as the concept of Te Whare Tapa Whā,
           illustrate the intimate link between the physical, spiritual and
           mental health of individuals with their communities and
@@ -147,7 +147,7 @@
       {% endcall %}
       <!-- right side organism -->
       {% call child_container_fifty_percent_basis.render() %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           It is important to link social well-being to the other indicators
           presented in this report, to gain insights into how the health and
           happiness of the community may impact the catchment health.
@@ -157,7 +157,7 @@
           of survey respondents stating their quality of life to be
           &quot;good&quot; or &quot;extremely good&quot;.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Spare income and spare time are vital requirements for residents of
           the catchment to be able to invest into caring for the environment;
           whether this is in the form of volunteer hours or financial donations

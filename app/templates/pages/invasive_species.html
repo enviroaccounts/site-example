@@ -14,7 +14,7 @@
 {% import 'molecules/reference.html' as reference  with context %}
 {% import 'molecules/reference_item.html' as reference_item  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'molecules/datasource_item.html' as datasource_item with context %}
@@ -30,12 +30,12 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           New Zealand&#39;s biodiversity is unique: 100% of the country&#39;s
           frogs and reptiles, 90% of the insects, 80% of vascular plants, and
           25% of bird species are only found in New Zealand<sup>3</sup>.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Invasive species are recognised as an important challenge in the
           catchment and greater region. The Otago Regional Council has
           classified 49 species<sup>4</sup> of plants and animals in the region
@@ -47,7 +47,7 @@
         {% call callout.render(statistic_value="503  ") %}
           Increase in the number of traps between 2020 and 2021
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Monitoring the extent of invasive species can provide an insight into
           the extent and control of threats to our ecosystems.The predator
           control areas with the catchment are highlighted on the map.
@@ -82,7 +82,7 @@
     {% call page_container_two_columns.render() %}
       <!-- full width organism with items aligned to end -->
       {% call child_container_forty_percent_basis.render() %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Pest control efforts across the catchment have been on a steady
           increase the last three years, as the number of active traps
           (including automatic traps) across the catchment has been increasing.
@@ -91,7 +91,7 @@
         {% call callout.render(statistic_value="855 ") %}
           Increase in the number of traps between 2021 and 2022.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The number of pests caught continues to increase as well, indicating
           that pest presence remains an issue.
         {% endcall %}
@@ -125,7 +125,7 @@
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           In 2022, the dominating pests caught in the catchment are rats (40%)
           followed by possums(12%).
         {% endcall %}
@@ -133,7 +133,7 @@
         {% call callout.render(statistic_value="40%") %}
           The majority of pests caught in the catchment are rats.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Continued efforts to control pests in the catchment is an important
           contribution to the national Predator Free 2050 goal, which is working
           towards an Aotearoa where our native species are safe from extinction
@@ -181,7 +181,7 @@
           important to consider the increasing threat that spreading exotic
           forest cover may pose on the catchment.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The wilding conifer data are currently only sourced from the WCIS,
           which only covers a fraction of the spatial extent of the catchment.
         {% endcall %}

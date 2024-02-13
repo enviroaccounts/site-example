@@ -9,7 +9,7 @@
 {% import 'organisims/flyout.html' as flyout with context %}
 {% import 'organisims/child_container_full_width.html' as child_container_full_width with context %}
 {% import 'molecules/navigation_tertiary_item.html' as navigation_tertiary_item  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/button_black.html' as button_black with context %}
@@ -115,12 +115,12 @@
             {% endcall %}
           {% endif %}
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           At the heart of our endeavour lies a comprehensive monitoring
           framework, crafted to encapsulate the essence of Te Taiao and to
           foster a holistic understanding of catchment health.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The monitoring framework is comprised of a selection of indicators
           that reflect the health of our land, water, biodiversity, livelihoods,
           and culture within the catchment, all interconnected within Te Taiao.
@@ -131,7 +131,7 @@
       {% endcall %}
       <!--  Right side organism -->
       {% call child_container_fifty_percent_basis.render() %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The monitoring framework is comprised of a selection of indicators
           that reflect the health of our land, water, biodiversity, livelihoods,
           and culture within the catchment, all interconnected within Te Taiao.
@@ -139,7 +139,7 @@
           sense of ownership and pride within our community for the stewardship
           of our catchment.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           By rooting our monitoring framework indicators with direct community
           values, pressures, and actions that were identified in the
           <a
@@ -153,7 +153,7 @@
           dedicated to preserving and enhancing our catchment's health as well
           as guide future environmental investments.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The monitoring framework aims to connect the Upper Clutha community to
           Te Taiao through understanding the state of our catchment health and
           the interacting indicators that contribute such. We recognise that
@@ -163,7 +163,7 @@
           framework, we aim to assess and nurture this delicate equilibrium,
           guided by the ethos of respect and care for our surroundings.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           As a central repository for data collection and reporting, our
           monitoring framework fosters collaboration among various organisations
           across the catchment, ensuring a unified approach towards
@@ -191,13 +191,13 @@
           Clutha Catchment. We look forward to welcoming you as a valued partner
           in this important endeavour.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           {% call button_black.render() %}
             <a href="/supporter">Become a supporter</a>
           {% endcall %}
         {% endcall %}
 
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Want to find more information on how to become a partner?
 
           <a href="mailto:getinvolved@waiwanaka.nz" class="underline"
