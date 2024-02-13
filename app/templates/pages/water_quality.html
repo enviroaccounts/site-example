@@ -15,7 +15,7 @@
 {% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
-{% import 'molecules/text_list_item.html' as text_list_item with context %}
+{% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/text_divider.html' as text_divider with context %}
 {% import 'molecules/datasource_item.html' as datasource_item with context %}
@@ -38,16 +38,16 @@
             table below):
           {% endcall %}
           {% call text_list.render() %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Total phosphorus
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Phytoplankton (chlorophyll-a)
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Escherichia coli
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Nitrate-nitrogen
             {% endcall %}
           {% endcall %}
@@ -222,19 +222,19 @@
             management practices&#58;
           {% endcall %}
           {% call text_list.render() %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Monitoring nitrate levels helps manage agricultural practices to
               minimise pollution and protect water resources&#59;
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Monitoring E.coli ensures that water sources are safe for
               recreational activities, drinking, and agricultural use&#59;
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Monitoring chlorophyll-a levels provides insight into the overall
               health of aquatic ecosystems&#59;
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Monitoring total phosphorus allows for early detection of
               potential threats to native species and habitats and it helps to
               identify and manage nutrient pollution, preventing detrimental

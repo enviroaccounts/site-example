@@ -16,7 +16,7 @@
 {% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
 {% import 'molecules/text_list.html' as text_list with context %}
-{% import 'molecules/text_list_item.html' as text_list_item with context %}
+{% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% import 'molecules/datasource_item.html' as datasource_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
@@ -37,13 +37,13 @@
             catchment health, including&#58;
           {% endcall %}
           {% call text_list.render() %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Community and Cultural Spirit
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Affordability Overall
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Quality of Life
             {% endcall %}
           {% endcall %}
