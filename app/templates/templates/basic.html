@@ -7,7 +7,7 @@
 {% import 'organisims/header.html' as header  with context %}
 {% import 'molecules/icon_frame.html' as icon_frame with context %}
 {% import 'molecules/navigation_secondary_item.html' as navigation_secondary_item with context %}
-{% import 'molecules/nav_item_dropdown_menu.html' as nav_item_dropdown_menu with context %}
+{% import 'molecules/navigation_primary_item_dropdown_menu.html' as navigation_primary_item_dropdown_menu with context %}
 {% import 'molecules/navigation_primary_item_regualr.html' as navigation_primary_item_regualr with context %}
 {% import 'molecules/nav_dropdown_item.html' as nav_dropdown_item with context %}
 {% import 'atoms/headline_textstyle.html' as headline with context %}
@@ -83,7 +83,7 @@
           {% call navigation_primary_item_regualr.render(url="/home") %}
             Home
           {% endcall %}
-          {% call nav_item_dropdown_menu.render() %}
+          {% call navigation_primary_item_dropdown_menu.render() %}
             {% call nav_dropdown_item.render(url="/vision") %}
               Vision
             {% endcall %}
