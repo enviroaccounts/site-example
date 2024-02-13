@@ -50,6 +50,10 @@ def story():
 def sponsorship():
     return render_template("pages/sponsorship.html")
 
+@app.route('/supporter')
+def supporter():
+    return render_template("pages/supporter.html")
+
 @app.route('/reference')
 def reference():
     return render_template("pages/reference.html")

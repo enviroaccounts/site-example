@@ -1,5 +1,6 @@
 {%- macro render(gap="gap-0") -%}
   <ul class="w-full flex flex-col list-disc pt-5 pl-5 {{ gap }}">
+    <!-- call text_list_item atom here -->
     {{ caller() }}
   </ul>
 {%- endmacro -%}
