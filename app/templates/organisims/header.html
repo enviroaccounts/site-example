@@ -27,16 +27,16 @@
         {% call button_hamburger.render() %}
         {% endcall %}
       </div>
-      <!--  navigation list -->
       <nav
-        class="items-center justify-between hidden w-full md:flex md:w-[40%] md:order-1 md:ml-[3%] md:h-[22%] xl:mb-7 lg:mb-6 md:mb-5"
-        id="navbar-cta"
-      >
+      class="md:flex hidden items-center justify-between w-full md:w-[40%] md:order-1 md:ml-[3%] md:h-[22%] xl:mb-7 lg:mb-6 md:mb-5"
+      id="navbar-cta"
+    >
+      <!--  navigation_primary list -->
         {% call nav_list.render() %}
-          <!-- navigation item -->
+          <!-- navigation_primary item -->
           {{ parent_caller2 }}
         {% endcall %}
-      </nav>
     </div>
+  </nav>
   </div>
 {%- endmacro -%}
