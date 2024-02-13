@@ -172,3 +172,60 @@
   --target-top:91%; 
   --target-left: 75.5%; 
 }
+
+/* animation in screen < md */
+@media (max-width: 768px) {
+  .icon_climate_variables {
+    position: absolute;
+    animation: moveIcon 2s ease-in forwards;
+    --initial-top: 15%; 
+    --initial-left: 29.53%; 
+    --target-top: 56.5%; 
+    --target-left: 87.5%;
+  }
+
+  .icon_greenhouse_gas_emissions {
+    position: absolute;
+    animation: moveIcon 2s ease-in forwards;
+    --initial-top: 18.09%; 
+    --initial-left: 41.38%; 
+    --target-top: 63%; 
+    --target-left:  87.5%; 
+  }
+
+  .icon_land_use_change {
+    position: absolute;
+    animation: moveIcon 2s ease-in forwards;
+    --initial-top: 20.33%; 
+    --initial-left: 20.05%; 
+    --target-top: 69.5%; 
+    --target-left:  87.5%; 
+  }
+
+  .icon_social_wellbeing {
+    position: absolute;
+    animation: moveIcon 2s ease-in forwards;
+    --initial-top: 17.75%; 
+    --initial-left: 51.35%; 
+    --target-top: 75.5%;  
+    --target-left:  87.5%;
+  }
+
+  .icon_water_quality {
+    position: absolute;
+    animation: moveIcon 2s ease-in forwards;
+    --initial-top: 27.54%; 
+    --initial-left: 45.96%; 
+    --target-top: 81.5%;  
+    --target-left:87.5%;
+  }
+
+  .icon_invasive_species {
+    position: absolute;
+    animation: moveIcon 2s ease-in forwards;
+    --initial-top: 23.33%; 
+    --initial-left: 53.77%; 
+    --target-top:87.5%; 
+    --target-left: 87.5%;
+  }
+}
