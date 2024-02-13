@@ -39,6 +39,21 @@
 /****************
  Plot container 
  ****************/
+ /* extra small */
+ .graph_container_extrasmall {
+  width: 100%;
+  padding-top: 80%; 
+  position: relative;
+}
+.graph_container_extrasmall  > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* small */
 .graph_container_small {
   width: 100%;
   padding-top: 80%; 
@@ -59,7 +74,7 @@
   position: relative;
 }
 }
-
+/* medium */
 .graph_container_medium {
   width: 100%;
   padding-top: 90%; 
@@ -181,7 +196,7 @@
     --initial-top: 15%; 
     --initial-left: 29.53%; 
     --target-top: 56.5%; 
-    --target-left: 87.5%;
+    --target-left: 82%; 
   }
 
   .icon_greenhouse_gas_emissions {
@@ -190,7 +205,7 @@
     --initial-top: 18.09%; 
     --initial-left: 41.38%; 
     --target-top: 63%; 
-    --target-left:  87.5%; 
+    --target-left:  82%; 
   }
 
   .icon_land_use_change {
@@ -199,7 +214,7 @@
     --initial-top: 20.33%; 
     --initial-left: 20.05%; 
     --target-top: 69.5%; 
-    --target-left:  87.5%; 
+    --target-left:  82%; 
   }
 
   .icon_social_wellbeing {
@@ -207,8 +222,8 @@
     animation: moveIcon 2s ease-in forwards;
     --initial-top: 17.75%; 
     --initial-left: 51.35%; 
-    --target-top: 75.5%;  
-    --target-left:  87.5%;
+    --target-top: 76.5%;  
+    --target-left:  82%; 
   }
 
   .icon_water_quality {
@@ -216,8 +231,8 @@
     animation: moveIcon 2s ease-in forwards;
     --initial-top: 27.54%; 
     --initial-left: 45.96%; 
-    --target-top: 81.5%;  
-    --target-left:87.5%;
+    --target-top: 82.5%;  
+    --target-left:82%; 
   }
 
   .icon_invasive_species {
@@ -225,7 +240,7 @@
     animation: moveIcon 2s ease-in forwards;
     --initial-top: 23.33%; 
     --initial-left: 53.77%; 
-    --target-top:87.5%; 
-    --target-left: 87.5%;
+    --target-top:88.5%; 
+    --target-left: 82%; 
   }
 }
