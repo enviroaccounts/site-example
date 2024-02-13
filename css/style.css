@@ -115,6 +115,45 @@
   left: 53.77%; 
 }
 
+/* icon initial position in xs screen */
+@media (max-width: 768px) {
+  .icon_climate_variables {
+    position: absolute;
+    top: 15%; 
+    left: 29.53%; 
+  }
+
+  .icon_greenhouse_gas_emissions {
+    position: absolute;
+    top: 18.09%; 
+    left: 41.38%; 
+  }
+
+  .icon_land_use_change {
+    position: absolute;
+    top: 20.33%; 
+    left: 20.05%; 
+  }
+
+  .icon_social_wellbeing {
+    position: absolute;
+    top: 17.75%; 
+    left: 51.35%; 
+  }
+
+  .icon_water_quality {
+    position: absolute;
+    top: 27.54%; 
+    left: 45.96%; 
+  }
+
+  .icon_invasive_species {
+    position: absolute;
+    top: 23.33%; 
+    left: 53.77%; 
+  }
+}
+
 /* anmiation */
 @keyframes moveIcon {
   from {
