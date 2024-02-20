@@ -33,36 +33,32 @@
           {% call paragraph.render() %}
             Climate change mitigation is an important target for the catchment,
             which has a strong focus on being a sustainable tourism
-            destination<sup>9,10</sup>. The purpose of providing an emissions
+            destination<sup><a href="#fn1">9,10</a></sup>. The purpose of providing an emissions
             inventory as part of the monitoring framework is to determine
             significant sources of GHG emissions in the catchment, which can
             help to prioritise mitigation efforts.
           {% endcall %}
         {% endcall %}
         <!-- graph frame organism-->
-        {% call(content) graph_frame.render(graph_title="GHG emissions by sector in 2022 for the catchment. Forestry emissions are based on the most recent LUCAS data (from 2016).",flyout_id="flyout_GHGemissions") %}
+        {% call(content) graph_frame.render(graph_title="GHG emissions by sector in 2022 for the catchment. Forestry emissions are based on the most recent LUCAS data from 2016.",flyout_id="flyout_GHGemissions") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_GHGemissions") %}
               {% call datasource_item.render(link="https://www.auroraenergy.co.nz/",link_title="Aurora Energy") %}
                 Energy consumption data were obtained from the electricity
-                network
+                network.
               {% endcall %}
               {% call datasource_item.render(link="https://www.stats.govt.nz/information-releases/agricultural-production-statistics-year-to-june-2022-provisional/",link_title="Stats NZ Agricultural Production Census") %}
-                Agricultural activity data were obtained from
+                Agricultural activity data were obtained from census data.
               {% endcall %}
               {% call datasource_item.render(link="https://waiwanaka.nz/wp-content/uploads/2023/10/Technical-Report-and-SOPs.pdf",link_title="Technical Report") %}
                 Transport emissions were derived from fuel tax data which were
                 obtained from the Central Otago District Council. The detailed
-                method on how emissions were derived can be found in the
+                method on how emissions were derived can be found in the Technical Report.
               {% endcall %}
               {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/",link_title="LUCAS") %}
                 GHG sequestration removals from forestry were estimated using
                 data obtained from the Land Use and Coverage Area frame Survey
-                (LUCAS) data set
-              {% endcall %}
-              {% call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LCDB") %}
-                GHG sequestration removals from forestry were estimated using
-                data obtained from the New Zealand Land Cover Database.
+                (LUCAS) data set.
               {% endcall %}
             {% endcall %}
           {% endif %}
@@ -127,7 +123,7 @@
         <!--  text without heading molecule-->
         {% call paragraph.render() %}
           Agriculture emissions are dominated by the sheep, dairy, and beef
-          industries. Data for this sector were obtained from StatsNZ census.
+          industries. Data for this sector were obtained from census data provided by StatsNZ.
         {% endcall %}
         {% call paragraph.render() %}
           An overview of the GHG emissions by sector since 2020 is provided
@@ -143,8 +139,7 @@
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_GhgAgri") %}
               {% call datasource_item.render(link="https://www.stats.govt.nz/information-releases/agricultural-production-statistics-year-to-june-2022-provisional/",link_title="Stats NZ Agricultural Production Census") %}
-                Agricultural activity data were obtained from the (LUCAS) data
-                set
+                Agricultural activity data were obtained from census data.
               {% endcall %}
             {% endcall %}
           {% endif %}
@@ -162,7 +157,7 @@
       <!-- full width organism with items aligned to end -->
       {% call child_container_full_width_items_end.render() %}
         <!-- graph frame organism-->
-        {% call(content) graph_frame.render(graph_title="GHG emissions by industry sector in 2020, 2021 and 2022.",flyout_id="flyout_GHGEmissionsBySector") %}
+        {% call(content) graph_frame.render(graph_title="GHG emissions by sector in 2020, 2021 and 2022.",flyout_id="flyout_GHGEmissionsBySector") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_GHGEmissionsBySector") %}
               {% call datasource_item.render(link="https://www.auroraenergy.co.nz/",link_title="Aurora Energy") %}
@@ -170,21 +165,17 @@
                 network
               {% endcall %}
               {% call datasource_item.render(link="https://www.stats.govt.nz/information-releases/agricultural-production-statistics-year-to-june-2022-provisional/",link_title="Stats NZ Agricultural Production Census") %}
-                Agricultural activity data were obtained from
+                Agricultural activity data were obtained from census data.
               {% endcall %}
               {% call datasource_item.render(link="https://waiwanaka.nz/wp-content/uploads/2023/10/Technical-Report-and-SOPs.pdf",link_title="Technical Report") %}
                 Transport emissions were derived from fuel tax data which were
                 obtained from the Central Otago District Council. The detailed
-                method on how emissions were derived can be found in the
+                method on how emissions were derived can be found in the Technical Report.
               {% endcall %}
               {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/",link_title="LUCAS") %}
                 GHG sequestration removals from forestry were estimated using
                 data obtained from the Land Use and Coverage Area frame Survey
-                (LUCAS) data set
-              {% endcall %}
-              {% call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LCDB") %}
-                GHG sequestration removals from forestry were estimated using
-                data obtained from the New Zealand Land Cover Database.
+                (LUCAS) data set.
               {% endcall %}
             {% endcall %}
           {% endif %}
@@ -210,7 +201,7 @@
         <!--  text without heading molecule-->
         {% call paragraph.render() %}
           Each sector can be analysed in more detail to understand where the
-          largest contributing activities or sources exist.For example, Wanaka
+          largest contributing activities or sources exist. For example, Wānaka
           is the main contributor to the overall emissions from the energy
           sector with 78%.
         {% endcall %}
@@ -262,8 +253,8 @@
           catchment&#59; as forests grow, they sequester carbon dioxide and act
           as a natural carbon sink. A small quantity of greenhouse gas emissions
           result from deforestation and harvesting of both natural and
-          plantation forests&#58; for example,a loss of 10.3 ha of forestland in
-          2016 led to 9,500 tonnes of CO<sub>2</sub>e emitted to the atmosphere.
+          plantation forests. For example, a loss of 10.3 ha of forestland in
+          2016 led to 9,500 tonnes of CO<sub>2</sub>e emitted into the atmosphere.
         {% endcall %}
       {% endcall %}
       <!--  right side organism -->
@@ -274,11 +265,7 @@
             {% call flyout.render(flyout_id="flyout_GhgRemoval") %}
               {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011/",link_title="LUCAS") %}
                 GHG sequestration removals from forestry were estimated using
-                data obtained from the Land Use and Coverage Area frame Survey
-              {% endcall %}
-              {% call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LCDB") %}
-                GHG sequestration removals from forestry were estimated using
-                data obtained from the New Zealand Land Cover Database
+                data obtained from the Land Use and Coverage Area frame Survey.
               {% endcall %}
             {% endcall %}
           {% endif %}
@@ -296,15 +283,12 @@
 
     {% call page_container_plain.render() %}
       {% call reference.render() %}
-        {% call subhead_01_textstyle.render() %}
-          Reference
-        {% endcall %}
-        {% call reference_item.render(url="https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/queenstownnz/Queenstown_Lakes_Regenerative_Tourism_Plan_956930e4-1b59-4293-9294-96b5d5ec5196.pdf",name=" online",additional_info=", last accessed Jan 2024.") %}
-          [9] Destination Management Plan for Queenstown Lakes, Travel to a
+        {% call reference_item.render(url="https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/queenstownnz/Queenstown_Lakes_Regenerative_Tourism_Plan_956930e4-1b59-4293-9294-96b5d5ec5196.pdf",name=" online,",additional_info="last accessed Jan 2024.") %}
+          <span id="fn1">[9]</span> Destination Management Plan for Queenstown Lakes, Travel to a
           thriving future &minus; available
         {% endcall %}
-        {% call reference_item.render(url="https://www.qldc.govt.nz/media/ie3jk5bb/qldc_climate-and-biodiversity-plan_jun22-web.pdf",name=" online",additional_info=", last accessed Jan 2024.") %}
-          [10] Queenstown Lakes Climate and Biodiversity Plan 2022-2025, July
+        {% call reference_item.render(url="https://www.qldc.govt.nz/media/ie3jk5bb/qldc_climate-and-biodiversity-plan_jun22-web.pdf",name=" online,",additional_info="last accessed Jan 2024.") %}
+          <span id="fn1">[10]</span> Queenstown Lakes Climate and Biodiversity Plan 2022-2025, July
           2022 - available
         {% endcall %}
       {% endcall %}

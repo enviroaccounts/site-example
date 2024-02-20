@@ -57,14 +57,14 @@
           Water quality was assessed in accordance with the guidelines provided
           by the National Policy Statement for Freshwater Management 2020
           (NPS-FM), which ranks each parameter from A (good) to D or E
-          (poor)<sup>11</sup>.
+          (poor)<sup><a href="#fn1">11</a></sup>.
         {% endcall %}
 
         {% call paragraph.render() %}
           While the parameters are being measured in both lake and rivers,
           NPS-FM provides guidelines that allow us to obtain quality ratings for
           total phosphorus and chlorophyll-a for lakes only, not rivers;
-          rankings for nitrate can only be obtained for rivers not lakes.
+          and rankings for nitrate can only be obtained for rivers not lakes.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
@@ -73,6 +73,10 @@
         {% call(content) graph_frame.render(graph_title="Water quality measurement sites.",flyout_id="placeholder7") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder7") %}
+              {% call datasource_item.render(link="https://envdata.orc.govt.nz/AQWebPortal/Data",link_title="AQWebPortal") %}
+                Upper Clutha water quality measurement sites as available from the Otago Regional Council Environmental
+                Data Portal website
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -161,7 +165,7 @@
                     Human contact
                   </td>
                   <td class="md:py-4 md:px-6 py-1 px-2 bg-neutral-100">
-                    E. coli (Escherichia coli) is an indicator of the faecal
+                    E.coli (Escherichia coli) is an indicator of the faecal
                     contamination and the presence of disease-causing organisms.
                     Common sources of E.coli bacteria are human wastewater
                     discharges, animal waste, bird droppings and stormwater
@@ -190,12 +194,12 @@
         {% call(content) graph_frame.render(graph_title="The 'current state’ of lake and river water quality in the catchment.",flyout_id="placeholder9") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder9") %}
-              {% call datasource_item.render(link="https://envdata.orc.govt.nz/AQWebPortal/Disclaimer?returnUrl=%2FData",link_title="AQWebPortal") %}
+              {% call datasource_item.render(link="https://envdata.orc.govt.nz/AQWebPortal/Data",link_title="AQWebPortal") %}
                 Data were obtained from the Otago Regional Council Environmental
-                Data Portal website
+                Data Portal website, and
               {% endcall %}
               {% call datasource_item.render(link="https://www.lawa.org.nz/",link_title="LAWA") %}
-                Data were obtained from the Land Air Water Aotearoa website
+                the Land Air Water Aotearoa (LAWA) website
               {% endcall %}
             {% endcall %}
           {% endif %}
@@ -224,15 +228,15 @@
           {% call unorderlist_disc_style.render() %}
             {% call unorderlist_item.render() %}
               Monitoring nitrate levels helps manage agricultural practices to
-              minimise pollution and protect water resources&#59;
+              minimise pollution and protect water resources.
             {% endcall %}
             {% call unorderlist_item.render() %}
               Monitoring E.coli ensures that water sources are safe for
-              recreational activities, drinking, and agricultural use&#59;
+              recreational activities, drinking, and agricultural use.
             {% endcall %}
             {% call unorderlist_item.render() %}
               Monitoring chlorophyll-a levels provides insight into the overall
-              health of aquatic ecosystems&#59;
+              health of aquatic ecosystems.
             {% endcall %}
             {% call unorderlist_item.render() %}
               Monitoring total phosphorus allows for early detection of
@@ -264,11 +268,8 @@
 
     {% call page_container_plain.render() %}
       {% call reference.render() %}
-        {% call subhead_01_textstyle.render() %}
-          Reference
-        {% endcall %}
         {% call reference_item.render(url="https://environment.govt.nz/publications/national-policy-statement-for-freshwater-management-2020-amended-january-2024/",name=" online",additional_info=".") %}
-          [11] Ministry for the Environment, National Policy Statement for
+        <span id="fn1">[11]</span> Ministry for the Environment, National Policy Statement for
           Freshwater Management 2020, available
         {% endcall %}
       {% endcall %}

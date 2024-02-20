@@ -96,7 +96,7 @@
             {% call flyout.render(flyout_id="placeholder6") %}
               {% call datasource_item.render(link="https://letstalk.qldc.govt.nz/qol",link_title="Quality of Life Survey") %}
                 Data and information were obtained from the Queenstown Lakes
-                District Council (QLDC)
+                District Council (QLDC).
               {% endcall %}
             {% endcall %}
           {% endif %}
@@ -128,15 +128,15 @@
           Various studies have been conducted to understand how the health of
           the environment we live in may impact the well-being of the people who
           live in it. Societies living in a flourishing, green environment may
-          be more likely to thrive<sup>5</sup>. Wealthier societies may have
+          be more likely to thrive<sup><a href="#fn1">5</a></sup>. Wealthier societies may have
           more opportunities to invest in climate-aware lifestyle
-          choices<sup>6</sup>.
+          choices<sup><a href="#fn1">6</a></sup>.
         {% endcall %}
         {% call paragraph.render() %}
           Māori health models, such as the concept of Te Whare Tapa Whā,
           illustrate the intimate link between the physical, spiritual and
           mental health of individuals with their communities and
-          environment<sup>7</sup>.
+          environment<sup><a href="#fn1">7</a></sup>.
         {% endcall %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="36%") %}
@@ -148,7 +148,7 @@
       {% call child_container_fifty_percent_basis.render() %}
         {% call paragraph.render() %}
           It is important to link social well-being to the other indicators
-          presented in this report, to gain insights into how the health and
+          presented here, to gain insights into how the health and
           happiness of the community may impact the catchment health.
         {% endcall %}
         <!-- call out molecule-->
@@ -164,7 +164,7 @@
           rank of the overall quality of life, the high cost of living and low
           affordability of housing pose significant threats for the future
           health of the catchment, as residents may simply be unable to afford
-          to support improvements.
+          supporting improvements.
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -177,21 +177,18 @@
 
     {% call page_container_plain.render() %}
       {% call reference.render() %}
-        {% call subhead_01_textstyle.render() %}
-          Reference
-        {% endcall %}
         {% call reference_item.render(url="https://academic.oup.com/heapro/article/36/Supplement_1/i53/6460415",name=" online",additional_info=", last accessed Jan 2024.") %}
-          [5] Hancock, T. and the IUHPE&#39;s Global Working Group on Waiora
+          <span id="fn1">[5]</span> Hancock, T. and the IUHPE&#39;s Global Working Group on Waiora
           Planetary Health: Towards healthy One Planet cities and communities:
           planetary health promotion at the local level, Health Promotion
           International, Volume 36, 2021 &minus; available
         {% endcall %}
         {% call reference_item.render(url="https://edition.cnn.com/2019/07/12/health/rich-people-climate-change-intl/index.html",name=" online",additional_info=", last accessed Jan 2024.") %}
-          [6] Bailey, S.: How rich people could help save the planet from
+          <span id="fn1">[6]</span> Bailey, S.: How rich people could help save the planet from
           climate change, CNN, Jul. 12, 2019 &minus; available
         {% endcall %}
         {% call reference_item.render(url="https://natlib.govt.nz/blog/posts/nature-and-nurture-connecting-conservation-and-wellbeing",name=" online",additional_info=", last accessed Jan 2024.") %}
-          [7] Williamson E. and Gaston N: Nature and nurture: Connecting
+          <span id="fn1">[7]</span> Williamson E. and Gaston N: Nature and nurture: Connecting
           conservation and wellbeing, National Library of New Zealand, 2020,
           available
         {% endcall %}
