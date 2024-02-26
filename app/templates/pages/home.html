@@ -92,7 +92,7 @@
       {% call paragraph.render() %}
         Welcome to the Upper Clutha Catchment Health Project, an initiative
         deeply rooted in the principles of Te Taiao – a profound connection to
-        and reverence for the natural world (Figure below). Our project serves
+        and reverence for the natural world. Our project serves
         as a catalyst for community engagement, uniting diverse stakeholders –
         from residents and iwi to landowners and tourism operators – in a
         collective effort to revitalise Te Taiao.
@@ -134,17 +134,26 @@
           sense of ownership and pride within our community for the stewardship
           of our catchment.
         {% endcall %}
+        {% call(content) graph_frame.render(graph_title="The concept of Te Taiao and its four interconnected components.",flyout_id="flyout_Illustration_TeTaiao") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_Illustration_TeTaiao") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            {% call graph_container_extrasmall.render() %}
+              <img
+                width="100%"
+                height="100%"
+                src="/static/images/graphs/Illustration_TeTaiao.png"
+                alt="The concept of Te Taiao and its four interconnected components."
+                title="The concept of Te Taiao and its four interconnected components."
+              />
+            {% endcall %}
+          {% endif %}
+        {% endcall %}  
       {% endcall %}
       <!--  Right side organism -->
       {% call child_container_fifty_percent_basis.render() %}
-        {% call paragraph.render() %}
-          The monitoring framework is comprised of a selection of indicators
-          that reflect the health of our land, water, biodiversity, livelihoods,
-          and culture within the catchment, all interconnected within Te Taiao.
-          These indicators not only provide valuable insights but also instil a
-          sense of ownership and pride within our community for the stewardship
-          of our catchment.
-        {% endcall %}
         {% call paragraph.render() %}
           By rooting our monitoring framework indicators with direct community
           values, pressures, and actions that were identified in the
@@ -162,7 +171,7 @@
         {% call paragraph.render() %}
           The monitoring framework aims to connect the Upper Clutha community to
           Te Taiao through understanding the state of our catchment health and
-          the interacting indicators that contribute such. We recognise that
+          the interacting indicators that contribute. We recognise that
           true health in our catchment transcends mere ecological balance; it
           encompasses a sustainable coexistence between human activities and
           endeavours, and the natural environment. Through our monitoring
@@ -174,7 +183,7 @@
           monitoring framework fosters collaboration among various organisations
           across the catchment, ensuring a unified approach towards
           environmental stewardship. It serves as the cornerstone for our annual
-          "State of Catchment Health" assessments, providing a concise overview
+          "State of the Upper Clutha Catchment Health" assessments, providing a concise overview
           of key findings as presented on this website.
         {% endcall %}
       {% endcall %}
@@ -211,7 +220,7 @@
           Want to find more information on how to become a partner?
 
           <a href="mailto:getinvolved@waiwanaka.nz" class="underline"
-            >contact us</a
+            >Contact us today.</a
           >
         {% endcall %}
       {% endcall %}

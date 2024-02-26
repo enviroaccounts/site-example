@@ -8,7 +8,7 @@
 {% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
-{% set title_text="Our Supporter" %}
+{% set title_text="Our Supporters" %}
 
 {% block title %}{{ title_text }}{% endblock %}
 
@@ -30,11 +30,10 @@
           >, recognising the significance of their contribution in catalysing
           positive change. Their commitment to advancing knowledge and fostering
           collaboration has been instrumental in shaping the foundation of this
-          catchment health framework.
+          monitoring framework.
         {% endcall %}
         {% call paragraph.render() %}
-          We would also like to express our sincere appreciation to the working
-          group organisations -
+          We would also like to express our sincere appreciation to the organisations -
           <a href="https://enviroaccounts.com/" class="underline"
             >Environmental Accounting Services</a
           >
@@ -51,8 +50,7 @@
         {% call child_container_full_width.render() %}
           {% call paragraph.render() %}
             This project has been collaborative from the outset, with
-            significant time and input from the following organisations and
-            people;
+            significant time and input from the following organisations:
           {% endcall %}
           {% call unorderlist_disc_style.render(gap="gap-1") %}
             {% call unorderlist_item.render() %}
@@ -70,16 +68,17 @@
             {% endcall %}
             {% call unorderlist_item.render() %}
               <a href="https://www.orc.govt.nz/" class="underline">
-                Otago Regional Council</a
-              >,
+                Otago Regional Council,</a
+              > and
             {% endcall %}
             {% call unorderlist_item.render() %}
               <a href="https://www.qldc.govt.nz/" class="underline">
-                Queenstown Lakes District Council</a
+                Queenstown Lakes District Council.</a
               >
             {% endcall %}
           {% endcall %}
         {% endcall %}
+        <!-- MGG - START CHECK --!>
         {% call paragraph.render() %}
           The analysis and findings presented here are based on our
           interpretation of the data and do not necessarily reflect the views or
@@ -92,6 +91,7 @@
           be held liable for the use of and reliance of the information and
           findings provided on this website.
         {% endcall %}
+        <!-- MGG - END CHECK --!>       
         {% call paragraph.render() %}
           Your collective efforts have not only enriched the content of this
           framework but have also strengthened the bonds within our community.
@@ -121,7 +121,7 @@
         <!-- Become a supporter of the Upper Clutha Catchment Health Report -->
         {% call paragraph.render() %}
           Thank you for your interest in joining us as a supporter of the Upper
-          Clutha Catchment Health Project. By becoming a partner, you'll play a
+          Clutha Catchment Health Project. By becoming a partner you'll play a
           crucial role in monitoring and reporting on the health of our
           waterways, contributing to a better understanding of our environment
           and fostering opportunities for a healthy, accessible, and thriving
@@ -134,14 +134,10 @@
         Why Partner with Upper Clutha Catchment Health Partnership?
         {% endcall %}
         {% call paragraph.render() %}
-          As a partner, you'll stand alongside government entities, industries,
+          As a partner you'll stand alongside government entities, industries,
           research groups, and the community, showcasing your commitment to
-          environmental stewardship and community well-being.
+          environmental stewardship and community well-being. Here's what you can expect as a supporter:
         {% endcall %}
-        {% call paragraph.render() %}
-          Here's what you can expect as a supporter:
-        {% endcall %}
-
         <!-- Recognition and Benefits: -->
         {% call child_container_full_width.render() %}
           {% call subhead_01_textstyle.render() %}
@@ -152,9 +148,6 @@
               Acknowledgment of your organisation's contribution and its
               commitment to environmental and economic sustainability, cultural
               awareness, and social well-being.
-            {% endcall %}
-            {% call unorderlist_item.render() %}
-              Utilisation of data and analysis to make informed decisions.
             {% endcall %}
             {% call unorderlist_item.render() %}
               Enhanced community relations by demonstrating your organisation's
@@ -178,7 +171,7 @@
           {% call unorderlist_disc_style.render(gap="gap-1") %}
             {% call unorderlist_item.render() %}
               Assist in disseminating reports and publications, such as the
-              Annual Health Report Card.
+              Annual Summary Health Report.
             {% endcall %}
             {% call unorderlist_item.render() %}
               Support the continuous development of this initiative through
@@ -219,8 +212,7 @@
           {% endcall %}
           {% call unorderlist_item.render() %}
             The Ministry for the Environment (MfE), for freely publishing their
-            environmental data on a publicly accessible web-based application
-            called the MfE Data Service
+            environmental data on a publicly accessible web-based application.
           {% endcall %}
           {% call unorderlist_item.render() %}
             The Queenstown-Lakes District Council (QLDC), for sharing their
@@ -234,12 +226,11 @@
           {% endcall %}
           {% call unorderlist_item.render() %}
             The Central Otago District Council (CODC), for providing data for
-            use in the GHG emissions indicator.
+            use in estimating the GHG emissions.
           {% endcall %}
           {% call unorderlist_item.render() %}
-            The National Institute of Water and Atmospheric Research (NIWA), for
-            collecting data from weather stations across New Zealand and making
-            this raw data publicly available data on their National Climate
+            The National Institute of Water and Atmospheric Research (NIWA), for making
+            data from weather stations across New Zealand publicly available through New Zealand's National Climate
             Database (CliFlo).
           {% endcall %}
           {% call unorderlist_item.render() %}
@@ -247,7 +238,7 @@
             predator trapping and monitoring, and sharing their data for the
             purpose of this monitoring framework. We would like to thank the
             TrapNZ staff for the additional data provided that was not readily
-            accessible on their website, to enhance our data processing.
+            accessible on their website.
           {% endcall %}
           {% call unorderlist_item.render() %}
             The Land Information New Zealand (LINZ) in collaboration with the
@@ -259,8 +250,8 @@
             alternative data sources.
           {% endcall %}
           {% call unorderlist_item.render() %}
-            Aurora Energy, for providing energy consumption data for use in the
-            GHG emissions indicator.
+            Aurora Energy, for providing energy consumption data for use in estimating
+            GHG emissions from the energy sector.
           {% endcall %}
         {% endcall %}
       {% endcall %}

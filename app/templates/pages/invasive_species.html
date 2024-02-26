@@ -32,19 +32,19 @@
         {% call paragraph.render() %}
           New Zealand&#39;s biodiversity is unique: 100% of the country&#39;s
           frogs and reptiles, 90% of the insects, 80% of vascular plants, and
-          25% of bird species are only found in New Zealand<sup>3</sup>.
+          25% of bird species are only found in New Zealand<sup><a href="#fn1">3</a></sup>.
         {% endcall %}
         {% call paragraph.render() %}
           Invasive species are recognised as an important challenge in the
           catchment and greater region. The Otago Regional Council has
-          classified 49 species<sup>4</sup> of plants and animals in the region
+          classified 49 species<sup><a href="#fn2">4</a></sup> of plants and animals in the region
           as pests due to the threats they pose. With that the Upper Clutha
           Catchment is home to a valuable ecosystem that needs protecting and
           restoring.
         {% endcall %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="503  ") %}
-          Increase in the number of traps between 2020 and 2021
+          Increase in the number of traps between 2020 and 2021.
         {% endcall %}
         {% call paragraph.render() %}
           Monitoring the extent of invasive species can provide an insight into
@@ -58,6 +58,9 @@
         {% call(content) graph_frame.render(graph_title="Heat map of pest control areas within the catchment.",flyout_id="placeholder2") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder2") %}
+              {% call datasource_item.render(link="https://www.trap.nz/",link_title="TrapNZ") %}
+                Data were obtained from
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -126,7 +129,7 @@
       {% call child_container_forty_percent_basis.render() %}
         {% call paragraph.render() %}
           In 2022, the dominating pests caught in the catchment are rats (40%)
-          followed by possums(12%).
+          followed by possums with 12%.
         {% endcall %}
         <!-- call out molecule-->
         {% call callout.render(statistic_value="40%") %}
@@ -135,7 +138,7 @@
         {% call paragraph.render() %}
           Continued efforts to control pests in the catchment is an important
           contribution to the national Predator Free 2050 goal, which is working
-          towards an Aotearoa where our native species are safe from extinction
+          towards an Aotearoa New Zealand where our native species are safe from extinction
           and thrive alongside us.
         {% endcall %}
       {% endcall %}
@@ -217,15 +220,12 @@
 
     {% call page_container_plain.render() %}
       {% call reference.render() %}
-        {% call subhead_01_textstyle.render() %}
-          Reference
-        {% endcall %}
-        {% call reference_item.render(url="https://environment.govt.nz/publications/environment-new-zealand-2007/chapter-12-biodiversity/introduction/",name=" online",additional_info=", last accessed Jan 2024.") %}
-          [3] Environment New Zealand 2007, Ministry for the Environment, Manatū
+        {% call reference_item.render(url="https://environment.govt.nz/publications/environment-new-zealand-2007/chapter-12-biodiversity/introduction/",name=" online,",additional_info="last accessed Jan 2024.") %}
+          <span id="fn1">[3]</span> Environment New Zealand 2007, Ministry for the Environment, Manatū
           Mō Te Taiao, Report ME 847, Chapter 12 &minus; available
         {% endcall %}
-        {% call reference_item.render(url="https://www.orc.govt.nz/plans-policies-reports/regional-plans-and-policies/regional-pest-management-plan",name=" online",additional_info=", last accessed Jan 2024.") %}
-          [4] Otago Pest Management Plan 2019-2029, Otago Regional Council, 2019
+        {% call reference_item.render(url="https://www.orc.govt.nz/plans-policies-reports/regional-plans-and-policies/regional-pest-management-plan",name=" online,",additional_info="last accessed Jan 2024.") %}
+          <span id="fn2">[4]</span> Otago Pest Management Plan 2019-2029, Otago Regional Council, 2019
           &minus; available
         {% endcall %}
       {% endcall %}
