@@ -11,15 +11,13 @@
 {% import 'organisims/graph_container_medium.html' as graph_container_medium with context %}
 {% import 'organisims/table_container.html' as table_container with context %}
 {% import 'organisims/table_container.html' as table_container with context %}
-{% import 'organisims/reference.html' as reference  with context %}
+{% import 'molecules/reference.html' as reference  with context %}
 {% import 'molecules/reference_item.html' as reference_item  with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
-{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
-{% import 'atoms/datasource_item.html' as datasource_item with context %}
+{% import 'molecules/datasource_item.html' as datasource_item with context %}
 {% set title_text="Land use change" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -31,7 +29,7 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Land use and land use change are catchment-wide indicators assessing
           how we are using our land. Over half of the area of the catchment is
           categorised as “production grassland”, dominated by low producing
@@ -80,7 +78,7 @@
       <!-- left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Urban areas in Wānaka and Hāwea have increased since 1990. Primarily
           through the conversion of productive grassland. Despite this
           conversion, the total area of production grassland remained the same,
@@ -190,7 +188,7 @@
       <!-- left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Since 1990, there has been a net increase of 392 ha of forestland
           across the catchment. Most of this increase has been through the growth
           of new exotic forest. The cover of natural, indigenous forest has seen
@@ -228,8 +226,12 @@
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
+        <!-- subhead_01_textstyle molecule-->
+        {% call subhead_01_textstyle.render() %}
+        Forest Cover
+        {% endcall %}
         <!--  text with heading molecule-->
-        {% call text_with_heading.render(subhead_01_text="Forest Cover") %}
+        {% call paragraph.render() %}
           To understand the current land use and land use change practices, a
           more recent dataset from 2008 to 2018 was analysed, showing a gross
           increase in exotic forest cover of 71 ha.This increase results from
@@ -244,7 +246,7 @@
           Indigenous forest cover has decreased by &lt;0.2% between 2008 and
           2018.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Most of the loss of indigenous forest that took place between 2008 and
           2018 was the result of landslides in the high alpine<sup><a href="#fn1">1</a></sup>,
           rather than a direct impact of anthropogenic activities. Although

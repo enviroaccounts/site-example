@@ -9,14 +9,12 @@
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
 {% import 'organisims/graph_container_large.html' as graph_container_large with context %}
-{% import 'organisims/reference.html' as reference  with context %}
+{% import 'molecules/reference.html' as reference  with context %}
 {% import 'molecules/reference_item.html' as reference_item  with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
-{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
-{% import 'atoms/datasource_item.html' as datasource_item with context %}
+{% import 'molecules/datasource_item.html' as datasource_item with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% set title_text="Climate Variables" %}
 
@@ -29,13 +27,14 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Climate variables are key drivers for many measures of catchment
+
           health due to their influence on the ecosystem as well as water
           quality and quantity. This indicator includes temperature and rainfall
           observations obtained from four, currently active, measurement sites.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Future expansion of the network of weather stations and parameters
           monitored would be extremely valuable to obtain a more robust
           representation of the climatic conditions of the catchment.
@@ -79,7 +78,9 @@
       <!-- full width organism with items aligned to end -->
       {% call child_container_full_width_items_end.render() %}
         {% call child_container_sixty_percent_width.render() %}
-          {% call text_with_heading.render(subhead_01_text="Wānaka Airport ") %}
+          <!-- subhead_01_textstyle heading-->
+          {% call subhead_01_textstyle.render() %}
+          Wānaka Airport
           {% endcall %}
         {% endcall %}
         <!-- graph frame organism-->
@@ -109,14 +110,14 @@
     <!-- content-third section   -->
     {% call page_container_plain.render() %}
       {% call child_container_full_width_items_end.render() %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The relationship between climate variables and other measures of
           catchment health are complex, but linked. Rainfall and temperature
           impact whether flora and fauna can flourish, may impede human
           recreation opportunities both in the summer and winter, as well as
           pose threats to the agricultural industry of the catchment.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The range of some invasive species may increase within the Upper
           Clutha Catchment: for example, the sub-tropical bungalow palm, which
           currently only grows on the North Island, could spread to the South
@@ -127,7 +128,7 @@
           growth. Rainfall, on the other hand, influences the
           availability of food, water, and shelter for pests.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Climate data presented here are thus important to consider when, for
           example, assessing the data presented as part of the
           <a href="/invasive_species" class="underline">invasive species</a>.
@@ -146,7 +147,7 @@
       <!-- full width organism with items aligned to end -->
       {% call child_container_full_width_items_end.render() %}
         {% call child_container_sixty_percent_width.render() %}
-          {% call text_without_heading.render() %}
+          {% call paragraph.render() %}
             A dryer summer and wetter winter in 2022 were observed in Makarora
             compared to the long-term average from 1990 to 2005 &minus; putting
             pressure on the water resources, especially in summer. Furthermore,

@@ -1,11 +1,11 @@
 {% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
-{% import 'molecules/text_list_plain.html' as text_list_plain with context %}
-{% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% import 'molecules/unoderlist_nodisc_style.html' as unoderlist_nodisc_style with context %}
+{% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 
 {%- macro render() -%}
   {% set  parent_caller = caller() %}
-  {% call text_list_plain.render(gap="gap-3") %}
+  {% call unoderlist_nodisc_style.render(gap="gap-3") %}
     {{ parent_caller }}
   {% endcall %}
 {% endmacro %}

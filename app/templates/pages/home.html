@@ -8,11 +8,11 @@
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
 {% import 'organisims/child_container_full_width.html' as child_container_full_width with context %}
-{% import 'molecules/homepage_navigation_item.html' as homepage_navigation_item  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
+{% import 'molecules/navigation_tertiary_item.html' as navigation_tertiary_item  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% import 'atoms/divider.html' as divider with context %}
-{% import 'atoms/button_plain.html' as button_plain with context %}
+{% import 'atoms/button_black.html' as button_black with context %}
 {% set title_text="Home" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -24,7 +24,7 @@
       <!-- animation organism -->
       {% call animation.render() %}
         <!-- animation navigation_icon molecule -->
-        {% call homepage_navigation_item.render(navigation_title="climate variables",navigation_class="icon_climate_variables") %}
+        {% call navigation_tertiary_item.render(navigation_title="climate variables",navigation_class="icon_climate_variables") %}
           <img
             src="/static/images/icons/climate_variables.svg"
             alt="Climate Variables"
@@ -32,7 +32,7 @@
             class="w-full h-full"
           />
         {% endcall %}
-        {% call homepage_navigation_item.render(navigation_title="greenhouse gas emissions",navigation_class="icon_greenhouse_gas_emissions") %}
+        {% call navigation_tertiary_item.render(navigation_title="greenhouse gas emissions",navigation_class="icon_greenhouse_gas_emissions") %}
           <img
             src="/static/images/icons/greenhouse_gas_emissions.svg"
             alt="Greenhouse Gas Emissions "
@@ -40,7 +40,7 @@
             class="w-full h-full"
           />
         {% endcall %}
-        {% call homepage_navigation_item.render(navigation_title="land use change",navigation_class="icon_land_use_change") %}
+        {% call navigation_tertiary_item.render(navigation_title="land use change",navigation_class="icon_land_use_change") %}
           <img
             src="/static/images/icons/land_use_change.svg"
             alt="Landuse change"
@@ -48,7 +48,7 @@
             class="w-full h-full"
           />
         {% endcall %}
-        {% call homepage_navigation_item.render(navigation_title="social wellbeing",navigation_class="icon_social_wellbeing") %}
+        {% call navigation_tertiary_item.render(navigation_title="social wellbeing",navigation_class="icon_social_wellbeing") %}
           <img
             src="/static/images/icons/social_wellbeing.svg"
             alt="Social Wellbeing"
@@ -56,7 +56,7 @@
             class="w-full h-full"
           />
         {% endcall %}
-        {% call homepage_navigation_item.render(navigation_title="water quality",navigation_class="icon_water_quality") %}
+        {% call navigation_tertiary_item.render(navigation_title="water quality",navigation_class="icon_water_quality") %}
           <img
             src="/static/images/icons/water_quality.svg"
             alt="Water quality"
@@ -64,7 +64,7 @@
             class="w-full h-full"
           />
         {% endcall %}
-        {% call homepage_navigation_item.render(navigation_title="invasive species",navigation_class="icon_invasive_species") %}
+        {% call navigation_tertiary_item.render(navigation_title="invasive species",navigation_class="icon_invasive_species") %}
           <img
             src="/static/images/icons/invasive_species.svg"
             alt="Invasive Species"
@@ -83,8 +83,13 @@
 
     <!-- The story section -->
     {% call page_container_plain.render() %}
+      {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
+      <!-- heading -->
+      {% call subhead_01_textstyle.render() %}
+        The Story
+      {% endcall %} 
 
-      {% call text_with_heading.render(subhead_01_text="The Story") %}
+      {% call paragraph.render() %}
         Welcome to the Upper Clutha Catchment Health Project, an initiative
         deeply rooted in the principles of Te Taiao – a profound connection to
         and reverence for the natural world. Our project serves
@@ -92,18 +97,36 @@
         from residents and iwi to landowners and tourism operators – in a
         collective effort to revitalise Te Taiao.
       {% endcall %}
+      {% endcall %}
     {% endcall %}
 
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_fifty_percent_basis.render() %}
         <!-- graph -->
-        {% call text_without_heading.render() %}
+        {% call(content) graph_frame.render(graph_title="The concept of Te Taiao and its four interconnected components",flyout_id="flyout_Illustration_TeTaiao") %}
+          {% if content == 'flyout' %}
+            {% call flyout.render(flyout_id="flyout_Illustration_TeTaiao") %}
+            {% endcall %}
+          {% endif %}
+          {% if content == 'graph' %}
+            {% call graph_container_extrasmall.render() %}
+              <img
+                width="100%"
+                height="100%"
+                src="/static/images/graphs/Illustration_TeTaiao.png"
+                alt="The concept of Te Taiao and its four interconnected components"
+                title="The concept of Te Taiao and its four interconnected components"
+              />
+            {% endcall %}
+          {% endif %}
+        {% endcall %}
+        {% call paragraph.render() %}
           At the heart of our endeavour lies a comprehensive monitoring
           framework, crafted to encapsulate the essence of Te Taiao and to
           foster a holistic understanding of catchment health.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The monitoring framework is comprised of a selection of indicators
           that reflect the health of our land, water, biodiversity, livelihoods,
           and culture within the catchment, all interconnected within Te Taiao.
@@ -131,7 +154,7 @@
       {% endcall %}
       <!--  Right side organism -->
       {% call child_container_fifty_percent_basis.render() %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           By rooting our monitoring framework indicators with direct community
           values, pressures, and actions that were identified in the
           <a
@@ -145,7 +168,7 @@
           dedicated to preserving and enhancing our catchment's health as well
           as guide future environmental investments.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The monitoring framework aims to connect the Upper Clutha community to
           Te Taiao through understanding the state of our catchment health and
           the interacting indicators that contribute. We recognise that
@@ -155,7 +178,7 @@
           framework, we aim to assess and nurture this delicate equilibrium,
           guided by the ethos of respect and care for our surroundings.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           As a central repository for data collection and reporting, our
           monitoring framework fosters collaboration among various organisations
           across the catchment, ensuring a unified approach towards
@@ -175,7 +198,11 @@
     <!-- Join us section -->
     {% call page_container_plain.render() %}
       {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
-        {% call text_with_heading.render(subhead_01_text="Join Us in Building a Healthier Catchment!") %}
+        <!-- heading -->
+        {% call subhead_01_textstyle.render() %}
+        Join Us in Building a Healthier Catchment!
+        {% endcall %}
+        {% call paragraph.render() %}
           By partnering with us, you'll not only contribute to the preservation
           of our natural resources but also strengthen your organisation's
           commitment to sustainability and community engagement. Together, we
@@ -183,13 +210,13 @@
           Clutha Catchment. We look forward to welcoming you as a valued partner
           in this important endeavour.
         {% endcall %}
-        {% call text_without_heading.render() %}
-          {% call button_plain.render() %}
+        {% call paragraph.render() %}
+          {% call button_black.render() %}
             <a href="/supporter">Become a supporter</a>
           {% endcall %}
         {% endcall %}
 
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Want to find more information on how to become a partner?
 
           <a href="mailto:getinvolved@waiwanaka.nz" class="underline"

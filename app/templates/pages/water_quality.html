@@ -10,17 +10,15 @@
 {% import 'organisims/graph_container_large.html' as graph_container_large with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
 {% import 'organisims/table_container.html' as table_container with context %}
-{% import 'organisims/reference.html' as reference  with context %}
+{% import 'molecules/reference.html' as reference  with context %}
 {% import 'molecules/reference_item.html' as reference_item  with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
-{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
-{% import 'molecules/text_list.html' as text_list with context %}
-{% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
+{% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/text_divider.html' as text_divider with context %}
-{% import 'atoms/datasource_item.html' as datasource_item with context %}
+{% import 'molecules/datasource_item.html' as datasource_item with context %}
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% set title_text="Water Quality" %}
 
@@ -34,35 +32,35 @@
       {% call child_container_forty_percent_basis.render() %}
 
         {% call child_container_full_width.render() %}
-          {% call text_without_heading.render() %}
+          {% call paragraph.render() %}
             Water quality rankings are provided for four parameters which were
             selected for their importance for ecosystem and human health (see
             table below):
           {% endcall %}
-          {% call text_list.render() %}
-            {% call text_list_item.render() %}
+          {% call unorderlist_disc_style.render() %}
+            {% call unorderlist_item.render() %}
               Total phosphorus
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Phytoplankton (chlorophyll-a)
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Escherichia coli
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Nitrate-nitrogen
             {% endcall %}
           {% endcall %}
         {% endcall %}
 
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Water quality was assessed in accordance with the guidelines provided
           by the National Policy Statement for Freshwater Management 2020
           (NPS-FM), which ranks each parameter from A (good) to D or E
           (poor)<sup><a href="#fn1">11</a></sup>.
         {% endcall %}
 
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           While the parameters are being measured in both lake and rivers,
           NPS-FM provides guidelines that allow us to obtain quality ratings for
           total phosphorus and chlorophyll-a for lakes only, not rivers;
@@ -221,26 +219,26 @@
       {% call child_container_forty_percent_basis.render() %}
         {% call child_container_full_width.render() %}
           <!--  text without heading molecule-->
-          {% call text_without_heading.render() %}
+          {% call paragraph.render() %}
             Monitoring water quality parameters provides a comprehensive
             understanding of the health of aquatic systems, their impact on
             human well-being, and the need for sustainable environmental
             management practices&#58;
           {% endcall %}
-          {% call text_list.render() %}
-            {% call text_list_item.render() %}
+          {% call unorderlist_disc_style.render() %}
+            {% call unorderlist_item.render() %}
               Monitoring nitrate levels helps manage agricultural practices to
               minimise pollution and protect water resources.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Monitoring E.coli ensures that water sources are safe for
               recreational activities, drinking, and agricultural use.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Monitoring chlorophyll-a levels provides insight into the overall
               health of aquatic ecosystems.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Monitoring total phosphorus allows for early detection of
               potential threats to native species and habitats and it helps to
               identify and manage nutrient pollution, preventing detrimental
@@ -249,12 +247,12 @@
             {% endcall %}
           {% endcall %}
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           ORC regularly monitors the water quality around Otago, which includes
           the Upper Clutha catchment. For the most recent measurements and
           evaluations of water quality, please visit the
           <a
-            href="https://envdata.orc.govt.nz/AQWebPortal/Data/Map/Parameter/E-Coli%20MPN/Interval/Latest  "
+            href="https://envdata.orc.govt.nz/AQWebPortal/Data/Map/Parameter/E-Coli%20MPN/Interval/Latest"
             class="underline"
             >ORC Environmental Portal website</a
           >.

@@ -2,9 +2,9 @@
 {% import 'templates/basic.html' as basic  with context %}
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
-{% import 'molecules/text_list.html' as text_list with context %}
-{% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
+{% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
 {% set title_text="Disclaimer" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -13,7 +13,7 @@
   {% call basic.render(title_text=title_text) %}
     {% call page_container_plain.render() %}
       {% call child_container_full_width.render(gap="gap-7") %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The professional analysis and advice on this website has been prepared
           by Environmental Accounting Services for the exclusive use of the
           party or parties to whom it is addressed (the addressee) and for the
@@ -23,7 +23,7 @@
           any other party without Environmental Accounting Services prior
           written consent.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The data presented on this website were obtained from third-party
           sources referenced on the respective pages. Whilst Environmental
           Accounting Services has used all reasonable endeavours to ensure that
@@ -35,14 +35,14 @@
           whatsoever that the information provided is fit for any particular
           purpose.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The analysis and findings presented here are based on our
           interpretation of the data and do not necessarily reflect the views or
           endorsement of the original data source. Users of this information
           should be aware that certain limitations may apply to the data, such
           as potential data gaps and measurement errors.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Environmental Accounting Services, the directors and employees cannot
           be held liable for the use of and reliance of the information and
           findings provided on this website.

@@ -8,12 +8,11 @@
 {% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/flyout.html' as flyout with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
-{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
-{% import 'molecules/text_list.html' as text_list with context %}
-{% import 'atoms/text_list_item.html' as text_list_item with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
+{% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/text_divider.html' as text_divider with context %}
 {% set title_text="Background" %}
@@ -25,16 +24,16 @@
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           This report presents an annual snapshot of the state of health of the
           Upper Clutha Catchment in 2022.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The aim of this report is to facilitate informed decision-making by
           stakeholders and the community about environmental management and
           investment in conservation efforts within the catchment.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           The data presented in this report were obtained from the Upper Clutha
           Catchment Health Monitoring Framework. This framework uses a
           combination of quantitative and qualitative methods to assess the
@@ -57,42 +56,42 @@
     {% call page_container_plain.render() %}
       {% call child_container_full_width_items_end.render() %}
         {% call child_container_full_width.render() %}
-          {% call text_without_heading.render() %}
+          {% call paragraph.render() %}
             The findings are presented according to the following six
             indicators&#58;
           {% endcall %}
-          {% call text_list.render() %}
-            {% call text_list_item.render() %}
+          {% call unorderlist_disc_style.render() %}
+            {% call unorderlist_item.render() %}
               Land Use Change&#58; Examines how the land within the catchment is
               being used and how it has changed over time. It includes an
               analysis of changes in land cover due to urbanisation,
               agriculture, and deforestation.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Climate Variables&#58; Presents temperature and rainfall
               observations as available from meteorological measurement sites in
               the catchment.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Water Quality&#58; Assesses the water quality of lakes and rivers.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Invasive Species&#58; Assesses the presence of invasive species;
               in particular, it considers the extent of pest control efforts and
               control of wilding pines.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Greenhouse Gas Emissions&#58; Presents the GHG emissions profile
               of the catchment, including emissions associated with the
               transport, energy, forestry and agricultural sectors.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Social Well-Being&#58; Assesses the well-being and quality of life
               of the people living in the catchment.
             {% endcall %}
           {% endcall %}
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           These indicators were chosen to provide insights on various key
           aspects of catchment health. However, the indicators are not static or
           exhaustive, and will evolve over time as the framework further
@@ -111,7 +110,9 @@
 
     {% call page_container_plain.render() %}
       {% call child_container_full_width_items_end.render() %}
-        {% call text_with_heading.render(subhead_01_text="What do we mean by health?") %}
+        {% call subhead_01_textstyle.render(subhead_01_text="What do we mean by health?") %}
+        {% endcall %}
+        {% call paragraph.render() %}
           The &#147;health of the Upper Clutha Catchment&#148; is seen here as a
           holistic concept that considers the interconnectedness of various
           environmental and social factors and how they collectively contribute
@@ -125,7 +126,7 @@
           positively impacts our families, communities and
           businesses<sup>8</sup>.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Health in the context of the Upper Clutha Catchment involves achieving
           a sustainable balance between human activities and the natural
           environment, recognising that a healthy catchment is one where the
@@ -136,7 +137,7 @@
           being assessed with a simple &#145;good&#146; or &#145;bad&#146;
           rating.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           This monitoring framework is designed to provide a snap-shot of the
           state of the catchment health, which is turn is indicative of its
           environmental well-being, encouraging us to strive for a future where
