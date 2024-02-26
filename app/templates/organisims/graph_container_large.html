@@ -1,0 +1,7 @@
+<!-- graph inside the large frame will overflow in mobile(xs) screen -->
+{%- macro render() -%}
+  {% set  parent_caller = caller() %}
+  <div class="overflow-auto md:overscroll-none w-full">
+    <div class="w-208 md:w-full">{{ parent_caller }}</div>
+  </div>
+{%- endmacro -%}

@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% import 'templates/basic.html' as basic  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/child_container_full_width.html' as child_container_full_width  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
+{% import 'molecules/unorderlist_disc_style.html' as unorderlist_disc_style with context %}
+{% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
+{% import 'atoms/divider.html' as divider with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
+{% set title_text="Our Supporters" %}
+
+{% block title %}{{ title_text }}{% endblock %}
+
+{% block content %}
+  {% call basic.render(title_text=title_text) %}
+    <!--  content-1 -->
+    {% call page_container_plain.render() %}
+      {% call child_container_full_width.render(gap="gap-7") %}
+        {% call paragraph.render() %}
+          We extend our gratitude to Our Land and Water -
+          <a
+            class="underline"
+            href="https://ourlandandwater.nz/project/revitalise-te-taiao/"
+            >Revitalise Te Taiao National Science Challenge</a
+          >
+          for their generous funding as part of
+          <a href="https://waiwanaka.nz/action-for-te-taiao/" class="underline"
+            >WAI Wānaka&#39;s Knowledge into Action for Te Taiao project</a
+          >, recognising the significance of their contribution in catalysing
+          positive change. Their commitment to advancing knowledge and fostering
+          collaboration has been instrumental in shaping the foundation of this
+          monitoring framework.
+        {% endcall %}
+        {% call paragraph.render() %}
+          We would also like to express our sincere appreciation to the organisations -
+          <a href="https://enviroaccounts.com/" class="underline"
+            >Environmental Accounting Services</a
+          >
+          and
+          <a href="https://www.lincoln.ac.nz/" class="underline"
+            >Lincoln University</a
+          >, whose dedication and partnership have been integral to the
+          realisation of this vision. Further, to
+          <a href="https://www.ghhp.org.au/" class="underline"
+            >Gladstone Healthy Harbour</a
+          >
+          as inspiration for the project.
+        {% endcall %}
+        {% call child_container_full_width.render() %}
+          {% call paragraph.render() %}
+            This project has been collaborative from the outset, with
+            significant time and input from the following organisations:
+          {% endcall %}
+          {% call unorderlist_disc_style.render(gap="gap-1") %}
+            {% call unorderlist_item.render() %}
+              <a href="https://www.lakewanaka.co.nz/" class="underline">
+                Lake Wānaka Tourism</a
+              >,
+            {% endcall %}
+            {% call unorderlist_item.render() %}
+              <a href="https://www.wanakachamber.co.nz/" class="underline">
+                Wānaka Business Chamber</a
+              >,
+            {% endcall %}
+            {% call unorderlist_item.render() %}
+              <a href="https://www.wao.co.nz/" class="underline"> WAO</a>,
+            {% endcall %}
+            {% call unorderlist_item.render() %}
+              <a href="https://www.orc.govt.nz/" class="underline">
+                Otago Regional Council,</a
+              > and
+            {% endcall %}
+            {% call unorderlist_item.render() %}
+              <a href="https://www.qldc.govt.nz/" class="underline">
+                Queenstown Lakes District Council.</a
+              >
+            {% endcall %}
+          {% endcall %}
+        {% endcall %}
+       {% call paragraph.render() %}
+          Your collective efforts have not only enriched the content of this
+          framework but have also strengthened the bonds within our community.
+        {% endcall %}
+        {% call paragraph.render() %}
+          Together, we embark on a journey towards a more vibrant, sustainable,
+          and interconnected future for the Upper Clutha Catchment. Thank you
+          for being champions of positive change and stewards of our shared Te
+          Taiao.
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!--  content-2 -->
+    {% call page_container_plain.render() %}
+      {% call child_container_full_width.render(gap="gap-7") %}
+        <!-- subhead_01_textstyle heading -->
+        {% call subhead_01_textstyle.render() %}
+        Become a supporter of the Upper Clutha Catchment Health Report
+        {% endcall %}
+        <!-- Become a supporter of the Upper Clutha Catchment Health Report -->
+        {% call paragraph.render() %}
+          Thank you for your interest in joining us as a supporter of the Upper
+          Clutha Catchment Health Project. By becoming a partner you'll play a
+          crucial role in monitoring and reporting on the health of our
+          waterways, contributing to a better understanding of our environment
+          and fostering opportunities for a healthy, accessible, and thriving
+          catchment.
+        {% endcall %}
+
+        <!-- Why Partner with Upper Clutha Catchment Health Partnership? -->
+        <!-- subhead_01_textstyle heading -->
+        {% call subhead_01_textstyle.render() %}
+        Why Partner with Upper Clutha Catchment Health Partnership?
+        {% endcall %}
+        {% call paragraph.render() %}
+          As a partner you'll stand alongside government entities, industries,
+          research groups, and the community, showcasing your commitment to
+          environmental stewardship and community well-being. Here's what you can expect as a supporter:
+        {% endcall %}
+        <!-- Recognition and Benefits: -->
+        {% call child_container_full_width.render() %}
+          {% call subhead_01_textstyle.render() %}
+            Recognition and Benefits:
+          {% endcall %}
+          {% call unorderlist_disc_style.render(gap="gap-1") %}
+            {% call unorderlist_item.render() %}
+              Acknowledgment of your organisation's contribution and its
+              commitment to environmental and economic sustainability, cultural
+              awareness, and social well-being.
+            {% endcall %}
+            {% call unorderlist_item.render() %}
+              Enhanced community relations by demonstrating your organisation's
+              dedication to the environment, offering positive marketing and
+              public relations opportunities.
+            {% endcall %}
+            {% call unorderlist_item.render() %}
+              Collaboration and networking opportunities with stakeholders in
+              the Upper Clutha region.
+            {% endcall %}
+            {% call unorderlist_item.render() %}
+              Your organisation's logo featured on reports and this website.
+            {% endcall %}
+          {% endcall %}
+        {% endcall %}
+        <!-- Your Contribution: -->
+        {% call child_container_full_width.render() %}
+          {% call subhead_01_textstyle.render() %}
+            Your Contribution:
+          {% endcall %}
+          {% call unorderlist_disc_style.render(gap="gap-1") %}
+            {% call unorderlist_item.render() %}
+              Assist in disseminating reports and publications, such as the
+              Annual Summary Health Report.
+            {% endcall %}
+            {% call unorderlist_item.render() %}
+              Support the continuous development of this initiative through
+              contribution to the science and/or operations of the initiative.
+            {% endcall %}
+
+            {% call unorderlist_item.render() %}
+              Annual monetary or in-kind contribution.
+            {% endcall %}
+          {% endcall %}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    <!-- Acknowledgements -->
+    {% call page_container_plain.render() %}
+      {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
+        <!-- subhead_01_textstyle heading -->
+        {% call subhead_01_textstyle.render() %}
+          Acknowledgements
+        {% endcall %}
+        {% call paragraph.render() %}
+          We would like to thank the following individuals and organisations for
+          their contribution to the development of the monitoring framework, the
+          development of this website, and accompanied reports:
+        {% endcall %}
+        {% call unorderlist_disc_style.render(gap="gap-1") %}
+          {% call unorderlist_item.render() %}
+            The steering group and working group members, for their insights,
+            advice and time provided in the development of the Upper Clutha
+            Catchment Health Monitoring Framework.
+          {% endcall %}
+          {% call unorderlist_item.render() %}
+            The Ministry for the Environment (MfE), for freely publishing their
+            environmental data on a publicly accessible web-based application.
+          {% endcall %}
+          {% call unorderlist_item.render() %}
+            The Queenstown-Lakes District Council (QLDC), for sharing their
+            Quality of Life survey data and providing guidance on potential data
+            limitations and gaps important for data processing.
+          {% endcall %}
+          {% call unorderlist_item.render() %}
+            The Otago Regional Council (ORC), for their work in collecting and
+            sharing data relating to water quality on their publicly available
+            Environmental Data Portal.
+          {% endcall %}
+          {% call unorderlist_item.render() %}
+            The Central Otago District Council (CODC), for providing data for
+            use in estimating the GHG emissions.
+          {% endcall %}
+          {% call unorderlist_item.render() %}
+            The National Institute of Water and Atmospheric Research (NIWA), for making
+            data from weather stations across New Zealand publicly available through New Zealand's National Climate
+            Database (CliFlo).
+          {% endcall %}
+          {% call unorderlist_item.render() %}
+            TrapNZ, for providing a national data management service for
+            predator trapping and monitoring, and sharing their data for the
+            purpose of this monitoring framework. We would like to thank the
+            TrapNZ staff for the additional data provided that was not readily
+            accessible on their website.
+          {% endcall %}
+          {% call unorderlist_item.render() %}
+            The Land Information New Zealand (LINZ) in collaboration with the
+            Wilding Conifer Information System (WCIS), for providing information
+            and data related to the national wilding conifer control programme.
+            We would like to give thanks to the WCIS staff for sharing
+            additional data that was not accessible on their WCIS app yet, and
+            providing guidance on existing data limitations, gaps, and potential
+            alternative data sources.
+          {% endcall %}
+          {% call unorderlist_item.render() %}
+            Aurora Energy, for providing energy consumption data for use in estimating
+            GHG emissions from the energy sector.
+          {% endcall %}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+  {% endcall %}
+{% endblock %}

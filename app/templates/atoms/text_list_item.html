@@ -1,9 +1,0 @@
-{% import 'atoms/body_textstyle.html' as body_textstyle with context %}
-{%- macro render() -%}
-  {% set parent_caller = caller() %}
-  <li>
-    {% call body_textstyle.render() %}
-      {{ parent_caller }}
-    {% endcall %}
-  </li>
-{%- endmacro -%}

@@ -1,14 +1,11 @@
-{% import 'atoms/body_textstyle.html' as body_textstyle with context %}
-{% import 'atoms/link_plain.html' as link_plain with context %}
-{%- macro render(url="#",name="",additional_info="") -%}
-  {% set parent_caller = caller() %}
-  <li class="">
-    {% call body_textstyle.render() %}
-      {{ parent_caller }}
-      {% call link_plain.render(url) %}
-        {{ name }}
-      {% endcall %}
-      {{ additional_info }}
-    {% endcall %}
-  </li>
-{%- endmacro -%}
+{% import 'templates/basic.html' as basic  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'molecules/unoderlist_nodisc_style.html' as unoderlist_nodisc_style with context %}
+{% import 'molecules/unorderlist_item.html' as unorderlist_item with context %}
+
+{%- macro render() -%}
+  {% set  parent_caller = caller() %}
+  {% call unoderlist_nodisc_style.render(gap="gap-3") %}
+    {{ parent_caller }}
+  {% endcall %}
+{% endmacro %}

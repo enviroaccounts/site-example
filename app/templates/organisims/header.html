@@ -1,21 +1,21 @@
-{% import 'molecules/button_get_started.html' as button_get_started  with context %}
-{% import 'molecules/button_hamburger.html' as button_hamburger  with context %}
-{% import 'molecules/nav_list.html' as nav_list  with context %}
-{% import 'molecules/full_icon_list.html' as full_icon_list with context %}
-{% import 'atoms/nav_item.html' as nav_item with context %}
+
+{% import 'molecules/navigation_primary.html' as navigation_primary  with context %}
+{% import 'molecules/navigation_secondary.html' as navigation_secondary with context %}
+{% import 'atoms/button_hamburger.html' as button_hamburger  with context %}
+{% import 'molecules/navigation_primary_item_regualr.html' as navigation_primary_item_regualr with context %}
 
 {%- macro render() -%}
-  {% set  parent_caller1 = caller('full_icon_list') %}
-  {% set  parent_caller2 = caller('nav_list') %}
+  {% set  parent_caller1 = caller('navigation_secondary') %}
+  {% set  parent_caller2 = caller('navigation_primary') %}
 
   <!-- header organism -->
   <div class="flex bg-white border-gray-200 rounded dark:bg-gray-900">
     <div
-      class="w-full flex flex-wrap xs:flex-row-reverse items-center justify-between mx-auto
+      class="w-full flex flex-wrap flex-row-reverse items-center justify-between mx-auto
     md:items-center relative h-[85px] md:h-[118px] lg:h-[157px] xl:h-[196px] border-b-4 border-grey-900 md:border-none"
     >
-      <!-- icon list -->
-      {% call full_icon_list.render() %}
+      <!-- navigation_secondary list -->
+      {% call navigation_secondary.render() %}
         {{ parent_caller1 }}
       {% endcall %}
       <!-- divider-->
@@ -27,16 +27,16 @@
         {% call button_hamburger.render() %}
         {% endcall %}
       </div>
-      <!--  navigation list -->
       <nav
-        class="items-center justify-between hidden w-full md:flex md:w-[40%] md:order-1 md:ml-[3%] md:h-[22%] xl:mb-7 lg:mb-6 md:mb-5"
-        id="navbar-cta"
-      >
-        {% call nav_list.render() %}
-          <!-- navigation item -->
+      class="md:flex hidden items-center justify-between w-full md:w-[40%] md:order-1 md:ml-[3%] md:h-[22%] xl:mb-7 lg:mb-6 md:mb-5"
+      id="navbar-cta"
+    >
+      <!--  navigation_primary list -->
+        {% call navigation_primary.render() %}
+          <!-- navigation_primary item -->
           {{ parent_caller2 }}
         {% endcall %}
-      </nav>
     </div>
+  </nav>
   </div>
 {%- endmacro -%}

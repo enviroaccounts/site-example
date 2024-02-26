@@ -71,6 +71,8 @@ def create_builtup_area_pie_chart(labels, values):
             xanchor="center",
             orientation="h",
             font=dict(size=12),
+            itemclick=False,  
+            itemdoubleclick=False 
             
         ),
         plot_bgcolor='rgba(0,0,0,0)',

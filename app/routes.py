@@ -32,7 +32,7 @@ app.jinja_env.globals.update(PredatorControl=PredatorControl)
 
 @app.route('/')
 def home():
-    return redirect("/landuse_change")
+    return render_template("pages/home.html")
 
 @app.route('/home')
 def main():
@@ -42,17 +42,17 @@ def main():
 def disclaimer():
     return render_template("pages/disclaimer.html")
 
-@app.route('/story')
+@app.route('/vision')
 def story():
-    return render_template("pages/story.html")
+    return render_template("pages/vision.html")
 
 @app.route('/sponsorship')
 def sponsorship():
     return render_template("pages/sponsorship.html")
 
-@app.route('/reference')
-def reference():
-    return render_template("pages/reference.html")
+@app.route('/supporter')
+def supporter():
+    return render_template("pages/supporter.html")
 
 @app.route('/acknowledgements')
 def acknowledgements():
@@ -65,64 +65,35 @@ def background():
 @app.route('/landuse_change')
 def landuse_change():
     return render_template("pages/landuse_change.html",
-                           related = {
-                                    "climate_variables",
-                                    "invasive_species",
-                                    "social_well_being",
-                                    "greenhouse_gas_emissions",
-                                    "water_quality"
-                                    },active="landuse_change"
+                           active="landuse_change"
                                     )
-
+    
 @app.route('/climate_variables')
 def climate_variables():
     return render_template("pages/climate_variables.html",
-                                    related = {
-                                    "invasive_species",
-                                    "social_well_being",
-                                    "water_quality",
-                                    },active="climate_variables"
+                                   active="climate_variables"
                                     )
-
 
 @app.route('/invasive_species')
 def invasive_species():
     return render_template("pages/invasive_species.html",
-                                    related = {
-                                    "climate_variables",
-                                    "water_quality",
-                                    "landuse_change",
-                                    },active="invasive_species")
+                                    active="invasive_species")
 
 @app.route('/social_well_being')
 def social_well_being():
     return render_template("pages/social_well_being.html",
-                                    related = {
-                                    "climate_variables",
-                                    "invasive_species",
-                                    "greenhouse_gas_emissions",
-                                    "water_quality"
-                                    },active="social_well_being")
+                                    active="social_well_being")
 
 @app.route('/greenhouse_gas_emissions')
 def greenhouse_gas_emissions():
     return render_template("pages/greenhouse_gas_emissions.html",
-                                    related = {
-                                    "climate_variables",
-                                    "social_well_being",
-                                    "water_quality",
-                                    },active="greenhouse_gas_emissions")
+                                   active="greenhouse_gas_emissions")
 
 
 @app.route('/water_quality')
 def water_quality():
     return render_template("pages/water_quality.html",
-                                    related = {
-                                    "climate_variables",
-                                    "social_well_being",
-                                    "greenhouse_gas_emissions",
-                                    "landuse_change"
-                                    },active="water_quality")
+                                    active="water_quality")
 
 
 

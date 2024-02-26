@@ -9,12 +9,15 @@
 {% import 'organisims/graph_frame.html' as graph_frame with context %}
 {% import 'organisims/graph_container_small.html' as graph_container_small with context %}
 {% import 'organisims/graph_container_medium.html' as graph_container_medium with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'organisims/table_container.html' as table_container with context %}
+{% import 'organisims/table_container.html' as table_container with context %}
+{% import 'molecules/reference.html' as reference  with context %}
+{% import 'molecules/reference_item.html' as reference_item  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
-{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
-{% import 'atoms/map_land_use.html' as map_land_use with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
+{% import 'molecules/datasource_item.html' as datasource_item with context %}
 {% set title_text="Land use change" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -26,9 +29,9 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
-          Land use and land use change is a catchment-wide basic assessing how
-          we are using our land. Over half of the area of the catchment is
+        {% call paragraph.render() %}
+          Land use and land use change are catchment-wide indicators assessing
+          how we are using our land. Over half of the area of the catchment is
           categorised as “production grassland”, dominated by low producing
           grassland. Following grassland, the most common land uses in the
           catchment are forest land (16.6%), and grassland with woody biomass
@@ -47,11 +50,18 @@
         {% call(content) graph_frame.render(graph_title="Land use cover across the catchment in 2016.",flyout_id="placeholder3") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder3") %}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011",link_title="MfE Data Service") %}
+                Data were obtained from the Land Use and Coverage Area frame
+                Survey (LUCAS) data set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          {% call map_land_use.render() %}
-          {% endcall %}
+            <img
+              src="/static/images/maps/map_landuse.svg"
+              alt="Landuse Map"
+              title="Landuse Map"
+            />
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -68,19 +78,24 @@
       <!-- left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
-          Urban areas in Wānaka and Hāwea have increased since 1990. A majority
-          of this new urbanised landscape resulted from converting productive
-          grassland. However, total production grassland remained constant, due
-          to conversion of grassland with woody biomass.
+        {% call paragraph.render() %}
+          Urban areas in Wānaka and Hāwea have increased since 1990. Primarily
+          through the conversion of productive grassland. Despite this
+          conversion, the total area of production grassland remained the same,
+          as grassland with woody biomass has been converted to production
+          grassland.
         {% endcall %}
       {% endcall %}
       <!--  right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
-        {% call(content) graph_frame.render(graph_title="What was all this urbanised land before 1990?",flyout_id="flyout_LandUseChangeBuildUp") %}
+        {% call(content) graph_frame.render(graph_title="Land use categories before 1990.",flyout_id="flyout_LandUseChangeBuildUp") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_LandUseChangeBuildUp") %}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011",link_title="MfE Data Service") %}
+                Data were obtained from the Land Use and Coverage Area frame
+                Survey (LUCAS) data set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -103,66 +118,66 @@
       <!-- full width organism with items aligned to end -->
       {% call child_container_full_width_items_end.render() %}
         <!-- graph frame organism-->
-        {% call(content) graph_frame.render(graph_title="Land Use Category",flyout_id="placeholder4") %}
+        {% call(content) graph_frame.render(graph_title="Total area by land use category for the catchment and their changes since 1990 (in hectares).",flyout_id="placeholder4") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder4") %}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011",link_title="MfE Data Service") %}
+                Data were obtained from the Land Use and Coverage Area frame
+                Survey (LUCAS) data set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            <div class="overflow-x-auto">
-              <table
-                class="min-w-full bg-grey-900 text-white text-body font-light font-inter tracking-default xl:text-lg xl:leading-7 lg:text-base lg:leading-snug md:text-xs md:leading-none text-xs leading-tight"
-              >
-                <thead>
-                  <tr>
-                    <th scope="col" class="py-3 px-6">Land Use Category</th>
-                    <th scope="col" class="py-3 px-6">2016 (ha)</th>
-                    <th scope="col" class="py-3 px-6">
-                      Net change since 1990 (ha)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="text-black">
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Forest</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">76,000</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">392</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">
-                      Grassland with woody biomass
-                    </td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">50,500</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">-932</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Production grassland</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">247,800</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">35</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Cropland</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">1,100</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">-18</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Wetland</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">39,400</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">-21</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Built-up area</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">1,400</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">551</td>
-                  </tr>
-                  <tr class="border-b-2 border-white">
-                    <td class="py-4 px-6 bg-grey-500">Other</td>
-                    <td class="py-4 px-6 bg-grey-300 text-center">42,600</td>
-                    <td class="py-4 px-6 bg-neutral-100 text-center">-7</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            {% call table_container.render() %}
+              <thead>
+                <tr>
+                  <th scope="col" class="py-3 px-6">Land Use Category</th>
+                  <th scope="col" class="py-3 px-6">2016 (ha)</th>
+                  <th scope="col" class="py-3 px-6">
+                    Net change since 1990 (ha)
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-black">
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Forest</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">76,000</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">392</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">
+                    Grassland with woody biomass
+                  </td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">50,500</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">-932</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Production grassland</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">247,800</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">35</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Cropland</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">1,100</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">-18</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Wetland</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">39,400</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">-21</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Built-up area</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">1,400</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">551</td>
+                </tr>
+                <tr class="border-b-2 border-white">
+                  <td class="py-4 px-6 bg-grey-500">Other</td>
+                  <td class="py-4 px-6 bg-grey-300 text-center">42,600</td>
+                  <td class="py-4 px-6 bg-neutral-100 text-center">-7</td>
+                </tr>
+              </tbody>
+            {% endcall %}
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -173,11 +188,11 @@
       <!-- left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
-          Since 1990, there has been a net increase of 300 ha of forestland
-          across the catchment. However, most of this has been through the
-          growth of new exotic forest, while the cover of natural, indigenous
-          forest has seen a net decline.
+        {% call paragraph.render() %}
+          Since 1990, there has been a net increase of 392 ha of forestland
+          across the catchment. Most of this increase has been through the growth
+          of new exotic forest. The cover of natural, indigenous forest has seen
+          a net decline.
         {% endcall %}
       {% endcall %}
       <!--  right side organism -->
@@ -186,6 +201,10 @@
         {% call(content) graph_frame.render(graph_title="Land uses converted from forestland since 1990.",flyout_id="flyout_landUses") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_landUses") %}
+              {% call datasource_item.render(link="https://data.mfe.govt.nz/layer/52375-lucas-nz-land-use-map-1990-2008-2012-2016-v011",link_title="MfE Data Service") %}
+                Data were obtained from the Land Use and Coverage Area frame
+                Survey (LUCAS) data set
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -207,12 +226,16 @@
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
+        <!-- subhead_01_textstyle molecule-->
+        {% call subhead_01_textstyle.render() %}
+        Forest Cover
+        {% endcall %}
         <!--  text with heading molecule-->
-        {% call text_with_heading.render(subhead_01_text="Forest Cover") %}
+        {% call paragraph.render() %}
           To understand the current land use and land use change practices, a
           more recent dataset from 2008 to 2018 was analysed, showing a gross
-          increase in exotic forest cover of 71 ha, which mainly is a result of
-          the conversion of production grassland (52 ha). 52 ha account for
+          increase in exotic forest cover of 71 ha.This increase results from
+          the conversion of production grassland (52 ha), which account for
           0.02% of the total production grassland available in the catchment. A
           gross decrease in indigenous forest cover of 69 ha is observed between
           2008 and 2018.
@@ -223,13 +246,12 @@
           Indigenous forest cover has decreased by &lt;0.2% between 2008 and
           2018.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Most of the loss of indigenous forest that took place between 2008 and
-          2018 was the result of landslides in the high alpine<sup>1</sup>,
-          rather than a direct impact of anthropogenic activities. While
-          indigenous forest is not under particular threat, other native
-          vegetation classes, such as fernlands, have seen significant
-          reductions in land cover&#58; fernland decreased by 1,500 ha.
+          2018 was the result of landslides in the high alpine<sup><a href="#fn1">1</a></sup>,
+          rather than a direct impact of anthropogenic activities. Although
+          indigenous forest is not under particular threat, there has been a notable decline in other native
+          vegetation classes. Specifically, fernlands have experienced a reduction of 1,500 hectares in land cover.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
@@ -238,6 +260,9 @@
         {% call(content) graph_frame.render(graph_title="Land uses converted into exotic forest between 2008 and 2018.",flyout_id="flyout_LandUseChangeExoticForest") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_LandUseChangeExoticForest") %}
+              {% call datasource_item.render(link="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",link_title="LDCB-LRIS Portal") %}
+                Data were obtained from the New Zealand Land Cover Database
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -245,6 +270,21 @@
               {{ LandUseChangeExoticForest.create_figure().to_html(div_id="LandUseChangeExoticForest",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
             {% endcall %}
           {% endif %}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    {% call page_container_plain.render() %}
+      {% call reference.render() %}
+        {% call reference_item.render(url="https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/",name=" LRIS Portal,",additional_info="last accessed Jan 2024.") %}
+          <span id="fn1">[1]</span> Land Cover Database version 5.0, Mainland, New Zealand &minus;
+          available from the
         {% endcall %}
       {% endcall %}
     {% endcall %}

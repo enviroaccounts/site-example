@@ -10,11 +10,14 @@
 {% import 'organisims/flyout.html' as flyout with context %}
 {% import 'organisims/graph_container_small.html' as graph_container_small with context %}
 {% import 'organisims/graph_container_medium.html' as graph_container_medium with context %}
-{% import 'molecules/text_with_heading.html' as text_with_heading  with context %}
-{% import 'molecules/text_without_heading.html' as text_without_heading  with context %}
+{% import 'organisims/graph_container_large.html' as graph_container_large with context %}
+{% import 'molecules/reference.html' as reference  with context %}
+{% import 'molecules/reference_item.html' as reference_item  with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
 {% import 'molecules/callout.html' as callout with context %}
-{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
 {% import 'atoms/divider.html' as divider with context %}
+{% import 'molecules/datasource_item.html' as datasource_item with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% set title_text="Invasive Species" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -26,33 +29,46 @@
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
         <!--  text without heading molecule-->
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           New Zealand&#39;s biodiversity is unique: 100% of the country&#39;s
           frogs and reptiles, 90% of the insects, 80% of vascular plants, and
-          25% of bird species are only found in New Zealand<sup>3</sup>.
+          25% of bird species are only found in New Zealand<sup><a href="#fn1">3</a></sup>.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           Invasive species are recognised as an important challenge in the
           catchment and greater region. The Otago Regional Council has
-          classified 49 species<sup>4</sup> of plants and animals in the region
-          as pests due to the threats they pose. With that we are home to a
-          valuable ecosystem that needs protecting and restoring.
+          classified 49 species<sup><a href="#fn2">4</a></sup> of plants and animals in the region
+          as pests due to the threats they pose. With that the Upper Clutha
+          Catchment is home to a valuable ecosystem that needs protecting and
+          restoring.
         {% endcall %}
-        {% call text_without_heading.render() %}
-          Monitoring the extent of invasive species can therefore provide an
-          insight into the extent and control of threats to our ecosystems.
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="503  ") %}
+          Increase in the number of traps between 2020 and 2021.
+        {% endcall %}
+        {% call paragraph.render() %}
+          Monitoring the extent of invasive species can provide an insight into
+          the extent and control of threats to our ecosystems.The predator
+          control areas with the catchment are highlighted on the map.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
       {% call child_container_sixty_percent_basis.render() %}
         <!-- graph frame organism-->
-        {% call(content) graph_frame.render(graph_title="Heat map of pest control areas in the catchment.",flyout_id="placeholder2") %}
+        {% call(content) graph_frame.render(graph_title="Heat map of pest control areas within the catchment.",flyout_id="placeholder2") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="placeholder2") %}
+              {% call datasource_item.render(link="https://www.trap.nz/",link_title="TrapNZ") %}
+                Data were obtained from
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            <!-- graph placeholder -->
+            <img
+              src="/static/images/maps/map_pestcontrol_heat.svg"
+              alt="Pest Control Heat Map"
+              title="Pest Control Heat Map"
+            />
           {% endif %}
         {% endcall %}
       {% endcall %}
@@ -65,26 +81,38 @@
     {% endcall %}
 
     <!-- content-second section   -->
-    {% call page_container_plain.render() %}
+    {% call page_container_two_columns.render() %}
       <!-- full width organism with items aligned to end -->
-      {% call child_container_full_width_items_end.render() %}
-        {% call child_container_sixty_percent_width.render() %}
-          {% call text_without_heading.render() %}
-            Urban areas in Wānaka and Hāwea have increased since 1990. A
-            majority of this new urbanised landscape resulted from converting
-            productive grassland. However, total production grassland remained
-            constant, due to conversion of grassland with woody biomass.
-          {% endcall %}
+      {% call child_container_forty_percent_basis.render() %}
+        {% call paragraph.render() %}
+          Pest control efforts across the catchment have been on a steady
+          increase the last three years, as the number of active traps
+          (including automatic traps) across the catchment has been increasing.
         {% endcall %}
-        <!-- graph frame organism-->
+        <!-- call out molecule-->
+        {% call callout.render(statistic_value="855 ") %}
+          Increase in the number of traps between 2021 and 2022.
+        {% endcall %}
+        {% call paragraph.render() %}
+          The number of pests caught continues to increase as well, indicating
+          that pest presence remains an issue.
+        {% endcall %}
+      {% endcall %}
+      <!-- graph frame organism-->
+      {% call child_container_sixty_percent_basis.render() %}
         {% call(content) graph_frame.render(graph_title="Predator control data over the last three years.",flyout_id="flyout_PredatorControl") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_PredatorControl") %}
+              {% call datasource_item.render(link="https://www.trap.nz/",link_title="TrapNZ") %}
+                Data were obtained from
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-            {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
-            {% endif %}
+            {% call graph_container_medium.render() %}
+              {{ PredatorControl.create_figure().to_html(div_id="PredatorControl",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
+            {% endcall %}
+          {% endif %}
         {% endcall %}
       {% endcall %}
     {% endcall %}
@@ -99,22 +127,19 @@
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
-        {% call text_without_heading.render() %}
-          The dominating pests caught in the catchment are rats (33%) followed
-          by possums(17%).
-        {% endcall %}
-        {% call text_without_heading.render() %}
-          Continued efforts to control pests in the catchment is an important
-          contribution to the national Predator Free 2050 goal, which is working
-          towards an Aotearoa where our native species are safe from extinction
-          and thrive alongside us.
+        {% call paragraph.render() %}
+          In 2022, the dominating pests caught in the catchment are rats (40%)
+          followed by possums with 12%.
         {% endcall %}
         <!-- call out molecule-->
-        {% call callout.render(statistic_value="503  ") %}
-          Increase in the number of traps between 2020 and 2021
+        {% call callout.render(statistic_value="40%") %}
+          The majority of pests caught in the catchment are rats.
         {% endcall %}
-        {% call callout.render(statistic_value="855 ") %}
-          Increase in the number of traps between 2021 and 2022.
+        {% call paragraph.render() %}
+          Continued efforts to control pests in the catchment is an important
+          contribution to the national Predator Free 2050 goal, which is working
+          towards an Aotearoa New Zealand where our native species are safe from extinction
+          and thrive alongside us.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
@@ -123,10 +148,13 @@
         {% call(content) graph_frame.render(graph_title="Type of pests being caught in traps across the catchment.",flyout_id="flyout_PredatorType") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_PredatorType") %}
+              {% call datasource_item.render(link="https://www.trap.nz/",link_title="TrapNZ") %}
+                Data were obtained from
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
-          {% call graph_container_medium.render() %}
+            {% call graph_container_medium.render() %}
               {{ PredatorType.create_figure().to_html(div_id="PredatorType",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
             {% endcall %}
           {% endif %}
@@ -144,20 +172,24 @@
     {% call page_container_two_columns.render() %}
       <!--  left side organism -->
       {% call child_container_forty_percent_basis.render() %}
-        {% call text_with_heading.render(subhead_01_text="Wilding Conifers") %}
+      <!-- subhead_01_textstyle heading -->
+        {% call subhead_01_textstyle.render() %}
+          Wilding Conifers
+        {% endcall %}
+        {% call paragraph.render() %}
           Wilding conifers are a threat to native plants and animals as they
           compete for sunlight and water. Particularly high-risk areas of
           wilding conifer invasion are the high country and tussock grasslands
-          of the catchment , which are further threatened by water demand and
+          of the catchment, which are further threatened by water demand and
           fire risk associated by the increase in wilding conifers. While WCIS,
-          Whakatipu Wilding Conifer Control Group, and Central Otago Wilding
+          the Whakatipu Wilding Conifer Control Group, and Central Otago Wilding
           Control Group continue their wilding pine management efforts, it is
           important to consider the increasing threat that spreading exotic
           forest cover may pose on the catchment.
         {% endcall %}
-        {% call text_without_heading.render() %}
-          The wilding data are currently only sourced from the WCIS, which only
-          covers a fraction of the spatial extent of the catchment.
+        {% call paragraph.render() %}
+          The wilding conifer data are currently only sourced from the WCIS,
+          which only covers a fraction of the spatial extent of the catchment.
         {% endcall %}
       {% endcall %}
       <!-- right side organism -->
@@ -166,6 +198,9 @@
         {% call(content) graph_frame.render(graph_title="Wilding pines control efforts by WCIS.",flyout_id="flyout_WildingPines") %}
           {% if content == 'flyout' %}
             {% call flyout.render(flyout_id="flyout_WildingPines") %}
+              {% call datasource_item.render(link="https://wildpines.linz.govt.nz/portal/apps/StoryMapBasic/index.html?appid=9694bf0ea4b24ee7b13ca368ef449049",link_title="WCIS") %}
+                Data were obtained from the Wilding Conifers Information System
+              {% endcall %}
             {% endcall %}
           {% endif %}
           {% if content == 'graph' %}
@@ -173,6 +208,25 @@
               {{ WildingPines.create_figure().to_html(div_id="WildingPines",full_html=False, include_plotlyjs=False, include_mathjax=false )|safe }}
             {% endcall %}
           {% endif %}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    <!-- divider section -->
+    {% call page_container_plain.render() %}
+      <!-- divider atom-->
+      {{ divider.render(divider_width="border-b-2") }}
+    {% endcall %}
+
+    {% call page_container_plain.render() %}
+      {% call reference.render() %}
+        {% call reference_item.render(url="https://environment.govt.nz/publications/environment-new-zealand-2007/chapter-12-biodiversity/introduction/",name=" online,",additional_info="last accessed Jan 2024.") %}
+          <span id="fn1">[3]</span> Environment New Zealand 2007, Ministry for the Environment, Manatū
+          Mō Te Taiao, Report ME 847, Chapter 12 &minus; available
+        {% endcall %}
+        {% call reference_item.render(url="https://www.orc.govt.nz/plans-policies-reports/regional-plans-and-policies/regional-pest-management-plan",name=" online,",additional_info="last accessed Jan 2024.") %}
+          <span id="fn2">[4]</span> Otago Pest Management Plan 2019-2029, Otago Regional Council, 2019
+          &minus; available
         {% endcall %}
       {% endcall %}
     {% endcall %}

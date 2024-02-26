@@ -1,4 +1,4 @@
-{% import 'molecules/link_view_datasource.html' as link_view_datasource with context %}
+{% import 'molecules/view_datasource.html' as view_datasource with context %}
 {% import 'atoms/caption_textstyle.html' as caption_textstyle with context %}
 
 {%- macro render(graph_title="",flyout_id="drawer-disabled-backdrop",graph_container="") -%}
@@ -12,7 +12,7 @@
       <div class="w-full">
         <div class=" bg-light-grey w-full px-12 py-6 rounded-t-3xl">
           <!-- flyout button -->
-          {% call link_view_datasource.render(flyout_id) %}
+          {% call view_datasource.render(flyout_id) %}
           {% endcall %}
         </div>
       </div>

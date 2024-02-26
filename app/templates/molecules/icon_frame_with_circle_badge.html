@@ -1,0 +1,10 @@
+<!-- a fixed width and height container used for the icon of navigation_tertiary_item -->
+{%- macro render(image_class1="",image_class2="") -%}
+  {% set parent_caller=caller() %}
+  <div
+    class="{{ image_class1 }} {{ image_class2 }}  lg:p-2 p-1 xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-9 md:h-9 w-7 h-7 bg-light-grey rounded-full flex justify-center items-center
+  "
+  >
+    {{ parent_caller }}
+  </div>
+{%- endmacro -%}

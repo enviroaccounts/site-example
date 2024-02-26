@@ -1,21 +1,21 @@
 {% import 'atoms/subhead_02_textstyle.html' as subhead_02_textstyle with context %}
-{% import 'atoms/footer_textstyle.html' as footer_textstyle with context %}
-{% import 'atoms/footer_02_textstyle.html' as footer_02_textstyle with context %}
-{% import 'atoms/icon_view_data_source_no_badge.html' as icon_view_data_source_no_badge with context %}
-{% import 'atoms/icon_frame.html' as icon_frame with context %}
 
 {%- macro render(flyout_id="drawer-disabled-backdrop") -%}
   {% set  parent_caller = caller() %}
   <!-- drawer component -->
   <div
     id="{{ flyout_id }}"
-    class="absolute top-0 left-0 z-40 lg:w-3/5 w-4/5 h-full p-8 overflow-y-auto transition-transform -translate-x-full bg-grey-900 opacity-95 dark:bg-gray-800 rounded-tl-3xl"
+    class="flyout absolute top-0 left-0 z-40 w-full md:w-[79%] h-full p-8 overflow-y-auto transition-transform -translate-x-full bg-grey-900  dark:bg-gray-800 rounded-tl-3xl"
     tabindex="-1"
     aria-labelledby="{{ flyout_id }}-label"
   >
     <div class="flex flex-row justify-start items-center gap-3 mb-5">
-      <div class="lg:w-6 lg:h-6 md:w-5 md:h-5 xs:w-4 xs:h-4">
-        {{ icon_view_data_source_no_badge.render() }}
+      <div class="lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4">
+        <img
+          src="/static/images/icons/icon_data_source_plain.svg"
+          alt="Data source"
+          title="Data source"
+        />
       </div>
       {% call subhead_02_textstyle.render(text_color="text-white") %}
         Data Source
@@ -48,56 +48,8 @@
     </button>
     <div class="py-4 overflow-y-auto">
       <ul class="space-y-2 font-medium text-white">
-        <li>
-          <div class="flex flex-row justify-start items-center">
-            {% call footer_textstyle.render(text_color="text-white") %}
-              Agriculture-
-            {% endcall %}
-            <a
-              >{% call footer_02_textstyle.render(text_color="text-white") %}
-                StatsNZ
-              {% endcall %}</a
-            >
-          </div>
-        </li>
-        <li>
-          <div class="flex flex-row justify-start items-center">
-            {% call footer_textstyle.render(text_color="text-white") %}
-              Transport-
-            {% endcall %}
-            <a
-              >{% call footer_02_textstyle.render(text_color="text-white") %}
-                Central Otago District Council
-              {% endcall %}</a
-            >
-          </div>
-        </li>
-        <li>
-          <div class="flex flex-row justify-start items-center">
-            {% call footer_textstyle.render(text_color="text-white") %}
-              Energy-
-            {% endcall %}
-            <a
-              >{% call footer_02_textstyle.render(text_color="text-white") %}
-                Aroura Engery
-              {% endcall %}</a
-            >
-          </div>
-        </li>
-        <li>
-          <div class="flex flex-row justify-start items-center">
-            {% call footer_textstyle.render(text_color="text-white") %}
-              Forestry-
-            {% endcall %}
-            <a
-              >{% call footer_02_textstyle.render(text_color="text-white") %}
-                LUCAS QLDC Quality Life survey
-              {% endcall %}</a
-            >
-          </div>
-        </li>
+        {{ parent_caller }}
       </ul>
     </div>
   </div>
-  {{ parent_caller }}
 {%- endmacro -%}

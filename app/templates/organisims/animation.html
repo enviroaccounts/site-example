@@ -1,0 +1,19 @@
+{% import 'molecules/navigation_tertiary.html' as navigation_tertiary  with context %}
+
+{%- macro render() -%}
+  {% set  parent_caller = caller() %}
+  <!-- animation section -->
+  <div class="relative">
+    <img
+      class="w-full mb-12 environment-graph"
+      src="/static/images/graphs/hero.svg"
+      alt="Environmental illustration"
+      title="Environmental illustration"
+      width="56"
+      height="56"
+    />
+    {% call navigation_tertiary.render() %}
+      {{ parent_caller }}
+    {% endcall %}
+  </div>
+{%- endmacro -%}

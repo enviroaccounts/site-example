@@ -62,6 +62,8 @@ def create_rainfall_bar_chart(months, values_1990_2005, values_2022):
             xanchor='center',
             orientation='h',  # Setting legend orientation to horizontal
             font=dict(size=12),
+            itemclick=False,  
+            itemdoubleclick=False 
         ),
         barmode='group',
         bargap=0.15,  # Space between bars of different groups
