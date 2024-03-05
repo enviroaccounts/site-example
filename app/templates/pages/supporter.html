@@ -32,7 +32,7 @@
           collaboration has been instrumental in shaping the foundation of this
           monitoring framework.
         {% endcall %}
-        {% call text_without_heading.render() %}
+        {% call paragraph.render() %}
           We would also like to express our sincere appreciation to the organisations -
           <a href="https://enviroaccounts.com/" class="underline"
             >Environmental Accounting Services</a
@@ -115,7 +115,11 @@
         {% endcall %}
 
         <!-- Why Partner with Upper Clutha Catchment Health Partnership? -->
-        {% call text_with_heading.render(subhead_01_text="Why Partner with Upper Clutha Catchment Health Partnership?") %}
+        <!-- subhead_01_textstyle heading -->
+        {% call subhead_01_textstyle.render() %}
+        Why Partner with Upper Clutha Catchment Health Partnership?
+        {% endcall %}
+        {% call paragraph.render() %}
           As a partner you'll stand alongside government entities, industries,
           research groups, and the community, showcasing your commitment to
           environmental stewardship and community well-being. Here's what you can expect as a supporter:
@@ -131,7 +135,7 @@
               commitment to environmental and economic sustainability, cultural
               awareness, and social well-being.
             {% endcall %}
-            {% call text_list_item.render() %}
+            {% call unorderlist_item.render() %}
               Enhanced community relations by demonstrating your organisation's
               dedication to the environment, offering positive marketing and
               public relations opportunities.
@@ -210,7 +214,7 @@
             The Central Otago District Council (CODC), for providing data for
             use in estimating the GHG emissions.
           {% endcall %}
-          {% call text_list_item.render() %}
+          {% call unorderlist_item.render() %}
             The National Institute of Water and Atmospheric Research (NIWA), for making
             data from weather stations across New Zealand publicly available through New Zealand's National Climate
             Database (CliFlo).
@@ -231,7 +235,7 @@
             providing guidance on existing data limitations, gaps, and potential
             alternative data sources.
           {% endcall %}
-          {% call text_list_item.render() %}
+          {% call unorderlist_item.render() %}
             Aurora Energy, for providing energy consumption data for use in estimating
             GHG emissions from the energy sector.
           {% endcall %}
