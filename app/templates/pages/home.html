@@ -1,232 +1,59 @@
 {% extends "base.html" %}
-{% import 'templates/basic.html' as basic  with context %}
-{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
-{% import 'organisims/animation.html' as animation  with context %}
-{% import 'organisims/page_container_two_columns.html' as page_container_two_columns  with context %}
-{% import 'organisims/child_container_fifty_percent_basis.html' as child_container_fifty_percent_basis  with context %}
-{% import 'organisims/graph_container_extrasmall.html' as graph_container_extrasmall with context %}
-{% import 'organisims/graph_frame.html' as graph_frame with context %}
-{% import 'organisims/flyout.html' as flyout with context %}
-{% import 'organisims/child_container_full_width.html' as child_container_full_width with context %}
-{% import 'molecules/navigation_tertiary_item.html' as navigation_tertiary_item  with context %}
-{% import 'molecules/paragraph.html' as paragraph  with context %}
-{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% import 'atoms/divider.html' as divider with context %}
-{% import 'atoms/button_plain.html' as button_plain with context %}
+{% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
+{% import 'atoms/text_divider.html' as text_divider with context %}
+{% import 'molecules/callout.html' as callout with context %}
+{% import 'molecules/navigation_primary_item_dropdown_menu_item.html' as navigation_primary_item_dropdown_menu_item with context %}
+{% import 'molecules/navigation_primary_item_dropdown_menu.html' as navigation_primary_item_dropdown_menu with context %}
+{% import 'molecules/navigation_primary_item_regualr.html' as navigation_primary_item_regualr with context %}
+{% import 'molecules/navigation_secondary_item.html' as navigation_secondary_item with context %}
+{% import 'molecules/paragraph.html' as paragraph  with context %}
+{% import 'organisims/footer_white.html' as footer_white  with context %}
+{% import 'organisims/front_page_image.html' as front_page_image  with context %}
+{% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
+{% import 'organisims/page_container_header.html' as page_container_header  with context %}
+{% import 'organisims/page_container_headline.html' as page_container_headline  with context %}
+{% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
+{% import 'organisims/sidebar.html' as sidebar with context %}
+{% import 'templates/single_page.html' as single_page  with context %}
 {% set title_text="Home" %}
 
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
-  {% call basic.render(title_text=title_text) %}
-    <!-- animation section -->
-    {% call page_container_plain.render() %}
-      <!-- animation organism -->
-      {% call animation.render() %}
-        <!-- animation navigation_icon molecule -->
-        {% call navigation_tertiary_item.render(navigation_title="climate variables",navigation_class="icon_climate_variables") %}
-          <img
-            src="/static/images/icons/climate_variables.svg"
-            alt="Climate Variables"
-            title="{{ navigation_title }}"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="greenhouse gas emissions",navigation_class="icon_greenhouse_gas_emissions") %}
-          <img
-            src="/static/images/icons/greenhouse_gas_emissions.svg"
-            alt="Greenhouse Gas Emissions "
-            title="Greenhouse Gas Emissions"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="land use change",navigation_class="icon_land_use_change") %}
-          <img
-            src="/static/images/icons/land_use_change.svg"
-            alt="Landuse change"
-            title="Landuse change"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="social wellbeing",navigation_class="icon_social_wellbeing") %}
-          <img
-            src="/static/images/icons/social_wellbeing.svg"
-            alt="Social Wellbeing"
-            title="Social Wellbeing"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="water quality",navigation_class="icon_water_quality") %}
-          <img
-            src="/static/images/icons/water_quality.svg"
-            alt="Water quality"
-            title="Water quality"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="invasive species",navigation_class="icon_invasive_species") %}
-          <img
-            src="/static/images/icons/invasive_species.svg"
-            alt="Invasive Species"
-            title="Invasive Species"
-            class="w-full h-full"
-          />
-        {% endcall %}
+  {% call single_page.render() %}
+    {% call front_page_image.render() %}
+    {% endcall %}
+  {% endcall %}
+  {% call sidebar.render(flyout_id="help_panel") %}
+    <div>
+      {{ divider.render(divider_width="border-b-2",border_color="border-white") }}
+    </div>
+
+    <section>
+    {% call paragraph.render(text_style="text-yellow text-body font-light font-inter") %}
+      Welcome to the Upper Clutha Catchment Health Project, an initiative
+      deeply rooted in the principles of Te Taiao – a profound connection to and
+      reverence for the natural world. Our project serves as a catalyst for
+      community engagement, uniting diverse stakeholders – from residents and
+      iwi to landowners and tourism operators – in a collective effort to
+      revitalise Te Taiao.<br /><br />To navigate click on the indicator icons
+      you would like to learn more about or use the navigation menu at the
+      top.<br /><br />Examples of the indicator icons are shown below:
+      <br /><br /><br /><br /><br />
+      <br />To learn more about our story click here.
+    {% endcall %}
+    </section>
+    <scetion class="absolute bottom-0 left-0 w-full p-8 mb-4 md:mb-8">
+      {{ divider.render(divider_width="border-b-2",border_color="border-white") }}
+      {% call page_container_footer.render() %}
+      <!-- footer organism -->
+      {% call footer_white.render() %}
       {% endcall %}
     {% endcall %}
-
-    <!-- divider section -->
-    {% call page_container_plain.render() %}
-      <!-- divider atom-->
-      {{ divider.render(divider_width="border-b-2") }}
-    {% endcall %}
-
-    <!-- The story section -->
-    {% call page_container_plain.render() %}
-      {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
-      <!-- heading -->
-      {% call subhead_01_textstyle.render() %}
-        The Story
-      {% endcall %} 
-
-      {% call paragraph.render() %}
-        Welcome to the Upper Clutha Catchment Health Project, an initiative
-        deeply rooted in the principles of Te Taiao – a profound connection to
-        and reverence for the natural world. Our project serves
-        as a catalyst for community engagement, uniting diverse stakeholders –
-        from residents and iwi to landowners and tourism operators – in a
-        collective effort to revitalise Te Taiao.
-      {% endcall %}
-      {% endcall %}
-    {% endcall %}
-
-    {% call page_container_two_columns.render() %}
-      <!--  left side organism -->
-      {% call child_container_fifty_percent_basis.render() %}
-        <!-- graph -->
-        {% call text_without_heading.render() %}
-          At the heart of our endeavour lies a comprehensive monitoring
-          framework, crafted to encapsulate the essence of Te Taiao and to
-          foster a holistic understanding of catchment health.
-        {% endcall %}
-        {% call paragraph.render() %}
-          The monitoring framework is comprised of a selection of indicators
-          that reflect the health of our land, water, biodiversity, livelihoods,
-          and culture within the catchment, all interconnected within Te Taiao.
-          These indicators not only provide valuable insights but also instil a
-          sense of ownership and pride within our community for the stewardship
-          of our catchment.
-        {% endcall %}
-        {% call(content) graph_frame.render(graph_title="The concept of Te Taiao and its four interconnected components.",flyout_id="flyout_Illustration_TeTaiao") %}
-          {% if content == 'flyout' %}
-            {% call flyout.render(flyout_id="flyout_Illustration_TeTaiao") %}
-            {% endcall %}
-          {% endif %}
-          {% if content == 'graph' %}
-            {% call graph_container_extrasmall.render() %}
-              <img
-                width="100%"
-                height="100%"
-                src="/static/images/graphs/Illustration_TeTaiao.png"
-                alt="The concept of Te Taiao and its four interconnected components."
-                title="The concept of Te Taiao and its four interconnected components."
-              />
-            {% endcall %}
-          {% endif %}
-        {% endcall %}  
-      {% endcall %}
-      <!--  Right side organism -->
-      {% call child_container_fifty_percent_basis.render() %}
-        {% call text_without_heading.render() %}
-          By rooting our monitoring framework indicators with direct community
-          values, pressures, and actions that were identified in the
-          <a
-            href="https://waiwanaka.nz/projects/community-catchment-plan/"
-            class="underline"
-            >Upper Clutha Community Catchment Plan</a
-          >, our framework embodies a collaborative effort involving the entire
-          catchment community, including residents from rural and urban areas,
-          as well as visitors to our region. Through ongoing monitoring and
-          reporting, we aim to showcase the myriad of local initiatives
-          dedicated to preserving and enhancing our catchment's health as well
-          as guide future environmental investments.
-        {% endcall %}
-        {% call paragraph.render() %}
-          The monitoring framework aims to connect the Upper Clutha community to
-          Te Taiao through understanding the state of our catchment health and
-          the interacting indicators that contribute. We recognise that
-          true health in our catchment transcends mere ecological balance; it
-          encompasses a sustainable coexistence between human activities and
-          endeavours, and the natural environment. Through our monitoring
-          framework, we aim to assess and nurture this delicate equilibrium,
-          guided by the ethos of respect and care for our surroundings.
-        {% endcall %}
-        {% call paragraph.render() %}
-          As a central repository for data collection and reporting, our
-          monitoring framework fosters collaboration among various organisations
-          across the catchment, ensuring a unified approach towards
-          environmental stewardship. It serves as the cornerstone for our annual
-          "State of the Upper Clutha Catchment Health" assessments, providing a concise overview
-          of key findings as presented on this website.
-        {% endcall %}
-      {% endcall %}
-    {% endcall %}
-
-    <!-- divider section -->
-    {% call page_container_plain.render() %}
-      <!-- divider atom-->
-      {{ divider.render(divider_width="border-b-2") }}
-    {% endcall %}
-
-    <!-- Join us section -->
-    {% call page_container_plain.render() %}
-      {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
-        <!-- heading -->
-        {% call subhead_01_textstyle.render() %}
-        Join Us in Building a Healthier Catchment!
-        {% endcall %}
-        {% call paragraph.render() %}
-          By partnering with us, you'll not only contribute to the preservation
-          of our natural resources but also strengthen your organisation's
-          commitment to sustainability and community engagement. Together, we
-          can make a lasting impact on the health and vitality of the Upper
-          Clutha Catchment. We look forward to welcoming you as a valued partner
-          in this important endeavour.
-        {% endcall %}
-        {% call paragraph.render() %}
-          {% call button_black.render() %}
-            <a href="/supporter">Become a supporter</a>
-          {% endcall %}
-        {% endcall %}
-
-        {% call paragraph.render() %}
-          Want to find more information on how to become a partner?
-
-          <a href="mailto:getinvolved@waiwanaka.nz" class="underline"
-            >Contact us today.</a
-          >
-        {% endcall %}
-      {% endcall %}
-    {% endcall %}
+    </scetion>
   {% endcall %}
 {% endblock %}
 
 {% block script_end %}
-  <!-- animation -->
-  <script>
-    let lastScroll = 0;
-    const icons = document.querySelectorAll(".environment_icon");
-
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset;
-      icons.forEach((icon) => {
-        if (currentScroll <= lastScroll) {
-          icon.style.animation = "returnIcon 1s ease-in forwards";
-        } else {
-          icon.style.animation = "moveIcon 1s ease-in forwards";
-        }
-      });
-      lastScroll = currentScroll;
-    });
-  </script>
 {% endblock %}

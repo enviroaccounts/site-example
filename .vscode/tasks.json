@@ -6,6 +6,7 @@
 			"label": "docker-build",
 			"platform": "python",
 			"dockerBuild": {
+				"containerName": "siteexample-build",
 				"tag": "siteexample:latest",
 				"dockerfile": "${workspaceFolder}/Dockerfile",
 				"context": "${workspaceFolder}",
@@ -73,14 +74,11 @@
 		},
 		{
 			"type": "shell",
-			"label": "docker-run: tailwind css compile ",
-			"dependsOn": [
-				"docker-build"
-			],
-			"command": "docker run --rm --tty -it --mount 'type=bind,source=${workspaceFolder},destination=/site' siteexample:latest bash -c 'tailwindcss -i css/style.css -o app/static/css/main.css --minify'",
+			"label": "docker-run: aaaa tailwind css compile  ",
+			"command": "docker run --rm --name 'site-css' --tty -it --mount 'type=bind,source=${workspaceFolder},destination=/site' siteexample:latest bash -c 'tailwindcss -i css/style.css -o app/static/css/main.css --minify'",
 
 			"problemMatcher": []
 		}
-		
 	]
 }
+
