@@ -65,11 +65,11 @@
 
 /* flyout */
 .flyout[aria-hidden="true"] {
-  opacity: 0;
+  display: none;
 }
 
 .flyout[aria-modal="true"]{
-  opacity: 0.95;
+  
 }
 
 
@@ -287,25 +287,17 @@
 
 @media screen and (min-width: 768px) {
   .navigation-list-nested-hover:hover {
-      box-shadow: 
-          inset 0 0 0 3px #2e2e2e, 
-          inset 0 0 0 3px #2e2e2e;
-      overflow: hidden;
-      transition: box-shadow 0.3s ease-in-out;
+
   }
 
   .navigation-list-nested-hover:hover a {
-      background-color: transparent;
+
   }
   .navigation-list-nested-active {
-    box-shadow: 
-        inset 0 0 0 3px #2e2e2e, 
-        inset 0 0 0 3px #2e2e2e;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out;
+
   }
 }
 
 #dropdownNavbar {
-  transform: translate(166, 100) !important; 
+  /* transform: translate(166, 100) !important; */
 }

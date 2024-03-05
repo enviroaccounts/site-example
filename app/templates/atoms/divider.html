@@ -1,5 +1,5 @@
-{%- macro render(divider_width="border-b-6",border_style="") -%}
+{%- macro render(divider_width="border-b-6",border_style="",border_color="border-black") -%}
   <div
-    class="{{ divider_width }} {{ border_style }} rounded-full border-black"
+    class="{{ divider_width }} {{ border_style }} rounded-full {{ border_color }}"
   ></div>
 {%- endmacro -%}
