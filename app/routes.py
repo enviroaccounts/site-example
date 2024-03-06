@@ -43,8 +43,12 @@ def disclaimer():
     return render_template("pages/disclaimer.html")
 
 @app.route('/vision')
-def story():
+def vision():
     return render_template("pages/vision.html")
+
+@app.route('/story')
+def story():
+    return render_template("pages/story.html")
 
 @app.route('/sponsorship')
 def sponsorship():

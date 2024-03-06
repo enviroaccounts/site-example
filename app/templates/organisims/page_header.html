@@ -1,0 +1,38 @@
+{% import 'molecules/navigation_primary.html' as navigation_primary  with context %}
+{% import 'molecules/navigation_secondary.html' as navigation_secondary with context %}
+{% import 'atoms/button_hamburger.html' as button_hamburger  with context %}
+{% import 'molecules/navigation_primary_item_regualr.html' as navigation_primary_item_regualr with context %}
+
+{%- macro render() -%}
+  <!-- header organism -->
+  <div class="flex bg-white border-gray-200 rounded dark:bg-gray-900">
+    <div
+      class="min-w-screen-xs w-full flex flex-wrap  items-center justify-between mx-auto
+    md:items-center relative h-[85px] md:h-[118px] lg:h-[157px] xl:h-[196px] border-b-4 border-grey-900 md:border-none"
+    >
+      <!-- navigation_secondary list -->
+      {% call navigation_secondary.render() %}
+      {% endcall %}
+      <!-- divider-->
+      <div
+        class="w-full md:border-b-4 xl:border-b-6  mt-20 absolute bottom-[40%] mx-auto h-auto z-0 rounded-full border-grey-900"
+      ></div>
+      <!-- hamburger button-->
+      <div class="flex lg:order-2 md:mb-[50px]">
+        {% call button_hamburger.render(flyout_id="nav_panel") %}
+        {% endcall %}
+      </div>
+      <nav
+        class="hidden items-center justify-between w-full"
+        id="navbar-cta"
+      >
+        <!--  navigation_primary list -->
+        {% call navigation_primary.render() %}
+          <!-- navigation_primary item -->
+          {{ parent_caller2 }}
+        {% endcall %}
+      </nav>
+      {{ caller() }}
+    </div>
+  </div>
+{%- endmacro -%}

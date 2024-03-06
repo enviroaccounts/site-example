@@ -1,10 +1,10 @@
 {% import 'atoms/body_textstyle.html' as body_textstyle with context %}
 
-{%- macro render() -%}
+{%- macro render(text_style="text-black text-body font-light font-inter") -%}
   {% set parent_caller=caller() %}
 
   <div class="w-full">
-    {% call body_textstyle.render() %}
+    {% call body_textstyle.render(text_style=text_style) %}
       {{ parent_caller }}
     {% endcall %}
   </div>

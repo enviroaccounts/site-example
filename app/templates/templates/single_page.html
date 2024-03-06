@@ -1,0 +1,26 @@
+{% import 'organisims/header.html' as header  with context %}
+{% import 'organisims/page_container_header.html' as page_container_header  with context %}
+{% import 'organisims/sidebar.html' as sidebar with context %}
+{% import 'organisims/sidebar_nav.html' as sidebar_nav with context %}
+
+{% import 'molecules/navigation_primary_item_dropdown_menu.html' as navigation_primary_item_dropdown_menu with context %}
+{% import 'molecules/navigation_primary_item_regualr.html' as navigation_primary_item_regualr with context %}
+{% import 'molecules/navigation_primary_item_dropdown_menu_item.html' as navigation_primary_item_dropdown_menu_item with context %}
+
+{%- macro render(title_text) -%}
+  {% set  parent_caller = caller() %}
+  <header class="max-w-screen-xl mx-auto px-2 xl:px-12 lg:px-8 md:px-6">
+    {% call page_container_header.render() %}
+      <!-- header organism -->
+      {% call header.render() %}
+      {% endcall %}
+    {% endcall %}
+  </header>
+
+  <main>{{ parent_caller }}</main>
+
+  {% call sidebar.render(flyout_id="nav_panel") %}
+    {% call sidebar_nav.render() %}
+    {% endcall %}
+  {% endcall %}
+{%- endmacro -%}
