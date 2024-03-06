@@ -4,13 +4,29 @@
 {% import 'atoms/link_plain.html' as link_plain with context %}
 
 {%- macro render() -%}
-  <div
-    class="flex justify-between items-end w-full"
-  >
+  <div class="flex  gap-3	justify-between items-start w-full mb-4">
+    <!-- Email us-->
+    {% call link_plain.render(url="mailto:getinvolved@waiwanaka.nz") %}
+      {% call footer_02_textstyle.render(text_color="text-grey-300") %}
+        Contact us
+      {% endcall %}
+    {% endcall %}
+    {% call link_plain.render(url="https://waiwanaka.nz/action-for-te-taiao/") %}
+      <!-- Find out more-->
+      {% call footer_02_textstyle.render(text_color="text-grey-300") %}
+        Find out more
+      {% endcall %}
+    {% endcall %}
+  </div>
+  <h3 class="hidden md:block text-grey-300 font-medium font-overused-grotesk">
+    Technical delivery partners
+  </h3>
+
+  <div class="flex gap-2  lg:gap-4 justify-between items-start w-full">
     <!-- wai wanaka logo -->
     {% call link_plain.render(url="https://waiwanaka.nz/") %}
-    <!-- logo frame: having a fixed width and height -->
-      <div class="xl:w-40 xl:h-24 lg:w-32 lg:h-20 md:w-24 md:h-14 w-28 h-16">
+      <!-- logo frame: having a fixed width and height -->
+      <div class="my-auto xl:h-20 lg:h-16 md:h-10 h-14">
         <img
           src="/static/images/icons/wai_wanaka_logo_white.png"
           alt="Wai wanaka logo"
@@ -19,21 +35,29 @@
         />
       </div>
     {% endcall %}
-    <div class="flex flex-col gap-3	justify-end">
-      <!-- Email us-->
-      {% call link_plain.render(url="mailto:getinvolved@waiwanaka.nz") %}
-        {% call footer_02_textstyle.render(text_color="text-grey-300") %}
-          Contact us
-        {% endcall %}
-      {% endcall %}
-      {% call link_plain.render(url="https://waiwanaka.nz/action-for-te-taiao/") %}
-        <!-- Find out more-->
-        {% call footer_02_textstyle.render(text_color="text-grey-300") %}
-          Find out more
-        {% endcall %}
-      {% endcall %}
-    </div>
+    {% call link_plain.render(url="https://enviroaccounts.com/") %}
+      <!-- logo frame: having a fixed width and height -->
+      <div class="hidden md:block my-auto xl:h-20 lg:h-16 md:h-12 h-6">
+        <img
+          src="/static/images/icons/EAS_vector_grey.svg"
+          alt="EAS logo"
+          title="EAS logo"
+          class="h-full object-fill"
+        />
+      </div>
+    {% endcall %}
+    <!-- <div class="my-auto h-full"> -->
+    {% call link_plain.render(url="https://whitelightstudio.co.nz/") %}
+      <!-- logo frame: having a fixed width and height -->
+      <div class="hidden md:block my-auto xl:h-18 lg:h-14 md:h-8 h-4">
+        <img
+          src="/static/images/icons/whitelightstudios-white.png"
+          alt="White Light Studio logo"
+          title="White Light Studio logo"
+          class="h-full object-fill"
+        />
+      </div>
+    {% endcall %}
   </div>
-  <!--  placeholder -->
   {{ caller() }}
 {%- endmacro -%}
