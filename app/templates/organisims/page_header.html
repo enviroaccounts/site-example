@@ -4,9 +4,6 @@
 {% import 'molecules/navigation_primary_item_regualr.html' as navigation_primary_item_regualr with context %}
 
 {%- macro render() -%}
-  {% set  parent_caller1 = caller('navigation_secondary') %}
-  {% set  parent_caller2 = caller('navigation_primary') %}
-
   <!-- header organism -->
   <div class="flex bg-white border-gray-200 rounded dark:bg-gray-900">
     <div
@@ -15,7 +12,6 @@
     >
       <!-- navigation_secondary list -->
       {% call navigation_secondary.render() %}
-        {{ parent_caller1 }}
       {% endcall %}
       <!-- divider-->
       <div
@@ -23,7 +19,7 @@
       ></div>
       <!-- hamburger button-->
       <div class="flex lg:order-2 md:mb-[50px]">
-        {% call button_hamburger.render(flyout_id="hp1") %}
+        {% call button_hamburger.render(flyout_id="nav_panel") %}
         {% endcall %}
       </div>
       <nav
@@ -36,6 +32,7 @@
           {{ parent_caller2 }}
         {% endcall %}
       </nav>
+      {{ caller() }}
     </div>
   </div>
 {%- endmacro -%}

@@ -4,6 +4,7 @@
 {% import 'organisims/page_container_footer.html' as page_container_footer  with context %}
 {% import 'organisims/child_container_sixty_percent_width.html' as child_container_sixty_percent_width with context %}
 {% import 'organisims/sidebar.html' as sidebar with context %}
+{% import 'organisims/sidebar_nav.html' as sidebar_nav with context %}
 {% import 'organisims/footer.html' as footer  with context %}
 {% import 'organisims/page_header.html' as page_header  with context %}
 {% import 'molecules/navigation_secondary_item.html' as navigation_secondary_item with context %}
@@ -11,70 +12,25 @@
 {% import 'molecules/navigation_primary_item_regualr.html' as navigation_primary_item_regualr with context %}
 {% import 'molecules/navigation_primary_item_dropdown_menu_item.html' as navigation_primary_item_dropdown_menu_item with context %}
 {% import 'atoms/headline_textstyle.html' as headline with context %}
+{% import 'atoms/divider.html' as divider with context %}
 
 {%- macro render(title_text) -%}
   <!-- header section-->
-  <header class="max-w-screen-xl mx-auto h-auto xl:px-24 lg:px-16 md:px-11 px-0">
+  <header
+    class="max-w-screen-xl mx-auto h-auto  md:px-4 px-0"
+  >
     {% call page_container_header.render() %}
       <!-- header organism -->
       {% call(content) page_header.render() %}
-        {% if content == 'navigation_secondary' %}
-          {% call navigation_secondary_item.render(url="/landuse_change",active=("landuse_change" == active)) %}
-            <img
-              src="/static/images/icons/land_use_change.svg"
-              alt="Landuse change"
-              title="Landuse change"
-            />
-          {% endcall %}
-
-          {% call navigation_secondary_item.render(url="/water_quality",active=("water_quality" == active)) %}
-            <img
-              src="/static/images/icons/water_quality.svg"
-              alt="Water quality"
-              title="Water quality"
-            />
-          {% endcall %}
-
-          {% call navigation_secondary_item.render(url="/invasive_species",active=("invasive_species" == active)) %}
-            <img
-              src="/static/images/icons/invasive_species.svg"
-              alt="Invasive Species"
-              title="Invasive Species"
-            />
-          {% endcall %}
-
-          {% call navigation_secondary_item.render(url="/greenhouse_gas_emissions",active=("greenhouse_gas_emissions" == active)) %}
-            <img
-              src="/static/images/icons/greenhouse_gas_emissions.svg"
-              alt="Greenhouse Gas Emissions "
-              title="Greenhouse Gas Emissions"
-            />
-          {% endcall %}
-
-          {% call navigation_secondary_item.render(url="/climate_variables",active=("climate_variables" == active)) %}
-            <img
-              src="/static/images/icons/climate_variables.svg"
-              alt="Climate Variables"
-              title="Climate Variables"
-            />
-          {% endcall %}
-
-          {% call navigation_secondary_item.render(url="/social_well_being",active=("social_well_being" == active)) %}
-            <img
-              src="/static/images/icons/social_wellbeing.svg"
-              alt="Social Wellbeing"
-              title="Social Wellbeing"
-            />
-          {% endcall %}
-        {% endif %}
-        {% if content == 'navigation_primary' %}
-        {% endif %}
+        
       {% endcall %}
     {% endcall %}
   </header>
 
   <!-- headline section-->
-  <section class="max-w-screen-xl mx-auto h-auto xl:px-24 lg:px-16 md:px-11 px-2">
+  <section
+    class="max-w-screen-xl mx-auto h-auto md:px-4 px-2"
+  >
     {% call page_container_headline.render() %}
       {% call child_container_sixty_percent_width.render() %}
         <!-- headline molecule -->
@@ -84,34 +40,27 @@
       {% endcall %}
     {% endcall %}
   </section>
-  
+
   <!-- article section-->
-  <main class="max-w-screen-xl mx-auto h-auto xl:px-24 lg:px-16 md:px-11 px-2">
+  <main class="max-w-screen-xl mx-auto h-auto  md:px-4 px-2">
     {{ caller() }}
   </main>
 
   <!-- footer section-->
-  <footer class="max-w-screen-xl mx-auto h-auto xl:px-24 lg:px-16 md:px-11 px-2 mb-12">
+  <footer
+    class="max-w-screen-xl mx-auto h-auto  md:px-4 px-2 mb-12"
+  >
+    <div class="w-full mb-10 xl:mb-16 lg:mb-12">
+      {{ divider.render(divider_width="border-b-2",border_color="border-black") }}
+    </div>
     {% call page_container_footer.render() %}
       <!-- footer organism -->
       {% call footer.render() %}
       {% endcall %}
     {% endcall %}
   </footer>
-  {% call sidebar.render(flyout_id="hp1") %}
-    {% call navigation_primary_item_regualr.render(url="/home") %}
-      Home
-    {% endcall %}
-    {% call navigation_primary_item_dropdown_menu.render() %}
-      {% call navigation_primary_item_dropdown_menu_item.render(url="/vision") %}
-        Vision
-      {% endcall %}
-      {% call navigation_primary_item_dropdown_menu_item.render(url="/supporter") %}
-        Supporters
-      {% endcall %}
-    {% endcall %}
-    {% call navigation_primary_item_regualr.render(url="/disclaimer") %}
-      Disclaimer
+  {% call sidebar.render(flyout_id="nav_panel") %}
+    {% call sidebar_nav.render() %}
     {% endcall %}
   {% endcall %}
   <!-- iconic icon -->

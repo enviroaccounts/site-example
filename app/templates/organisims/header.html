@@ -6,8 +6,6 @@
 {% import 'atoms/link_plain.html' as link_plain with context %}
 
 {%- macro render() -%}
-  {% set  parent_caller1 = caller('navigation_secondary') %}
-  {% set  parent_caller2 = caller('navigation_primary') %}
   <div class="flex justify-between items-center w-full">
     <!-- wai wanaka logo -->
     {% call link_plain.render(url="https://waiwanaka.nz/") %}
@@ -31,5 +29,6 @@
         {% endcall %}
       </div>
     </div>
+    {{ caller() }}
   </div>
 {%- endmacro -%}

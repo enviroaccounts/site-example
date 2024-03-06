@@ -1,8 +1,57 @@
+{% import 'molecules/navigation_secondary_item.html' as navigation_secondary_item with context %}
+
 <!-- Navigation_secondary: the six indicators' navigation list -->
 {%- macro render() -%}
   <div
     class="flex flex-row gap-0.5 justify-center items-center md:items-start items-1/4 z-10 md:mr-[3%] px-1 md:w-[46%] h-full"
   >
+    {% call navigation_secondary_item.render(url="/landuse_change",active=("landuse_change" == active)) %}
+      <img
+        src="/static/images/icons/land_use_change.svg"
+        alt="Landuse change"
+        title="Landuse change"
+      />
+    {% endcall %}
+
+    {% call navigation_secondary_item.render(url="/water_quality",active=("water_quality" == active)) %}
+      <img
+        src="/static/images/icons/water_quality.svg"
+        alt="Water quality"
+        title="Water quality"
+      />
+    {% endcall %}
+
+    {% call navigation_secondary_item.render(url="/invasive_species",active=("invasive_species" == active)) %}
+      <img
+        src="/static/images/icons/invasive_species.svg"
+        alt="Invasive Species"
+        title="Invasive Species"
+      />
+    {% endcall %}
+
+    {% call navigation_secondary_item.render(url="/greenhouse_gas_emissions",active=("greenhouse_gas_emissions" == active)) %}
+      <img
+        src="/static/images/icons/greenhouse_gas_emissions.svg"
+        alt="Greenhouse Gas Emissions "
+        title="Greenhouse Gas Emissions"
+      />
+    {% endcall %}
+
+    {% call navigation_secondary_item.render(url="/climate_variables",active=("climate_variables" == active)) %}
+      <img
+        src="/static/images/icons/climate_variables.svg"
+        alt="Climate Variables"
+        title="Climate Variables"
+      />
+    {% endcall %}
+
+    {% call navigation_secondary_item.render(url="/social_well_being",active=("social_well_being" == active)) %}
+      <img
+        src="/static/images/icons/social_wellbeing.svg"
+        alt="Social Wellbeing"
+        title="Social Wellbeing"
+      />
+    {% endcall %}
     {{ caller() }}
   </div>
 {%- endmacro -%}

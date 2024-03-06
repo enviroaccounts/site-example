@@ -1,0 +1,38 @@
+{% import 'atoms/subhead_02_textstyle.html' as subhead_02_textstyle with context %}
+{% import 'molecules/navigation_secondary_item.html' as navigation_secondary_item with context %}
+{% import 'molecules/navigation_primary_item_dropdown_menu.html' as navigation_primary_item_dropdown_menu with context %}
+{% import 'molecules/navigation_primary_item_regualr.html' as navigation_primary_item_regualr with context %}
+{% import 'molecules/navigation_primary_item_dropdown_menu_item.html' as navigation_primary_item_dropdown_menu_item with context %}
+{% import 'atoms/sidebar_nav_textstyle.html' as sidebar_nav_textstyle with context %}
+
+{%- macro render(flyout_id="drawer-disabled-backdrop") -%}
+  {% set  parent_caller = caller() %}
+  <div class="flex flex-col gap-4 my-8">
+  <a href="/home">
+    {% call sidebar_nav_textstyle.render(text_style="text-grey-300 font-medium font-overused-grotesk") %}
+      Home
+    {% endcall %}
+  </a>
+  <a href="/story">
+    {% call sidebar_nav_textstyle.render(text_style="text-grey-300 font-medium font-overused-grotesk") %}
+      Our Story
+    {% endcall %}
+  </a>
+  <a href="/vision">
+    {% call sidebar_nav_textstyle.render(text_style="text-grey-300 font-medium font-overused-grotesk") %}
+      Vision
+    {% endcall %}
+  </a>
+  <a href="/supporter">
+    {% call sidebar_nav_textstyle.render(text_style="text-grey-300 font-medium font-overused-grotesk") %}
+      Supperters
+    {% endcall %}
+  </a>
+  <a href="/disclaimer">
+    {% call sidebar_nav_textstyle.render(text_style="text-grey-300 font-medium font-overused-grotesk") %}
+      Disclaimer
+    {% endcall %}
+  </a>
+  </div>
+  {{ parent_caller }}
+{%- endmacro -%}

@@ -13,82 +13,14 @@
 {% import 'atoms/subhead_01_textstyle.html' as subhead_01_textstyle with context %}
 {% import 'atoms/divider.html' as divider with context %}
 {% import 'atoms/button_black.html' as button_black with context %}
-{% set title_text="Home" %}
+{% set title_text="Our Story" %}
 
 {% block title %}{{ title_text }}{% endblock %}
 
 {% block content %}
   {% call basic.render(title_text=title_text) %}
-    <!-- animation section -->
-    {% call page_container_plain.render() %}
-      <!-- animation organism -->
-      {% call animation.render() %}
-        <!-- animation navigation_icon molecule -->
-        {% call navigation_tertiary_item.render(navigation_title="climate variables",navigation_class="icon_climate_variables") %}
-          <img
-            src="/static/images/icons/climate_variables.svg"
-            alt="Climate Variables"
-            title="{{ navigation_title }}"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="greenhouse gas emissions",navigation_class="icon_greenhouse_gas_emissions") %}
-          <img
-            src="/static/images/icons/greenhouse_gas_emissions.svg"
-            alt="Greenhouse Gas Emissions "
-            title="Greenhouse Gas Emissions"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="land use change",navigation_class="icon_land_use_change") %}
-          <img
-            src="/static/images/icons/land_use_change.svg"
-            alt="Landuse change"
-            title="Landuse change"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="social wellbeing",navigation_class="icon_social_wellbeing") %}
-          <img
-            src="/static/images/icons/social_wellbeing.svg"
-            alt="Social Wellbeing"
-            title="Social Wellbeing"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="water quality",navigation_class="icon_water_quality") %}
-          <img
-            src="/static/images/icons/water_quality.svg"
-            alt="Water quality"
-            title="Water quality"
-            class="w-full h-full"
-          />
-        {% endcall %}
-        {% call navigation_tertiary_item.render(navigation_title="invasive species",navigation_class="icon_invasive_species") %}
-          <img
-            src="/static/images/icons/invasive_species.svg"
-            alt="Invasive Species"
-            title="Invasive Species"
-            class="w-full h-full"
-          />
-        {% endcall %}
-      {% endcall %}
-    {% endcall %}
-
-    <!-- divider section -->
-    {% call page_container_plain.render() %}
-      <!-- divider atom-->
-      {{ divider.render(divider_width="border-b-2") }}
-    {% endcall %}
-
-    <!-- The story section -->
     {% call page_container_plain.render() %}
       {% call child_container_full_width.render(gap="md:gap-7 gap-4") %}
-      <!-- heading -->
-      {% call subhead_01_textstyle.render() %}
-        The Story
-      {% endcall %} 
-
       {% call paragraph.render() %}
         Welcome to the Upper Clutha Catchment Health Project, an initiative
         deeply rooted in the principles of Te Taiao – a profound connection to

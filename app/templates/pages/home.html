@@ -16,6 +16,7 @@
 {% import 'organisims/page_container_plain.html' as page_container_plain  with context %}
 {% import 'organisims/sidebar.html' as sidebar with context %}
 {% import 'templates/single_page.html' as single_page  with context %}
+{% import 'molecules/navigation_secondary.html' as navigation_secondary with context %}
 {% set title_text="Home" %}
 
 {% block title %}{{ title_text }}{% endblock %}
@@ -26,32 +27,31 @@
     {% endcall %}
   {% endcall %}
   {% call sidebar.render(flyout_id="help_panel") %}
-    <div>
-      {{ divider.render(divider_width="border-b-2",border_color="border-white") }}
-    </div>
-
-    <section>
-    {% call paragraph.render(text_style="text-yellow text-body font-light font-inter") %}
-      Welcome to the Upper Clutha Catchment Health Project, an initiative
-      deeply rooted in the principles of Te Taiao – a profound connection to and
-      reverence for the natural world. Our project serves as a catalyst for
-      community engagement, uniting diverse stakeholders – from residents and
-      iwi to landowners and tourism operators – in a collective effort to
-      revitalise Te Taiao.<br /><br />To navigate click on the indicator icons
-      you would like to learn more about or use the navigation menu at the
-      top.<br /><br />Examples of the indicator icons are shown below:
-      <br /><br /><br /><br /><br />
-      <br />To learn more about our story click here.
-    {% endcall %}
-    </section>
-    <scetion class="absolute bottom-0 left-0 w-full p-8 mb-4 md:mb-8">
-      {{ divider.render(divider_width="border-b-2",border_color="border-white") }}
-      {% call page_container_footer.render() %}
-      <!-- footer organism -->
-      {% call footer_white.render() %}
+    <section class="flex flex-col gap-4">
+      {% call paragraph.render(text_style="text-grey-300 text-body font-light font-inter") %}
+        Welcome to the Upper Clutha Catchment Health Project, an initiative
+        deeply rooted in the principles of Te Taiao, a profound connection to
+        and reverence for the natural world. Our project serves as a catalyst
+        for community engagement, uniting diverse stakeholders, from residents
+        and iwi to landowners and tourism operators, in a collective effort to
+        revitalise Te Taiao.
       {% endcall %}
-    {% endcall %}
-    </scetion>
+      {% call paragraph.render(text_style="text-grey-300 text-body font-light font-inter") %}
+        To navigate click on the indicator icons
+        you would like to learn more about or use the navigation menu at the
+        top.
+      {% endcall %}
+      {% call paragraph.render(text_style="text-grey-300 text-body font-light font-inter") %}
+        Examples of the indicator icons are shown below:
+      {% endcall %}
+      <div class="w-full my-4">
+        {% call navigation_secondary.render() %}
+        {% endcall %}
+      </div>
+      {% call paragraph.render(text_style="text-grey-300 text-body font-light font-inter") %}
+        To learn more about our story click here.
+      {% endcall %}
+    </section>
   {% endcall %}
 {% endblock %}
 

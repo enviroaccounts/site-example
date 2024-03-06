@@ -5,7 +5,7 @@
 
 {%- macro render() -%}
   <div
-    class="flex justify-between items-end xl:border-t-6 border-t-4 border-grey-900 w-full pt-10 xl:pt-16 lg:pt-12 rounded"
+    class="flex justify-between items-end w-full"
   >
     <!-- wai wanaka logo -->
     {% call link_plain.render(url="https://waiwanaka.nz/") %}
@@ -22,13 +22,13 @@
     <div class="flex flex-col gap-3	justify-end">
       <!-- Email us-->
       {% call link_plain.render(url="mailto:getinvolved@waiwanaka.nz") %}
-        {% call footer_02_textstyle.render() %}
+        {% call footer_02_textstyle.render(text_color="text-grey-300") %}
           Contact us
         {% endcall %}
       {% endcall %}
       {% call link_plain.render(url="https://waiwanaka.nz/action-for-te-taiao/") %}
         <!-- Find out more-->
-        {% call footer_02_textstyle.render() %}
+        {% call footer_02_textstyle.render(text_color="text-grey-300") %}
           Find out more
         {% endcall %}
       {% endcall %}
