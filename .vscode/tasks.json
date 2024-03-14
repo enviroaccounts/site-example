@@ -14,6 +14,31 @@
 			}
 		},
 		{
+			"type": "docker-build",
+			"label": "docker-prod-build",
+			"platform": "python",
+			"dockerBuild": {
+				"containerName": "siteexample-prod-build",
+				"tag": "siteexample-prod:latest",
+				"dockerfile": "${workspaceFolder}/Dockerfile-prod",
+				"context": "${workspaceFolder}",
+				"pull": true
+			}
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run-prod: static",
+			"detail": "This directly runs the Flask app without dash.",
+			"hide": true,
+			"dependsOn": [
+				"docker-build-prod"
+			],
+			"dockerRun": {
+				"env": {}
+			},
+			"python": {}
+		},
+		{
 			"type": "docker-run",
 			"label": "docker-run: static",
 			"detail": "This directly runs the Flask app without dash.",

@@ -8,6 +8,11 @@
             "label": "Run python container",
             "template": "${containerCommand} run --rm --tty -it ${exposedPorts} --mount 'type=bind,source=${workspaceFolder},destination=/site' ${tag} bash",
             "match": "siteexample"
+        },
+        {
+            "label": "Run bash container",
+            "template": "${containerCommand} run --rm --tty -it ${exposedPorts} ${tag} bash",
+            "match": "siteexample-prod"
         }
     ]
 }
